@@ -1,7 +1,7 @@
 import Link from "next/link"
 import type { Metadata } from "next"
 import DocumentCard from "@/components/document/DocumentCard"
-import SubjectChip from "@/components/ui/SubjectChip"
+import SubjectChip from "@/components/ui/Subjectchip"
 import type { DocumentSummary, Subject } from "@/lib/types"
 import type { LandingStat } from "@/lib/mock-data"
 

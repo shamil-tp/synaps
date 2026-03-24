@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import type { DocumentSummary } from "@/lib/types"
 
 type Props = {
@@ -29,7 +30,7 @@ export default function DocumentCard({ doc }: Props) {
       {/* Thumbnail placeholder */}
       <div className="w-full aspect-[3/4] mb-3 bg-[var(--color-surface-raised)] border border-[var(--color-border)] rounded-[var(--radius-md)] overflow-hidden flex items-center justify-center relative">
         {doc.thumbnailUrl ? (
-          <img
+          <Image
             src={doc.thumbnailUrl}
             alt={doc.title}
             className="w-full h-full object-cover"
