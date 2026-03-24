@@ -4,120 +4,62 @@ import Link from "next/link"
 import { useState } from "react"
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[var(--color-border)] bg-[var(--color-background)]/90 backdrop-blur-sm">
-      <div className="synaps-container flex h-14 items-center justify-between">
-
-        {/* Wordmark */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <span
-            className="text-[var(--color-text-primary)] font-black tracking-[-0.06em] text-xl select-none"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            SYN
-            {/* The 'A' as two horizontal bars — the synapse gap */}
-            <span className="inline-flex flex-col justify-center gap-[3px] mx-[1px] translate-y-[1px]">
-              <span className="block w-[10px] h-[2px] bg-[var(--color-text-primary)] rounded-none" />
-              <span className="block w-[10px] h-[2px] bg-[var(--color-text-primary)] rounded-none" />
-            </span>
-            PS
+    <header className="sticky top-0 z-50 w-full border-b border-surface bg-cream/90 backdrop-blur-md">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
+          <span className="font-black tracking-tighter text-2xl text-slate-dark">
+            SYNAPS
           </span>
         </Link>
-
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-1">
-          <Link
-            href="/browse"
-            className="px-3 py-1.5 text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors duration-[var(--duration-fast)]"
-          >
-            Browse
-          </Link>
-          <Link
-            href="/search"
-            className="px-3 py-1.5 text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors duration-[var(--duration-fast)]"
-          >
-            Search
-          </Link>
-          <Link
-            href="/upload"
-            className="px-3 py-1.5 text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors duration-[var(--duration-fast)]"
-          >
-            Upload
-          </Link>
+        
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex items-center gap-8">
+          <Link href="/browse" className="text-sm font-bold text-slate-mid hover:text-slate-dark transition-colors">Browse</Link>
+          <Link href="/search" className="text-sm font-bold text-slate-mid hover:text-slate-dark transition-colors">Search</Link>
+          <Link href="/upload" className="text-sm font-bold text-slate-mid hover:text-slate-dark transition-colors">Upload</Link>
         </nav>
 
-        {/* Desktop CTA */}
-        <div className="hidden md:flex items-center gap-2">
-          <Link href="/login" className="synaps-btn synaps-btn-ghost text-xs py-2 px-4">
-            Sign in
+        {/* Desktop Buttons */}
+        <div className="hidden md:flex items-center gap-3">
+          <Link href="/login" className="px-4 py-2 text-sm font-bold text-slate-dark hover:bg-surface rounded border border-surface transition-colors">
+            Sign In
           </Link>
-          <Link href="/login" className="synaps-btn synaps-btn-primary text-xs py-2 px-4">
-            Get started
+          <Link href="/login" className="px-4 py-2 text-sm font-bold bg-slate-dark text-cream hover:opacity-90 rounded transition-opacity">
+            Get Started
           </Link>
         </div>
 
-        {/* Mobile hamburger */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden flex flex-col gap-[5px] p-2 cursor-pointer"
+        {/* Mobile Hamburger Button */}
+        <button 
+          className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.5 focus:outline-none"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
-          <span
-            className={`block w-5 h-[1.5px] bg-[var(--color-text-primary)] transition-all duration-[var(--duration-base)] origin-center ${
-              menuOpen ? "rotate-45 translate-y-[6.5px]" : ""
-            }`}
-          />
-          <span
-            className={`block w-5 h-[1.5px] bg-[var(--color-text-primary)] transition-all duration-[var(--duration-base)] ${
-              menuOpen ? "opacity-0" : ""
-            }`}
-          />
-          <span
-            className={`block w-5 h-[1.5px] bg-[var(--color-text-primary)] transition-all duration-[var(--duration-base)] origin-center ${
-              menuOpen ? "-rotate-45 -translate-y-[6.5px]" : ""
-            }`}
-          />
+          <div className={`w-6 h-0.5 bg-slate-dark rounded-full transition-all duration-300 ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`} />
+          <div className={`w-6 h-0.5 bg-slate-dark rounded-full transition-all duration-300 ${isMenuOpen ? "opacity-0" : ""}`} />
+          <div className={`w-6 h-0.5 bg-slate-dark rounded-full transition-all duration-300 ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
         </button>
       </div>
 
-      {/* Mobile menu */}
-      <div
-        className={`md:hidden border-t border-[var(--color-border)] bg-[var(--color-background)] overflow-hidden transition-all duration-[var(--duration-base)] ${
-          menuOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
-        }`}
+      {/* Mobile Drawer */}
+      <div 
+        className={`md:hidden absolute top-16 left-0 w-full bg-cream border-b border-surface overflow-hidden transition-all duration-300 ease-in-out ${isMenuOpen ? "max-h-[400px] py-4" : "max-h-0 py-0"}`}
       >
-        <nav className="synaps-container flex flex-col py-3 gap-1">
-          <Link
-            href="/browse"
-            onClick={() => setMenuOpen(false)}
-            className="py-2.5 text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] border-b border-[var(--color-border-subtle)]"
-          >
-            Browse
+        <nav className="flex flex-col gap-4 px-4">
+          <Link href="/browse" className="text-base font-bold text-slate-mid active:text-slate-dark" onClick={() => setIsMenuOpen(false)}>Browse</Link>
+          <Link href="/search" className="text-base font-bold text-slate-mid active:text-slate-dark" onClick={() => setIsMenuOpen(false)}>Search</Link>
+          <Link href="/upload" className="text-base font-bold text-slate-mid active:text-slate-dark" onClick={() => setIsMenuOpen(false)}>Upload</Link>
+          <div className="h-px w-full bg-surface my-2" />
+          <Link href="/login" className="w-full text-center px-4 py-3 text-sm font-bold text-slate-dark bg-surface hover:bg-slate-mid/10 rounded transition-colors" onClick={() => setIsMenuOpen(false)}>
+            Sign In
           </Link>
-          <Link
-            href="/search"
-            onClick={() => setMenuOpen(false)}
-            className="py-2.5 text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] border-b border-[var(--color-border-subtle)]"
-          >
-            Search
+          <Link href="/login" className="w-full text-center px-4 py-3 text-sm font-bold bg-slate-dark text-cream rounded transition-opacity" onClick={() => setIsMenuOpen(false)}>
+            Get Started
           </Link>
-          <Link
-            href="/upload"
-            onClick={() => setMenuOpen(false)}
-            className="py-2.5 text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] border-b border-[var(--color-border-subtle)]"
-          >
-            Upload
-          </Link>
-          <div className="flex gap-2 pt-3">
-            <Link href="/login" className="synaps-btn synaps-btn-ghost text-xs flex-1 justify-center py-2">
-              Sign in
-            </Link>
-            <Link href="/login" className="synaps-btn synaps-btn-primary text-xs flex-1 justify-center py-2">
-              Get started
-            </Link>
-          </div>
         </nav>
       </div>
     </header>

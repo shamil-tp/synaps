@@ -28,7 +28,7 @@ export default function DocumentCard({ doc }: Props) {
       className="synaps-card synaps-card-interactive flex flex-col h-full p-4 group"
     >
       {/* Thumbnail placeholder */}
-      <div className="w-full aspect-[3/4] mb-3 bg-[var(--color-surface-raised)] border border-[var(--color-border)] rounded-[var(--radius-md)] overflow-hidden flex items-center justify-center relative">
+      <div className="w-full aspect-video mb-3 bg-[var(--color-surface-raised)] border border-[var(--color-border)] rounded-[var(--radius-md)] overflow-hidden flex items-center justify-center relative">
         {doc.thumbnailUrl ? (
           <Image
             src={doc.thumbnailUrl}
