@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+@source "../components/**/*.{ts,tsx}";
+@source "../app/**/*.{ts,tsx}";
+
 /* ============================================================
    SYNAPS — Global Design System
    Tailwind v4 / @theme inline
