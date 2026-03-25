@@ -5,30 +5,21 @@
 
 @layer base {
   :root {
-    /* 1. Define raw hex base palette */
-    --raw-cream: #F5F0E8;
-    --raw-surface: #E8E2D9;
-    --raw-slate-mid: #4A5260;
-    --raw-slate-dark: #1E2328;
-
-    /* 2. Light Theme (Default Layout mapped) */
-    --theme-bg: var(--raw-cream);
-    --theme-surface: var(--raw-surface);
-    --theme-muted: var(--raw-slate-mid);
-    --theme-text: var(--raw-slate-dark);
+    /* Clean Minimalist SaaS Theme based on Visily Wireframes */
+    --theme-bg: #FFFFFF;
+    --theme-surface: #F9FAFB; /* Gray 50 */
+    --theme-muted: #6B7280;   /* Gray 500 */
+    --theme-text: #111827;    /* Gray 900 */
+    --theme-border: #E5E7EB;  /* Gray 200 */
   }
 
-  /* 3. Dark Theme (Inverted Layout mapped) */
   @media (prefers-color-scheme: dark) {
     :root {
-      /* Background becomes Slate Dark */
-      --theme-bg: var(--raw-slate-dark);
-      /* Surface becomes an elevated mixing of Slate Dark and Cream */
-      --theme-surface: color-mix(in srgb, var(--raw-slate-dark) 85%, var(--raw-cream));
-      /* Muted text becomes a lighter Slate Mid for readability */
-      --theme-muted: color-mix(in srgb, var(--raw-slate-mid) 50%, var(--raw-cream));
-      /* Text becomes Cream */
-      --theme-text: var(--raw-cream);
+      --theme-bg: #111827;
+      --theme-surface: #1F2937;
+      --theme-muted: #9CA3AF;
+      --theme-text: #F9FAFB;
+      --theme-border: #374151;
     }
   }
 
@@ -39,12 +30,12 @@
 }
 
 @theme {
-  /* 4. Map Tailwind's class utility generator directly to our dynamic theme variables! 
-     With this, `bg-cream` will be Cream in Light Mode, and Slate Dark in Dark Mode. */
   --color-cream: var(--theme-bg);
   --color-surface: var(--theme-surface);
   --color-slate-mid: var(--theme-muted);
   --color-slate-dark: var(--theme-text);
+  --color-border: var(--theme-border);
 
-  --font-sans: var(--font-geist, ui-sans-serif, system-ui, sans-serif);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-space);
 }
