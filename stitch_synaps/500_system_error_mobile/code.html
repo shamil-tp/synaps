@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary": "#e6e1df",
+              "surface-container-high": "#e8e8e6",
+              "surface-bright": "#f9f9f7",
+              "on-error": "#ffffff",
+              "on-background": "#0d0c0b",
+              "tertiary-container": "#777472",
+              "tertiary": "#3d3b3a",
+              "on-error-container": "#410002",
+              "primary": "#0d0c0b",
+              "primary-container": "#3d3b3a",
+              "on-primary": "#f5f5f3",
+              "surface": "#f5f5f3",
+              "secondary-fixed-dim": "#aeaaa8",
+              "secondary-container": "#d8d3d1",
+              "on-surface-variant": "#474747",
+              "on-primary-fixed": "#ffffff",
+              "on-primary-container": "#ffffff",
+              "background": "#f5f5f3",
+              "on-tertiary-fixed": "#ffffff",
+              "surface-tint": "#605e5c",
+              "tertiary-fixed": "#605e5c",
+              "on-secondary-container": "#1d1b1a",
+              "on-secondary-fixed": "#1d1b1a",
+              "on-primary-fixed-variant": "#e6e1df",
+              "inverse-on-surface": "#f1f1ef",
+              "surface-variant": "#e2e3e1",
+              "secondary": "#605e5c",
+              "inverse-primary": "#cac6c3",
+              "on-secondary": "#ffffff",
+              "surface-dim": "#dadad8",
+              "error-container": "#ffdad6",
+              "inverse-surface": "#0d0c0b",
+              "error": "#ba1a1a",
+              "tertiary-fixed-dim": "#484645",
+              "outline": "#0d0c0b",
+              "on-tertiary-container": "#ffffff",
+              "primary-fixed-dim": "#484645",
+              "primary-fixed": "#605e5c",
+              "on-surface": "#0d0c0b",
+              "surface-container-highest": "#e2e3e1",
+              "on-tertiary-fixed-variant": "#e6e1df",
+              "secondary-fixed": "#cac6c3",
+              "outline-variant": "#c6c6c6",
+              "surface-container-low": "#f4f4f2",
+              "surface-container": "#eeeeec",
+              "on-secondary-fixed-variant": "#3d3b3a",
+              "surface-container-lowest": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Geist", "sans-serif"],
+              "body": ["Geist", "sans-serif"],
+              "label": ["Geist", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .signature-shadow {
+            box-shadow: 4px 4px 0px 0px #0d0c0b;
+        }
+        .signature-shadow-hover:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #0d0c0b;
+        }
+        .diagonal-hatch {
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(13, 12, 11, 0.05) 10px, rgba(13, 12, 11, 0.05) 11px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar suppression logic applied: Error page implies temporary departure from main flow -->
+<header class="fixed top-0 w-full border-b border-[#0d0c0b] bg-[#f5f5f3] flex justify-between items-center px-6 h-16 w-full z-50">
+<div class="text-2xl font-black tracking-[-0.04em] text-[#0d0c0b] font-['Geist'] uppercase">SYNAPS</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[#0d0c0b]">menu</span>
+</div>
+</header>
+<main class="min-h-screen pt-16 flex flex-col items-center justify-center px-8 relative overflow-hidden">
+<!-- Background Texture representing the "Archivalist" feel -->
+<div class="absolute inset-0 diagonal-hatch pointer-events-none opacity-50"></div>
+<div class="w-full max-w-sm flex flex-col items-start z-10">
+<!-- Massive 500 text -->
+<div class="w-full border-b border-on-background pb-4 mb-8">
+<h1 class="text-[120px] font-bold leading-[0.8] tracking-[-0.06em] font-headline text-primary">
+                    500
+                </h1>
+<div class="mt-4 inline-block bg-primary text-on-primary px-2 py-1 text-[10px] font-medium tracking-[0.05em] uppercase font-label">
+                    SYSTEM_FAILURE_DETECTION
+                </div>
+</div>
+<!-- Heading -->
+<div class="mb-12">
+<h2 class="text-2xl font-semibold tracking-tight font-headline mb-4 uppercase">
+                    Something went wrong
+                </h2>
+<p class="text-sm leading-relaxed max-w-[280px]">
+                    The server encountered an internal inconsistency. The archive integrity remains intact, but the request could not be processed.
+                </p>
+</div>
+<!-- Stacked Buttons -->
+<div class="w-full flex flex-col gap-4">
+<!-- Refresh Primary -->
+<button class="w-full bg-primary text-on-primary border border-primary h-14 font-label text-[11px] font-bold tracking-[0.1em] uppercase signature-shadow signature-shadow-hover transition-all duration-100 active:translate-y-0 active:shadow-none flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+                    Refresh
+                </button>
+<!-- Go Home Ghost -->
+<button class="w-full bg-transparent text-primary border border-primary h-14 font-label text-[11px] font-bold tracking-[0.1em] uppercase transition-all duration-100 hover:bg-primary hover:text-on-primary flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">home</span>
+                    Go home
+                </button>
+</div>
+<!-- Error Code / Metadata -->
+<div class="mt-16 pt-8 border-t border-on-background/20 w-full flex justify-between items-end">
+<div class="flex flex-col gap-1">
+<span class="text-[10px] font-medium tracking-[0.05em] uppercase font-label opacity-60">Error Node</span>
+<span class="text-[11px] font-bold font-label">SYN-ARC-092X</span>
+</div>
+<div class="flex flex-col gap-1 items-end">
+<span class="text-[10px] font-medium tracking-[0.05em] uppercase font-label opacity-60">Timestamp</span>
+<span class="text-[11px] font-bold font-label">12:00:00 UTC</span>
+</div>
+</div>
+</div>
+<!-- Decorative Archival Element -->
+<div class="absolute bottom-24 right-[-20px] opacity-10 rotate-90 origin-bottom-right hidden md:block">
+<span class="text-[60px] font-black tracking-tighter uppercase whitespace-nowrap">ARCHIVE_ERROR_PROTOCOL</span>
+</div>
+</main>
+<!-- Footer component from JSON -->
+<footer class="w-full border-t border-[#0d0c0b] bg-[#f5f5f3] flex flex-col gap-4 p-8 w-full items-start mb-16 md:mb-0">
+<div class="font-['Geist'] text-[11px] leading-relaxed tracking-[0.05em] uppercase text-[#0d0c0b] font-bold">
+            © 2024 SYNAPS ARCHIVE
+        </div>
+<div class="flex gap-6">
+<a class="font-['Geist'] text-[11px] leading-relaxed tracking-[0.05em] uppercase text-[#0d0c0b] hover:bg-[#0d0c0b] hover:text-[#f5f5f3]" href="#">TERMS</a>
+<a class="font-['Geist'] text-[11px] leading-relaxed tracking-[0.05em] uppercase text-[#0d0c0b] hover:bg-[#0d0c0b] hover:text-[#f5f5f3]" href="#">PRIVACY</a>
+<a class="font-['Geist'] text-[11px] leading-relaxed tracking-[0.05em] uppercase text-[#0d0c0b] hover:bg-[#0d0c0b] hover:text-[#f5f5f3]" href="#">DOCS</a>
+</div>
+</footer>
+<!-- BottomNavBar suppression logic: Hidden as this is a task-focused/error screen, prioritizing the content canvas -->
+<!-- However, JSON provided it as a global shell. For 500 pages, we typically suppress, but keeping it per instruction hierarchy if requested implicitly by 'Mobile Page' -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 bg-[#f5f5f3] border-t border-[#0d0c0b] md:hidden">
+<button class="text-[#0d0c0b] p-3 transition-none">
+<span class="material-symbols-outlined">home</span>
+</button>
+<button class="text-[#0d0c0b] p-3 transition-none">
+<span class="material-symbols-outlined">folder_open</span>
+</button>
+<button class="text-[#0d0c0b] p-3 transition-none">
+<span class="material-symbols-outlined">analytics</span>
+</button>
+<button class="text-[#0d0c0b] p-3 transition-none">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</nav>
+</body></html>

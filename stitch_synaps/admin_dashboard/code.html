@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Geist+Mono&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error": "#ba1a1a",
+              "primary-container": "#3d3b3a",
+              "surface-container": "#eeeeec",
+              "inverse-on-surface": "#f1f1ef",
+              "tertiary-fixed-dim": "#484645",
+              "on-secondary": "#ffffff",
+              "inverse-primary": "#cac6c3",
+              "secondary-container": "#d8d3d1",
+              "surface-dim": "#dadad8",
+              "error-container": "#ffdad6",
+              "secondary-fixed": "#cac6c3",
+              "inverse-surface": "#2f3130",
+              "on-tertiary-fixed": "#ffffff",
+              "on-primary-fixed-variant": "#e6e1df",
+              "on-surface": "#1a1c1b",
+              "on-tertiary": "#e6e1df",
+              "surface-container-low": "#f4f4f2",
+              "on-secondary-fixed": "#1d1b1a",
+              "surface-container-high": "#e8e8e6",
+              "on-error": "#ffffff",
+              "on-secondary-container": "#1d1b1a",
+              "tertiary-fixed": "#605e5c",
+              "secondary-fixed-dim": "#aeaaa8",
+              "primary-fixed-dim": "#484645",
+              "secondary": "#605e5c",
+              "background": "#f5f5f3",
+              "surface-container-highest": "#e2e3e1",
+              "on-tertiary-fixed-variant": "#e6e1df",
+              "on-primary-fixed": "#ffffff",
+              "on-primary-container": "#ffffff",
+              "surface-variant": "#e2e3e1",
+              "surface-container-lowest": "#ffffff",
+              "on-surface-variant": "#474747",
+              "on-primary": "#e6e1df",
+              "surface-bright": "#f5f5f3",
+              "outline": "#0d0c0b",
+              "tertiary": "#3d3b3a",
+              "surface": "#f5f5f3",
+              "on-error-container": "#410002",
+              "on-tertiary-container": "#ffffff",
+              "primary-fixed": "#605e5c",
+              "outline-variant": "#c6c6c6",
+              "tertiary-container": "#777472",
+              "surface-tint": "#605e5c",
+              "on-secondary-fixed-variant": "#3d3b3a",
+              "on-background": "#0d0c0b",
+              "primary": "#0d0c0b"
+            },
+            fontFamily: {
+              "headline": ["Geist", "sans-serif"],
+              "body": ["Geist", "sans-serif"],
+              "label": ["Geist", "sans-serif"],
+              "mono": ["Geist Mono", "monospace"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .signature-shadow {
+            box-shadow: 4px 4px 0px 0px #0d0c0b;
+        }
+        .signature-shadow-hover:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #0d0c0b;
+        }
+        .diagonal-hatch {
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                #0d0c0b10 10px,
+                #0d0c0b10 20px
+            );
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body antialiased">
+<!-- SideNavBar Integration -->
+<aside class="fixed left-0 top-0 h-screen w-64 flex flex-col bg-[#f5f5f3] border-r border-[#0d0c0b] z-50">
+<div class="p-8 border-b border-[#0d0c0b]">
+<div class="font-bold text-lg tracking-widest uppercase">ARCHIVALIST</div>
+<div class="text-[10px] tracking-[0.05em] opacity-60 mt-1 uppercase">V1.0.4-STABLE</div>
+</div>
+<nav class="flex-1 py-6 overflow-y-auto">
+<ul class="space-y-1 px-4">
+<li>
+<a class="flex items-center gap-3 px-4 py-3 bg-[#0d0c0b] text-[#f5f5f3] font-bold uppercase text-[11px] tracking-[0.05em]" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+                        Dashboard
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-[#0d0c0b] hover:bg-[#0d0c0b] hover:text-[#f5f5f3] transition-none uppercase text-[11px] tracking-[0.05em]" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+                        Users
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-[#0d0c0b] hover:bg-[#0d0c0b] hover:text-[#f5f5f3] transition-none uppercase text-[11px] tracking-[0.05em]" href="#">
+<span class="material-symbols-outlined text-[20px]">description</span>
+                        Files
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-[#0d0c0b] hover:bg-[#0d0c0b] hover:text-[#f5f5f3] transition-none uppercase text-[11px] tracking-[0.05em]" href="#">
+<span class="material-symbols-outlined text-[20px]">terminal</span>
+                        Logs
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-[#0d0c0b] hover:bg-[#0d0c0b] hover:text-[#f5f5f3] transition-none uppercase text-[11px] tracking-[0.05em]" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+                        System
+                    </a>
+</li>
+</ul>
+</nav>
+<div class="p-4 border-t border-[#0d0c0b]">
+<button class="w-full bg-[#0d0c0b] text-[#f5f5f3] py-4 text-[11px] font-bold tracking-[0.05em] signature-shadow-hover transition-transform">
+                UPLOAD_NEW
+            </button>
+</div>
+<div class="px-4 py-6 border-t border-[#0d0c0b]">
+<ul class="space-y-1">
+<li>
+<a class="flex items-center gap-3 px-4 py-2 text-[#0d0c0b] uppercase text-[10px] tracking-[0.05em]" href="#">
+<span class="material-symbols-outlined text-[18px]">help</span>
+                        Support
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-2 text-[#0d0c0b] uppercase text-[10px] tracking-[0.05em]" href="#">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+                        Logout
+                    </a>
+</li>
+</ul>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen">
+<!-- TopAppBar Integration -->
+<header class="flex justify-between items-center w-full px-12 h-16 bg-[#f5f5f3] border-b border-[#0d0c0b] sticky top-0 z-40">
+<div class="text-xl font-bold uppercase tracking-tighter text-[#0d0c0b]">SYNAPS</div>
+<div class="flex items-center gap-12">
+<nav class="hidden md:flex gap-8">
+<a class="text-[#0d0c0b]/60 hover:underline decoration-1 underline-offset-4 text-[11px] uppercase tracking-[0.05em]" href="#">Documents</a>
+<a class="text-[#0d0c0b] border-b-2 border-[#0d0c0b] pb-1 text-[11px] uppercase tracking-[0.05em]" href="#">Admin</a>
+<a class="text-[#0d0c0b]/60 hover:underline decoration-1 underline-offset-4 text-[11px] uppercase tracking-[0.05em]" href="#">Profile</a>
+</nav>
+<div class="flex items-center gap-4 border-l border-[#0d0c0b] pl-12 h-8">
+<span class="material-symbols-outlined text-[20px] cursor-pointer">notifications</span>
+<span class="material-symbols-outlined text-[20px] cursor-pointer">settings</span>
+<div class="w-8 h-8 bg-[#0d0c0b] flex items-center justify-center">
+<span class="material-symbols-outlined text-[#f5f5f3] text-[18px]">person</span>
+</div>
+</div>
+</div>
+</header>
+<section class="p-12 space-y-12 max-w-7xl mx-auto">
+<!-- Page Header -->
+<div class="border-b border-[#0d0c0b] pb-8">
+<h1 class="text-6xl font-bold tracking-tight uppercase leading-none">Admin heading</h1>
+<p class="text-xl opacity-60 mt-4 tracking-tight">Platform overview subtitle</p>
+</div>
+<!-- Stats Grid: 4 large metric cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="border border-[#0d0c0b] p-6 signature-shadow bg-surface">
+<div class="text-[10px] font-bold tracking-[0.1em] uppercase opacity-60">Total documents</div>
+<div class="text-4xl font-bold mt-2 font-mono">14,208</div>
+<div class="mt-4 flex items-center gap-1 text-[10px] text-[#0d0c0b]">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>
+<span>+12.4% FROM LAST MONTH</span>
+</div>
+</div>
+<div class="border border-[#0d0c0b] p-6 signature-shadow bg-surface">
+<div class="text-[10px] font-bold tracking-[0.1em] uppercase opacity-60">Pending review</div>
+<div class="text-4xl font-bold mt-2 font-mono">42</div>
+<div class="mt-4 flex items-center gap-1 text-[10px] text-error">
+<span class="material-symbols-outlined text-[14px]">priority_high</span>
+<span>URGENT ATTENTION REQUIRED</span>
+</div>
+</div>
+<div class="border border-[#0d0c0b] p-6 signature-shadow bg-surface">
+<div class="text-[10px] font-bold tracking-[0.1em] uppercase opacity-60">Total members</div>
+<div class="text-4xl font-bold mt-2 font-mono">892</div>
+<div class="mt-4 flex items-center gap-1 text-[10px] opacity-60">
+<span class="material-symbols-outlined text-[14px]">trending_flat</span>
+<span>STABLE GROWTH RATE</span>
+</div>
+</div>
+<div class="border border-[#0d0c0b] p-6 signature-shadow bg-surface">
+<div class="text-[10px] font-bold tracking-[0.1em] uppercase opacity-60">Total downloads</div>
+<div class="text-4xl font-bold mt-2 font-mono">3.1M</div>
+<div class="mt-4 flex items-center gap-1 text-[10px] text-[#0d0c0b]">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>
+<span>RECORD HIGH SYSTEM LOAD</span>
+</div>
+</div>
+</div>
+<!-- Visual Analytics Section -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+<!-- Line Chart Mockup -->
+<div class="lg:col-span-2 space-y-6">
+<div class="flex justify-between items-end border-b border-[#0d0c0b] pb-4">
+<h2 class="text-2xl font-bold uppercase tracking-tight">Uploads per day</h2>
+<span class="text-[10px] tracking-[0.1em] font-bold opacity-60 uppercase">Last 30 days</span>
+</div>
+<div class="border border-[#0d0c0b] aspect-[2/1] relative p-8 bg-surface">
+<!-- Chart Grid Lines -->
+<div class="absolute inset-8 flex flex-col justify-between opacity-10">
+<div class="border-b border-[#0d0c0b] w-full"></div>
+<div class="border-b border-[#0d0c0b] w-full"></div>
+<div class="border-b border-[#0d0c0b] w-full"></div>
+<div class="border-b border-[#0d0c0b] w-full"></div>
+</div>
+<!-- Line Chart Vector (Abstracted) -->
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 400 200">
+<polyline fill="none" points="0,180 50,150 100,160 150,100 200,120 250,60 300,80 350,20 400,40" stroke="#0d0c0b" stroke-width="2" vector-effect="non-scaling-stroke"></polyline>
+<path d="M0,180 L50,150 L100,160 L150,100 L200,120 L250,60 L300,80 L350,20 L400,40 V200 H0 Z" fill="#0d0c0b" fill-opacity="0.05"></path>
+</svg>
+<!-- Chart Axis Labels -->
+<div class="flex justify-between mt-4 text-[9px] font-mono tracking-tighter uppercase opacity-60">
+<span>01 OCT</span>
+<span>08 OCT</span>
+<span>15 OCT</span>
+<span>22 OCT</span>
+<span>30 OCT</span>
+</div>
+</div>
+</div>
+<!-- Horizontal Bar Chart Mockup -->
+<div class="space-y-6">
+<div class="flex justify-between items-end border-b border-[#0d0c0b] pb-4">
+<h2 class="text-2xl font-bold uppercase tracking-tight">Top subjects</h2>
+<span class="text-[10px] tracking-[0.1em] font-bold opacity-60 uppercase">Frequency</span>
+</div>
+<div class="space-y-8 py-4">
+<div class="space-y-2">
+<div class="flex justify-between text-[11px] font-bold uppercase tracking-widest">
+<span>Architecture</span>
+<span class="font-mono">2,410</span>
+</div>
+<div class="h-4 border border-[#0d0c0b]">
+<div class="h-full bg-[#0d0c0b] w-[85%]"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-[11px] font-bold uppercase tracking-widest">
+<span>Cybernetics</span>
+<span class="font-mono">1,892</span>
+</div>
+<div class="h-4 border border-[#0d0c0b]">
+<div class="h-full bg-[#0d0c0b] w-[65%]"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-[11px] font-bold uppercase tracking-widest">
+<span>Cartography</span>
+<span class="font-mono">1,403</span>
+</div>
+<div class="h-4 border border-[#0d0c0b]">
+<div class="h-full bg-[#0d0c0b] w-[45%]"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-[11px] font-bold uppercase tracking-widest">
+<span>Linguistics</span>
+<span class="font-mono">921</span>
+</div>
+<div class="h-4 border border-[#0d0c0b]">
+<div class="h-full bg-[#0d0c0b] w-[30%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Activity Feed -->
+<div class="space-y-8">
+<div class="flex justify-between items-end border-b border-[#0d0c0b] pb-4">
+<h2 class="text-2xl font-bold uppercase tracking-tight">Recent activity feed</h2>
+<button class="text-[10px] tracking-[0.1em] font-bold uppercase underline underline-offset-4">Export Log</button>
+</div>
+<div class="border border-[#0d0c0b] divide-y divide-[#0d0c0b]">
+<!-- Activity Item 1 -->
+<div class="flex items-center p-6 hover:bg-[#0d0c0b] hover:text-[#f5f5f3] transition-colors group">
+<div class="w-12 h-12 bg-on-background/5 group-hover:bg-[#f5f5f3]/10 flex items-center justify-center border border-[#0d0c0b] group-hover:border-[#f5f5f3]">
+<span class="material-symbols-outlined">upload_file</span>
+</div>
+<div class="ml-6 flex-1">
+<div class="text-[11px] font-bold tracking-[0.05em] uppercase">Batch Upload: Technical_Drafts_2024.zip</div>
+<div class="text-[10px] opacity-60 mt-1">INITIATED BY: USER_9281 (MODERATOR)</div>
+</div>
+<div class="text-right">
+<div class="text-[10px] font-mono font-bold">14:02:11</div>
+<div class="text-[9px] uppercase tracking-wider mt-1 px-2 py-0.5 bg-[#0d0c0b] text-[#f5f5f3] group-hover:bg-[#f5f5f3] group-hover:text-[#0d0c0b]">SUCCESS</div>
+</div>
+</div>
+<!-- Activity Item 2 -->
+<div class="flex items-center p-6 hover:bg-[#0d0c0b] hover:text-[#f5f5f3] transition-colors group">
+<div class="w-12 h-12 bg-on-background/5 group-hover:bg-[#f5f5f3]/10 flex items-center justify-center border border-[#0d0c0b] group-hover:border-[#f5f5f3]">
+<span class="material-symbols-outlined">security</span>
+</div>
+<div class="ml-6 flex-1">
+<div class="text-[11px] font-bold tracking-[0.05em] uppercase">Multiple failed login attempts detected</div>
+<div class="text-[10px] opacity-60 mt-1">IP_ADDR: 192.168.1.104 (REGION: UNKNOWN)</div>
+</div>
+<div class="text-right">
+<div class="text-[10px] font-mono font-bold">13:45:00</div>
+<div class="text-[9px] uppercase tracking-wider mt-1 px-2 py-0.5 bg-error text-white">ALERT</div>
+</div>
+</div>
+<!-- Activity Item 3 -->
+<div class="flex items-center p-6 hover:bg-[#0d0c0b] hover:text-[#f5f5f3] transition-colors group">
+<div class="w-12 h-12 bg-on-background/5 group-hover:bg-[#f5f5f3]/10 flex items-center justify-center border border-[#0d0c0b] group-hover:border-[#f5f5f3]">
+<span class="material-symbols-outlined">person_add</span>
+</div>
+<div class="ml-6 flex-1">
+<div class="text-[11px] font-bold tracking-[0.05em] uppercase">New Member Registration: Sarah Jenkins</div>
+<div class="text-[10px] opacity-60 mt-1">ACCESS LEVEL: RESEARCHER_LEVEL_1</div>
+</div>
+<div class="text-right">
+<div class="text-[10px] font-mono font-bold">12:30:54</div>
+<div class="text-[9px] uppercase tracking-wider mt-1 px-2 py-0.5 bg-[#0d0c0b] text-[#f5f5f3] group-hover:bg-[#f5f5f3] group-hover:text-[#0d0c0b]">PENDING</div>
+</div>
+</div>
+<!-- Activity Item 4 -->
+<div class="flex items-center p-6 hover:bg-[#0d0c0b] hover:text-[#f5f5f3] transition-colors group">
+<div class="w-12 h-12 bg-on-background/5 group-hover:bg-[#f5f5f3]/10 flex items-center justify-center border border-[#0d0c0b] group-hover:border-[#f5f5f3]">
+<span class="material-symbols-outlined">delete</span>
+</div>
+<div class="ml-6 flex-1">
+<div class="text-[11px] font-bold tracking-[0.05em] uppercase">Purge Command: Obsolete_Meta_Data</div>
+<div class="text-[10px] opacity-60 mt-1">COMMAND ORIGIN: SYSTEM_CRON_TAB</div>
+</div>
+<div class="text-right">
+<div class="text-[10px] font-mono font-bold">04:00:00</div>
+<div class="text-[9px] uppercase tracking-wider mt-1 px-2 py-0.5 bg-[#0d0c0b] text-[#f5f5f3] group-hover:bg-[#f5f5f3] group-hover:text-[#0d0c0b]">SUCCESS</div>
+</div>
+</div>
+</div>
+<div class="flex justify-center pt-8">
+<button class="border border-[#0d0c0b] px-12 py-4 text-[11px] font-bold tracking-[0.1em] uppercase signature-shadow-hover transition-transform bg-surface">
+                        View Full System Logs
+                    </button>
+</div>
+</div>
+<!-- Footer Meta -->
+<footer class="pt-12 border-t border-[#0d0c0b] flex flex-col md:flex-row justify-between items-center opacity-60 text-[9px] tracking-[0.2em] uppercase font-mono">
+<div>Archive System ID: ADM-99-ALPHA</div>
+<div>Status: Fully Operational / 0 Fatal Errors</div>
+<div>© 2024 Synaps Core Protocol</div>
+</footer>
+</section>
+</main>
+<!-- BottomNavBar Integration (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 bg-[#f5f5f3] border-t border-[#0d0c0b]">
+<div class="flex flex-col items-center justify-center text-[#0d0c0b] px-4 py-1">
+<span class="material-symbols-outlined">visibility</span>
+<span class="text-[8px] font-bold uppercase tracking-[0.05em] mt-1">View</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#0d0c0b] px-4 py-1">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="text-[8px] font-bold uppercase tracking-[0.05em] mt-1">Library</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#0d0c0b] px-4 py-1">
+<span class="material-symbols-outlined">search</span>
+<span class="text-[8px] font-bold uppercase tracking-[0.05em] mt-1">Search</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#0d0c0b] text-[#f5f5f3] px-4 py-2">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-[8px] font-bold uppercase tracking-[0.05em] mt-1">Profile</span>
+</div>
+</nav>
+</body></html>

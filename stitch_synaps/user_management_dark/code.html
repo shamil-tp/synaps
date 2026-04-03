@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SYNAPS | USER MANAGEMENT</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed": "#1a1c1b",
+              "on-primary-container": "#000000",
+              "inverse-on-surface": "#32302f",
+              "outline-variant": "#474747",
+              "on-surface-variant": "#c6c6c6",
+              "surface-container-lowest": "#0f0e0d",
+              "on-tertiary-container": "#000000",
+              "inverse-primary": "#5d5f5d",
+              "tertiary": "#e2e3e1",
+              "on-primary": "#1a1c1b",
+              "secondary-fixed-dim": "#ababaa",
+              "secondary": "#c6c7c5",
+              "on-tertiary": "#1a1c1b",
+              "on-primary-fixed": "#ffffff",
+              "error-container": "#93000a",
+              "surface": "#141312",
+              "surface-container-high": "#2b2a28",
+              "surface-variant": "#363433",
+              "on-background": "#e6e1df",
+              "background": "#141312",
+              "tertiary-container": "#90918f",
+              "surface-bright": "#3b3937",
+              "tertiary-fixed": "#5d5f5d",
+              "on-surface": "#e6e1df",
+              "on-error": "#690005",
+              "tertiary-fixed-dim": "#454746",
+              "on-tertiary-fixed": "#ffffff",
+              "primary-fixed": "#5d5f5d",
+              "outline": "#919191",
+              "on-primary-fixed-variant": "#e2e3e1",
+              "surface-container-low": "#1d1b1a",
+              "surface-container-highest": "#363433",
+              "error": "#ffb4ab",
+              "secondary-container": "#454746",
+              "surface-dim": "#141312",
+              "secondary-fixed": "#c6c7c5",
+              "on-tertiary-fixed-variant": "#e2e3e1",
+              "surface-container": "#211f1e",
+              "on-secondary-container": "#e2e3e1",
+              "surface-tint": "#c6c7c5",
+              "on-secondary-fixed-variant": "#3a3c3b",
+              "primary-container": "#d4d4d3",
+              "on-secondary": "#1a1c1b",
+              "on-error-container": "#ffdad6",
+              "primary-fixed-dim": "#454746",
+              "inverse-surface": "#e6e1df",
+              "primary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hard-shadow {
+            box-shadow: 4px 4px 0px 0px #ffffff;
+        }
+        body {
+            background-color: #0d0c0b;
+            color: #f5f5f3;
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="bg-[#0d0c0b] text-[#f5f5f3] font-['Space_Grotesk'] uppercase tracking-tighter text-sm docked full-width top-0 rounded-none border-b-2 border-[#f5f5f3] flex justify-between items-center w-full px-6 h-16 z-50 sticky">
+<div class="text-2xl font-black tracking-tighter text-[#ffffff]">SYNAPS</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#c6c7c5] hover:bg-[#f5f5f3] hover:text-[#0d0c0b] transition-colors duration-150 py-1" href="#">BROWSE</a>
+<a class="text-[#c6c7c5] hover:bg-[#f5f5f3] hover:text-[#0d0c0b] transition-colors duration-150 py-1" href="#">SEARCH</a>
+<a class="text-[#c6c7c5] hover:bg-[#f5f5f3] hover:text-[#0d0c0b] transition-colors duration-150 py-1" href="#">UPLOAD</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:bg-[#f5f5f3] hover:text-[#0d0c0b] transition-colors duration-150 px-4 py-1 border border-[#f5f5f3] text-[10px] tracking-widest">SIGN IN</button>
+<button class="bg-[#f5f5f3] text-[#0d0c0b] hover:bg-[#ffffff] transition-colors duration-150 px-4 py-1 font-bold text-[10px] tracking-widest">GET STARTED</button>
+</div>
+</nav>
+<main class="min-h-screen px-6 py-12 max-w-7xl mx-auto">
+<!-- Header & Stats -->
+<header class="mb-16">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+<div>
+<h1 class="font-headline text-6xl font-black uppercase tracking-tighter leading-none mb-2">User Management</h1>
+<p class="font-headline text-secondary uppercase tracking-widest text-xs">[ ACCESS_LEVEL: ADMIN_ROOT ]</p>
+</div>
+<div class="w-full md:w-96">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary">search</span>
+<input class="w-full bg-surface-container-low border-b-2 border-outline-variant focus:border-primary focus:ring-0 text-sm font-headline uppercase tracking-widest py-4 pl-12 transition-all" placeholder="SEARCH PROTOCOL_ID OR EMAIL..." type="text"/>
+</div>
+</div>
+</div>
+<!-- Dashboard Stats -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<div class="bg-surface-container p-6 border border-outline-variant hard-shadow">
+<p class="font-headline text-[10px] text-secondary tracking-widest uppercase mb-1">Total Users</p>
+<p class="font-headline text-3xl font-bold">12,408</p>
+</div>
+<div class="bg-surface-container p-6 border border-outline-variant hard-shadow">
+<p class="font-headline text-[10px] text-secondary tracking-widest uppercase mb-1">Active Now</p>
+<p class="font-headline text-3xl font-bold">842</p>
+</div>
+<div class="bg-surface-container p-6 border border-outline-variant hard-shadow">
+<p class="font-headline text-[10px] text-secondary tracking-widest uppercase mb-1">Daily Uploads</p>
+<p class="font-headline text-3xl font-bold">3,190</p>
+</div>
+<div class="bg-surface-container p-6 border border-outline-variant hard-shadow">
+<p class="font-headline text-[10px] text-secondary tracking-widest uppercase mb-1">Threat Flags</p>
+<p class="font-headline text-3xl font-bold text-error">02</p>
+</div>
+</div>
+</header>
+<!-- User Table -->
+<section class="mb-24">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="font-headline text-[10px] tracking-widest text-secondary uppercase border-b-2 border-primary">
+<th class="pb-4 font-normal">Ident</th>
+<th class="pb-4 font-normal">Protocol Name</th>
+<th class="pb-4 font-normal">Contact</th>
+<th class="pb-4 font-normal">Authorization</th>
+<th class="pb-4 font-normal">Registry</th>
+<th class="pb-4 font-normal">Data Load</th>
+<th class="pb-4 font-normal">Condition</th>
+<th class="pb-4 font-normal text-right">Directives</th>
+</tr>
+</thead>
+<tbody class="font-headline text-xs tracking-tight">
+<!-- Row 1: Active User -->
+<tr class="group border-b border-outline-variant hover:bg-surface-container-high transition-colors">
+<td class="py-6">
+<div class="w-10 h-10 bg-surface-container-highest border border-outline flex items-center justify-center grayscale overflow-hidden">
+<img alt="User" class="w-full h-full object-cover" data-alt="Monochromatic portrait of a man with serious expression, high contrast harsh studio lighting, brutalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDztmqk2GXogUVbeiLL4P4kA6aWH4CN7Jowo6PgdgC5MBcX5jCXh-4azWKgENIpAhpSTNLTiF7PBaIJw_Q7UJlPVV6kMR2sflRPRLwRj1rTZIhAOb1TozTOOHoucdSe0XoLiLAqcpCzw7K2oEdzaxl704ONxtwKx3BFn51dxX6TiCs8V7pB69cNueLXAVOm4scBp7tMG37JAjL1V4-D6dDvdpOyXNWum6jDcXz7c6cs5CI5lO_wMppo_mAv9RV6ZNJKbs1thOj2T2_L"/>
+</div>
+</td>
+<td class="py-6 font-bold uppercase">Kaelen Voss</td>
+<td class="py-6 text-secondary">voss.k@synaps.arch</td>
+<td class="py-6">
+<span class="border border-outline px-2 py-0.5 text-[9px] font-bold">[MODERATOR]</span>
+</td>
+<td class="py-6 text-secondary">2023.11.12</td>
+<td class="py-6">1.4 GB</td>
+<td class="py-6">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 bg-primary"></div>
+<span>OPERATIONAL</span>
+</div>
+</td>
+<td class="py-6 text-right">
+<div class="flex justify-end gap-3">
+<button class="hover:text-primary text-secondary transition-colors" title="Change Role">
+<span class="material-symbols-outlined text-sm">encrypted</span>
+</button>
+<button class="hover:text-error text-secondary transition-colors" title="Restrict Access">
+<span class="material-symbols-outlined text-sm">block</span>
+</button>
+<button class="hover:text-primary text-secondary transition-colors" title="Expand Activity">
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Expanded Inline Example -->
+<tr class="bg-surface-container-lowest border-b-2 border-primary">
+<td class="py-6">
+<div class="w-10 h-10 bg-surface-container-highest border border-outline flex items-center justify-center grayscale overflow-hidden">
+<img alt="User" class="w-full h-full object-cover" data-alt="Monochromatic portrait of a woman looking directly into camera, sharp focus, grainy film texture, brutalist style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb_5sbCFLkdLfuoyyXl_gyjGIvLiAVmKIMKCV0TgeDNgdqawXRn9HjLbdKaRk61iz3v6IoaWLcewBm2LkFjJaVgW1cik3RY7Lf6unkOjuhKq7KmhtijxHw9Lam76ZPJqB3zYEoeb3dxCZLvCQNFTzzOwMwicYKanWSNC2f7qnDisGbKmDTs9tigzQ0EWBAagjuv8M58N2OBqTdUCpm2ldFLQIe-059iSi2IeJLHhAs5EjUGCCuuLWCL0lAHOwU1YxVB-oM58AC5lh_"/>
+</div>
+</td>
+<td class="py-6 font-bold uppercase">Sela Marin</td>
+<td class="py-6 text-secondary">marin_s@synaps.arch</td>
+<td class="py-6">
+<span class="bg-primary text-on-primary px-2 py-0.5 text-[9px] font-bold">[CURATOR]</span>
+</td>
+<td class="py-6 text-secondary">2024.01.05</td>
+<td class="py-6">8.2 GB</td>
+<td class="py-6">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 bg-primary"></div>
+<span>OPERATIONAL</span>
+</div>
+</td>
+<td class="py-6 text-right">
+<div class="flex justify-end gap-3">
+<button class="text-primary" title="Change Role">
+<span class="material-symbols-outlined text-sm">encrypted</span>
+</button>
+<button class="hover:text-error text-secondary transition-colors" title="Restrict Access">
+<span class="material-symbols-outlined text-sm">block</span>
+</button>
+<button class="text-primary rotate-180" title="Collapse">
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Inline Expansion Content -->
+<tr class="bg-surface-container-lowest border-b border-outline-variant">
+<td class="p-8" colspan="8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="col-span-2">
+<h4 class="font-headline text-[10px] tracking-widest text-secondary uppercase mb-4">Recent Activity Log</h4>
+<div class="space-y-4">
+<div class="flex items-start gap-4 text-[10px] font-mono">
+<span class="text-secondary">[ 02:45:11 ]</span>
+<span class="uppercase tracking-tight">UPLOAD: ARCHIVE_FRAGMENT_771.DMG (450MB)</span>
+</div>
+<div class="flex items-start gap-4 text-[10px] font-mono">
+<span class="text-secondary">[ 04:12:05 ]</span>
+<span class="uppercase tracking-tight">METADATA_EDIT: FILE_INDEX_A12</span>
+</div>
+<div class="flex items-start gap-4 text-[10px] font-mono">
+<span class="text-secondary">[ 08:33:59 ]</span>
+<span class="uppercase tracking-tight text-primary font-bold">SYSTEM_LOGIN: SUCCESSFUL from IP_192.168.1.1</span>
+</div>
+</div>
+</div>
+<div class="border-l border-outline-variant pl-8">
+<h4 class="font-headline text-[10px] tracking-widest text-secondary uppercase mb-4">Quick Directives</h4>
+<div class="flex flex-col gap-3">
+<button class="w-full text-left py-2 px-3 border border-outline hover:bg-primary hover:text-on-primary transition-all text-[9px] font-bold uppercase tracking-widest">RESET AUTH TOKENS</button>
+<button class="w-full text-left py-2 px-3 border border-outline hover:bg-primary hover:text-on-primary transition-all text-[9px] font-bold uppercase tracking-widest">SEND ENCRYPTED COMM</button>
+<button class="w-full text-left py-2 px-3 border border-error text-error hover:bg-error hover:text-on-error transition-all text-[9px] font-bold uppercase tracking-widest">PURGE DATA LOAD</button>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<!-- Row 3: Banned User -->
+<tr class="group border-b border-outline-variant hover:bg-surface-container-high transition-colors opacity-50">
+<td class="py-6">
+<div class="w-10 h-10 bg-surface-container-highest border border-outline flex items-center justify-center grayscale overflow-hidden">
+<img alt="User" class="w-full h-full object-cover" data-alt="Monochromatic portrait of a man, shadowy lighting, dark industrial background, sharp focus, brutalist design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFf088kludGbn4rf6IVS-hFgRx7G_4GARA6jNd9em_ldSf6sDDJQwap1guHA6h9mbydSzh5x_EXRJnnBZrKHzJrzJRyqSWRh_EZy3gs7aMGd7eaaZeNfn4KbqaIi0HyQVvK9tOa1ugotTHU8m-tloPOpVQJ0fEBcWzFCVXR8SOb7mFh8X20_Q8PcaR8-I_19Y8N_YIHU4MX2RduDQeZ1N7JfM3ZalinP026qXbGr6tsW-DHQTAgaa4YbUQsaCQXbaNESkwJqIjgLDF"/>
+</div>
+</td>
+<td class="py-6 font-bold uppercase">Aris Thorne</td>
+<td class="py-6 text-secondary">thorne.a@synaps.arch</td>
+<td class="py-6">
+<span class="border border-outline px-2 py-0.5 text-[9px] font-bold">[USER]</span>
+</td>
+<td class="py-6 text-secondary">2022.08.30</td>
+<td class="py-6">0.0 GB</td>
+<td class="py-6">
+<div class="flex items-center gap-2 text-error">
+<div class="w-2 h-2 bg-error"></div>
+<span>RESTRICTED</span>
+</div>
+</td>
+<td class="py-6 text-right">
+<div class="flex justify-end gap-3">
+<button class="hover:text-primary text-secondary transition-colors" title="Change Role">
+<span class="material-symbols-outlined text-sm">encrypted</span>
+</button>
+<button class="text-error" title="Revoke Restriction">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">lock_open</span>
+</button>
+<button class="hover:text-primary text-secondary transition-colors" title="Expand Activity">
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="mt-8 flex justify-between items-center">
+<p class="font-headline text-[10px] tracking-widest text-secondary uppercase">Showing 03 of 12,408 protocols</p>
+<div class="flex gap-2">
+<button class="w-10 h-10 border border-outline-variant hover:border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 bg-primary text-on-primary flex items-center justify-center font-bold font-headline text-xs">01</button>
+<button class="w-10 h-10 border border-outline-variant hover:border-primary flex items-center justify-center transition-colors font-headline text-xs">02</button>
+<button class="w-10 h-10 border border-outline-variant hover:border-primary flex items-center justify-center transition-colors font-headline text-xs">03</button>
+<button class="w-10 h-10 border border-outline-variant hover:border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- System Logs / Asymmetric Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 bg-surface-container-high p-8 border border-outline-variant hard-shadow flex flex-col justify-between min-h-[300px]">
+<div>
+<h3 class="font-headline text-2xl font-black uppercase tracking-tighter mb-4">Terminal Overload Prevention</h3>
+<p class="text-secondary text-sm max-w-md">Real-time monitoring of user ingestion rates. Current throughput is within safe protocol limits.</p>
+</div>
+<div class="flex items-end gap-1 h-32">
+<div class="flex-1 bg-primary h-[40%]"></div>
+<div class="flex-1 bg-primary h-[60%]"></div>
+<div class="flex-1 bg-primary h-[85%]"></div>
+<div class="flex-1 bg-primary h-[70%]"></div>
+<div class="flex-1 bg-primary h-[90%]"></div>
+<div class="flex-1 bg-primary h-[55%]"></div>
+<div class="flex-1 bg-primary h-[30%]"></div>
+<div class="flex-1 bg-primary h-[65%]"></div>
+<div class="flex-1 bg-primary h-[80%]"></div>
+<div class="flex-1 bg-primary h-[45%]"></div>
+</div>
+</div>
+<div class="bg-primary text-on-primary p-8 border border-primary hard-shadow flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-4xl mb-4">security</span>
+<h3 class="font-headline text-2xl font-black uppercase tracking-tighter mb-2">Protocol Warning</h3>
+<p class="text-xs uppercase font-bold tracking-widest leading-relaxed">External attempt detected at sector [7-A]. All administrative actions are currently being logged via secure tunneling.</p>
+</div>
+<button class="mt-8 py-3 w-full border-2 border-on-primary font-black uppercase text-[10px] tracking-[0.2em] hover:bg-on-primary hover:text-primary transition-all">
+                    INITIATE LOCKDOWN
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0d0c0b] text-[#f5f5f3] font-['Space_Grotesk'] uppercase text-[10px] tracking-widest full-width rounded-none border-t-2 border-[#f5f5f3] flex flex-col md:flex-row justify-between items-center w-full px-6 py-8 gap-4 mt-24">
+<div class="text-lg font-bold text-[#ffffff]">SYNAPS</div>
+<div class="text-[#c6c7c5]">© 2024 SYNAPS ARCHIVAL PROTOCOL. ALL RIGHTS RESERVED.</div>
+<div class="flex gap-6">
+<a class="text-[#c6c7c5] hover:text-[#ffffff] transition-colors" href="#">DOCUMENTATION</a>
+<a class="text-[#c6c7c5] hover:text-[#ffffff] transition-colors" href="#">API</a>
+<a class="text-[#c6c7c5] hover:text-[#ffffff] transition-colors" href="#">TERMS</a>
+<a class="text-[#c6c7c5] hover:text-[#ffffff] transition-colors" href="#">PRIVACY</a>
+</div>
+</footer>
+</body></html>

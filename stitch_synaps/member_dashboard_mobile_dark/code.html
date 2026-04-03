@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-lowest": "#0f0e0d",
+            "on-primary-container": "#000000",
+            "tertiary-container": "#90918f",
+            "primary-fixed": "#5d5f5d",
+            "on-tertiary-fixed-variant": "#e2e3e1",
+            "on-secondary-fixed": "#1a1c1b",
+            "on-primary": "#1a1c1b",
+            "surface-tint": "#c6c7c5",
+            "secondary": "#c6c7c5",
+            "on-tertiary-fixed": "#ffffff",
+            "outline": "#919191",
+            "on-secondary-fixed-variant": "#3a3c3b",
+            "surface-dim": "#141312",
+            "secondary-container": "#454746",
+            "surface-bright": "#3b3937",
+            "on-primary-fixed-variant": "#e2e3e1",
+            "on-error-container": "#ffdad6",
+            "on-surface": "#e6e1df",
+            "on-primary-fixed": "#ffffff",
+            "secondary-fixed-dim": "#ababaa",
+            "tertiary": "#e2e3e1",
+            "primary-fixed-dim": "#454746",
+            "primary": "#ffffff",
+            "inverse-surface": "#e6e1df",
+            "surface-container-highest": "#363433",
+            "primary-container": "#d4d4d3",
+            "outline-variant": "#474747",
+            "on-tertiary-container": "#000000",
+            "error": "#ffb4ab",
+            "surface": "#141312",
+            "secondary-fixed": "#c6c7c5",
+            "inverse-primary": "#5d5f5d",
+            "tertiary-fixed": "#5d5f5d",
+            "inverse-on-surface": "#32302f",
+            "background": "#141312",
+            "on-background": "#e6e1df",
+            "surface-variant": "#363433",
+            "surface-container": "#211f1e",
+            "surface-container-low": "#1d1b1a",
+            "on-secondary-container": "#e2e3e1",
+            "on-secondary": "#1a1c1b",
+            "tertiary-fixed-dim": "#454746",
+            "on-error": "#690005",
+            "surface-container-high": "#2b2a28",
+            "on-tertiary": "#1a1c1b",
+            "on-surface-variant": "#c6c6c6",
+            "error-container": "#93000a"
+          },
+          fontFamily: {
+            "headline": ["Space Grotesk"],
+            "body": ["Inter"],
+            "label": ["Space Grotesk"]
+          },
+          borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .brutalist-shadow { box-shadow: 4px 4px 0px 0px #ffffff; }
+    .brutalist-shadow-hover:hover { box-shadow: 4px 4px 0px 0px #ffffff; transform: translate(-2px, -2px); }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-6 py-4 bg-[#141312] sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#ffffff]">menu</span>
+<h1 class="text-2xl font-bold tracking-widest text-[#ffffff] font-['Space_Grotesk'] uppercase tracking-tighter">SYNAPS</h1>
+</div>
+<div class="w-10 h-10 bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">account_circle</span>
+</div>
+</header>
+<main class="pb-24">
+<!-- Hero Greeting -->
+<section class="px-6 pt-8 pb-6">
+<p class="font-label text-xs uppercase tracking-[0.2em] text-secondary mb-2">SYSTEM_LOGGED_IN</p>
+<h2 class="font-headline text-5xl font-bold leading-none tracking-tighter text-primary">GOOD MORNING,<br/>ARCAS</h2>
+</section>
+<!-- Quick Actions Bento Grid -->
+<section class="px-6 grid grid-cols-2 gap-4 mb-10">
+<div class="col-span-2 bg-primary p-6 transition-all duration-150 active:scale-[0.98]">
+<div class="flex justify-between items-start mb-8">
+<span class="material-symbols-outlined text-on-primary text-3xl">upload_file</span>
+<span class="font-label text-[10px] uppercase font-bold text-on-primary opacity-60">[CMD_01]</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-primary uppercase leading-tight">Upload<br/>New Asset</h3>
+</div>
+<div class="bg-surface-container-high p-5 border border-outline-variant hover:bg-surface-bright transition-all duration-150">
+<span class="material-symbols-outlined text-primary mb-4">explore</span>
+<h3 class="font-label text-sm font-bold text-primary uppercase">Browse</h3>
+</div>
+<div class="bg-surface-container-high p-5 border border-outline-variant hover:bg-surface-bright transition-all duration-150">
+<span class="material-symbols-outlined text-primary mb-4">auto_stories</span>
+<h3 class="font-label text-sm font-bold text-primary uppercase">Library</h3>
+</div>
+</section>
+<!-- Continue Reading Row -->
+<section class="mb-12">
+<div class="px-6 flex justify-between items-end mb-4">
+<h3 class="font-headline text-xl font-bold uppercase tracking-tight">Continue Reading</h3>
+<span class="font-label text-[10px] text-secondary uppercase tracking-widest">View All</span>
+</div>
+<div class="flex gap-4 overflow-x-auto px-6 hide-scrollbar">
+<!-- Card 1 -->
+<div class="flex-none w-64 group">
+<div class="relative aspect-[3/4] mb-3 bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:scale-105 transition-transform duration-300" data-alt="abstract monochromatic architectural photography with sharp shadows and brutalist concrete textures in high contrast" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkdG8SUCw5Cay_XBQC1AowADKdT9dT6PAqRH-BYe7leaHQxV6ba68pnbXxT7AgJ0Jgube9nOvsZtONciPlcYQkHnP7IEVpijSFcueMoEr5tWcTEQGwtqbKHa7WpZjTnOFgFdej62q0EUaL0em9HfsneYCQ97qVClkOhpFftPYjvOxg9F8S8l5oTrjtrEIXwEMY-toQMoDNCrtytBQ2eVp4v8YOfvnA8tLZeqKplPvXn6UzzKmi-hWbWLcFeW3g5IndSKtdmeK2idC3"/>
+<div class="absolute bottom-0 left-0 w-full h-1 bg-surface-container-highest">
+<div class="bg-primary h-full w-[65%]"></div>
+</div>
+</div>
+<p class="font-label text-[10px] text-secondary uppercase mb-1">Vol. 12 // ARCHIVE</p>
+<h4 class="font-headline text-lg font-bold leading-tight text-primary uppercase">The Kinetic Geometry of Modernism</h4>
+</div>
+<!-- Card 2 -->
+<div class="flex-none w-64 group">
+<div class="relative aspect-[3/4] mb-3 bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:scale-105 transition-transform duration-300" data-alt="dark moody minimal still life with geometric shapes and sharp lighting on textured black background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9SbzgiheSm5ma-MUJVyltIkXdHIdc327ey81Y9ZImFrm58YjVexOJKJCZDRO6xExoTKbSKLgW-FtK3oRXQukNtB9_sh7ChviG1ilqXqvKkkXUP06DJoQoykF0NmXLqfg4wxaAsLzkV7IvCFrr7UGtZAuKbrvX1v2gFpFqnmyB2OJiHi9ss6uXmmVK8iX4yAQ04zQ760rOz_zGF0NK3fQTQa58mVCYMNLbXrV_mF7f--Y4IVg8Vi3-BTrS9gm7fnW8HgbbN4neijRR"/>
+<div class="absolute bottom-0 left-0 w-full h-1 bg-surface-container-highest">
+<div class="bg-primary h-full w-[12%]"></div>
+</div>
+</div>
+<p class="font-label text-[10px] text-secondary uppercase mb-1">Vol. 08 // THEORY</p>
+<h4 class="font-headline text-lg font-bold leading-tight text-primary uppercase">Shadows as Structural Elements</h4>
+</div>
+</div>
+</section>
+<!-- Recent Uploads List -->
+<section class="px-6">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline text-xl font-bold uppercase tracking-tight">Recent Activity</h3>
+<span class="material-symbols-outlined text-secondary">filter_list</span>
+</div>
+<div class="space-y-4">
+<!-- Activity Item 1 -->
+<div class="bg-surface-container-low p-4 flex items-center justify-between group hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">description</span>
+</div>
+<div>
+<h4 class="font-label text-sm font-bold text-primary uppercase tracking-tight">Manifesto_Final_V2.pdf</h4>
+<p class="font-body text-[10px] text-on-surface-variant uppercase">Updated 2h ago</p>
+</div>
+</div>
+<div class="border border-outline px-2 py-1">
+<span class="font-label text-[9px] text-primary uppercase">SYNCED</span>
+</div>
+</div>
+<!-- Activity Item 2 -->
+<div class="bg-surface-container-low p-4 flex items-center justify-between group hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">image</span>
+</div>
+<div>
+<h4 class="font-label text-sm font-bold text-primary uppercase tracking-tight">Brutalist_Study_01.jpg</h4>
+<p class="font-body text-[10px] text-on-surface-variant uppercase">Added 5h ago</p>
+</div>
+</div>
+<div class="border border-primary bg-primary px-2 py-1">
+<span class="font-label text-[9px] text-on-primary font-bold uppercase">PENDING</span>
+</div>
+</div>
+<!-- Activity Item 3 -->
+<div class="bg-surface-container-low p-4 flex items-center justify-between group hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">analytics</span>
+</div>
+<div>
+<h4 class="font-label text-sm font-bold text-primary uppercase tracking-tight">System_Audit_Log.csv</h4>
+<p class="font-body text-[10px] text-on-surface-variant uppercase">Added Yesterday</p>
+</div>
+</div>
+<div class="border border-outline px-2 py-1">
+<span class="font-label text-[9px] text-primary uppercase">SYNCED</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-16 flex justify-around items-stretch bg-[#141312] z-50">
+<!-- Active State: Home -->
+<a class="flex flex-col items-center justify-center bg-[#ffffff] text-[#141312] h-full w-full" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Space_Grotesk'] font-bold uppercase text-[10px] mt-1">HOME</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28] transition-colors duration-150" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-['Space_Grotesk'] font-bold uppercase text-[10px] mt-1">SEARCH</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28] transition-colors duration-150" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-['Space_Grotesk'] font-bold uppercase text-[10px] mt-1">VAULT</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28] transition-colors duration-150" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Space_Grotesk'] font-bold uppercase text-[10px] mt-1">SETUP</span>
+</a>
+</nav>
+</body></html>

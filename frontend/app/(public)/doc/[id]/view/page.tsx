@@ -1,0 +1,1 @@
+export default function viewPage() { return <div>Placeholder</div>; }

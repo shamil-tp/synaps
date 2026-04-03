@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed": "#ffffff",
+              "on-primary-fixed": "#ffffff",
+              "on-background": "#e6e1df",
+              "primary-container": "#d4d4d3",
+              "on-primary": "#1a1c1b",
+              "surface-dim": "#141312",
+              "on-secondary-container": "#e2e3e1",
+              "on-tertiary": "#1a1c1b",
+              "on-secondary": "#1a1c1b",
+              "tertiary-fixed-dim": "#454746",
+              "tertiary-fixed": "#5d5f5d",
+              "surface-container": "#211f1e",
+              "on-secondary-fixed-variant": "#3a3c3b",
+              "on-tertiary-fixed-variant": "#e2e3e1",
+              "surface-container-highest": "#363433",
+              "outline-variant": "#474747",
+              "secondary-container": "#454746",
+              "surface-container-lowest": "#0f0e0d",
+              "on-tertiary-container": "#000000",
+              "primary-fixed": "#5d5f5d",
+              "error": "#ffb4ab",
+              "surface-container-low": "#1d1b1a",
+              "surface-bright": "#3b3937",
+              "primary": "#ffffff",
+              "on-primary-fixed-variant": "#e2e3e1",
+              "primary-fixed-dim": "#454746",
+              "tertiary": "#e2e3e1",
+              "on-surface": "#e6e1df",
+              "surface-container-high": "#2b2a28",
+              "secondary": "#c6c7c5",
+              "background": "#141312",
+              "inverse-on-surface": "#32302f",
+              "inverse-surface": "#e6e1df",
+              "surface-variant": "#363433",
+              "secondary-fixed-dim": "#ababaa",
+              "on-surface-variant": "#c6c6c6",
+              "on-primary-container": "#000000",
+              "on-secondary-fixed": "#1a1c1b",
+              "on-error": "#690005",
+              "tertiary-container": "#90918f",
+              "outline": "#919191",
+              "inverse-primary": "#5d5f5d",
+              "surface-tint": "#c6c7c5",
+              "secondary-fixed": "#c6c7c5",
+              "on-error-container": "#ffdad6",
+              "error-container": "#93000a",
+              "surface": "#141312"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "0px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .font-space { font-family: 'Space Grotesk', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center px-4 h-16 bg-[#141312] text-[#ffffff] font-['Space_Grotesk'] uppercase tracking-tighter rounded-none border-b-2 border-[#ffffff] shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
+<div class="flex items-center w-full justify-between">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center p-2 hover:bg-[#ffffff] hover:text-[#141312] transition-none">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-xl font-bold tracking-widest text-[#ffffff]">ARCHIVE_v1.0</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center justify-center p-2 hover:bg-[#ffffff] hover:text-[#141312] transition-none">
+<span class="material-symbols-outlined">search</span>
+</button>
+<div class="w-8 h-8 bg-surface-container-highest border border-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">person</span>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-24 px-4">
+<!-- Dashboard Header -->
+<div class="mb-8">
+<h2 class="font-headline text-4xl font-black uppercase tracking-tighter leading-none mb-2">My Library</h2>
+<div class="h-1 w-12 bg-primary"></div>
+</div>
+<!-- Tabbed Navigation -->
+<nav class="flex overflow-x-auto no-scrollbar gap-2 mb-8 bg-surface-container-lowest p-1">
+<button class="px-6 py-2 bg-primary text-on-primary font-label text-xs font-bold uppercase transition-none border-r-2 border-b-2 border-primary-fixed-dim">
+                All
+            </button>
+<button class="px-6 py-2 text-secondary font-label text-xs font-bold uppercase hover:bg-surface-container-highest transition-none">
+                Approved
+            </button>
+<button class="px-6 py-2 text-secondary font-label text-xs font-bold uppercase hover:bg-surface-container-highest transition-none">
+                Pending
+            </button>
+<button class="px-6 py-2 text-secondary font-label text-xs font-bold uppercase hover:bg-surface-container-highest transition-none">
+                Rejected
+            </button>
+</nav>
+<!-- Vertical List of Document Cards -->
+<div class="flex flex-col gap-5">
+<!-- Card 1 -->
+<div class="group relative bg-surface-container hover:bg-surface-container-high transition-none p-4 flex gap-4 hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
+<div class="w-20 h-24 bg-surface-container-highest flex-shrink-0 relative overflow-hidden border border-outline-variant">
+<img alt="Document Thumbnail" class="w-full h-full object-cover grayscale contrast-125 opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-none" data-alt="Abstract brutalist architecture graphic with high contrast black and white geometric shapes and grainy texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBb-w1XaIuFmw0DKa9qxcDpDhxk54r-Kkqg8vhrPCecdG-PbD5T5ZRc3SERK05boGj1rNEVeA0w5yF643_pXWdF02ton9Hap-2wtGjHoehwO6T_GBm85e9wdVKUmZaif3vmV_CjlDT6ncHv-H9jo6iEibUwgln-lILugRw_1uOMU3PqTEfX2llNfW9zZZ9LFkQyQb0QHat5juoVTMSOnNl3tPf-k25i0ogh8zuxp9Yy6CaWqcjG-zJ5255vZAjZEQY-6QptFb1djfDC"/>
+</div>
+<div class="flex flex-col justify-between flex-grow py-1">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-headline text-lg font-bold uppercase tracking-tight leading-none mb-2">SYSTEM_LOG_ALPHA.PDF</h3>
+<div class="px-2 py-0.5 border border-primary text-[10px] font-label font-black text-primary">
+                                [APPROVED]
+                            </div>
+</div>
+<p class="font-body text-xs text-on-surface-variant uppercase tracking-widest">Modified: 24_OCT_2023</p>
+</div>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-sm text-secondary">visibility</span>
+<span class="material-symbols-outlined text-sm text-secondary">share</span>
+<span class="material-symbols-outlined text-sm text-secondary">more_vert</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative bg-surface-container hover:bg-surface-container-high transition-none p-4 flex gap-4 hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
+<div class="w-20 h-24 bg-surface-container-highest flex-shrink-0 relative overflow-hidden border border-outline-variant">
+<img alt="Document Thumbnail" class="w-full h-full object-cover grayscale contrast-125 opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-none" data-alt="Top down view of technical blueprints with stark lighting and sharp black lines on dark gray paper" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxfABfkMuKs52JqNDzsR4kprWTz8MnnKwk1yy6lfDqMlY2M1OeHclG1EoDRoduSaumej9XB22X_H6W-oCTniEsZihkxSHIZ_DPpnrrCRiKyHis9lfTAGhfjR4edk1EJivRJ1nDsrEhYutGd0Iul4p4SHFP5zFzkFYK2UkyGDbJ-6VqbzLhOe5Uu2IfMHynhxMdIvugq4_MtwWwhEQhH4lhUoplKIkVvQAO287FD9f5-bnLGNGx1gRUM0QtBcJza0873bHSwP71opdn"/>
+</div>
+<div class="flex flex-col justify-between flex-grow py-1">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-headline text-lg font-bold uppercase tracking-tight leading-none mb-2">MANIFESTO_V2.MD</h3>
+<div class="px-2 py-0.5 border border-outline text-[10px] font-label font-black text-secondary">
+                                [PENDING]
+                            </div>
+</div>
+<p class="font-body text-xs text-on-surface-variant uppercase tracking-widest">Modified: 12_NOV_2023</p>
+</div>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-sm text-secondary">edit</span>
+<span class="material-symbols-outlined text-sm text-secondary">delete</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative bg-surface-container hover:bg-surface-container-high transition-none p-4 flex gap-4 hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
+<div class="w-20 h-24 bg-surface-container-highest flex-shrink-0 relative overflow-hidden border border-outline-variant">
+<img alt="Document Thumbnail" class="w-full h-full object-cover grayscale contrast-125 opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-none" data-alt="Futuristic cybernetic interface with glowing circuits and dark metallic textures in a macro shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPR6NR0rFhnUDjA7WYNRaI6jtc2NW3dPIPyb78ZrcIiy7RPcRpA7ai2v4TmYX7tB0cykhoBD9IHaYIPnKcb77-W6cETBfkp3JRe6wcSrqYyLhy7BOPQgel-TLx-Dqa41p3-pHEs24WTr-vMafRC_rnJUyWILYzaiVJEsA3VQ-1eSiLeR0KX1j0SLBBVj5BQSDYWtupa19L5ZPr-sNAEBnsOX-Y-_3LDKQsFIOfXWAVnfqNruiN1Ps8UPYdDO-cAXprRGxai2UkpCSg"/>
+</div>
+<div class="flex flex-col justify-between flex-grow py-1">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-headline text-lg font-bold uppercase tracking-tight leading-none mb-2">ENCRYPT_KEY.TXT</h3>
+<div class="px-2 py-0.5 border border-error text-[10px] font-label font-black text-error">
+                                [REJECTED]
+                            </div>
+</div>
+<p class="font-body text-xs text-on-surface-variant uppercase tracking-widest">Modified: 01_DEC_2023</p>
+</div>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-sm text-error">warning</span>
+<span class="material-symbols-outlined text-sm text-secondary">info</span>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group relative bg-surface-container hover:bg-surface-container-high transition-none p-4 flex gap-4 hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
+<div class="w-20 h-24 bg-surface-container-highest flex-shrink-0 relative overflow-hidden border border-outline-variant">
+<img alt="Document Thumbnail" class="w-full h-full object-cover grayscale contrast-125 opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-none" data-alt="Digital static and noise on a monitor with high contrast black and white pixel patterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqO0A4BoONVFO1VTZyz6UecKUvvMai6D_YJA9J9yo_lsCVJnfYzug1qWwFt-kjn1PqVfG6Qf6Wx7dc9la6FtHefQXvQdDF8r3rbtHD5X-FXmqOAao_p5Ml47kCqWVEOzg3mdhHKkM4YY0Em-XIm9DpW_WBCnPflsNj0HrQ6HhxHW08Lz7V8JrcPbHyeepXvo5ZllApZMrd-pthUTa8RYm81c0cFgFW4uc8yHdhyV8iJk3CfDrWmUVP0InBqBDFVLUL8RhbkjN91W2r"/>
+</div>
+<div class="flex flex-col justify-between flex-grow py-1">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="font-headline text-lg font-bold uppercase tracking-tight leading-none mb-2">RAW_DATA_SET_X.CSV</h3>
+<div class="px-2 py-0.5 border border-primary text-[10px] font-label font-black text-primary">
+                                [APPROVED]
+                            </div>
+</div>
+<p class="font-body text-xs text-on-surface-variant uppercase tracking-widest">Modified: 05_DEC_2023</p>
+</div>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-sm text-secondary">download</span>
+<span class="material-symbols-outlined text-sm text-secondary">share</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB for New Upload -->
+<button class="fixed bottom-28 right-6 w-14 h-14 bg-primary text-on-primary flex items-center justify-center shadow-[6px_6px_0px_0px_rgba(255,255,255,0.3)] hover:shadow-[0px_0px_0px_0px_rgba(255,255,255,1)] hover:translate-x-1 hover:translate-y-1 transition-none z-40 border-2 border-on-primary">
+<span class="material-symbols-outlined text-3xl font-bold">add</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-stretch h-20 bg-[#141312] text-[#ffffff] font-['Space_Grotesk'] text-[10px] uppercase font-bold rounded-none border-t-2 border-[#ffffff] shadow-[0px_-4px_0px_0px_rgba(255,255,255,1)]">
+<a class="flex flex-col items-center justify-center bg-[#ffffff] text-[#141312] h-full w-full transition-none" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">database</span>
+<span>LIBRARY</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28] transition-none" href="#">
+<span class="material-symbols-outlined mb-1">gavel</span>
+<span>MODERATE</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28] transition-none" href="#">
+<span class="material-symbols-outlined mb-1">group</span>
+<span>USERS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28] transition-none" href="#">
+<span class="material-symbols-outlined mb-1">settings</span>
+<span>SYSTEM</span>
+</a>
+</nav>
+</body></html>

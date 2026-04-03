@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-lowest": "#0f0e0d",
+              "on-primary-container": "#000000",
+              "tertiary-container": "#90918f",
+              "primary-fixed": "#5d5f5d",
+              "on-tertiary-fixed-variant": "#e2e3e1",
+              "on-secondary-fixed": "#1a1c1b",
+              "on-primary": "#1a1c1b",
+              "surface-tint": "#c6c7c5",
+              "secondary": "#c6c7c5",
+              "on-tertiary-fixed": "#ffffff",
+              "outline": "#919191",
+              "on-secondary-fixed-variant": "#3a3c3b",
+              "surface-dim": "#141312",
+              "secondary-container": "#454746",
+              "surface-bright": "#3b3937",
+              "on-primary-fixed-variant": "#e2e3e1",
+              "on-error-container": "#ffdad6",
+              "on-surface": "#e6e1df",
+              "on-primary-fixed": "#ffffff",
+              "secondary-fixed-dim": "#ababaa",
+              "tertiary": "#e2e3e1",
+              "primary-fixed-dim": "#454746",
+              "primary": "#ffffff",
+              "inverse-surface": "#e6e1df",
+              "surface-container-highest": "#363433",
+              "primary-container": "#d4d4d3",
+              "outline-variant": "#474747",
+              "on-tertiary-container": "#000000",
+              "error": "#ffb4ab",
+              "surface": "#141312",
+              "secondary-fixed": "#c6c7c5",
+              "inverse-primary": "#5d5f5d",
+              "tertiary-fixed": "#5d5f5d",
+              "inverse-on-surface": "#32302f",
+              "background": "#141312",
+              "on-background": "#e6e1df",
+              "surface-variant": "#363433",
+              "surface-container": "#211f1e",
+              "surface-container-low": "#1d1b1a",
+              "on-secondary-container": "#e2e3e1",
+              "on-secondary": "#1a1c1b",
+              "tertiary-fixed-dim": "#454746",
+              "on-error": "#690005",
+              "surface-container-high": "#2b2a28",
+              "on-tertiary": "#1a1c1b",
+              "on-surface-variant": "#c6c6c6",
+              "error-container": "#93000a"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #141312;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+        }
+        .brutalist-shadow {
+            box-shadow: 4px 4px 0px 0px #ffffff;
+        }
+        .active-tab-indicator {
+            height: 2px;
+            background-color: #ffffff;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="bg-[#141312] text-[#ffffff] font-['Space_Grotesk'] uppercase tracking-tighter flex justify-between items-center w-full px-6 py-4 sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-2xl" data-icon="menu">menu</span>
+<h1 class="text-2xl font-bold tracking-widest text-[#ffffff]">SYNAPS</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-2xl" data-icon="search">search</span>
+</div>
+</header>
+<main class="px-6 pt-4 space-y-8">
+<!-- Section Header -->
+<section>
+<h2 class="font-headline text-4xl font-bold uppercase tracking-tighter text-primary">Settings</h2>
+<p class="font-label text-on-surface-variant text-sm mt-1">[ SYSTEM_PREFERENCES_V4.0 ]</p>
+</section>
+<!-- Segmented Control / Tabs -->
+<nav class="flex overflow-x-auto no-scrollbar border-b border-outline-variant">
+<button class="flex-shrink-0 px-4 py-3 relative font-headline text-sm font-bold uppercase text-primary">
+                Profile
+                <div class="active-tab-indicator"></div>
+</button>
+<button class="flex-shrink-0 px-4 py-3 font-headline text-sm font-bold uppercase text-on-surface-variant hover:text-primary transition-colors">
+                Account
+            </button>
+<button class="flex-shrink-0 px-4 py-3 font-headline text-sm font-bold uppercase text-on-surface-variant hover:text-primary transition-colors">
+                Notifications
+            </button>
+<button class="flex-shrink-0 px-4 py-3 font-headline text-sm font-bold uppercase text-on-surface-variant hover:text-primary transition-colors">
+                Privacy
+            </button>
+</nav>
+<!-- Profile Settings Canvas -->
+<div class="space-y-10">
+<!-- Avatar Section -->
+<div class="flex items-end gap-6">
+<div class="w-32 h-32 bg-surface-container-high relative group">
+<img alt="User Profile" class="w-full h-full object-cover grayscale" data-alt="High contrast monochromatic portrait of a person with sharp facial features and dramatic shadows in a minimalist studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRIpiSi7kaSPrfhO14RgKt2j5s798E07wr1ksdweQJXAulepyuFla1uRK0T2B6kFMM0-i4pkVcr4SfkdU5XTSqu3gOu4o1yzDD-Gz1FzAk_QzHriQ_g2tyy7tuVHTkcv73Jrt7SwUCwJt9z24ijByd9w1ghxCRfvS8iOs3bsCG3H45s7zVubU4uciNiyq7UDzEtXsHooXXOVKLHUUCYLUCMkh6epuKzYXpOSSjUKvX2sOpuizz8KsCcAzBsQphBzi63I0Y82v1zT6a"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="add_a_photo">add_a_photo</span>
+</div>
+</div>
+<div class="flex-1">
+<label class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant block mb-1">Identity UID</label>
+<p class="font-headline font-bold text-lg text-primary">USER_992_X</p>
+<button class="mt-2 text-[10px] font-headline font-bold uppercase border-b-2 border-primary pb-0.5 inline-block">Change Photo</button>
+</div>
+</div>
+<!-- Form Fields -->
+<form class="space-y-8">
+<div class="space-y-6">
+<!-- Name Input -->
+<div class="relative group">
+<label class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant block mb-2">Display Name</label>
+<input class="w-full bg-surface-container-low border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 text-primary font-headline font-bold py-3 px-0 transition-all placeholder-on-surface-variant/30" type="text" value="ALEXANDER VORTECH"/>
+</div>
+<!-- Bio Input -->
+<div class="relative group">
+<label class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant block mb-2">Biography</label>
+<textarea class="w-full bg-surface-container-low border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 text-primary font-body py-3 px-0 transition-all resize-none" rows="3">Digital curator specializing in brutalist structures and high-performance data visualization. Based in the decentralized grid.</textarea>
+</div>
+<!-- Location Input -->
+<div class="relative group">
+<label class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant block mb-2">Location</label>
+<input class="w-full bg-surface-container-low border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 text-primary font-headline font-bold py-3 px-0 transition-all" type="text" value="NEO-BERLIN // SECTOR 7"/>
+</div>
+<!-- Web Link -->
+<div class="relative group">
+<label class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant block mb-2">Digital Link</label>
+<div class="flex items-center">
+<span class="text-on-surface-variant mr-2">https://</span>
+<input class="w-full bg-surface-container-low border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 text-primary font-headline font-bold py-3 px-0 transition-all" type="text" value="synaps.io/vortech"/>
+</div>
+</div>
+</div>
+<!-- Secondary Meta-Data Section -->
+<div class="p-6 bg-surface-container-low border border-outline-variant space-y-4">
+<h3 class="font-headline text-xs font-bold uppercase text-on-surface-variant tracking-widest">Visibility Settings</h3>
+<div class="flex items-center justify-between">
+<span class="font-body text-sm text-primary">Show online status</span>
+<div class="w-12 h-6 bg-primary p-1 flex items-center justify-end">
+<div class="w-4 h-4 bg-on-primary"></div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-body text-sm text-primary">Public index profile</span>
+<div class="w-12 h-6 bg-surface-container-highest p-1 flex items-center justify-start">
+<div class="w-4 h-4 bg-on-surface-variant"></div>
+</div>
+</div>
+</div>
+<!-- Save Button -->
+<div class="pt-6">
+<button class="w-full bg-primary text-on-primary font-headline font-extrabold uppercase py-5 text-sm tracking-[0.2em] transition-all hover:brutalist-shadow active:translate-x-1 active:translate-y-1 active:shadow-none" type="submit">
+                        Save Changes
+                    </button>
+</div>
+</form>
+</div>
+<!-- System Metadata -->
+<footer class="pt-12 pb-8 flex flex-col items-center gap-4">
+<div class="flex gap-2">
+<span class="px-2 py-0.5 border border-outline text-[8px] font-label text-on-surface-variant">V.2.4.0-STABLE</span>
+<span class="px-2 py-0.5 border border-outline text-[8px] font-label text-on-surface-variant">ENCRYPTED</span>
+</div>
+<p class="font-label text-[10px] uppercase text-outline-variant">Terminating Session in 12:44</p>
+</footer>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-16 flex justify-around items-stretch bg-[#141312] z-50">
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#ffffff] text-[#141312] h-full w-full" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</a>
+</nav>
+</body></html>

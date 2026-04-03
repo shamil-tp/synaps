@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SYNAPS | Member Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#211f1e",
+              "error": "#ffb4ab",
+              "surface-container-low": "#1d1b1a",
+              "surface-container-lowest": "#0f0e0d",
+              "surface": "#141312",
+              "inverse-surface": "#e6e1df",
+              "primary": "#ffffff",
+              "primary-fixed": "#5d5f5d",
+              "surface-variant": "#363433",
+              "surface-dim": "#141312",
+              "inverse-primary": "#5d5f5d",
+              "on-tertiary": "#1a1c1b",
+              "error-container": "#93000a",
+              "on-primary": "#1a1c1b",
+              "on-tertiary-fixed-variant": "#e2e3e1",
+              "on-tertiary-container": "#000000",
+              "secondary": "#c6c7c5",
+              "on-surface": "#e6e1df",
+              "tertiary-fixed": "#5d5f5d",
+              "on-primary-fixed-variant": "#e2e3e1",
+              "primary-container": "#d4d4d3",
+              "tertiary-container": "#90918f",
+              "outline": "#919191",
+              "outline-variant": "#474747",
+              "surface-container-highest": "#363433",
+              "inverse-on-surface": "#32302f",
+              "surface-bright": "#3b3937",
+              "tertiary": "#e2e3e1",
+              "on-surface-variant": "#c6c6c6",
+              "secondary-container": "#454746",
+              "secondary-fixed-dim": "#ababaa",
+              "on-secondary-container": "#e2e3e1",
+              "on-error-container": "#ffdad6",
+              "on-secondary-fixed": "#1a1c1b",
+              "on-error": "#690005",
+              "on-secondary-fixed-variant": "#3a3c3b",
+              "primary-fixed-dim": "#454746",
+              "on-secondary": "#1a1c1b",
+              "background": "#141312",
+              "on-background": "#e6e1df",
+              "surface-container-high": "#2b2a28",
+              "tertiary-fixed-dim": "#454746",
+              "on-tertiary-fixed": "#ffffff",
+              "secondary-fixed": "#c6c7c5",
+              "surface-tint": "#c6c7c5",
+              "on-primary-fixed": "#ffffff",
+              "on-primary-container": "#000000"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        background-color: #141312;
+        color: #ffffff;
+        font-family: 'Inter', sans-serif;
+      }
+      .brutalist-shadow {
+        box-shadow: 4px 4px 0px 0px #ffffff;
+      }
+      .brutalist-shadow-hover:hover {
+        box-shadow: 6px 6px 0px 0px #ffffff;
+        transform: translate(-2px, -2px);
+      }
+      .brutalist-active:active {
+        box-shadow: 0px 0px 0px 0px #ffffff;
+        transform: translate(4px, 4px);
+      }
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- Top Navigation Anchor -->
+<nav class="sticky top-0 w-full flex justify-between items-center px-6 py-4 bg-[#141312] z-50 border-b-2 border-[#ffffff] shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
+<div class="text-2xl font-black tracking-tighter text-[#ffffff] uppercase font-headline">
+            SYNAPS
+        </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-xs font-mono uppercase text-[#ffffff] font-bold underline underline-offset-8" href="#">Browse</a>
+<a class="text-xs font-mono uppercase text-[#c6c7c5] hover:text-[#ffffff] transition-none" href="#">Search</a>
+<a class="text-xs font-mono uppercase text-[#c6c7c5] hover:text-[#ffffff] transition-none" href="#">Upload</a>
+</div>
+<div class="flex gap-4 items-center">
+<button class="px-4 py-2 text-xs font-mono uppercase border-2 border-primary text-primary hover:bg-primary hover:text-on-primary transition-none">Sign in</button>
+<button class="px-4 py-2 text-xs font-mono uppercase bg-primary text-on-primary transition-none active:translate-x-[2px] active:translate-y-[2px]">Get started</button>
+</div>
+</nav>
+<main class="max-w-[1440px] mx-auto p-6 md:p-12 lg:flex lg:gap-16">
+<!-- Left Content Area -->
+<div class="flex-1">
+<!-- Header Section -->
+<header class="mb-16 flex justify-between items-end">
+<div>
+<h1 class="font-headline text-5xl md:text-7xl font-black tracking-tighter uppercase mb-2">Good morning, Shamil</h1>
+<p class="font-label text-sm text-secondary uppercase tracking-widest font-medium">12 OCTOBER 2024 — SYSTEM STATUS: OPTIMAL</p>
+</div>
+<div class="w-16 h-16 md:w-24 md:h-24 border-2 border-primary overflow-hidden bg-surface-container-high shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="High contrast black and white minimalist avatar portrait with sharp geometric features and neutral expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVOeNbYQ8gQvA-aIHklzeaaRh0s3RMegQV-rcOjif8Nj3YFeWijsAklOIaCCqy6NS3zrfBCvbLWD4bQqCzPOAvoUU6NkaGVm4VGM0CChyggRUqleVnS9_t3_XRDhA4GDrIRtgPGQACZV8NMYar71iAEDz7_AGd5ryfbNy5t6WejGg8jiwBGMh85ij78KEeEcOstMZGpChetvfX6z6--n56vJikJLzEWHrOfKwPEf0u0b3yaI6iByoIs13z_PnYw_bhqmr0s5IkClX_"/>
+</div>
+</header>
+<!-- Quick Actions Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+<a class="bg-surface-container border-2 border-primary p-8 brutalist-shadow brutalist-shadow-hover transition-all flex flex-col justify-between min-h-[200px]" href="#">
+<span class="material-symbols-outlined text-4xl" data-icon="upload_file">upload_file</span>
+<h3 class="font-headline text-2xl font-bold uppercase mt-4">Upload</h3>
+</a>
+<a class="bg-surface-container border-2 border-primary p-8 brutalist-shadow brutalist-shadow-hover transition-all flex flex-col justify-between min-h-[200px]" href="#">
+<span class="material-symbols-outlined text-4xl" data-icon="search">search</span>
+<h3 class="font-headline text-2xl font-bold uppercase mt-4">Browse</h3>
+</a>
+<a class="bg-surface-container border-2 border-primary p-8 brutalist-shadow brutalist-shadow-hover transition-all flex flex-col justify-between min-h-[200px]" href="#">
+<span class="material-symbols-outlined text-4xl" data-icon="folder_managed">folder_managed</span>
+<h3 class="font-headline text-2xl font-bold uppercase mt-4">My uploads</h3>
+</a>
+</section>
+<!-- Continue Reading (Horizontal Scroll) -->
+<section class="mb-16">
+<div class="flex justify-between items-center mb-8">
+<h2 class="font-headline text-3xl font-black uppercase tracking-tighter">Continue Reading</h2>
+<button class="font-label text-xs uppercase tracking-widest underline italic hover:text-primary transition-all">View all library</button>
+</div>
+<div class="flex overflow-x-auto gap-6 pb-6 hide-scrollbar">
+<!-- Document Card 1 -->
+<div class="min-w-[280px] bg-surface-container-low border-2 border-outline-variant p-6 hover:border-primary transition-colors group">
+<div class="aspect-[3/4] bg-surface-container-highest mb-4 overflow-hidden relative">
+<img class="w-full h-full object-cover grayscale opacity-50 group-hover:opacity-100 transition-opacity" data-alt="Abstract architectural photograph of brutalist concrete structure with high contrast shadows and sharp lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpO-RYbZ4iakb3zxHCqIIWfvyXdojUgyoa_KqYGW1T7dvWZ_B5yrF1YHiCrP_OhPwBxWwtPU5M4EguyTyznyQiGGPHYMzIUJGKdjJqGx-t3t7wd2nlPBGeg7WZgUIZucZMAPhTSdF4aWo5Elh15eOVwIxAz70zX6E8IUwWFKDkBvjUSr4RA_fvTf8iqDTUkplztZwJ1Zg5Tvkx3DAoRGvqmmkqdaKmBhOZ802wddFFhBGzGZ4Yxoqcvl1CXoa4p9ps39R7XktLEdng"/>
+<div class="absolute top-2 left-2 bg-primary text-on-primary px-2 py-1 text-[10px] font-mono uppercase">ARCHIVE_01</div>
+</div>
+<h4 class="font-headline text-lg font-bold uppercase leading-tight mb-2">Neural Architectures in Late Modernism</h4>
+<p class="font-label text-[10px] text-secondary uppercase tracking-tighter">78% COMPLETED — 4 MIN LEFT</p>
+</div>
+<!-- Document Card 2 -->
+<div class="min-w-[280px] bg-surface-container-low border-2 border-outline-variant p-6 hover:border-primary transition-colors group">
+<div class="aspect-[3/4] bg-surface-container-highest mb-4 overflow-hidden relative">
+<img class="w-full h-full object-cover grayscale opacity-50 group-hover:opacity-100 transition-opacity" data-alt="Detail shot of a vintage mainframe computer panel with glowing monochrome indicators and heavy industrial design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsjT--UF_mmhQLwUmllHuVbkxxQ1rw8U2YzAi3QkLalzofoPMYcd1paCA63-lM4xC_a4_hHyrCeYZwxuQe4DVZIX14NTVoJERW8o8YR5D1ojXwwO8aukZh2TiYgrpR-m-ktmRA9ipx_n9s9Xr44ywmu9wMcgmRk0_FUi6BpCY7qdtB6jPsOadSxAwDn-sXfAOxkS92HpdXq1QK1DnLlRefJq8e2C1x6vpX8wD3WtoLwQVREQbRV8x6UMbRuze-WQkPGPJ_EREP4pnA"/>
+<div class="absolute top-2 left-2 bg-primary text-on-primary px-2 py-1 text-[10px] font-mono uppercase">ARCHIVE_42</div>
+</div>
+<h4 class="font-headline text-lg font-bold uppercase leading-tight mb-2">The Aesthetics of Signal Noise</h4>
+<p class="font-label text-[10px] text-secondary uppercase tracking-tighter">12% COMPLETED — 18 MIN LEFT</p>
+</div>
+<!-- Document Card 3 -->
+<div class="min-w-[280px] bg-surface-container-low border-2 border-outline-variant p-6 hover:border-primary transition-colors group">
+<div class="aspect-[3/4] bg-surface-container-highest mb-4 overflow-hidden relative">
+<img class="w-full h-full object-cover grayscale opacity-50 group-hover:opacity-100 transition-opacity" data-alt="Strict geometric pattern of black and white floor tiles with dramatic top-down lighting creating high contrast grid" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBMDohYMNdpbaet71Lpjkyi-b3Ywg2BVO917F8hpWj4BYZ4JR7_QsUtmOBhRL4vOF48b9vNNgvxCjKXeyA0XRykIoLrKfXZ1AbC0pUrPh1asVgyA5JtMyJFUUnHc1-wBiAIMrNPc8QcIFN6UYAfPvHz-1oat6Xpi6T-jEddbH29TWhHW4xUckId1d6lz7N6dBSiuzgmNO1JoKCKvb-WVSd-XhyXAar00IED2wYHNaaiAUqNb6QM1a385gUiiwq3oL4NqduC1okBTYs"/>
+<div class="absolute top-2 left-2 bg-primary text-on-primary px-2 py-1 text-[10px] font-mono uppercase">ARCHIVE_19</div>
+</div>
+<h4 class="font-headline text-lg font-bold uppercase leading-tight mb-2">Grid Systems as Social Control</h4>
+<p class="font-label text-[10px] text-secondary uppercase tracking-tighter">94% COMPLETED — 1 MIN LEFT</p>
+</div>
+</div>
+</section>
+<!-- My Recent Uploads -->
+<section class="mb-12">
+<h2 class="font-headline text-3xl font-black uppercase tracking-tighter mb-8">My Recent Uploads</h2>
+<div class="space-y-4">
+<!-- Upload Item 1 -->
+<div class="flex flex-col md:flex-row md:items-center justify-between p-6 bg-surface-container-low border-l-4 border-primary hover:bg-surface-container transition-colors">
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-1">
+<span class="px-2 py-0.5 border border-outline text-[10px] font-mono text-primary uppercase">[SYSTEM_OK]</span>
+<h4 class="font-headline text-xl font-bold uppercase">Urban_Decay_Study_01.pdf</h4>
+</div>
+<p class="text-xs font-mono text-secondary uppercase">UPLOADED: 11 OCT 2024 | SIZE: 4.2MB</p>
+</div>
+<div class="flex gap-8 mt-4 md:mt-0 text-center">
+<div>
+<p class="text-[10px] font-mono text-on-surface-variant uppercase mb-1">Views</p>
+<p class="font-headline text-lg font-bold">1,240</p>
+</div>
+<div>
+<p class="text-[10px] font-mono text-on-surface-variant uppercase mb-1">Downloads</p>
+<p class="font-headline text-lg font-bold">428</p>
+</div>
+</div>
+</div>
+<!-- Upload Item 2 -->
+<div class="flex flex-col md:flex-row md:items-center justify-between p-6 bg-surface-container-low border-l-4 border-primary hover:bg-surface-container transition-colors">
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-1">
+<span class="px-2 py-0.5 border border-outline text-[10px] font-mono text-primary uppercase">[PENDING_RE]</span>
+<h4 class="font-headline text-xl font-bold uppercase">Concrete_Textures_Vol_4.zip</h4>
+</div>
+<p class="text-xs font-mono text-secondary uppercase">UPLOADED: 09 OCT 2024 | SIZE: 128MB</p>
+</div>
+<div class="flex gap-8 mt-4 md:mt-0 text-center">
+<div>
+<p class="text-[10px] font-mono text-on-surface-variant uppercase mb-1">Views</p>
+<p class="font-headline text-lg font-bold">14</p>
+</div>
+<div>
+<p class="text-[10px] font-mono text-on-surface-variant uppercase mb-1">Downloads</p>
+<p class="font-headline text-lg font-bold">0</p>
+</div>
+</div>
+</div>
+<!-- Upload Item 3 -->
+<div class="flex flex-col md:flex-row md:items-center justify-between p-6 bg-surface-container-low border-l-4 border-primary hover:bg-surface-container transition-colors">
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-1">
+<span class="px-2 py-0.5 border border-outline text-[10px] font-mono text-primary uppercase">[SYSTEM_OK]</span>
+<h4 class="font-headline text-xl font-bold uppercase">Monochrome_Fashion_Archive.tar</h4>
+</div>
+<p class="text-xs font-mono text-secondary uppercase">UPLOADED: 05 OCT 2024 | SIZE: 890MB</p>
+</div>
+<div class="flex gap-8 mt-4 md:mt-0 text-center">
+<div>
+<p class="text-[10px] font-mono text-on-surface-variant uppercase mb-1">Views</p>
+<p class="font-headline text-lg font-bold">4,102</p>
+</div>
+<div>
+<p class="text-[10px] font-mono text-on-surface-variant uppercase mb-1">Downloads</p>
+<p class="font-headline text-lg font-bold">1,120</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Sidebar (Notifications) -->
+<aside class="w-full lg:w-96">
+<div class="sticky top-28">
+<div class="bg-surface-container p-8 brutalist-shadow border-2 border-primary">
+<h3 class="font-headline text-2xl font-black uppercase mb-8 border-b-2 border-primary pb-4">Activity Feed</h3>
+<div class="space-y-8">
+<!-- Feed Item 1 -->
+<div class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:bg-primary">
+<p class="font-label text-[10px] text-secondary uppercase mb-1">08:24 AM — SYSTEM</p>
+<h5 class="font-headline text-sm font-bold uppercase leading-tight mb-1">Upload Approved</h5>
+<p class="text-xs text-on-surface-variant font-mono">'Urban_Decay_Study_01' is now live in the global archive.</p>
+</div>
+<!-- Feed Item 2 -->
+<div class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:bg-primary">
+<p class="font-label text-[10px] text-secondary uppercase mb-1">YESTERDAY — MILESTONE</p>
+<h5 class="font-headline text-sm font-bold uppercase leading-tight mb-1">Curator Status Reached</h5>
+<p class="text-xs text-on-surface-variant font-mono">You have contributed 50GB of verified archival data.</p>
+</div>
+<!-- Feed Item 3 -->
+<div class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:bg-outline">
+<p class="font-label text-[10px] text-secondary uppercase mb-1">2 DAYS AGO — MESSAGE</p>
+<h5 class="font-headline text-sm font-bold uppercase leading-tight mb-1">New Inquiry: Archive_42</h5>
+<p class="text-xs text-on-surface-variant font-mono">User 'K_MALEEVICH' requested collaboration on metadata tagging.</p>
+</div>
+<!-- Feed Item 4 -->
+<div class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:bg-outline">
+<p class="font-label text-[10px] text-secondary uppercase mb-1">3 DAYS AGO — SYSTEM</p>
+<h5 class="font-headline text-sm font-bold uppercase leading-tight mb-1">Maintenance Notice</h5>
+<p class="text-xs text-on-surface-variant font-mono">Archive node 'SYN_04' will be offline for indexing at 02:00 UTC.</p>
+</div>
+</div>
+<button class="w-full mt-12 py-4 bg-transparent border-2 border-primary font-label text-xs uppercase font-bold tracking-widest hover:bg-primary hover:text-on-primary transition-all">Clear All Notifications</button>
+</div>
+<div class="mt-8 p-8 bg-surface-container-lowest border-2 border-outline-variant">
+<p class="font-label text-[10px] text-secondary uppercase mb-4 tracking-widest">Storage Status</p>
+<div class="w-full h-4 bg-surface-container-high border border-outline-variant overflow-hidden">
+<div class="h-full bg-primary" style="width: 65%;"></div>
+</div>
+<div class="flex justify-between mt-2 font-mono text-[10px] uppercase">
+<span>325.4 GB USED</span>
+<span>500 GB TOTAL</span>
+</div>
+</div>
+</div>
+</aside>
+</main>
+<!-- Footer Anchor -->
+<footer class="w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 gap-12 border-t-2 border-[#ffffff] mt-24 bg-[#141312]">
+<div class="space-y-6">
+<div class="text-3xl font-black text-[#ffffff] font-headline uppercase">SYNAPS</div>
+<p class="font-mono text-sm uppercase tracking-widest text-secondary max-w-sm">
+                Advanced archival system for digital artifacts and architectural documentation. Built for the terminal era.
+            </p>
+</div>
+<div class="flex flex-col md:items-end justify-between">
+<div class="flex gap-6 mb-8 md:mb-0">
+<a class="font-mono text-sm uppercase tracking-widest text-[#c6c6c6] hover:text-[#ffffff] hover:italic transition-all" href="#">Browse</a>
+<a class="font-mono text-sm uppercase tracking-widest text-[#c6c6c6] hover:text-[#ffffff] hover:italic transition-all" href="#">Upload</a>
+<a class="font-mono text-sm uppercase tracking-widest text-[#c6c6c6] hover:text-[#ffffff] hover:italic transition-all" href="#">About</a>
+<a class="font-mono text-sm uppercase tracking-widest text-[#c6c6c6] hover:text-[#ffffff] hover:italic transition-all" href="#">Privacy</a>
+</div>
+<p class="font-mono text-xs text-secondary uppercase tracking-widest mt-auto">
+                © 2024 SYNAPS ARCHIVAL SYSTEM — ALL RIGHTS REDACTED
+            </p>
+</div>
+</footer>
+</body></html>

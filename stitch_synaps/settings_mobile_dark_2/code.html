@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed": "#ffffff",
+              "on-primary-fixed": "#ffffff",
+              "on-background": "#e6e1df",
+              "primary-container": "#d4d4d3",
+              "on-primary": "#1a1c1b",
+              "surface-dim": "#141312",
+              "on-secondary-container": "#e2e3e1",
+              "on-tertiary": "#1a1c1b",
+              "on-secondary": "#1a1c1b",
+              "tertiary-fixed-dim": "#454746",
+              "tertiary-fixed": "#5d5f5d",
+              "surface-container": "#211f1e",
+              "on-secondary-fixed-variant": "#3a3c3b",
+              "on-tertiary-fixed-variant": "#e2e3e1",
+              "surface-container-highest": "#363433",
+              "outline-variant": "#474747",
+              "secondary-container": "#454746",
+              "surface-container-lowest": "#0f0e0d",
+              "on-tertiary-container": "#000000",
+              "primary-fixed": "#5d5f5d",
+              "error": "#ffb4ab",
+              "surface-container-low": "#1d1b1a",
+              "surface-bright": "#3b3937",
+              "primary": "#ffffff",
+              "on-primary-fixed-variant": "#e2e3e1",
+              "primary-fixed-dim": "#454746",
+              "tertiary": "#e2e3e1",
+              "on-surface": "#e6e1df",
+              "surface-container-high": "#2b2a28",
+              "secondary": "#c6c7c5",
+              "background": "#141312",
+              "inverse-on-surface": "#32302f",
+              "inverse-surface": "#e6e1df",
+              "surface-variant": "#363433",
+              "secondary-fixed-dim": "#ababaa",
+              "on-surface-variant": "#c6c6c6",
+              "on-primary-container": "#000000",
+              "on-secondary-fixed": "#1a1c1b",
+              "on-error": "#690005",
+              "tertiary-container": "#90918f",
+              "outline": "#919191",
+              "inverse-primary": "#5d5f5d",
+              "surface-tint": "#c6c7c5",
+              "secondary-fixed": "#c6c7c5",
+              "on-error-container": "#ffdad6",
+              "error-container": "#93000a",
+              "surface": "#141312"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        display: inline-block;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+      }
+      ::-webkit-scrollbar { width: 4px; }
+      ::-webkit-scrollbar-track { background: #141312; }
+      ::-webkit-scrollbar-thumb { background: #ffffff; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center px-4 h-16 bg-[#141312] text-[#ffffff] border-b-2 border-[#ffffff] shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
+<div class="flex items-center justify-between w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#ffffff]" data-icon="menu">menu</span>
+<h1 class="text-xl font-bold tracking-widest font-['Space_Grotesk'] uppercase">ARCHIVE_v1.0</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#ffffff]" data-icon="search">search</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-32 px-4 max-w-xl mx-auto min-h-screen">
+<!-- Section Header -->
+<div class="mb-10">
+<h2 class="text-4xl font-headline font-bold uppercase tracking-tighter text-primary">Settings</h2>
+<div class="h-1 w-12 bg-primary mt-2"></div>
+</div>
+<!-- Segmented Control Navigation -->
+<nav class="flex overflow-x-auto no-scrollbar mb-8 gap-0 border-2 border-outline-variant">
+<button class="flex-1 px-4 py-3 text-xs font-label font-bold uppercase whitespace-nowrap bg-primary text-on-primary">Profile</button>
+<button class="flex-1 px-4 py-3 text-xs font-label font-bold uppercase whitespace-nowrap text-secondary border-l border-outline-variant hover:bg-surface-container-high transition-none">Account</button>
+<button class="flex-1 px-4 py-3 text-xs font-label font-bold uppercase whitespace-nowrap text-secondary border-l border-outline-variant hover:bg-surface-container-high transition-none">Notifications</button>
+<button class="flex-1 px-4 py-3 text-xs font-label font-bold uppercase whitespace-nowrap text-secondary border-l border-outline-variant hover:bg-surface-container-high transition-none">Privacy</button>
+</nav>
+<!-- Profile Photo Section -->
+<section class="mb-12 flex items-end gap-6">
+<div class="relative group">
+<div class="w-24 h-24 bg-surface-container border-2 border-primary shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
+<img alt="User Profile" class="w-full h-full object-cover grayscale" data-alt="Monochromatic portrait of a man with sharp features, dramatic lighting, high contrast photography, editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCppUpkFzU_CKJOqNjCjYh5ODRm8_6-74DvfrWw3ufjyrIWR5HOn62_xztLd_JciqpLy0Yo1t90JBKMm0ZIpArP2g7yeCPmbjAdrwPgFajMPzBhCEtLndwjhyjwZdHMqMMaAMPhdJkILgG5pXTKFEDURxX_TJeK2bA6eFaNlw_7_iwTFxIHsVIpMiu3jpgrwvzgV8DaG7lYFH9NeqjajwYNk9lbvUr_X_iO2vy_af-_StNAyrnGYiUJqHMOrP61goHGC4SkzVXDemCG"/>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-primary p-1 border border-background">
+<span class="material-symbols-outlined text-on-primary text-sm" data-icon="edit">edit</span>
+</div>
+</div>
+<div class="pb-2">
+<p class="font-label text-[10px] uppercase font-bold text-secondary mb-1">Status</p>
+<div class="inline-flex items-center gap-2 border border-outline px-2 py-0.5">
+<div class="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+<span class="font-label text-[10px] uppercase font-bold tracking-widest">[CURATOR_ACTIVE]</span>
+</div>
+</div>
+</section>
+<!-- Form Fields -->
+<section class="space-y-8">
+<!-- Display Name -->
+<div class="space-y-2">
+<label class="block font-label text-xs font-bold uppercase tracking-widest text-primary">Display Name</label>
+<div class="relative group">
+<input class="w-full bg-surface-container-low border-b-2 border-outline-variant focus:border-primary focus:bg-surface-container-high focus:ring-0 px-0 py-3 font-body text-on-surface transition-none" type="text" value="CURATOR_01"/>
+</div>
+<p class="text-[10px] font-label text-on-surface-variant uppercase">Public identifier for review logs</p>
+</div>
+<!-- Bio -->
+<div class="space-y-2">
+<label class="block font-label text-xs font-bold uppercase tracking-widest text-primary">Archive Bio</label>
+<textarea class="w-full bg-surface-container-low border-b-2 border-outline-variant focus:border-primary focus:bg-surface-container-high focus:ring-0 px-0 py-3 font-body text-on-surface transition-none resize-none" rows="3">Senior curator specializing in post-industrial data fragments and digital archaeology. LVL_9 access only.</textarea>
+</div>
+<!-- Institution -->
+<div class="space-y-2">
+<label class="block font-label text-xs font-bold uppercase tracking-widest text-primary">Primary Institution</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low border-b-2 border-outline-variant focus:border-primary focus:bg-surface-container-high focus:ring-0 px-0 py-3 font-body text-on-surface transition-none" type="text" value="NEO-ATHENS CENTRAL STORAGE"/>
+<span class="absolute right-0 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline" data-icon="lock">lock</span>
+</div>
+<p class="text-[10px] font-label text-error uppercase italic">Locked by system administrator</p>
+</div>
+</section>
+<!-- Danger Zone -->
+<section class="mt-16 pt-8 border-t-2 border-outline-variant">
+<h3 class="font-label text-xs font-bold uppercase text-error mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="warning">warning</span>
+                Critical System Actions
+            </h3>
+<div class="bg-surface-container-lowest p-6 border-2 border-error/20">
+<p class="text-sm text-on-surface mb-6 leading-relaxed">
+                    Deletion of this directory is irreversible. All linked access logs, review histories, and archived assets will be purged from the central ledger.
+                </p>
+<button class="w-full py-4 text-xs font-label font-bold uppercase tracking-widest border-2 border-error text-error hover:bg-error hover:text-on-error transition-none">
+                    Request Deletion Profile
+                </button>
+</div>
+</section>
+<!-- Action Area -->
+<div class="mt-12">
+<button class="w-full py-5 bg-primary text-on-primary font-label font-bold uppercase tracking-[0.2em] shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] active:shadow-none active:translate-x-1 active:translate-y-1 transition-none">
+                Save System Changes
+            </button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-stretch h-20 bg-[#141312] text-[#ffffff] border-t-2 border-[#ffffff] shadow-[0px_-4px_0px_0px_rgba(255,255,255,1)]">
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28] transition-none" href="#">
+<span class="material-symbols-outlined" data-icon="database">database</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold mt-1">LIBRARY</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28] transition-none" href="#">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold mt-1">MODERATE</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28] transition-none" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold mt-1">USERS</span>
+</a>
+<!-- ACTIVE TAB: SYSTEM -->
+<a class="flex flex-col items-center justify-center bg-[#ffffff] text-[#141312] h-full w-full transition-none" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold mt-1">SYSTEM</span>
+</a>
+</nav>
+</body></html>

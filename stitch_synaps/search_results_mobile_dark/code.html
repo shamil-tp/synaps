@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-lowest": "#0f0e0d",
+                        "on-primary-container": "#000000",
+                        "tertiary-container": "#90918f",
+                        "primary-fixed": "#5d5f5d",
+                        "on-tertiary-fixed-variant": "#e2e3e1",
+                        "on-secondary-fixed": "#1a1c1b",
+                        "on-primary": "#1a1c1b",
+                        "surface-tint": "#c6c7c5",
+                        "secondary": "#c6c7c5",
+                        "on-tertiary-fixed": "#ffffff",
+                        "outline": "#919191",
+                        "on-secondary-fixed-variant": "#3a3c3b",
+                        "surface-dim": "#141312",
+                        "secondary-container": "#454746",
+                        "surface-bright": "#3b3937",
+                        "on-primary-fixed-variant": "#e2e3e1",
+                        "on-error-container": "#ffdad6",
+                        "on-surface": "#e6e1df",
+                        "on-primary-fixed": "#ffffff",
+                        "secondary-fixed-dim": "#ababaa",
+                        "tertiary": "#e2e3e1",
+                        "primary-fixed-dim": "#454746",
+                        "primary": "#ffffff",
+                        "inverse-surface": "#e6e1df",
+                        "surface-container-highest": "#363433",
+                        "primary-container": "#d4d4d3",
+                        "outline-variant": "#474747",
+                        "on-tertiary-container": "#000000",
+                        "error": "#ffb4ab",
+                        "surface": "#141312",
+                        "secondary-fixed": "#c6c7c5",
+                        "inverse-primary": "#5d5f5d",
+                        "tertiary-fixed": "#5d5f5d",
+                        "inverse-on-surface": "#32302f",
+                        "background": "#141312",
+                        "on-background": "#e6e1df",
+                        "surface-variant": "#363433",
+                        "surface-container": "#211f1e",
+                        "surface-container-low": "#1d1b1a",
+                        "on-secondary-container": "#e2e3e1",
+                        "on-secondary": "#1a1c1b",
+                        "tertiary-fixed-dim": "#454746",
+                        "on-error": "#690005",
+                        "surface-container-high": "#2b2a28",
+                        "on-tertiary": "#1a1c1b",
+                        "on-surface-variant": "#c6c6c6",
+                        "error-container": "#93000a"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "0px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #141312;
+            color: #e6e1df;
+            font-family: 'Inter', sans-serif;
+        }
+        .brutalist-shadow {
+            box-shadow: 4px 4px 0px 0px #ffffff;
+        }
+        .brutalist-shadow-hover:hover {
+            box-shadow: 4px 4px 0px 0px #ffffff;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen pb-20">
+<!-- TopAppBar -->
+<header class="bg-[#141312] text-[#ffffff] font-['Space_Grotesk'] uppercase tracking-tighter flex justify-between items-center w-full px-6 py-4 sticky top-0 z-40">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#ffffff]" data-icon="menu">menu</span>
+<h1 class="text-2xl font-bold tracking-widest text-[#ffffff]">SYNAPS</h1>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[#ffffff]" data-icon="account_circle">account_circle</span>
+</div>
+</header>
+<main class="px-6 mt-4">
+<!-- Search Input Section -->
+<div class="mb-8">
+<div class="relative group">
+<input class="w-full bg-surface-container-low border-b-2 border-outline-variant py-6 px-4 font-headline text-2xl text-primary focus:outline-none focus:bg-surface-container-high focus:brutalist-shadow transition-all duration-150" placeholder="SEARCH SYSTEM..." type="text" value="DATA STRUCTURES"/>
+<div class="absolute right-4 top-1/2 -translate-y-1/2">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="search">search</span>
+</div>
+</div>
+<!-- Result Summary -->
+<div class="mt-6 flex justify-between items-end border-b border-outline-variant pb-2">
+<p class="font-label text-[10px] tracking-[0.2em] text-secondary uppercase">42 RESULTS FOR "DATA STRUCTURES"</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-secondary" data-icon="filter_list">filter_list</span>
+<span class="font-label text-[10px] tracking-[0.2em] text-secondary uppercase">SORT: RELEVANCE</span>
+</div>
+</div>
+</div>
+<!-- Search Results List -->
+<div class="flex flex-col gap-5">
+<!-- Result Card 1 -->
+<div class="bg-surface-container p-4 transition-all duration-150 active:bg-surface-container-highest group">
+<div class="flex gap-4">
+<div class="w-20 h-20 bg-surface-container-highest flex-shrink-0">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:grayscale-0 transition-all" data-alt="Abstract architectural wireframe showing interconnected nodes and geometric data structures in stark white against black" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlFCqBsALcbbtmevJn-WiN_-AQzTriL_ae9i0LXlFlmjF-_byrxSPmOhk88c8zoIxWZ0qRF50MPsziHLshelRPV-Xwdp2Z1Ba5OKH7p6mHspgBIsHFD2cfQA_93LquG58aPtBemT032QeDVaQaVncJrOLhJye3Fit9-jjiH5Oh5Q6Sz0EVtjjmnth8ErMaUcjxiCtcwBb1LEorq_lxMStnPmy8f4QUl7l4XJFRJZ0NbbApujivY5qaVTDh03DfBb9egiRLmLr9x1mY"/>
+</div>
+<div class="flex flex-col justify-between overflow-hidden">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline font-bold text-lg leading-tight truncate text-primary uppercase">Advanced Graph Theory</h3>
+<div class="border border-outline px-1 py-0.5 ml-2">
+<span class="font-label text-[8px] tracking-widest text-secondary uppercase">[CORE_MODULE]</span>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant line-clamp-2 leading-relaxed">Systematic exploration of complex nodes, weighted edges, and traversal optimization algorithms for distributed synaps networks.</p>
+</div>
+<div class="mt-2 flex items-center gap-4">
+<span class="font-label text-[10px] text-secondary">ID: 0049-XT</span>
+<span class="font-label text-[10px] text-primary">ACCESS GRANTED</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Result Card 2 -->
+<div class="bg-surface-container p-4 transition-all duration-150 active:bg-surface-container-highest group">
+<div class="flex gap-4">
+<div class="w-20 h-20 bg-surface-container-highest flex-shrink-0">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 transition-all" data-alt="Macro view of crystalline digital textures with sharp edges and monochromatic lighting highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDML-qn7dNCyaikT16Mb0qRb0q0CrYuwAZKAECjaMMIBHa-4tWh23FAanW5iyaJAPcIfvCEjr8xnjDikwAPS7kVjyVlpVYLXrZ76_gCkeju2I3w0xA1fV7OY7dJD5WT2VvtyuaeZMYjcT1upzMODaOvtwFX3FmwOiphCrNwD2Vb4943PZFuKI5M4bu8W6Y2iANKhoOwMXB0F9hD0tPUT0rtTVNlAzWrnrZj1xIDoWx5VUgSVI-VJaaEUbcCglqrrlS_HIQZhHilUewf"/>
+</div>
+<div class="flex flex-col justify-between overflow-hidden">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline font-bold text-lg leading-tight truncate text-primary uppercase">Binary Search Trees</h3>
+<div class="border border-outline px-1 py-0.5 ml-2">
+<span class="font-label text-[8px] tracking-widest text-secondary uppercase">[REFERENCE]</span>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant line-clamp-2 leading-relaxed">Hierarchical data organization logic for logarithmic search performance in massive archive retrieval operations.</p>
+</div>
+<div class="mt-2 flex items-center gap-4">
+<span class="font-label text-[10px] text-secondary">ID: 0812-AQ</span>
+<span class="font-label text-[10px] text-primary">ACCESS GRANTED</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Result Card 3 -->
+<div class="bg-surface-container p-4 transition-all duration-150 active:bg-surface-container-highest group">
+<div class="flex gap-4">
+<div class="w-20 h-20 bg-surface-container-highest flex-shrink-0">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 transition-all" data-alt="Minimalist top-down view of black stone slabs arranged in a complex labyrinthine pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAddew3MF7z-elbRAT3gqQ5N2LCC7z-H4_bBNgYkZ8ciMk1X9CXuFcUorIo20EnVG2l49dxpbVcEuzC7kt0QPIzbhSu9UafEO2My8XKM1JmcTgxxowHTwRcs5ELJs8RrIp3bwOzIbF8hRVb-h7lOv1Jv0ZO2i0BHsDhpFyoN26Y_VeijARhXD7F8lXOCYyTa4VjD2BvUg6MeqkQeA1XkTW7r9DSPZLRZ-L8PgOejBjC8zq5fBtFbn6umnV77nnqdEPCxFb_G0UXsY-u"/>
+</div>
+<div class="flex flex-col justify-between overflow-hidden">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline font-bold text-lg leading-tight truncate text-primary uppercase">Hash Map Protocols</h3>
+<div class="border border-outline px-1 py-0.5 ml-2">
+<span class="font-label text-[8px] tracking-widest text-secondary uppercase">[TECHNICAL]</span>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant line-clamp-2 leading-relaxed">Collision resolution strategies and key-value pair mapping for constant-time data access in high-latency environments.</p>
+</div>
+<div class="mt-2 flex items-center gap-4">
+<span class="font-label text-[10px] text-secondary">ID: 1102-LK</span>
+<span class="font-label text-[10px] text-error uppercase">RESTRICTED</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Result Card 4 -->
+<div class="bg-surface-container p-4 transition-all duration-150 active:bg-surface-container-highest group">
+<div class="flex gap-4">
+<div class="w-20 h-20 bg-surface-container-highest flex-shrink-0">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 transition-all" data-alt="Dynamic shot of flowing liquid metal forming sharp vertical lines under intense high-contrast studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAR6bUGO-trNSNpufPK4SR0Ufg97dEzUFHKYvfAxE7hOZv1xqLe2m49SlsBzRrVhWrqPkPjdpPV2HCfSXYCGJUFxYrjz2epWp2Bg9OsyENQYR_1jELWcaT2g1Ll-COjAZSbo1BUMnwMidz5YrwNsIiG7pyDn7PcyPguDaJIihVJfEhGZXgYKpu8UJO6ydLCEaOQl8MoAxHbf_LcmdY7Llh98CQXI-qf2ME7XfAvniaWoloG0FDSw0F9B-sTMywj01QIQmSXC9ue6O2K"/>
+</div>
+<div class="flex flex-col justify-between overflow-hidden">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline font-bold text-lg leading-tight truncate text-primary uppercase">Linear Arrays v4</h3>
+<div class="border border-outline px-1 py-0.5 ml-2">
+<span class="font-label text-[8px] tracking-widest text-secondary uppercase">[LEGACY]</span>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant line-clamp-2 leading-relaxed">Sequential memory allocation patterns for low-level storage management in core processing units.</p>
+</div>
+<div class="mt-2 flex items-center gap-4">
+<span class="font-label text-[10px] text-secondary">ID: 0021-MM</span>
+<span class="font-label text-[10px] text-primary">ACCESS GRANTED</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- End of Results Sentinel -->
+<div class="py-12 flex flex-col items-center">
+<div class="h-[2px] w-12 bg-outline-variant mb-4"></div>
+<p class="font-label text-[10px] tracking-[0.3em] text-outline uppercase">END OF ACTIVE DIRECTORY</p>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-16 flex justify-around items-stretch bg-[#141312] z-50">
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28]" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Space_Grotesk'] font-bold uppercase text-[10px] mt-1">HOME</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#ffffff] text-[#141312] h-full w-full" href="#">
+<span class="material-symbols-outlined" data-icon="search" style="font-variation-settings: 'FILL' 1;">search</span>
+<span class="font-['Space_Grotesk'] font-bold uppercase text-[10px] mt-1">SEARCH</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28]" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-['Space_Grotesk'] font-bold uppercase text-[10px] mt-1">VAULT</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28]" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Space_Grotesk'] font-bold uppercase text-[10px] mt-1">PREFS</span>
+</a>
+</nav>
+</body></html>

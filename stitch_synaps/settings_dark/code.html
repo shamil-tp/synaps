@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SYNAPS | SETTINGS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed": "#1a1c1b",
+              "on-primary-container": "#000000",
+              "inverse-on-surface": "#32302f",
+              "outline-variant": "#474747",
+              "on-surface-variant": "#c6c6c6",
+              "surface-container-lowest": "#0f0e0d",
+              "on-tertiary-container": "#000000",
+              "inverse-primary": "#5d5f5d",
+              "tertiary": "#e2e3e1",
+              "on-primary": "#1a1c1b",
+              "secondary-fixed-dim": "#ababaa",
+              "secondary": "#c6c7c5",
+              "on-tertiary": "#1a1c1b",
+              "on-primary-fixed": "#ffffff",
+              "error-container": "#93000a",
+              "surface": "#141312",
+              "surface-container-high": "#2b2a28",
+              "surface-variant": "#363433",
+              "on-background": "#e6e1df",
+              "background": "#141312",
+              "tertiary-container": "#90918f",
+              "surface-bright": "#3b3937",
+              "tertiary-fixed": "#5d5f5d",
+              "on-surface": "#e6e1df",
+              "on-error": "#690005",
+              "tertiary-fixed-dim": "#454746",
+              "on-tertiary-fixed": "#ffffff",
+              "primary-fixed": "#5d5f5d",
+              "outline": "#919191",
+              "on-primary-fixed-variant": "#e2e3e1",
+              "surface-container-low": "#1d1b1a",
+              "surface-container-highest": "#363433",
+              "error": "#ffb4ab",
+              "secondary-container": "#454746",
+              "surface-dim": "#141312",
+              "secondary-fixed": "#c6c7c5",
+              "on-tertiary-fixed-variant": "#e2e3e1",
+              "surface-container": "#211f1e",
+              "on-secondary-container": "#e2e3e1",
+              "surface-tint": "#c6c7c5",
+              "on-secondary-fixed-variant": "#3a3c3b",
+              "primary-container": "#d4d4d3",
+              "on-secondary": "#1a1c1b",
+              "on-error-container": "#ffdad6",
+              "primary-fixed-dim": "#454746",
+              "inverse-surface": "#e6e1df",
+              "primary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #0d0c0b;
+            color: #f5f5f3;
+            font-family: 'Inter', sans-serif;
+        }
+        .brutalist-shadow {
+            box-shadow: 4px 4px 0px 0px #ffffff;
+        }
+        .brutalist-shadow-hover:hover {
+            box-shadow: 4px 4px 0px 0px #ffffff;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #141312;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-[#0d0c0b] text-[#f5f5f3] selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar from Shared Components -->
+<header class="bg-[#0d0c0b] text-[#f5f5f3] font-['Space_Grotesk'] uppercase tracking-tighter text-sm docked full-width top-0 rounded-none border-b-2 border-[#f5f5f3] flex justify-between items-center w-full px-6 h-16 z-50 sticky shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
+<div class="text-2xl font-black tracking-tighter text-[#ffffff]">SYNAPS</div>
+<nav class="hidden md:flex gap-8 h-full items-center">
+<a class="text-[#c6c7c5] hover:bg-[#f5f5f3] hover:text-[#0d0c0b] transition-colors duration-150 py-2 px-3" href="#">BROWSE</a>
+<a class="text-[#c6c7c5] hover:bg-[#f5f5f3] hover:text-[#0d0c0b] transition-colors duration-150 py-2 px-3" href="#">SEARCH</a>
+<a class="text-[#c6c7c5] hover:bg-[#f5f5f3] hover:text-[#0d0c0b] transition-colors duration-150 py-2 px-3" href="#">UPLOAD</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hover:bg-[#f5f5f3] hover:text-[#0d0c0b] transition-colors duration-150 px-4 py-1 border border-transparent">SIGN IN</button>
+<button class="bg-[#f5f5f3] text-[#0d0c0b] px-4 py-1 font-bold brutalist-shadow-hover transition-all">GET STARTED</button>
+</div>
+</header>
+<main class="flex min-h-[calc(100vh-64px)] w-full">
+<!-- Sidebar Navigation -->
+<aside class="w-64 border-r-2 border-[#f5f5f3] bg-[#0d0c0b] hidden md:flex flex-col p-0">
+<div class="p-6 border-b border-outline-variant">
+<p class="font-headline text-[10px] tracking-[0.2em] text-on-surface-variant uppercase">Settings Protocol</p>
+</div>
+<nav class="flex flex-col flex-grow">
+<!-- Active Item: Profile -->
+<a class="flex items-center gap-3 px-6 py-4 text-[#ffffff] border-b-2 border-[#ffffff] pb-1 bg-surface-container font-headline font-bold text-sm tracking-tight" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+                    PROFILE
+                </a>
+<a class="flex items-center gap-3 px-6 py-4 text-[#c6c7c5] hover:bg-[#f5f5f3] hover:text-[#0d0c0b] transition-colors duration-150 font-headline text-sm tracking-tight border-b border-outline-variant" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+                    ACCOUNT
+                </a>
+<a class="flex items-center gap-3 px-6 py-4 text-[#c6c7c5] hover:bg-[#f5f5f3] hover:text-[#0d0c0b] transition-colors duration-150 font-headline text-sm tracking-tight border-b border-outline-variant" href="#">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+                    NOTIFICATIONS
+                </a>
+<a class="flex items-center gap-3 px-6 py-4 text-[#c6c7c5] hover:bg-[#f5f5f3] hover:text-[#0d0c0b] transition-colors duration-150 font-headline text-sm tracking-tight border-b border-outline-variant" href="#">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+                    PRIVACY
+                </a>
+</nav>
+<div class="p-6 mt-auto">
+<div class="p-4 bg-surface-container-low border border-outline-variant">
+<p class="font-label text-[10px] text-on-surface-variant mb-2">[SYSTEM_STATUS]</p>
+<p class="font-headline text-xs text-primary font-bold">VERIFIED_NODE_771</p>
+</div>
+</div>
+</aside>
+<!-- Content Area -->
+<section class="flex-grow p-6 md:p-12 max-w-5xl mx-auto custom-scrollbar overflow-y-auto">
+<header class="mb-12">
+<h1 class="font-headline text-5xl md:text-7xl font-black tracking-tighter uppercase mb-2">Profile</h1>
+<p class="font-body text-secondary text-sm md:text-base max-w-lg">Manage your archival identity and protocol credentials within the SYNAPS network.</p>
+</header>
+<!-- Profile Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<!-- Avatar Section -->
+<div class="md:col-span-1 bg-surface-container border-2 border-primary p-6 brutalist-shadow relative overflow-hidden flex flex-col items-center justify-center">
+<div class="w-32 h-32 bg-surface-container-highest border border-primary relative mb-4">
+<img alt="User profile" class="w-full h-full object-cover grayscale contrast-125" data-alt="High contrast black and white abstract portrait of a person with digital glitch artifacts and brutalist texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4UYkl5T_11OA0glQvMzOLp60560ANHLEbXeEArPnGe-RGTvd_wlQ0LnS4VsnH9x0Okg868WejIQZOkRKf3ILaIAU78F5gHEhG8DaDmP9OiywNlTgD8ioEUP0JTGT3hLOTQwpjFPqz07K1ag5kdO5PuYuO4vcxjkCqRQ08DBDkQL-ILJ0QaJeyynepYkaGHsNZkCyBUxLYiOqQ6t93FVHdvDWplsf6ABr9xLurYrNyVtNYQJVo2FecC2dSG_MvzW3jpXMrhmE9b9g1"/>
+<div class="absolute inset-0 border-2 border-primary pointer-events-none"></div>
+</div>
+<button class="font-headline text-[10px] tracking-widest uppercase border border-primary px-3 py-1 hover:bg-primary hover:text-on-primary transition-all">
+                        Update Core_IMG
+                    </button>
+</div>
+<!-- Bio/Name Section -->
+<div class="md:col-span-2 bg-surface-container border border-outline-variant p-6 space-y-6">
+<div class="space-y-2">
+<label class="font-headline text-[10px] tracking-[0.2em] uppercase text-on-surface-variant">Archival_ID</label>
+<input class="w-full bg-surface-container-low border-b-2 border-outline focus:border-primary text-primary font-headline text-xl focus:ring-0 px-0 py-2 uppercase" type="text" value="NEO_ARCHITECT_00"/>
+</div>
+<div class="space-y-2">
+<label class="font-headline text-[10px] tracking-[0.2em] uppercase text-on-surface-variant">Manifesto / Bio</label>
+<textarea class="w-full bg-surface-container-low border-b-2 border-outline focus:border-primary text-primary font-body text-sm focus:ring-0 px-0 py-2 resize-none h-24" placeholder="Input archival purpose..."></textarea>
+</div>
+</div>
+</div>
+<!-- Form Fields Section -->
+<div class="space-y-8 mb-12">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="font-headline text-[10px] tracking-[0.2em] uppercase text-on-surface-variant">Primary_Email</label>
+<div class="flex">
+<input class="w-full bg-surface-container-low border-b-2 border-outline focus:border-primary text-primary font-body text-sm focus:ring-0 px-0 py-2" type="email" value="neo@synaps.protocol"/>
+<span class="material-symbols-outlined text-primary self-center ml-2" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-headline text-[10px] tracking-[0.2em] uppercase text-on-surface-variant">Location_Node</label>
+<input class="w-full bg-surface-container-low border-b-2 border-outline focus:border-primary text-primary font-body text-sm focus:ring-0 px-0 py-2 uppercase" type="text" value="BERLIN_SECTOR_7"/>
+</div>
+</div>
+</div>
+<!-- Toggles Section -->
+<div class="border-t border-outline-variant pt-8 mb-12">
+<h3 class="font-headline text-xl font-black mb-6 tracking-tighter uppercase">Protocol Preferences</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center p-4 bg-surface-container-low hover:bg-surface-container-high transition-colors group">
+<div>
+<p class="font-headline text-sm font-bold uppercase tracking-tight">Public Archival Discovery</p>
+<p class="font-body text-xs text-on-surface-variant">Allow your nodes to be indexed by global search protocols.</p>
+</div>
+<div class="w-12 h-6 bg-primary flex items-center p-1 cursor-pointer">
+<div class="w-4 h-4 bg-on-primary"></div>
+</div>
+</div>
+<div class="flex justify-between items-center p-4 bg-surface-container-low hover:bg-surface-container-high transition-colors group">
+<div>
+<p class="font-headline text-sm font-bold uppercase tracking-tight">Telemetry Broadcast</p>
+<p class="font-body text-xs text-on-surface-variant">Transmit anonymized usage data to SYNAPS core.</p>
+</div>
+<div class="w-12 h-6 bg-surface-variant flex items-center justify-start p-1 cursor-pointer border border-outline">
+<div class="w-4 h-4 bg-outline"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Danger Zone -->
+<div class="border-2 border-error p-6 md:p-8 bg-surface-container-lowest relative overflow-hidden">
+<div class="absolute top-0 right-0 p-2 bg-error text-on-error font-headline text-[10px] font-black uppercase">Critical Action</div>
+<h3 class="font-headline text-xl font-black text-error mb-2 tracking-tighter uppercase">Danger Zone</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6 max-w-xl">Purging your account will permanently scrub all nodes, metadata, and archival history from the SYNAPS network. This protocol is irreversible.</p>
+<button class="bg-transparent border-2 border-error text-error font-headline font-black px-6 py-3 text-sm hover:bg-error hover:text-on-error transition-all brutalist-shadow-hover uppercase tracking-widest">
+                    Terminate Account Protocol
+                </button>
+</div>
+<!-- Save Action (Sticky Mobile) -->
+<div class="mt-12 flex justify-end gap-4 border-t border-outline-variant pt-8">
+<button class="font-headline text-sm font-bold uppercase text-secondary px-6 py-2 hover:underline">Discard Changes</button>
+<button class="font-headline text-sm font-bold uppercase bg-primary text-on-primary px-10 py-3 brutalist-shadow transition-transform active:translate-y-1">Commit Synchronization</button>
+</div>
+</section>
+</main>
+<!-- Footer from Shared Components -->
+<footer class="bg-[#0d0c0b] text-[#f5f5f3] font-['Space_Grotesk'] uppercase text-[10px] tracking-widest full-width rounded-none border-t-2 border-[#f5f5f3] flex flex-col md:flex-row justify-between items-center w-full px-6 py-8 gap-4">
+<div class="text-lg font-bold text-[#ffffff]">SYNAPS ARCHIVAL</div>
+<div class="flex gap-6">
+<a class="text-[#c6c7c5] hover:text-[#ffffff] transition-colors" href="#">DOCUMENTATION</a>
+<a class="text-[#c6c7c5] hover:text-[#ffffff] transition-colors" href="#">API</a>
+<a class="text-[#c6c7c5] hover:text-[#ffffff] transition-colors" href="#">TERMS</a>
+<a class="text-[#c6c7c5] hover:text-[#ffffff] transition-colors" href="#">PRIVACY</a>
+</div>
+<div class="text-[#c6c7c5]">© 2024 SYNAPS ARCHIVAL PROTOCOL. ALL RIGHTS RESERVED.</div>
+</footer>
+</body></html>

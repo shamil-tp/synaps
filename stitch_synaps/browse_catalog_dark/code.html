@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container": "#211f1e",
+                        "error": "#ffb4ab",
+                        "surface-container-low": "#1d1b1a",
+                        "surface-container-lowest": "#0f0e0d",
+                        "surface": "#141312",
+                        "inverse-surface": "#e6e1df",
+                        "primary": "#ffffff",
+                        "primary-fixed": "#5d5f5d",
+                        "surface-variant": "#363433",
+                        "surface-dim": "#141312",
+                        "inverse-primary": "#5d5f5d",
+                        "on-tertiary": "#1a1c1b",
+                        "error-container": "#93000a",
+                        "on-primary": "#1a1c1b",
+                        "on-tertiary-fixed-variant": "#e2e3e1",
+                        "on-tertiary-container": "#000000",
+                        "secondary": "#c6c7c5",
+                        "on-surface": "#e6e1df",
+                        "tertiary-fixed": "#5d5f5d",
+                        "on-primary-fixed-variant": "#e2e3e1",
+                        "primary-container": "#d4d4d3",
+                        "tertiary-container": "#90918f",
+                        "outline": "#919191",
+                        "outline-variant": "#474747",
+                        "surface-container-highest": "#363433",
+                        "inverse-on-surface": "#32302f",
+                        "surface-bright": "#3b3937",
+                        "tertiary": "#e2e3e1",
+                        "on-surface-variant": "#c6c6c6",
+                        "secondary-container": "#454746",
+                        "secondary-fixed-dim": "#ababaa",
+                        "on-secondary-container": "#e2e3e1",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed": "#1a1c1b",
+                        "on-error": "#690005",
+                        "on-secondary-fixed-variant": "#3a3c3b",
+                        "primary-fixed-dim": "#454746",
+                        "on-secondary": "#1a1c1b",
+                        "background": "#141312",
+                        "on-background": "#e6e1df",
+                        "surface-container-high": "#2b2a28",
+                        "tertiary-fixed-dim": "#454746",
+                        "on-tertiary-fixed": "#ffffff",
+                        "secondary-fixed": "#c6c7c5",
+                        "surface-tint": "#c6c7c5",
+                        "on-primary-fixed": "#ffffff",
+                        "on-primary-container": "#000000"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #141312;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+        }
+        .brutalist-shadow {
+            box-shadow: 4px 4px 0px 0px #ffffff;
+        }
+        .brutalist-shadow-hover:hover {
+            box-shadow: 4px 4px 0px 0px #ffffff;
+            transform: translate(-2px, -2px);
+        }
+        .active-nav-link {
+            text-decoration: underline;
+            text-underline-offset: 8px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="bg-surface text-primary selection:bg-primary selection:text-surface">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 w-full flex justify-between items-center px-6 py-4 bg-[#141312] border-b-2 border-[#ffffff] z-50 shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
+<div class="flex items-center gap-8">
+<a class="text-2xl font-black tracking-tighter text-[#ffffff] uppercase font-headline" href="/">
+                SYNAPS
+            </a>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-xs font-mono uppercase text-[#ffffff] font-bold underline underline-offset-8" href="/browse">Browse</a>
+<a class="text-xs font-mono uppercase text-[#c6c7c5] hover:text-[#ffffff] hover:bg-[#ffffff] hover:text-[#141312] transition-none px-2 py-1" href="/search">Search</a>
+<a class="text-xs font-mono uppercase text-[#c6c7c5] hover:text-[#ffffff] hover:bg-[#ffffff] hover:text-[#141312] transition-none px-2 py-1" href="/upload">Upload</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-xs font-mono uppercase px-4 py-2 text-[#c6c7c5] hover:text-[#ffffff]">Sign in</button>
+<button class="bg-[#ffffff] text-[#141312] text-xs font-mono uppercase px-6 py-2 font-bold hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-none brutalist-shadow">
+                Get started
+            </button>
+</div>
+</header>
+<main class="min-h-screen pt-12 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto">
+<!-- Hero Header Section -->
+<section class="mb-16">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<span class="text-xs font-mono uppercase text-secondary tracking-widest mb-4 block">[ ACCESSING_CATALOG ]</span>
+<h1 class="text-6xl md:text-8xl font-black font-headline uppercase tracking-tighter leading-none text-primary">
+                        Browse<br/>Archives
+                    </h1>
+</div>
+<div class="flex flex-col items-end">
+<div class="text-right">
+<p class="text-xs font-mono text-secondary uppercase mb-1">Total Indexed Objects</p>
+<p class="text-5xl font-black font-headline leading-none">4,200</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Sticky Filter Bar -->
+<div class="sticky top-[80px] z-40 bg-surface py-6">
+<div class="bg-surface-container border-2 border-primary p-2 flex flex-wrap items-center gap-2 brutalist-shadow">
+<!-- Select Dropdowns -->
+<div class="flex-1 grid grid-cols-2 md:grid-cols-5 gap-2">
+<div class="relative group">
+<select class="w-full bg-surface-container-low text-primary border-none text-xs font-mono uppercase focus:ring-0 appearance-none py-3 px-4 cursor-pointer hover:bg-surface-container-high">
+<option>Subject</option>
+<option>Cybernetics</option>
+<option>Urbanism</option>
+<option>Propaganda</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-xs">expand_more</span>
+</div>
+<div class="relative group">
+<select class="w-full bg-surface-container-low text-primary border-none text-xs font-mono uppercase focus:ring-0 appearance-none py-3 px-4 cursor-pointer hover:bg-surface-container-high">
+<option>Type</option>
+<option>Manuscript</option>
+<option>Technical Drawing</option>
+<option>Photography</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-xs">expand_more</span>
+</div>
+<div class="relative group">
+<select class="w-full bg-surface-container-low text-primary border-none text-xs font-mono uppercase focus:ring-0 appearance-none py-3 px-4 cursor-pointer hover:bg-surface-container-high">
+<option>Language</option>
+<option>English</option>
+<option>Mandarin</option>
+<option>Binary</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-xs">expand_more</span>
+</div>
+<div class="relative group">
+<select class="w-full bg-surface-container-low text-primary border-none text-xs font-mono uppercase focus:ring-0 appearance-none py-3 px-4 cursor-pointer hover:bg-surface-container-high">
+<option>Format</option>
+<option>Vector</option>
+<option>Raster</option>
+<option>Text</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-xs">expand_more</span>
+</div>
+<div class="relative group">
+<select class="w-full bg-surface-container-low text-primary border-none text-xs font-mono uppercase focus:ring-0 appearance-none py-3 px-4 cursor-pointer hover:bg-surface-container-high">
+<option>Sort: Recent</option>
+<option>Sort: Alpha</option>
+<option>Sort: Random</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-xs">swap_vert</span>
+</div>
+</div>
+<button class="bg-primary text-on-primary text-xs font-mono uppercase px-6 py-3 font-bold hover:bg-secondary">
+                    Reset
+                </button>
+</div>
+<!-- Active Filters Row -->
+<div class="flex flex-wrap gap-2 mt-4">
+<div class="bg-surface-container-highest border border-outline-variant px-3 py-1 flex items-center gap-2 group">
+<span class="text-[10px] font-mono text-secondary uppercase">Subject:</span>
+<span class="text-[10px] font-mono text-primary uppercase font-bold">Cybernetics</span>
+<button class="material-symbols-outlined text-sm hover:text-error transition-colors">close</button>
+</div>
+<div class="bg-surface-container-highest border border-outline-variant px-3 py-1 flex items-center gap-2 group">
+<span class="text-[10px] font-mono text-secondary uppercase">Format:</span>
+<span class="text-[10px] font-mono text-primary uppercase font-bold">Technical Drawing</span>
+<button class="material-symbols-outlined text-sm hover:text-error transition-colors">close</button>
+</div>
+<div class="bg-surface-container-highest border border-outline-variant px-3 py-1 flex items-center gap-2 group">
+<span class="text-[10px] font-mono text-secondary uppercase">Year:</span>
+<span class="text-[10px] font-mono text-primary uppercase font-bold">2077</span>
+<button class="material-symbols-outlined text-sm hover:text-error transition-colors">close</button>
+</div>
+</div>
+</div>
+<!-- Document Grid -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+<!-- Card 1 -->
+<div class="group bg-surface-container-low border-2 border-transparent hover:border-primary p-4 transition-all hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)]">
+<div class="aspect-[3/4] bg-surface-container-highest mb-4 overflow-hidden relative">
+<img alt="technical blueprint" class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-300" data-alt="Intricate neon-lit technical blueprint of a cybernetic neural interface with schematic lines and digital data overlays in high contrast black and white." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoo6ajVNsTu649HVZjNHsBqI4tmT1IhAE0SOtQBKiiPiYiLYD4-6C1zkDu2LDyZnfX8skopj8f23P9vg0b2YCe7vMxX-vb2jb7wL9XZiacS2HVaj3ZMl-bZrRWXGsWfkCmFNQouioPHPWhIBms_9aZmY7UJbzTxeS42VQhSqrf1sVXOhW70nK8SdKVyKVtazuP9s9g5mG2gvJGihPgIvh7HdChTQvTlMdzjJx3PP1WtXspq22HNNwamElbiIFjy2eagonuCptep0bF"/>
+<div class="absolute top-2 left-2 bg-primary text-on-primary px-2 py-0.5 text-[10px] font-mono font-bold uppercase">
+                        Ref: XJ-900
+                    </div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-start">
+<h3 class="text-lg font-black font-headline uppercase leading-tight">Neural Core Schematic</h3>
+<span class="material-symbols-outlined text-secondary group-hover:text-primary">north_east</span>
+</div>
+<p class="text-[10px] font-mono text-on-surface-variant uppercase tracking-wider">Type: Technical Drawing / Vector</p>
+<div class="pt-4 border-t border-outline-variant flex justify-between items-center">
+<span class="text-xs font-mono text-secondary">2.4 MB</span>
+<span class="text-xs font-mono text-primary font-bold">DECRYPTED</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-surface-container-low border-2 border-transparent hover:border-primary p-4 transition-all hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)]">
+<div class="aspect-[3/4] bg-surface-container-highest mb-4 overflow-hidden relative">
+<img alt="deep space nebula" class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-300" data-alt="Stark monochromatic capture of a dense asteroid belt with high contrast lighting casting sharp shadows across jagged space rocks in a dark void." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBELvDISBKdsXtMguIREIGy1t-y0P4BXX_j0v7pFThp9cIx2s-KlrbzV4p-v2uzdWSBaO7NIP5y1jy_03rLYoX2jBbTiCZRZ5N8wwx15vtlpMiWWArYAE0rJ0lnXzWhrDco7MqPZVw6HObjbiYvVPVZdBLGRqSx9OUgFWdkI_9MfAT0ouhhyjIXtUTssyB8jEXaIC-CmUTFH4uMM4nkDOsfWpxwzk0L1i_0vM61H1Ugftx2fiKIyKPFbh87jJ3s5Kqm4m37H67tl61L"/>
+<div class="absolute top-2 left-2 bg-primary text-on-primary px-2 py-0.5 text-[10px] font-mono font-bold uppercase">
+                        Ref: VL-421
+                    </div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-start">
+<h3 class="text-lg font-black font-headline uppercase leading-tight">Void Sector Mapping</h3>
+<span class="material-symbols-outlined text-secondary group-hover:text-primary">north_east</span>
+</div>
+<p class="text-[10px] font-mono text-on-surface-variant uppercase tracking-wider">Type: Photography / High-Res</p>
+<div class="pt-4 border-t border-outline-variant flex justify-between items-center">
+<span class="text-xs font-mono text-secondary">42.8 MB</span>
+<span class="text-xs font-mono text-primary font-bold">CLASSIFIED</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group bg-surface-container-low border-2 border-transparent hover:border-primary p-4 transition-all hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)]">
+<div class="aspect-[3/4] bg-surface-container-highest mb-4 overflow-hidden relative">
+<img alt="digital grid" class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-300" data-alt="Digital representation of global data traffic patterns as luminous white networks on a pitch black globe with glitch artifacts and sharp vectors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4c1Bfef8cyKOpZba9uizgibp7toZEhChuIPtJfhG0ZkzDuJKZuwRdKrefRGUpMRQqV-6lp3cDitzLXk0R8xU8Vqr-cD6idaMsRTfOvpCW5LetvOztpb4-ozTc8dPxnYeJIBVvjgu-KR47pZZkGbFDF6nRWP9ARot3t07lfsSiaPh-U_ZviGw_nLt8GT6-VIpfSxW0ZSCiCL-TRiLYYg8oML08qT4AYgyRmqt86YBlMDUt9Zf0QLzmsQesrEEfU4fSn4qwGgSYcvsi"/>
+<div class="absolute top-2 left-2 bg-primary text-on-primary px-2 py-0.5 text-[10px] font-mono font-bold uppercase">
+                        Ref: NET-002
+                    </div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-start">
+<h3 class="text-lg font-black font-headline uppercase leading-tight">Data Nexus Protocol</h3>
+<span class="material-symbols-outlined text-secondary group-hover:text-primary">north_east</span>
+</div>
+<p class="text-[10px] font-mono text-on-surface-variant uppercase tracking-wider">Type: Protocol / Text-File</p>
+<div class="pt-4 border-t border-outline-variant flex justify-between items-center">
+<span class="text-xs font-mono text-secondary">0.1 MB</span>
+<span class="text-xs font-mono text-primary font-bold">ARCHIVED</span>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group bg-surface-container-low border-2 border-transparent hover:border-primary p-4 transition-all hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)]">
+<div class="aspect-[3/4] bg-surface-container-highest mb-4 overflow-hidden relative">
+<img alt="brutalist concrete" class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-300" data-alt="Dramatic close-up of weathered brutalist concrete texture with sharp angular shadows and industrial grit in high contrast black and white." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2ALoYCkWmYfIfieaDZjdUNe9OJqvkn3abH5GrvHyvXQ0fpPbw7cfPLOK65a7MXHtfOEfFv6e7606_1jzUDZp_hyjEenoflREICRgUcjdccMrBTGaJOGXpy0hfOjc9pq0kR9cfU8XqwEDYtxnt-qahq3IWq4aCaqRX4n_MHz7yJKYmGwrLaG5y50HSISjd-bCZvMvTWzhqAOtW2C_aSf1bzDWKfcOW52d2AfL_SnRPMBCysHEZplNvbGeoy7aj0-1aqjD6EnCq9uQf"/>
+<div class="absolute top-2 left-2 bg-primary text-on-primary px-2 py-0.5 text-[10px] font-mono font-bold uppercase">
+                        Ref: ARCH-88
+                    </div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-start">
+<h3 class="text-lg font-black font-headline uppercase leading-tight">Urban Decay Analysis</h3>
+<span class="material-symbols-outlined text-secondary group-hover:text-primary">north_east</span>
+</div>
+<p class="text-[10px] font-mono text-on-surface-variant uppercase tracking-wider">Type: Dossier / Print-Scan</p>
+<div class="pt-4 border-t border-outline-variant flex justify-between items-center">
+<span class="text-xs font-mono text-secondary">15.2 MB</span>
+<span class="text-xs font-mono text-primary font-bold">PUBLIC</span>
+</div>
+</div>
+</div>
+<!-- Repeat for row 2 (simplified) -->
+<div class="group bg-surface-container-low border-2 border-transparent hover:border-primary p-4 transition-all hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)]">
+<div class="aspect-[3/4] bg-surface-container-highest mb-4 relative flex items-center justify-center p-8">
+<div class="text-[8px] font-mono text-outline leading-tight overflow-hidden opacity-40">
+                       01010111 01000101 01001100 01000011 01001111 01001101 01000101 00100000 01010100 01001111 00100000 01010011 01011001 01001110 01000001 01010000 01010011 00001010 01010011 01011001 01010011 01010100 01000101 01001101 01011111 01001111 01001011 00001010 01010100 01010010 01000001 01001110 01010011 01001101 01001001 01010100 01010100 01001001 01001110 01000111 00101110 00101110 00101110
+                   </div>
+<div class="absolute top-2 left-2 bg-primary text-on-primary px-2 py-0.5 text-[10px] font-mono font-bold uppercase">
+                        Ref: BIN-001
+                    </div>
+</div>
+<div class="space-y-2">
+<h3 class="text-lg font-black font-headline uppercase leading-tight">Manifesto.bin</h3>
+<p class="text-[10px] font-mono text-on-surface-variant uppercase tracking-wider">Type: Script / Executable</p>
+<div class="pt-4 border-t border-outline-variant flex justify-between items-center">
+<span class="text-xs font-mono text-secondary">1.2 KB</span>
+<span class="text-xs font-mono text-error font-bold italic underline">CORRUPTED</span>
+</div>
+</div>
+</div>
+<!-- Placeholder Cards to fill the grid -->
+<div class="hidden lg:block bg-surface-container-low p-4 opacity-50 border border-dashed border-outline-variant"></div>
+<div class="hidden lg:block bg-surface-container-low p-4 opacity-50 border border-dashed border-outline-variant"></div>
+<div class="hidden lg:block bg-surface-container-low p-4 opacity-50 border border-dashed border-outline-variant"></div>
+</section>
+<!-- Pagination Section -->
+<nav class="mt-24 border-t-2 border-primary py-12 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-4">
+<button class="font-mono text-xs uppercase text-secondary hover:text-primary hover:italic transition-all">Prev</button>
+<div class="flex items-center gap-2">
+<a class="w-10 h-10 flex items-center justify-center bg-primary text-on-primary font-bold font-mono text-sm brutalist-shadow" href="#">1</a>
+<a class="w-10 h-10 flex items-center justify-center border-2 border-transparent hover:border-primary font-mono text-sm text-secondary hover:text-primary transition-all" href="#">2</a>
+<a class="w-10 h-10 flex items-center justify-center border-2 border-transparent hover:border-primary font-mono text-sm text-secondary hover:text-primary transition-all" href="#">3</a>
+<span class="px-2 font-mono text-secondary">...</span>
+<a class="w-10 h-10 flex items-center justify-center border-2 border-transparent hover:border-primary font-mono text-sm text-secondary hover:text-primary transition-all" href="#">42</a>
+</div>
+<button class="font-mono text-xs uppercase text-secondary hover:text-primary hover:italic transition-all">Next</button>
+</div>
+<div class="text-[10px] font-mono text-secondary uppercase tracking-widest">
+                Showing 1-20 of 4,200 elements
+            </div>
+</nav>
+</main>
+<!-- Footer -->
+<footer class="w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 gap-12 bg-[#141312] border-t-2 border-[#ffffff]">
+<div class="space-y-6">
+<div class="text-3xl font-black text-[#ffffff] font-headline uppercase tracking-tighter">SYNAPS</div>
+<p class="font-mono text-sm uppercase tracking-widest text-secondary max-w-md">
+                A decentralized archival system for the deep-web history. Preserving the digital decay since 2024.
+            </p>
+<div class="text-[10px] font-mono text-on-surface-variant uppercase">
+                © 2024 SYNAPS ARCHIVAL SYSTEM
+            </div>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="flex flex-col gap-4">
+<span class="text-xs font-mono font-bold text-primary uppercase">Explore</span>
+<a class="text-sm font-mono uppercase text-[#c6c6c6] hover:text-[#ffffff] hover:italic" href="#">Browse</a>
+<a class="text-sm font-mono uppercase text-[#c6c6c6] hover:text-[#ffffff] hover:italic" href="#">Upload</a>
+<a class="text-sm font-mono uppercase text-[#c6c6c6] hover:text-[#ffffff] hover:italic" href="#">Random</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="text-xs font-mono font-bold text-primary uppercase">Legal</span>
+<a class="text-sm font-mono uppercase text-[#c6c6c6] hover:text-[#ffffff] hover:italic" href="#">About</a>
+<a class="text-sm font-mono uppercase text-[#c6c6c6] hover:text-[#ffffff] hover:italic" href="#">Privacy</a>
+<a class="text-sm font-mono uppercase text-[#c6c6c6] hover:text-[#ffffff] hover:italic" href="#">Terms</a>
+</div>
+</div>
+</footer>
+</body></html>

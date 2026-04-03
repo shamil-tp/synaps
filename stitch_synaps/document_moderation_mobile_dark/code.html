@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ARCHIVE_v1.0 | Moderation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed": "#ffffff",
+              "on-primary-fixed": "#ffffff",
+              "on-background": "#e6e1df",
+              "primary-container": "#d4d4d3",
+              "on-primary": "#1a1c1b",
+              "surface-dim": "#141312",
+              "on-secondary-container": "#e2e3e1",
+              "on-tertiary": "#1a1c1b",
+              "on-secondary": "#1a1c1b",
+              "tertiary-fixed-dim": "#454746",
+              "tertiary-fixed": "#5d5f5d",
+              "surface-container": "#211f1e",
+              "on-secondary-fixed-variant": "#3a3c3b",
+              "on-tertiary-fixed-variant": "#e2e3e1",
+              "surface-container-highest": "#363433",
+              "outline-variant": "#474747",
+              "secondary-container": "#454746",
+              "surface-container-lowest": "#0f0e0d",
+              "on-tertiary-container": "#000000",
+              "primary-fixed": "#5d5f5d",
+              "error": "#ffb4ab",
+              "surface-container-low": "#1d1b1a",
+              "surface-bright": "#3b3937",
+              "primary": "#ffffff",
+              "on-primary-fixed-variant": "#e2e3e1",
+              "primary-fixed-dim": "#454746",
+              "tertiary": "#e2e3e1",
+              "on-surface": "#e6e1df",
+              "surface-container-high": "#2b2a28",
+              "secondary": "#c6c7c5",
+              "background": "#141312",
+              "inverse-on-surface": "#32302f",
+              "inverse-surface": "#e6e1df",
+              "surface-variant": "#363433",
+              "secondary-fixed-dim": "#ababaa",
+              "on-surface-variant": "#c6c6c6",
+              "on-primary-container": "#000000",
+              "on-secondary-fixed": "#1a1c1b",
+              "on-error": "#690005",
+              "tertiary-container": "#90918f",
+              "outline": "#919191",
+              "inverse-primary": "#5d5f5d",
+              "surface-tint": "#c6c7c5",
+              "secondary-fixed": "#c6c7c5",
+              "on-error-container": "#ffdad6",
+              "error-container": "#93000a",
+              "surface": "#141312"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #141312;
+            color: #e6e1df;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen pb-24 pt-16">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center px-4 h-16 bg-[#141312] text-[#ffffff] rounded-none border-b-2 border-[#ffffff] shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
+<div class="flex items-center w-full justify-between">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined cursor-pointer">menu</span>
+<h1 class="text-xl font-bold tracking-widest font-['Space_Grotesk'] uppercase">ARCHIVE_v1.0</h1>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined cursor-pointer">search</span>
+</div>
+</div>
+</header>
+<main class="px-4 py-6">
+<!-- Dashboard Header -->
+<div class="mb-8">
+<div class="flex items-baseline justify-between mb-2">
+<h2 class="text-4xl font-headline font-black uppercase tracking-tighter text-primary">MODERATION</h2>
+<span class="font-label text-[10px] border border-outline px-2 py-1">[SYSTEM_READY]</span>
+</div>
+<p class="text-secondary font-label text-xs tracking-widest uppercase">Root / Moderate / Pending_Queue</p>
+</div>
+<!-- Tabbed Navigation -->
+<div class="flex mb-8 bg-surface-container-low border-b-2 border-outline-variant">
+<button class="flex-1 py-4 font-headline text-sm font-bold tracking-widest bg-primary text-on-primary border-r border-background">
+                PENDING (12)
+            </button>
+<button class="flex-1 py-4 font-headline text-sm font-bold tracking-widest text-secondary hover:bg-surface-container-high transition-none">
+                APPROVED
+            </button>
+<button class="flex-1 py-4 font-headline text-sm font-bold tracking-widest text-secondary hover:bg-surface-container-high transition-none">
+                REJECTED
+            </button>
+</div>
+<!-- Bulk Actions & Filter -->
+<div class="flex items-center justify-between mb-6">
+<label class="flex items-center gap-3 cursor-pointer">
+<input class="w-5 h-5 rounded-none border-2 border-primary bg-transparent text-primary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span class="font-label text-xs font-bold uppercase">Select All</span>
+</label>
+<button class="flex items-center gap-2 font-label text-xs font-bold uppercase bg-surface-container-high px-3 py-2 border border-outline hover:bg-primary hover:text-on-primary transition-none">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                Filters
+            </button>
+</div>
+<!-- Document List -->
+<div class="space-y-8">
+<!-- Card 01 -->
+<div class="group relative bg-surface-container-high p-5 border-l-4 border-primary shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-start gap-4">
+<input class="mt-1 w-5 h-5 rounded-none border-2 border-primary bg-transparent text-primary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<div>
+<h3 class="font-headline font-bold text-lg leading-none mb-1 uppercase tracking-tight">MANIF_772_DELTA.PDF</h3>
+<p class="font-label text-[10px] text-secondary tracking-widest">SUBMITTED: 2023.10.12 // 14:32</p>
+</div>
+</div>
+<span class="font-label text-[10px] bg-surface-container px-2 py-1 border border-outline-variant">ID: 0x992F</span>
+</div>
+<div class="mb-6 aspect-video bg-surface-container-lowest border border-outline-variant overflow-hidden relative group">
+<img alt="Document preview" class="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-300" data-alt="Technical document scan with black ink on aged paper featuring architectural schematics and handwritten annotations in a brutalist layout" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdK8f6HPo0RSdHrm-AI9srlxLAlMo0fNJnLGdy8CX40keO2BU6OalsNtlZLNTXUhDydUXx-JSpVCFuR6jy1FQawOIbUeloqsZ0K6UImeHkOVjMpjl8fFgOdr9tmSnpnMHVIwCXnNjfJx4Y3kQssC4qTk0TYuUXmX7MVCSVJ_pbOsamsZuDBvxnlYsaLHo9wDZm-AXa9KG2cn2Av2UPfjapmv69qk2JCGDZ9xlkqPPN3LjHcLCZ5lynSSWJ86lyPoNeiE92BOgS1kua"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent opacity-40"></div>
+<div class="absolute bottom-2 right-2 font-label text-[10px] text-primary bg-surface-container-highest px-2 py-1">PREVIEW_V1</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="font-label text-[9px] border border-outline-variant px-2 py-0.5 uppercase">[LEAK_RISK_MED]</span>
+<span class="font-label text-[9px] border border-outline-variant px-2 py-0.5 uppercase">[UNCATEGORIZED]</span>
+<span class="font-label text-[9px] border border-outline-variant px-2 py-0.5 uppercase">[OCR_CONF_88%]</span>
+</div>
+<div class="grid grid-cols-3 gap-0 border-t-2 border-primary pt-0">
+<button class="py-4 flex items-center justify-center gap-2 font-label text-xs font-bold uppercase bg-surface-container-lowest text-on-surface-variant hover:bg-primary hover:text-on-primary transition-none border-r border-outline-variant">
+<span class="material-symbols-outlined text-lg">flag</span>
+                        Flag
+                    </button>
+<button class="py-4 flex items-center justify-center gap-2 font-label text-xs font-bold uppercase bg-surface-container-lowest text-error hover:bg-error hover:text-on-error transition-none border-r border-outline-variant">
+<span class="material-symbols-outlined text-lg">close</span>
+                        Reject
+                    </button>
+<button class="py-4 flex items-center justify-center gap-2 font-label text-xs font-bold uppercase bg-primary text-on-primary hover:bg-surface-bright transition-none">
+<span class="material-symbols-outlined text-lg">check</span>
+                        Approve
+                    </button>
+</div>
+</div>
+<!-- Card 02 -->
+<div class="group relative bg-surface-container-high p-5 border-l-4 border-secondary shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-start gap-4">
+<input class="mt-1 w-5 h-5 rounded-none border-2 border-primary bg-transparent text-primary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<div>
+<h3 class="font-headline font-bold text-lg leading-none mb-1 uppercase tracking-tight">LOG_SYSTEM_ERR_01.LOG</h3>
+<p class="font-label text-[10px] text-secondary tracking-widest">SUBMITTED: 2023.10.12 // 15:01</p>
+</div>
+</div>
+<span class="font-label text-[10px] bg-surface-container px-2 py-1 border border-outline-variant">ID: 0x881E</span>
+</div>
+<div class="mb-6 p-4 bg-surface-container-lowest border border-outline-variant font-mono text-[10px] leading-relaxed text-on-surface-variant max-h-32 overflow-hidden">
+<code class="block text-primary">&gt;&gt; CRITICAL_ERROR: STACK_OVERFLOW_0x221</code>
+<code class="block">&gt;&gt; RECOVERY_MODE: INITIATED</code>
+<code class="block">&gt;&gt; TIMESTAMP: 1697112000</code>
+<code class="block">&gt;&gt; USER_AGENT: ARCHIVE_BOT_7</code>
+<code class="block opacity-50">&gt;&gt; TRACE: /root/sys/core/init.sh ...</code>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="font-label text-[9px] border border-outline-variant px-2 py-0.5 uppercase">[TEXT_ONLY]</span>
+<span class="font-label text-[9px] border border-outline-variant px-2 py-0.5 uppercase">[HIGH_PRIORITY]</span>
+</div>
+<div class="grid grid-cols-3 gap-0 border-t-2 border-primary pt-0">
+<button class="py-4 flex items-center justify-center gap-2 font-label text-xs font-bold uppercase bg-surface-container-lowest text-on-surface-variant hover:bg-primary hover:text-on-primary transition-none border-r border-outline-variant">
+<span class="material-symbols-outlined text-lg">flag</span>
+                        Flag
+                    </button>
+<button class="py-4 flex items-center justify-center gap-2 font-label text-xs font-bold uppercase bg-surface-container-lowest text-error hover:bg-error hover:text-on-error transition-none border-r border-outline-variant">
+<span class="material-symbols-outlined text-lg">close</span>
+                        Reject
+                    </button>
+<button class="py-4 flex items-center justify-center gap-2 font-label text-xs font-bold uppercase bg-primary text-on-primary hover:bg-surface-bright transition-none">
+<span class="material-symbols-outlined text-lg">check</span>
+                        Approve
+                    </button>
+</div>
+</div>
+<!-- Card 03 -->
+<div class="group relative bg-surface-container-high p-5 border-l-4 border-primary shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-start gap-4">
+<input class="mt-1 w-5 h-5 rounded-none border-2 border-primary bg-transparent text-primary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<div>
+<h3 class="font-headline font-bold text-lg leading-none mb-1 uppercase tracking-tight">ASSET_PHOTO_99.JPG</h3>
+<p class="font-label text-[10px] text-secondary tracking-widest">SUBMITTED: 2023.10.12 // 16:11</p>
+</div>
+</div>
+<span class="font-label text-[10px] bg-surface-container px-2 py-1 border border-outline-variant">ID: 0x110A</span>
+</div>
+<div class="mb-6 aspect-square bg-surface-container-lowest border border-outline-variant overflow-hidden relative">
+<img alt="Visual asset" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" data-alt="Extreme high contrast monochrome photograph of industrial machinery and complex piping in a dark factory setting with harsh shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo_8bp6-x_ryqV4K3JwNtv28DREndiqfBr9YPH3r_W914dO8bUgQFD_ZyODnjHIwfMqJkDOM1PA3OAZrwF05K9fjXQ1KhQq3-CABEssse2ovrROP1rLzdQaj8vKJUb5VJElo3Tp7AGsNhnW8Oyj1jlQU4hw7o4RIi6JHK-PpVxtw6WvxSSqhxOKFgMdB1iRRuZ1sUNfWZCIg3wHVw0tnw36EeCyJ8SWxKFHZs8PSxm2hE0afROTzNi0iKr3tiA0XPzR54A0jeI1qoe"/>
+</div>
+<div class="grid grid-cols-3 gap-0 border-t-2 border-primary pt-0">
+<button class="py-4 flex items-center justify-center gap-2 font-label text-xs font-bold uppercase bg-surface-container-lowest text-on-surface-variant hover:bg-primary hover:text-on-primary transition-none border-r border-outline-variant">
+<span class="material-symbols-outlined text-lg">flag</span>
+                        Flag
+                    </button>
+<button class="py-4 flex items-center justify-center gap-2 font-label text-xs font-bold uppercase bg-surface-container-lowest text-error hover:bg-error hover:text-on-error transition-none border-r border-outline-variant">
+<span class="material-symbols-outlined text-lg">close</span>
+                        Reject
+                    </button>
+<button class="py-4 flex items-center justify-center gap-2 font-label text-xs font-bold uppercase bg-primary text-on-primary hover:bg-surface-bright transition-none">
+<span class="material-symbols-outlined text-lg">check</span>
+                        Approve
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-stretch h-20 bg-[#141312] text-[#ffffff] rounded-none border-t-2 border-[#ffffff] shadow-[0px_-4px_0px_0px_rgba(255,255,255,1)]">
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28] transition-none" href="#">
+<span class="material-symbols-outlined">database</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold mt-1">LIBRARY</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#ffffff] text-[#141312] h-full w-full transition-none" href="#">
+<span class="material-symbols-outlined">gavel</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold mt-1">MODERATE</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28] transition-none" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold mt-1">USERS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28] transition-none" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase font-bold mt-1">SYSTEM</span>
+</a>
+</nav>
+</body></html>

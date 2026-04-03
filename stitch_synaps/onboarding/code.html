@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SYNAPS — ONBOARDING</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono&amp;family=Geist:wght@100;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error": "#ba1a1a",
+              "primary-container": "#3d3b3a",
+              "surface-container": "#eeeeec",
+              "inverse-on-surface": "#f1f1ef",
+              "tertiary-fixed-dim": "#484645",
+              "on-secondary": "#ffffff",
+              "inverse-primary": "#cac6c3",
+              "secondary-container": "#d8d3d1",
+              "surface-dim": "#dadad8",
+              "error-container": "#ffdad6",
+              "secondary-fixed": "#cac6c3",
+              "inverse-surface": "#2f3130",
+              "on-tertiary-fixed": "#ffffff",
+              "on-primary-fixed-variant": "#e6e1df",
+              "on-surface": "#1a1c1b",
+              "on-tertiary": "#e6e1df",
+              "surface-container-low": "#f4f4f2",
+              "on-secondary-fixed": "#1d1b1a",
+              "surface-container-high": "#e8e8e6",
+              "on-error": "#ffffff",
+              "on-secondary-container": "#1d1b1a",
+              "tertiary-fixed": "#605e5c",
+              "secondary-fixed-dim": "#aeaaa8",
+              "primary-fixed-dim": "#484645",
+              "secondary": "#605e5c",
+              "background": "#f5f5f3",
+              "surface-container-highest": "#e2e3e1",
+              "on-tertiary-fixed-variant": "#e6e1df",
+              "on-primary-fixed": "#ffffff",
+              "on-primary-container": "#ffffff",
+              "surface-variant": "#e2e3e1",
+              "surface-container-lowest": "#ffffff",
+              "on-surface-variant": "#474747",
+              "on-primary": "#e6e1df",
+              "surface-bright": "#f9f9f7",
+              "outline": "#0d0c0b",
+              "tertiary": "#3d3b3a",
+              "surface": "#f5f5f3",
+              "on-error-container": "#410002",
+              "on-tertiary-container": "#ffffff",
+              "primary-fixed": "#605e5c",
+              "outline-variant": "#c6c6c6",
+              "tertiary-container": "#777472",
+              "surface-tint": "#605e5c",
+              "on-secondary-fixed-variant": "#3d3b3a",
+              "on-background": "#0d0c0b",
+              "primary": "#0d0c0b"
+            },
+            fontFamily: {
+              "headline": ["Geist", "sans-serif"],
+              "body": ["Geist", "sans-serif"],
+              "mono": ["Geist Mono", "monospace"],
+              "label": ["Geist", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "0px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #f5f5f3;
+            color: #0d0c0b;
+            font-family: 'Geist', sans-serif;
+        }
+        .signature-shadow {
+            box-shadow: 4px 4px 0px 0px #0d0c0b;
+        }
+        .signature-shadow-hover:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #0d0c0b;
+        }
+        .diagonal-hatch {
+            background: repeating-linear-gradient(
+                45deg,
+                #0d0c0b,
+                #0d0c0b 1px,
+                transparent 1px,
+                transparent 10px
+            );
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f5f5f3;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #0d0c0b;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-6 sm:p-12">
+<!-- Onboarding Container -->
+<main class="w-full max-w-[480px] flex flex-col gap-10">
+<!-- Branding Anchor -->
+<div class="flex justify-between items-end border-b border-outline pb-4">
+<h1 class="text-xl font-bold uppercase tracking-tighter text-on-background">SYNAPS</h1>
+<span class="text-[10px] font-mono tracking-widest uppercase opacity-60">ARCHIVALIST_V1.0.4</span>
+</div>
+<!-- Progress Indicator -->
+<div class="w-full h-4 border border-outline p-[2px] bg-white">
+<div class="h-full bg-primary w-1/2"></div>
+</div>
+<!-- Step 1: About You -->
+<section class="flex flex-col gap-8">
+<div class="flex flex-col gap-2">
+<span class="text-[10px] font-mono uppercase tracking-[0.2em] text-on-background/60">Step 1 of 2: About you</span>
+<h2 class="text-4xl font-bold tracking-[-0.04em] leading-[1.0] text-on-background">Tell us about yourself.</h2>
+</div>
+<form class="flex flex-col gap-6">
+<!-- Field Group -->
+<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-1">
+<label class="text-[11px] font-bold uppercase tracking-[0.05em]">Display name</label>
+<input class="w-full bg-transparent border border-outline px-4 py-3 text-sm focus:ring-0 focus:border-outline signature-shadow-hover transition-all duration-200 placeholder:text-on-background/30" placeholder="John Doe" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-[11px] font-bold uppercase tracking-[0.05em]">Institution</label>
+<input class="w-full bg-transparent border border-outline px-4 py-3 text-sm focus:ring-0 focus:border-outline signature-shadow-hover transition-all duration-200 placeholder:text-on-background/30" placeholder="Department of Digital Arts" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-[11px] font-bold uppercase tracking-[0.05em]">Bio</label>
+<textarea class="w-full bg-transparent border border-outline px-4 py-3 text-sm focus:ring-0 focus:border-outline signature-shadow-hover transition-all duration-200 placeholder:text-on-background/30 resize-none" placeholder="Brief professional summary..." rows="3"></textarea>
+</div>
+</div>
+<!-- Action -->
+<button class="w-full bg-primary text-background font-bold py-4 signature-shadow signature-shadow-hover transition-all duration-200 uppercase tracking-[0.1em] text-sm flex items-center justify-center gap-2 group" type="button">
+                    Continue
+                    <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</form>
+</section>
+<!-- Divider / Visual Break -->
+<div class="h-[1px] w-full diagonal-hatch opacity-20"></div>
+<!-- Step 2: Interests (Rendered as part of a scrollable or hidden flow, visible here for design review) -->
+<section class="flex flex-col gap-8 opacity-40 grayscale pointer-events-none">
+<div class="flex flex-col gap-2">
+<span class="text-[10px] font-mono uppercase tracking-[0.2em] text-on-background/60">Step 2 of 2: Interests</span>
+<h2 class="text-4xl font-bold tracking-[-0.04em] leading-[1.0] text-on-background">What subjects interest you?</h2>
+</div>
+<div class="grid grid-cols-3 gap-3">
+<!-- Interest Chips -->
+<label class="relative group cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="border border-outline p-3 text-center transition-all peer-checked:bg-primary peer-checked:text-background">
+<span class="text-[10px] font-bold uppercase tracking-tight">AI/ML</span>
+</div>
+</label>
+<label class="relative group cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="border border-outline p-3 text-center transition-all peer-checked:bg-primary peer-checked:text-background">
+<span class="text-[10px] font-bold uppercase tracking-tight">DESIGN</span>
+</div>
+</label>
+<label class="relative group cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="border border-outline p-3 text-center transition-all peer-checked:bg-primary peer-checked:text-background">
+<span class="text-[10px] font-bold uppercase tracking-tight">ARCHIVE</span>
+</div>
+</label>
+<label class="relative group cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="border border-outline p-3 text-center transition-all peer-checked:bg-primary peer-checked:text-background">
+<span class="text-[10px] font-bold uppercase tracking-tight">SYSTEMS</span>
+</div>
+</label>
+<label class="relative group cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="border border-outline p-3 text-center transition-all peer-checked:bg-primary peer-checked:text-background">
+<span class="text-[10px] font-bold uppercase tracking-tight">PHYSICS</span>
+</div>
+</label>
+<label class="relative group cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="border border-outline p-3 text-center transition-all peer-checked:bg-primary peer-checked:text-background">
+<span class="text-[10px] font-bold uppercase tracking-tight">HISTORY</span>
+</div>
+</label>
+<label class="relative group cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="border border-outline p-3 text-center transition-all peer-checked:bg-primary peer-checked:text-background">
+<span class="text-[10px] font-bold uppercase tracking-tight">BIO-TECH</span>
+</div>
+</label>
+<label class="relative group cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="border border-outline p-3 text-center transition-all peer-checked:bg-primary peer-checked:text-background">
+<span class="text-[10px] font-bold uppercase tracking-tight">CRYPTO</span>
+</div>
+</label>
+<label class="relative group cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="border border-outline p-3 text-center transition-all peer-checked:bg-primary peer-checked:text-background">
+<span class="text-[10px] font-bold uppercase tracking-tight">THEORY</span>
+</div>
+</label>
+</div>
+<button class="w-full bg-primary text-background font-bold py-4 signature-shadow uppercase tracking-[0.1em] text-sm" type="button">
+                Get started
+            </button>
+</section>
+<!-- Footer Meta -->
+<footer class="mt-auto pt-8 border-t border-outline/10 flex justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span class="text-[9px] font-mono uppercase tracking-widest">End-to-end Encrypted</span>
+</div>
+<a class="text-[9px] font-mono uppercase tracking-widest underline underline-offset-4 hover:bg-primary hover:text-background px-1 transition-colors" href="#">Privacy Policy</a>
+</footer>
+</main>
+<!-- Contextual Decorative Element (Brutalist Grid) -->
+<div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden opacity-[0.03]">
+<div class="absolute top-0 left-0 w-full h-full" style="background-image: radial-gradient(#0d0c0b 1px, transparent 1px); background-size: 24px 24px;"></div>
+</div>
+</body></html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SYNAPS — User Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&amp;family=Geist:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error": "#ba1a1a",
+              "primary-container": "#3d3b3a",
+              "surface-container": "#eeeeec",
+              "inverse-on-surface": "#f1f1ef",
+              "tertiary-fixed-dim": "#484645",
+              "on-secondary": "#ffffff",
+              "inverse-primary": "#cac6c3",
+              "secondary-container": "#d8d3d1",
+              "surface-dim": "#dadad8",
+              "error-container": "#ffdad6",
+              "secondary-fixed": "#cac6c3",
+              "inverse-surface": "#2f3130",
+              "on-tertiary-fixed": "#ffffff",
+              "on-primary-fixed-variant": "#e6e1df",
+              "on-surface": "#1a1c1b",
+              "on-tertiary": "#e6e1df",
+              "surface-container-low": "#f4f4f2",
+              "on-secondary-fixed": "#1d1b1a",
+              "surface-container-high": "#e8e8e6",
+              "on-error": "#ffffff",
+              "on-secondary-container": "#1d1b1a",
+              "tertiary-fixed": "#605e5c",
+              "secondary-fixed-dim": "#aeaaa8",
+              "primary-fixed-dim": "#484645",
+              "secondary": "#605e5c",
+              "background": "#f5f5f3",
+              "surface-container-highest": "#e2e3e1",
+              "on-tertiary-fixed-variant": "#e6e1df",
+              "on-primary-fixed": "#ffffff",
+              "on-primary-container": "#ffffff",
+              "surface-variant": "#e2e3e1",
+              "surface-container-lowest": "#ffffff",
+              "on-surface-variant": "#474747",
+              "on-primary": "#e6e1df",
+              "surface-bright": "#f9f9f7",
+              "outline": "#0d0c0b",
+              "tertiary": "#3d3b3a",
+              "surface": "#f5f5f3",
+              "on-error-container": "#410002",
+              "on-tertiary-container": "#ffffff",
+              "primary-fixed": "#605e5c",
+              "outline-variant": "#c6c6c6",
+              "tertiary-container": "#777472",
+              "surface-tint": "#605e5c",
+              "on-secondary-fixed-variant": "#3d3b3a",
+              "on-background": "#0d0c0b",
+              "primary": "#0d0c0b"
+            },
+            fontFamily: {
+              "headline": ["Geist", "sans-serif"],
+              "body": ["Geist", "sans-serif"],
+              "label": ["Geist", "sans-serif"],
+              "mono": ["Geist Mono", "monospace"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .signature-shadow {
+            box-shadow: 4px 4px 0px 0px #0d0c0b;
+        }
+        .signature-shadow:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #0d0c0b;
+        }
+        .active-nav-shadow {
+            box-shadow: 4px 4px 0px 0px #0d0c0b;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-surface">
+<div class="flex h-screen overflow-hidden">
+<aside class="hidden md:flex flex-col h-screen border-r border-outline w-64 bg-surface">
+<div class="p-6 border-b border-outline">
+<div class="font-bold text-lg tracking-widest uppercase">ARCHIVALIST</div>
+<div class="text-[10px] font-mono opacity-60 mt-1 uppercase tracking-widest">V1.0.4-STABLE</div>
+</div>
+<nav class="flex-1 overflow-y-auto py-6">
+<div class="px-6 mb-4 text-[10px] font-bold tracking-[0.2em] opacity-40 uppercase">CORE_SYSTEM</div>
+<ul class="space-y-1 px-4">
+<li>
+<a class="flex items-center gap-3 px-3 py-2 text-[#0d0c0b] hover:bg-[#0d0c0b] hover:text-[#f5f5f3] transition-none group" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="dashboard">dashboard</span>
+<span class="label-sm font-mono text-xs uppercase tracking-wider">Dashboard</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 bg-[#0d0c0b] text-[#f5f5f3] font-bold transition-none" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="group">group</span>
+<span class="label-sm font-mono text-xs uppercase tracking-wider">Users</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 text-[#0d0c0b] hover:bg-[#0d0c0b] hover:text-[#f5f5f3] transition-none" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="description">description</span>
+<span class="label-sm font-mono text-xs uppercase tracking-wider">Files</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 text-[#0d0c0b] hover:bg-[#0d0c0b] hover:text-[#f5f5f3] transition-none" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="terminal">terminal</span>
+<span class="label-sm font-mono text-xs uppercase tracking-wider">Logs</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 text-[#0d0c0b] hover:bg-[#0d0c0b] hover:text-[#f5f5f3] transition-none" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="settings">settings</span>
+<span class="label-sm font-mono text-xs uppercase tracking-wider">System</span>
+</a>
+</li>
+</ul>
+<div class="px-4 mt-8">
+<button class="w-full py-3 border border-primary signature-shadow font-bold text-xs uppercase tracking-widest bg-surface flex items-center justify-center gap-2 transition-none">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+                        UPLOAD_NEW
+                    </button>
+</div>
+</nav>
+<div class="p-4 border-t border-outline">
+<ul class="space-y-1">
+<li>
+<a class="flex items-center gap-3 px-3 py-2 text-[#0d0c0b] hover:underline decoration-1 underline-offset-4" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="help">help</span>
+<span class="label-sm font-mono text-xs uppercase tracking-wider">Support</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 text-[#0d0c0b] hover:underline decoration-1 underline-offset-4" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="logout">logout</span>
+<span class="label-sm font-mono text-xs uppercase tracking-wider">Logout</span>
+</a>
+</li>
+</ul>
+</div>
+</aside>
+<main class="flex-1 flex flex-col min-w-0 overflow-hidden">
+<header class="flex justify-between items-center w-full px-6 md:px-12 h-16 bg-surface border-b border-outline shrink-0">
+<div class="flex items-center gap-4">
+<span class="text-xl font-bold uppercase tracking-tighter text-[#0d0c0b]">SYNAPS</span>
+<span class="h-4 w-px bg-outline/20 hidden md:block"></span>
+<nav class="hidden md:flex gap-8">
+<a class="text-[#0d0c0b]/60 hover:underline decoration-1 underline-offset-4 label-sm text-[10px] uppercase tracking-[0.1em]" href="#">Documents</a>
+<a class="text-[#0d0c0b] border-b-2 border-[#0d0c0b] pb-1 label-sm text-[10px] uppercase tracking-[0.1em]" href="#">Admin</a>
+<a class="text-[#0d0c0b]/60 hover:underline decoration-1 underline-offset-4 label-sm text-[10px] uppercase tracking-[0.1em]" href="#">Profile</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-xl text-[#0d0c0b]" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined text-xl text-[#0d0c0b]" data-icon="settings">settings</button>
+<div class="w-8 h-8 bg-primary overflow-hidden">
+<img alt="User profile" class="w-full h-full object-cover grayscale" data-alt="portrait of a professional male in his 30s with neutral expression in a minimalist studio setting high contrast photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9plfH9pVWNrWINyrYw4Vg8ijqpMWhBFih3AjRBs3LfKrzm_54GuuoBP-XhPWebSocfAWPLf3YS_Ek7GAw9nA5ZG7SzWrSSmoGFEnt9C3R_oFO7-SLM1J3_Nu_-VT2AiCWGg0Iv5wi3xLjSOYPONrU7-2Z2R06e_szZGDsyZhpvoj0XTtxaI7rj5btKwVh-Ral9e5IgbV5JsIQTJlTcfVveDIiTEjkpbxkYMCR3v-oXHzGDtGTmrgkqbYRaDbPX9qB8RDOT6al3xBV"/>
+</div>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto p-6 md:p-12">
+<div class="max-w-7xl mx-auto space-y-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="text-5xl md:text-7xl font-bold tracking-[-0.04em] uppercase leading-[0.9]">User management</h1>
+<div class="mt-4 flex items-center gap-3">
+<span class="bg-primary text-surface px-2 py-0.5 font-mono text-sm">TOTAL_COUNT</span>
+<span class="text-2xl font-mono font-bold">1,284</span>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="px-6 py-3 border border-primary signature-shadow bg-surface uppercase font-bold text-xs tracking-widest">EXPORT_CSV</button>
+</div>
+</div>
+<div class="relative">
+<input class="w-full bg-surface border border-primary p-4 pl-12 focus:ring-0 focus:border-primary placeholder:opacity-40 font-mono text-sm uppercase tracking-wider" placeholder="SEARCH_BY_NAME_EMAIL_OR_ID..." type="text"/>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 opacity-60" data-icon="search">search</span>
+</div>
+<div class="border border-primary overflow-x-auto bg-surface">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-primary bg-surface-container">
+<th class="p-4 font-mono text-[10px] uppercase tracking-widest font-bold">UID</th>
+<th class="p-4 font-mono text-[10px] uppercase tracking-widest font-bold">User</th>
+<th class="p-4 font-mono text-[10px] uppercase tracking-widest font-bold">Email</th>
+<th class="p-4 font-mono text-[10px] uppercase tracking-widest font-bold">Role</th>
+<th class="p-4 font-mono text-[10px] uppercase tracking-widest font-bold">Joined</th>
+<th class="p-4 font-mono text-[10px] uppercase tracking-widest font-bold">Uploads</th>
+<th class="p-4 font-mono text-[10px] uppercase tracking-widest font-bold">Status</th>
+<th class="p-4 font-mono text-[10px] uppercase tracking-widest font-bold text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-primary/10">
+<tr class="hover:bg-surface-container-low transition-none group">
+<td class="p-4 font-mono text-xs opacity-60">#8821</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 border border-primary shrink-0">
+<img class="w-full h-full object-cover grayscale" data-alt="Close-up headshot of a person with short hair looking directly at the camera, monochromatic style, harsh lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5PzygP7UInfsMc65FOqJXR_HGn2sW05RQV8oT3ZtQeoIeAeTyHHsp-r7tk-rsW2jCEDnGaf_y3nQd__nz0dlTeERKf0v_Oq9PSosNJNQ72Si2wEMyDpwfBZBu2BThR9Ts82sJTG2R6k6qLe-yfJbFZFvc8sG4OWSDo6xdtQMplF0g0v0C4l2q_4gw81wI22EWseHOUzIBQffxUI6Vt2XfHLKoRn25VeWr6Ptdd7VsGp_hc3v8AsG3OdUGAg0AsVY_Snmj4NKxXwlB"/>
+</div>
+<span class="font-bold text-sm tracking-tight">Kasper Jensen</span>
+</div>
+</td>
+<td class="p-4 font-mono text-xs">k.jensen@synaps.io</td>
+<td class="p-4">
+<span class="bg-primary text-surface px-2 py-0.5 text-[10px] font-bold uppercase tracking-widest">Admin</span>
+</td>
+<td class="p-4 font-mono text-xs">2023-11-04</td>
+<td class="p-4 font-mono text-xs">142</td>
+<td class="p-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 bg-on-background"></span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Active</span>
+</div>
+</td>
+<td class="p-4 text-right">
+<button class="material-symbols-outlined opacity-40 hover:opacity-100 transition-none" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-none group">
+<td class="p-4 font-mono text-xs opacity-60">#8790</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 border border-primary shrink-0">
+<img class="w-full h-full object-cover grayscale" data-alt="Portrait of a young woman with hair tied back, neutral gaze, technical aesthetic, high contrast black and white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUXQazMIfechVkI8w0aFzLvJKkO7MdjOe_HyMQ78lowaGuQ1b04qv09r8k3s7BeVL69vaL2-O9YVX75PgbqHXEJ7ojhfnznWb76_gEYMuCLL57A9S5smJhcJg8UnzWYDjfB0cc3UgAylWOpPrtLiZYWuv6MMg4zSMhp49lPel4ImK3D97scm2bqIgzQ9cL3t4umdMlQuZ0uh2vZWoAAMYoRpZm0xQnsGb59_lHv-coRKVQ_EA01VevlsHzpledEuoKIbgb4s01MsXi"/>
+</div>
+<span class="font-bold text-sm tracking-tight">Elias Thorne</span>
+</div>
+</td>
+<td class="p-4 font-mono text-xs">thorne.e@synaps.io</td>
+<td class="p-4">
+<span class="border border-primary px-2 py-0.5 text-[10px] font-bold uppercase tracking-widest">Moderator</span>
+</td>
+<td class="p-4 font-mono text-xs">2024-01-12</td>
+<td class="p-4 font-mono text-xs">89</td>
+<td class="p-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 bg-on-background"></span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Active</span>
+</div>
+</td>
+<td class="p-4 text-right">
+<button class="material-symbols-outlined opacity-40 hover:opacity-100 transition-none" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-none group">
+<td class="p-4 font-mono text-xs opacity-60">#8766</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 border border-primary shrink-0">
+<img class="w-full h-full object-cover grayscale" data-alt="Serious expression of a man with spectacles, professional studio headshot, brutalist photography style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLFzN5acPEJSGzc3gzS_nsegO1hhw_AzarHnaShJxv92cOs2HtR87wV8e0uX1YhUezeSuy146WLNaI3q1Hfs_01sD_fB5BpDr7pLzDO3y_6AmM0tnhjPnPIGH9tk_ngl5aWbcY3oMRZkGZCV8BSbY-SXqH2cRVAbISZtypT1C7d-G3C6-mVrAqUfbmGKVyOxVpJMeLd6wWaT_b3awv85cD1u0N-65NX2KY3iRoynr67P4WYH2yPiyvlIlgqWRDc1d6_T1u-hr6EJDc"/>
+</div>
+<span class="font-bold text-sm tracking-tight">Marcus Vane</span>
+</div>
+</td>
+<td class="p-4 font-mono text-xs">mvane@external.net</td>
+<td class="p-4">
+<span class="border border-primary px-2 py-0.5 text-[10px] font-bold uppercase tracking-widest">Member</span>
+</td>
+<td class="p-4 font-mono text-xs">2024-02-28</td>
+<td class="p-4 font-mono text-xs">3</td>
+<td class="p-4">
+<div class="flex items-center gap-2 text-error">
+<span class="w-2 h-2 bg-error"></span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Banned</span>
+</div>
+</td>
+<td class="p-4 text-right">
+<button class="material-symbols-outlined opacity-40 hover:opacity-100 transition-none" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-none group">
+<td class="p-4 font-mono text-xs opacity-60">#8652</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 border border-primary shrink-0">
+<img class="w-full h-full object-cover grayscale" data-alt="Artistic profile of a person, minimalist aesthetics, high key lighting, sharp focus on facial features" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKS8HtcWpPeDhZV1mo2FmVmAyaNilrYaj_JzntBhOlWXW4EC0J-JUGpp1NKkf7uwQnH7hRyaAMbiUfeONFKHd9uGpLfKIKfl825s7aL47cgy3WaloW9p5eoYGFfhiwJU0Geb7JT50lkzoZnQLOa7b5HI7yF8sIeYMFt8NRmcsFa1lmecbbRvAc8-0sF6_7DfBCGqMmmNDKwHVK2VbjStQritT_D5p96c3fqovuZ5TVCUhsMIR8UUcRReL8sZyO35xwqh_Guajr1sH8"/>
+</div>
+<span class="font-bold text-sm tracking-tight">Sola Kim</span>
+</div>
+</td>
+<td class="p-4 font-mono text-xs">kim.sola@synaps.io</td>
+<td class="p-4">
+<span class="border border-primary px-2 py-0.5 text-[10px] font-bold uppercase tracking-widest">Member</span>
+</td>
+<td class="p-4 font-mono text-xs">2024-03-05</td>
+<td class="p-4 font-mono text-xs">21</td>
+<td class="p-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 bg-on-background"></span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Active</span>
+</div>
+</td>
+<td class="p-4 text-right">
+<button class="material-symbols-outlined opacity-40 hover:opacity-100 transition-none" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex justify-between items-center border border-primary p-4 bg-surface">
+<div class="font-mono text-[10px] uppercase tracking-widest opacity-60">SHOWING_1_TO_10_OF_1284_RESULTS</div>
+<div class="flex gap-px bg-primary border border-primary">
+<button class="bg-surface p-2 hover:bg-primary hover:text-surface transition-none">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="bg-primary text-surface p-2 px-4 text-xs font-mono">1</button>
+<button class="bg-surface p-2 px-4 text-xs font-mono hover:bg-surface-container transition-none border-x border-primary">2</button>
+<button class="bg-surface p-2 px-4 text-xs font-mono hover:bg-surface-container transition-none">3</button>
+<button class="bg-surface p-2 hover:bg-primary hover:text-surface transition-none">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 border-t border-outline bg-surface">
+<a class="flex flex-col items-center justify-center text-[#0d0c0b] px-4 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+<span class="text-[9px] font-bold uppercase mt-1">View</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#0d0c0b] px-4 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="text-[9px] font-bold uppercase mt-1">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#0d0c0b] px-4 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="text-[9px] font-bold uppercase mt-1">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#0d0c0b] text-[#f5f5f3] px-4 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="text-[9px] font-bold uppercase mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

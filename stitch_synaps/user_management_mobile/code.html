@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/npm/geist@1.0.3/dist/fonts/geist-sans/Geist-Medium.woff2') format('woff2');
+        }
+        body {
+            font-family: 'Geist', 'Inter', sans-serif;
+            background-color: #f5f5f3;
+            color: #0d0c0b;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .signature-shadow {
+            box-shadow: 4px 4px 0px 0px #0d0c0b;
+        }
+        .signature-shadow:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #0d0c0b;
+        }
+        .diagonal-hatch {
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(13, 12, 11, 0.05) 10px, rgba(13, 12, 11, 0.05) 20px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary": "#e6e1df",
+                        "surface-container-high": "#e8e8e6",
+                        "surface-bright": "#f9f9f7",
+                        "on-error": "#ffffff",
+                        "on-background": "#0d0c0b",
+                        "tertiary-container": "#777472",
+                        "tertiary": "#3d3b3a",
+                        "on-error-container": "#410002",
+                        "primary": "#0d0c0b",
+                        "primary-container": "#3d3b3a",
+                        "on-primary": "#f5f5f3",
+                        "surface": "#f5f5f3",
+                        "background": "#f5f5f3",
+                        "outline": "#0d0c0b",
+                        "inverse-surface": "#0d0c0b",
+                        "inverse-on-surface": "#f5f5f3"
+                    },
+                    fontFamily: {
+                        "headline": ["Geist", "Inter"],
+                        "body": ["Geist", "Inter"],
+                        "label": ["Geist", "Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full border-b border-[#0d0c0b] bg-[#f5f5f3] z-50 flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#0d0c0b]" data-icon="menu">menu</span>
+<span class="text-2xl font-black tracking-[-0.04em] text-[#0d0c0b] uppercase">SYNAPS</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#0d0c0b]" data-icon="search">search</span>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-2xl mx-auto">
+<!-- Page Title & Stats -->
+<div class="mb-10">
+<h1 class="text-[3.5rem] font-bold tracking-[-0.04em] leading-none uppercase mb-2">Users</h1>
+<div class="flex items-center gap-4 border-b border-[#0d0c0b] pb-4">
+<span class="text-[0.6875rem] font-medium tracking-[0.05em] uppercase">Total Archive Access: 1,248</span>
+<span class="text-[0.6875rem] font-medium tracking-[0.05em] uppercase text-slate-500">Active Nodes: 892</span>
+</div>
+</div>
+<!-- Full-width Search Bar -->
+<div class="mb-8 group">
+<div class="relative flex items-center border border-[#0d0c0b] bg-[#f5f5f3] h-14 signature-shadow transition-all duration-200">
+<span class="material-symbols-outlined px-4" data-icon="search">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-[0.6875rem] font-medium tracking-[0.05em] uppercase placeholder-[#0d0c0b]" placeholder="SEARCH SYSTEM IDENTITY..." type="text"/>
+</div>
+</div>
+<!-- User Card List -->
+<div class="flex flex-col gap-6">
+<!-- User Card 01 -->
+<div class="border border-[#0d0c0b] bg-[#f5f5f3] p-4 signature-shadow transition-all duration-200 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div class="flex gap-4">
+<div class="w-12 h-12 border border-[#0d0c0b] flex-shrink-0 overflow-hidden">
+<img alt="User" class="w-full h-full object-cover grayscale" data-alt="Close-up portrait of a man with minimalist lighting on a neutral background, monochromatic aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfLKgxkRiczs9Qvf2I6QTDxdPoQmUr0mXAjDPSr4cirRT-3EwBpcFhkSROOiMuiZdZCdyezO6CbkXbgb7pn1YPY1M03zzEc9Sd9CELCrUxjIRqFA_cQBxzlP6SUq4cENDHaD8SDhYe68ykjsugseNC3-9QHFaXoA5lELCV5iDquqUIPJunGexhEOfSPY7CcsVRtZv-6zedRbE-slF6ESEiAe9oDMJLtGT4pllm46HR3Pi53sUSO9bmAhesK__FOPcsYRo6_5NKvzfy"/>
+</div>
+<div class="flex flex-col">
+<h3 class="text-sm font-bold tracking-tight uppercase leading-tight">Elias Thorne</h3>
+<p class="text-[11px] font-normal leading-relaxed tracking-[0.05em] uppercase text-slate-500">e.thorne@synaps.io</p>
+</div>
+</div>
+<button class="material-symbols-outlined hover:bg-[#0d0c0b] hover:text-[#f5f5f3] p-1 transition-colors" data-icon="more_vert">more_vert</button>
+</div>
+<div class="flex justify-between items-end border-t border-[#0d0c0b] pt-4">
+<div class="flex flex-col gap-1">
+<span class="text-[0.6875rem] font-medium tracking-[0.05em] uppercase text-slate-500">Permission Level</span>
+<div class="border border-[#0d0c0b] px-2 py-0.5 inline-block w-fit">
+<span class="text-[0.6875rem] font-medium tracking-[0.05em] uppercase">System Admin</span>
+</div>
+</div>
+<div class="bg-[#0d0c0b] text-[#f5f5f3] px-2 py-0.5">
+<span class="text-[0.6875rem] font-medium tracking-[0.05em] uppercase">Active</span>
+</div>
+</div>
+</div>
+<!-- User Card 02 -->
+<div class="border border-[#0d0c0b] bg-[#f5f5f3] p-4 signature-shadow transition-all duration-200 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div class="flex gap-4">
+<div class="w-12 h-12 border border-[#0d0c0b] flex-shrink-0 overflow-hidden">
+<img alt="User" class="w-full h-full object-cover grayscale" data-alt="Studio portrait of a woman with sharp features against a stark white background, high contrast monochromatic style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMZzku2LnWlFfBxM0J7q49Mf5HyxqL7Qf7mVOu-wS6h71zZi8byA2dJYFiTmO0W89HstoND-zvozfm0qfEgL8nIivWDCSAZc0IFvVlphHvUMRbPsVQdKGkNRK4HQtM4ENYubBBBeO7jT3216UncTezr3fXY7JjgibJs8fvaD55jkB4mRDytR7pWuL8jXj0sIrQJpalLA29RZJ6EuRBKMs8KtW-9Rhd4jchlrlH-ZfDsRsTe1t6LUyrQpFsRx2re1zJ7dYo2u92oZdB"/>
+</div>
+<div class="flex flex-col">
+<h3 class="text-sm font-bold tracking-tight uppercase leading-tight">Sarah Chen</h3>
+<p class="text-[11px] font-normal leading-relaxed tracking-[0.05em] uppercase text-slate-500">s.chen@synaps.io</p>
+</div>
+</div>
+<button class="material-symbols-outlined hover:bg-[#0d0c0b] hover:text-[#f5f5f3] p-1 transition-colors" data-icon="more_vert">more_vert</button>
+</div>
+<div class="flex justify-between items-end border-t border-[#0d0c0b] pt-4">
+<div class="flex flex-col gap-1">
+<span class="text-[0.6875rem] font-medium tracking-[0.05em] uppercase text-slate-500">Permission Level</span>
+<div class="border border-[#0d0c0b] px-2 py-0.5 inline-block w-fit">
+<span class="text-[0.6875rem] font-medium tracking-[0.05em] uppercase">Archivist</span>
+</div>
+</div>
+<div class="bg-[#0d0c0b] text-[#f5f5f3] px-2 py-0.5">
+<span class="text-[0.6875rem] font-medium tracking-[0.05em] uppercase">Active</span>
+</div>
+</div>
+</div>
+<!-- User Card 03 (Flagged/Banned State) -->
+<div class="border border-[#0d0c0b] bg-[#f5f5f3] p-4 signature-shadow transition-all duration-200 flex flex-col gap-4 relative overflow-hidden">
+<div class="absolute inset-0 diagonal-hatch pointer-events-none opacity-20"></div>
+<div class="flex justify-between items-start">
+<div class="flex gap-4">
+<div class="w-12 h-12 border border-[#0d0c0b] flex-shrink-0 overflow-hidden grayscale opacity-50">
+<img alt="User" class="w-full h-full object-cover" data-alt="Portrait of a young man in dark clothing, brutalist photography style with harsh shadows and high contrast" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8ba387d7bjNP3QcFssHTAygmqVdmT3ykCPljcRHp51oStwiDq4jtHTNGi04410gXiMZ6wcuktr197uf__5Pd7fgdPW5U4qlriTFHBFaPPICPS65NkJO0WU_jzv3lLqr2Y4LkjXVWci3mzFZkC4rPjYZoQ3ccNraq-sn7sKajzWHFAwyjkx5SU5Ym115nTpxoynwvSi7tt-plcEjB96Em_9PzQdoHgMk-jvA5RVBOj9bgzir4FlXb2vZdTAStVysJjWtmsin8XAKbp"/>
+</div>
+<div class="flex flex-col">
+<h3 class="text-sm font-bold tracking-tight uppercase leading-tight line-through">Marcus Vane</h3>
+<p class="text-[11px] font-normal leading-relaxed tracking-[0.05em] uppercase text-slate-500">m.vane@synaps.io</p>
+</div>
+</div>
+<button class="material-symbols-outlined hover:bg-[#0d0c0b] hover:text-[#f5f5f3] p-1 transition-colors" data-icon="more_vert">more_vert</button>
+</div>
+<div class="flex justify-between items-end border-t border-[#0d0c0b] pt-4">
+<div class="flex flex-col gap-1">
+<span class="text-[0.6875rem] font-medium tracking-[0.05em] uppercase text-slate-500">Permission Level</span>
+<div class="border border-[#0d0c0b] px-2 py-0.5 inline-block w-fit">
+<span class="text-[0.6875rem] font-medium tracking-[0.05em] uppercase opacity-50">Restricted</span>
+</div>
+</div>
+<div class="bg-red-600 text-white px-2 py-0.5">
+<span class="text-[0.6875rem] font-medium tracking-[0.05em] uppercase">Banned</span>
+</div>
+</div>
+</div>
+<!-- User Card 04 -->
+<div class="border border-[#0d0c0b] bg-[#f5f5f3] p-4 signature-shadow transition-all duration-200 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div class="flex gap-4">
+<div class="w-12 h-12 border border-[#0d0c0b] flex-shrink-0 overflow-hidden">
+<img alt="User" class="w-full h-full object-cover grayscale" data-alt="Minimalist professional portrait of a woman looking directly at camera, stark contrast, high key lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4JXxJ4kllHU3OlsQi8TYy30eh_U9qMzFhi9DjenMu2g1OSSS5JDQCjVQVf3t2ifYYGL-aaB9sXjfrq4VelqLJbcI_xpP_n2FN6hMkaW0p-9eMpQqJHFVbrLmCdSbF-lWc9gba00_OtbdMlfd3bvs-LsLOnW5bXAt7qr72QOPJww3BBpoY6LdAargr5YkrP4dDs_lNCHqcHLLi8qr5B1R5e3viOawOeLjYn_-XOzJe8nKtAbpWxdvOev7jXC6eWpYehUbVnHKGmZF1"/>
+</div>
+<div class="flex flex-col">
+<h3 class="text-sm font-bold tracking-tight uppercase leading-tight">Lena Kowalski</h3>
+<p class="text-[11px] font-normal leading-relaxed tracking-[0.05em] uppercase text-slate-500">l.kowa@synaps.io</p>
+</div>
+</div>
+<button class="material-symbols-outlined hover:bg-[#0d0c0b] hover:text-[#f5f5f3] p-1 transition-colors" data-icon="more_vert">more_vert</button>
+</div>
+<div class="flex justify-between items-end border-t border-[#0d0c0b] pt-4">
+<div class="flex flex-col gap-1">
+<span class="text-[0.6875rem] font-medium tracking-[0.05em] uppercase text-slate-500">Permission Level</span>
+<div class="border border-[#0d0c0b] px-2 py-0.5 inline-block w-fit">
+<span class="text-[0.6875rem] font-medium tracking-[0.05em] uppercase">Auditor</span>
+</div>
+</div>
+<div class="bg-[#0d0c0b] text-[#f5f5f3] px-2 py-0.5">
+<span class="text-[0.6875rem] font-medium tracking-[0.05em] uppercase">Active</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Loader Simulation (Footer of list) -->
+<div class="mt-12 flex flex-col items-center gap-4">
+<div class="w-full h-1 border border-[#0d0c0b] diagonal-hatch"></div>
+<p class="text-[0.6875rem] font-medium tracking-[0.05em] uppercase">End of Directory</p>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 bg-[#f5f5f3] border-t border-[#0d0c0b]">
+<a class="text-[#0d0c0b] p-3 hover:bg-[#0d0c0b] hover:text-[#f5f5f3] transition-none" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+</a>
+<a class="text-[#0d0c0b] p-3 hover:bg-[#0d0c0b] hover:text-[#f5f5f3] transition-none" href="#">
+<span class="material-symbols-outlined" data-icon="folder_open">folder_open</span>
+</a>
+<a class="text-[#0d0c0b] p-3 hover:bg-[#0d0c0b] hover:text-[#f5f5f3] transition-none" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+</a>
+<a class="bg-[#0d0c0b] text-[#f5f5f3] p-3 transition-none" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</a>
+</nav>
+<!-- FAB (Suppressed on Details, but appropriate for User Management home) -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-[#0d0c0b] text-[#f5f5f3] flex items-center justify-center signature-shadow border border-[#f5f5f3] active:translate-y-1 transition-all z-40">
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+</button>
+<!-- Footer for mobile (hidden mostly by scroll) -->
+<footer class="w-full border-t border-[#0d0c0b] bg-[#f5f5f3] flex flex-col gap-4 p-8 w-full items-start mb-16">
+<div class="font-['Geist'] text-[11px] leading-relaxed tracking-[0.05em] uppercase text-[#0d0c0b]">
+            © 2024 SYNAPS ARCHIVE
+        </div>
+<div class="flex gap-6">
+<a class="font-['Geist'] text-[11px] leading-relaxed tracking-[0.05em] uppercase text-[#0d0c0b] hover:underline" href="#">TERMS</a>
+<a class="font-['Geist'] text-[11px] leading-relaxed tracking-[0.05em] uppercase text-[#0d0c0b] hover:underline" href="#">PRIVACY</a>
+<a class="font-['Geist'] text-[11px] leading-relaxed tracking-[0.05em] uppercase text-[#0d0c0b] hover:underline" href="#">DOCS</a>
+</div>
+</footer>
+</body></html>

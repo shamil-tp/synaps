@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-lowest": "#0f0e0d",
+              "on-primary-container": "#000000",
+              "tertiary-container": "#90918f",
+              "primary-fixed": "#5d5f5d",
+              "on-tertiary-fixed-variant": "#e2e3e1",
+              "on-secondary-fixed": "#1a1c1b",
+              "on-primary": "#1a1c1b",
+              "surface-tint": "#c6c7c5",
+              "secondary": "#c6c7c5",
+              "on-tertiary-fixed": "#ffffff",
+              "outline": "#919191",
+              "on-secondary-fixed-variant": "#3a3c3b",
+              "surface-dim": "#141312",
+              "secondary-container": "#454746",
+              "surface-bright": "#3b3937",
+              "on-primary-fixed-variant": "#e2e3e1",
+              "on-error-container": "#ffdad6",
+              "on-surface": "#e6e1df",
+              "on-primary-fixed": "#ffffff",
+              "secondary-fixed-dim": "#ababaa",
+              "tertiary": "#e2e3e1",
+              "primary-fixed-dim": "#454746",
+              "primary": "#ffffff",
+              "inverse-surface": "#e6e1df",
+              "surface-container-highest": "#363433",
+              "primary-container": "#d4d4d3",
+              "outline-variant": "#474747",
+              "on-tertiary-container": "#000000",
+              "error": "#ffb4ab",
+              "surface": "#141312",
+              "secondary-fixed": "#c6c7c5",
+              "inverse-primary": "#5d5f5d",
+              "tertiary-fixed": "#5d5f5d",
+              "inverse-on-surface": "#32302f",
+              "background": "#141312",
+              "on-background": "#e6e1df",
+              "surface-variant": "#363433",
+              "surface-container": "#211f1e",
+              "surface-container-low": "#1d1b1a",
+              "on-secondary-container": "#e2e3e1",
+              "on-secondary": "#1a1c1b",
+              "tertiary-fixed-dim": "#454746",
+              "on-error": "#690005",
+              "surface-container-high": "#2b2a28",
+              "on-tertiary": "#1a1c1b",
+              "on-surface-variant": "#c6c6c6",
+              "error-container": "#93000a"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        background-color: #141312;
+        color: #e6e1df;
+        font-family: 'Inter', sans-serif;
+      }
+      .brutalist-shadow {
+        box-shadow: 4px 4px 0px 0px #ffffff;
+      }
+      .active-nav-item {
+        background-color: #ffffff;
+        color: #141312;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased">
+<!-- TopAppBar -->
+<header class="bg-[#141312] text-[#ffffff] font-['Space_Grotesk'] uppercase tracking-tighter flex justify-between items-center w-full px-6 py-4 sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#ffffff]" data-icon="menu">menu</span>
+<h1 class="text-2xl font-bold tracking-widest text-[#ffffff]">SYNAPS</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#ffffff]" data-icon="search">search</span>
+</div>
+</header>
+<main class="pb-24">
+<!-- Sticky Header Context -->
+<section class="px-6 pt-8 pb-4 bg-[#141312] sticky top-[64px] z-40">
+<div class="flex flex-col gap-1">
+<span class="font-label text-[10px] tracking-widest text-on-surface-variant uppercase">[ ACCESSING_NODE_04 ]</span>
+<div class="flex justify-between items-end">
+<h2 class="font-headline text-3xl font-extrabold tracking-tighter uppercase leading-none">Browse Archives</h2>
+<span class="font-label text-xs font-bold bg-surface-container px-2 py-1">8,492 DOCS</span>
+</div>
+</div>
+<div class="mt-6 flex justify-between items-center bg-surface-container-low p-4">
+<div class="flex flex-col">
+<span class="font-label text-[10px] uppercase text-on-surface-variant">Active Filter</span>
+<span class="font-label text-sm uppercase font-bold">ALL_ENTRIES.LOG</span>
+</div>
+<button class="bg-primary text-on-primary px-4 py-2 font-label text-xs font-bold uppercase flex items-center gap-2 active:translate-x-[2px] active:translate-y-[2px] transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="tune">tune</span>
+                    Filter
+                </button>
+</div>
+</section>
+<!-- Document Grid -->
+<section class="px-6 grid grid-cols-2 gap-4 mt-6">
+<!-- Document Card 1 -->
+<div class="group bg-surface-container flex flex-col hover:bg-surface-container-highest transition-colors cursor-pointer">
+<div class="relative aspect-square overflow-hidden bg-surface-container-low">
+<img alt="Abstract texture" class="w-full h-full object-cover grayscale opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300" data-alt="Monochromatic high-contrast abstract wave texture with dark shadows and sharp white peaks in a brutalist style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuDffRxS83r20sLM-s5C-F6-Bam6h2C3d1dHXnAu_2Plo_BBEhlE2Lb9ywkPwUxdlgMyg6NijA6VKhuklg9Z0sdoM5RB-oFYbpZFwFwJJIihzFE3bSQdUXMy0CFKJ2JztQnCHJFLtUd4WSqeflJwzb4kUnTdHDLu6Fi0OK_zWP2VfSbAm8aFtc98VAY4Q4DW_X421NN1Z9IEXCDuWaKwNFMH-GMkQVhplOhSjh1h8wGNvJc718fEx1QjW0aDViaXrqiVvbubNRh8pZ"/>
+<div class="absolute top-2 left-2">
+<span class="font-label text-[9px] font-bold uppercase bg-primary text-on-primary px-1.5 py-0.5">INTEL_B</span>
+</div>
+</div>
+<div class="p-3 flex flex-col gap-2">
+<h3 class="font-headline text-sm font-bold uppercase leading-tight tracking-tight">System_Protocol_v4</h3>
+<div class="flex flex-col gap-1">
+<span class="font-label text-[9px] uppercase text-on-surface-variant">ID: 992-AX</span>
+<span class="font-label text-[9px] uppercase text-on-surface-variant">TS: 04.12.24</span>
+</div>
+</div>
+</div>
+<!-- Document Card 2 -->
+<div class="group bg-surface-container flex flex-col hover:bg-surface-container-highest transition-colors cursor-pointer">
+<div class="relative aspect-square overflow-hidden bg-surface-container-low">
+<img alt="Circuitry detail" class="w-full h-full object-cover grayscale opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300" data-alt="Microchip circuitry macro photograph with metallic highlights and deep dark shadows, high-tech industrial aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqQ1gbg8VfhIT7J1p4nLaLrN0_hQsTiD1ESxreXgzMYB0HB0udl340xp-g8nd1PRq_uIRPW-gtIgqLf9cycadkL6MySwkv5_f9T0U8H8AO04lVeTcHS5eO4AMcabhPNvdOXwEJc3pN0B0uyb5pxnxheuvxuoBGTeIrw0pTm9VWhWi4fj3pGOZfHnyqlDc1p4H7YKucWmPooe46anFAGSBbya_TmcwaRaiinfK51kGae1ymGUVm-zlJHt4MRZjlDNK8ubfWm9j9JphB"/>
+<div class="absolute top-2 left-2">
+<span class="font-label text-[9px] font-bold uppercase bg-primary text-on-primary px-1.5 py-0.5">CORE_X</span>
+</div>
+</div>
+<div class="p-3 flex flex-col gap-2">
+<h3 class="font-headline text-sm font-bold uppercase leading-tight tracking-tight">Kernel_Override</h3>
+<div class="flex flex-col gap-1">
+<span class="font-label text-[9px] uppercase text-on-surface-variant">ID: 110-BL</span>
+<span class="font-label text-[9px] uppercase text-on-surface-variant">TS: 03.12.24</span>
+</div>
+</div>
+</div>
+<!-- Document Card 3 -->
+<div class="group bg-surface-container flex flex-col hover:bg-surface-container-highest transition-colors cursor-pointer">
+<div class="relative aspect-square overflow-hidden bg-surface-container-low">
+<img alt="Satellite data" class="w-full h-full object-cover grayscale opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300" data-alt="Satellite imagery of Earth's surface processed in high contrast black and white with visible data grid overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4LafORyOLrMZiMZoLgpNB7280H4KmpWxCbk1EZueAKSFxuiyC5EKZmhl6dFcNQ8XcylBhDGBQbm540KmzAJRJPLYg2w8cBkEx3ifoZNc6ER8GXB25zC16x9bv90xZpWLFI7Bw9N3U69ZcZhJTp0tulVsYAqQi2_RKXXU5Uhh46Moc1yxP2hyO4pIVmdzS_7JGtPgkIWXQVEmpFN-79Tu0ufdcJJViCF0qQbY-XOZ4WnFWDVeVcMzMY4To2-VGMQFkxLt5ktAgIom2"/>
+<div class="absolute top-2 left-2">
+<span class="font-label text-[9px] font-bold uppercase bg-primary text-on-primary px-1.5 py-0.5">GEO_S</span>
+</div>
+</div>
+<div class="p-3 flex flex-col gap-2">
+<h3 class="font-headline text-sm font-bold uppercase leading-tight tracking-tight">Grid_Expansion</h3>
+<div class="flex flex-col gap-1">
+<span class="font-label text-[9px] uppercase text-on-surface-variant">ID: 442-KK</span>
+<span class="font-label text-[9px] uppercase text-on-surface-variant">TS: 01.12.24</span>
+</div>
+</div>
+</div>
+<!-- Document Card 4 -->
+<div class="group bg-surface-container flex flex-col hover:bg-surface-container-highest transition-colors cursor-pointer">
+<div class="relative aspect-square overflow-hidden bg-surface-container-low">
+<img alt="Server room" class="w-full h-full object-cover grayscale opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300" data-alt="Cold dark server room interior with blinking lights and cable stacks in monochromatic editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXt84ql7tvuTkV3dSOA6eMJS3KP4LuVuj8UML4jLuAdVSbFZ1zjXI-n4NhPeRwpgRlC5B7KnivtJrbejcdZvbpkVVYMKem5taoHI1mKYHhTGQbNjlSKIOKuczfB3HmSqVgGzqXGygeVjbja64L7H3IbPSdG_y7Ue376t3hQC6QOkP1h2jyrjjpU0w_Si8epmreZBiHxg0yKRL0cfnHUETWQzoNHcVxlnmerLudaNcoe0TEa9gBRWjU2cZ34g6M5j2L7Rhkib4teeSu"/>
+<div class="absolute top-2 left-2">
+<span class="font-label text-[9px] font-bold uppercase bg-primary text-on-primary px-1.5 py-0.5">NETWORK</span>
+</div>
+</div>
+<div class="p-3 flex flex-col gap-2">
+<h3 class="font-headline text-sm font-bold uppercase leading-tight tracking-tight">Uplink_Log_01</h3>
+<div class="flex flex-col gap-1">
+<span class="font-label text-[9px] uppercase text-on-surface-variant">ID: 009-UP</span>
+<span class="font-label text-[9px] uppercase text-on-surface-variant">TS: 30.11.24</span>
+</div>
+</div>
+</div>
+<!-- Document Card 5 -->
+<div class="group bg-surface-container flex flex-col hover:bg-surface-container-highest transition-colors cursor-pointer">
+<div class="relative aspect-square overflow-hidden bg-surface-container-low">
+<img alt="Processor" class="w-full h-full object-cover grayscale opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300" data-alt="Extreme close up of a computer processor with intricate mechanical details in harsh white lighting and deep shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCC8JvSWYRycVB4REYge3yUqM-EmauR22gKgf_uvzqdF72DPd3Yk4KoiBgPP6vUQtyh16RF2RsNpg0qwY1VcDGxWFDS64R1DAIHL2LO9h7Gd3rd4PJ-oYwoD6lZfvwYSbFVYHu1Zo_4116c5RvzQN-uZoar15Alf5GZHz2zNkFC5ug6w9KXbk8f-Sc4BI57bnM5_LkghMZeqYCEZjCvNS-4YC7fJj9fjs4djY_hU_Lp4t4a39p6KcRllY1qWcHlHYyfxlv_DorysgP3"/>
+<div class="absolute top-2 left-2">
+<span class="font-label text-[9px] font-bold uppercase bg-primary text-on-primary px-1.5 py-0.5">HARDWARE</span>
+</div>
+</div>
+<div class="p-3 flex flex-col gap-2">
+<h3 class="font-headline text-sm font-bold uppercase leading-tight tracking-tight">Physical_Asset_4</h3>
+<div class="flex flex-col gap-1">
+<span class="font-label text-[9px] uppercase text-on-surface-variant">ID: 887-HW</span>
+<span class="font-label text-[9px] uppercase text-on-surface-variant">TS: 28.11.24</span>
+</div>
+</div>
+</div>
+<!-- Document Card 6 -->
+<div class="group bg-surface-container flex flex-col hover:bg-surface-container-highest transition-colors cursor-pointer">
+<div class="relative aspect-square overflow-hidden bg-surface-container-low">
+<img alt="Laptop dark" class="w-full h-full object-cover grayscale opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300" data-alt="Sleek modern laptop on a dark desk with minimal reflections and high contrast monochromatic aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt-tzX01hJclUN06irn28s6EmY6pXBBGcgutQg9PwXJDQ-c3vDOt5BaIS5N3tQTg2WZDyOaFqHlFstuQb3sFDuAKXEACXBe0RznuuAcMyL3hw6M5xlc9sx9HkBUsTLn6JGtqFyLb0sonyV3B_hL69uM-H7syNUFgu1tXZWTkynuU0ur0gBTfps0sZVurzZ_3ZmzuY5ixUQbBTl7fzOcEyEDspLd2Qqya3b56dEsSyp79bIZ98B_7Za9g_PWjqjfLjI5ISIH39Zp8tW"/>
+<div class="absolute top-2 left-2">
+<span class="font-label text-[9px] font-bold uppercase bg-primary text-on-primary px-1.5 py-0.5">LOCAL</span>
+</div>
+</div>
+<div class="p-3 flex flex-col gap-2">
+<h3 class="font-headline text-sm font-bold uppercase leading-tight tracking-tight">User_Session_B</h3>
+<div class="flex flex-col gap-1">
+<span class="font-label text-[9px] uppercase text-on-surface-variant">ID: 102-US</span>
+<span class="font-label text-[9px] uppercase text-on-surface-variant">TS: 25.11.24</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Load More / End of List -->
+<div class="px-6 mt-12 mb-8">
+<button class="w-full bg-transparent border-2 border-primary text-primary py-4 font-label font-bold uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all">
+                Load More Archives
+            </button>
+<div class="mt-8 flex items-center justify-center gap-4">
+<div class="h-[1px] flex-grow bg-outline-variant"></div>
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">End of Directory</span>
+<div class="h-[1px] flex-grow bg-outline-variant"></div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-16 flex justify-around items-stretch bg-[#141312] z-50">
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28]" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#ffffff] text-[#141312] h-full w-full" href="#">
+<span class="material-symbols-outlined" data-icon="search" style="font-variation-settings: 'FILL' 1;">search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28]" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28]" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</a>
+</nav>
+<!-- Contextual FAB (Suppressed on Browse as per instructions, but placeholder for structure if needed) -->
+</body></html>

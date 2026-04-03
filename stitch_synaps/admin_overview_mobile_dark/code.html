@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-lowest": "#0f0e0d",
+              "on-primary-container": "#000000",
+              "tertiary-container": "#90918f",
+              "primary-fixed": "#5d5f5d",
+              "on-tertiary-fixed-variant": "#e2e3e1",
+              "on-secondary-fixed": "#1a1c1b",
+              "on-primary": "#1a1c1b",
+              "surface-tint": "#c6c7c5",
+              "secondary": "#c6c7c5",
+              "on-tertiary-fixed": "#ffffff",
+              "outline": "#919191",
+              "on-secondary-fixed-variant": "#3a3c3b",
+              "surface-dim": "#141312",
+              "secondary-container": "#454746",
+              "surface-bright": "#3b3937",
+              "on-primary-fixed-variant": "#e2e3e1",
+              "on-error-container": "#ffdad6",
+              "on-surface": "#e6e1df",
+              "on-primary-fixed": "#ffffff",
+              "secondary-fixed-dim": "#ababaa",
+              "tertiary": "#e2e3e1",
+              "primary-fixed-dim": "#454746",
+              "primary": "#ffffff",
+              "inverse-surface": "#e6e1df",
+              "surface-container-highest": "#363433",
+              "primary-container": "#d4d4d3",
+              "outline-variant": "#474747",
+              "on-tertiary-container": "#000000",
+              "error": "#ffb4ab",
+              "surface": "#141312",
+              "secondary-fixed": "#c6c7c5",
+              "inverse-primary": "#5d5f5d",
+              "tertiary-fixed": "#5d5f5d",
+              "inverse-on-surface": "#32302f",
+              "background": "#141312",
+              "on-background": "#e6e1df",
+              "surface-variant": "#363433",
+              "surface-container": "#211f1e",
+              "surface-container-low": "#1d1b1a",
+              "on-secondary-container": "#e2e3e1",
+              "on-secondary": "#1a1c1b",
+              "tertiary-fixed-dim": "#454746",
+              "on-error": "#690005",
+              "surface-container-high": "#2b2a28",
+              "on-tertiary": "#1a1c1b",
+              "on-surface-variant": "#c6c6c6",
+              "error-container": "#93000a"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #141312;
+            color: #e6e1df;
+            font-family: 'Inter', sans-serif;
+        }
+        .brutalist-shadow {
+            box-shadow: 4px 4px 0px 0px #ffffff;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-[#141312] text-[#ffffff] font-['Space_Grotesk'] uppercase tracking-tighter flex justify-between items-center w-full px-6 py-4 fixed top-0 z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#ffffff]" data-icon="menu">menu</span>
+<h1 class="text-2xl font-bold tracking-widest text-[#ffffff]">SYNAPS</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#ffffff]" data-icon="notifications">notifications</span>
+<div class="w-8 h-8 bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-xs" data-icon="person">person</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-20 pb-24 px-6 space-y-12">
+<!-- Header Section -->
+<section class="space-y-2">
+<p class="font-label text-xs tracking-widest text-secondary uppercase">[ SYSTEM_OVERVIEW ]</p>
+<h2 class="font-headline text-4xl font-bold leading-none tracking-tighter">ADMIN_DASHBOARD</h2>
+<p class="font-body text-sm text-on-surface-variant">Real-time terminal node monitoring active.</p>
+</section>
+<!-- 2x2 Metrics Grid -->
+<section class="grid grid-cols-2 gap-4">
+<!-- Total Docs -->
+<div class="bg-surface-container p-4 space-y-4">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="description">description</span>
+<span class="font-label text-[10px] text-primary bg-surface-bright px-1">ACTIVE</span>
+</div>
+<div>
+<p class="font-label text-[10px] text-secondary uppercase">Total Docs</p>
+<p class="font-headline text-2xl font-bold">12.4K</p>
+</div>
+</div>
+<!-- Pending -->
+<div class="bg-surface-container p-4 space-y-4">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="pending_actions">pending_actions</span>
+<span class="font-label text-[10px] text-primary bg-surface-bright px-1">PRIORITY</span>
+</div>
+<div>
+<p class="font-label text-[10px] text-secondary uppercase">Pending</p>
+<p class="font-headline text-2xl font-bold">842</p>
+</div>
+</div>
+<!-- Members -->
+<div class="bg-surface-container p-4 space-y-4">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="group">group</span>
+<span class="font-label text-[10px] text-primary bg-surface-bright px-1">STABLE</span>
+</div>
+<div>
+<p class="font-label text-[10px] text-secondary uppercase">Members</p>
+<p class="font-headline text-2xl font-bold">3,102</p>
+</div>
+</div>
+<!-- Downloads -->
+<div class="bg-surface-container p-4 space-y-4">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="download">download</span>
+<span class="font-label text-[10px] text-primary bg-surface-bright px-1">HIGH</span>
+</div>
+<div>
+<p class="font-label text-[10px] text-secondary uppercase">Downloads</p>
+<p class="font-headline text-2xl font-bold">45.2K</p>
+</div>
+</div>
+</section>
+<!-- Activity Chart Placeholder (Brutalist Style) -->
+<section class="space-y-4">
+<div class="flex justify-between items-end">
+<h3 class="font-headline text-xl font-bold uppercase tracking-tight">Activity_Stream</h3>
+<span class="font-label text-[10px] text-secondary uppercase">Last 24 Hours</span>
+</div>
+<div class="bg-surface-container h-48 w-full relative flex items-end justify-between px-2 pb-2 gap-1 overflow-hidden">
+<!-- Simulated Brutalist Bar/Line Chart Hybrid -->
+<div class="bg-primary-fixed-dim w-full h-[20%]"></div>
+<div class="bg-primary-fixed-dim w-full h-[35%]"></div>
+<div class="bg-primary-fixed-dim w-full h-[25%]"></div>
+<div class="bg-primary w-full h-[60%]"></div>
+<div class="bg-primary-fixed-dim w-full h-[45%]"></div>
+<div class="bg-primary-fixed-dim w-full h-[75%]"></div>
+<div class="bg-primary w-full h-[90%]"></div>
+<div class="bg-primary-fixed-dim w-full h-[40%]"></div>
+<div class="bg-primary-fixed-dim w-full h-[30%]"></div>
+<div class="bg-primary-fixed-dim w-full h-[55%]"></div>
+<div class="bg-primary w-full h-[85%]"></div>
+<div class="bg-primary-fixed-dim w-full h-[20%]"></div>
+<!-- Line Overlay simulation -->
+<div class="absolute inset-0 flex flex-col justify-between py-4 opacity-10">
+<div class="border-t border-primary w-full"></div>
+<div class="border-t border-primary w-full"></div>
+<div class="border-t border-primary w-full"></div>
+</div>
+</div>
+</section>
+<!-- Recent Activity Feed -->
+<section class="space-y-6">
+<h3 class="font-headline text-xl font-bold uppercase tracking-tight">Recent_Logs</h3>
+<div class="space-y-1">
+<!-- Activity Item 1 -->
+<div class="bg-surface-container-low p-4 flex gap-4 items-center group hover:bg-surface-container-highest transition-colors duration-150">
+<div class="w-10 h-10 bg-surface-bright flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="history_edu">history_edu</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between">
+<p class="font-label text-xs text-primary font-bold">DOC_REVISION_042</p>
+<p class="font-label text-[10px] text-secondary">04:21 PM</p>
+</div>
+<p class="font-body text-xs text-on-surface-variant">User 'admin_alpha' updated internal protocol.</p>
+</div>
+</div>
+<!-- Activity Item 2 -->
+<div class="bg-surface-container-low p-4 flex gap-4 items-center group hover:bg-surface-container-highest transition-colors duration-150">
+<div class="w-10 h-10 bg-surface-bright flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="person_add">person_add</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between">
+<p class="font-label text-xs text-primary font-bold">MEMBER_ENROLL</p>
+<p class="font-label text-[10px] text-secondary">02:15 PM</p>
+</div>
+<p class="font-body text-xs text-on-surface-variant">New encrypted node access granted to 'external_3'.</p>
+</div>
+</div>
+<!-- Activity Item 3 -->
+<div class="bg-surface-container-low p-4 flex gap-4 items-center group hover:bg-surface-container-highest transition-colors duration-150">
+<div class="w-10 h-10 bg-surface-bright flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="security">security</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between">
+<p class="font-label text-xs text-primary font-bold">AUTH_GATE_FAIL</p>
+<p class="font-label text-[10px] text-secondary">11:04 AM</p>
+</div>
+<p class="font-body text-xs text-on-surface-variant">Multiple failed login attempts detected at IP:192.x</p>
+</div>
+</div>
+</div>
+<button class="w-full py-4 border-2 border-primary font-headline font-bold text-primary uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all duration-150">
+                View Full Logs
+            </button>
+</section>
+<!-- System Status Badge Section -->
+<section class="flex flex-wrap gap-2">
+<span class="border border-outline px-2 py-1 font-label text-[10px] text-on-surface-variant">[SERVER_NODE_NYC]</span>
+<span class="border border-outline px-2 py-1 font-label text-[10px] text-on-surface-variant">[LATENCY_12ms]</span>
+<span class="border border-outline px-2 py-1 font-label text-[10px] text-primary bg-surface-container-highest">[ENCRYPTION_AES256]</span>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-16 flex justify-around items-stretch bg-[#141312] z-50">
+<a class="flex flex-col items-center justify-center bg-[#ffffff] text-[#141312] h-full w-full transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Space_Grotesk'] font-bold uppercase text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28] transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-['Space_Grotesk'] font-bold uppercase text-[10px]">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28] transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-['Space_Grotesk'] font-bold uppercase text-[10px]">Docs</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28] transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Space_Grotesk'] font-bold uppercase text-[10px]">Config</span>
+</a>
+</nav>
+</body></html>

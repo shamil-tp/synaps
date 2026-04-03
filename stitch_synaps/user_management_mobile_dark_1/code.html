@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-lowest": "#0f0e0d",
+                        "on-primary-container": "#000000",
+                        "tertiary-container": "#90918f",
+                        "primary-fixed": "#5d5f5d",
+                        "on-tertiary-fixed-variant": "#e2e3e1",
+                        "on-secondary-fixed": "#1a1c1b",
+                        "on-primary": "#1a1c1b",
+                        "surface-tint": "#c6c7c5",
+                        "secondary": "#c6c7c5",
+                        "on-tertiary-fixed": "#ffffff",
+                        "outline": "#919191",
+                        "on-secondary-fixed-variant": "#3a3c3b",
+                        "surface-dim": "#141312",
+                        "secondary-container": "#454746",
+                        "surface-bright": "#3b3937",
+                        "on-primary-fixed-variant": "#e2e3e1",
+                        "on-error-container": "#ffdad6",
+                        "on-surface": "#e6e1df",
+                        "on-primary-fixed": "#ffffff",
+                        "secondary-fixed-dim": "#ababaa",
+                        "tertiary": "#e2e3e1",
+                        "primary-fixed-dim": "#454746",
+                        "primary": "#ffffff",
+                        "inverse-surface": "#e6e1df",
+                        "surface-container-highest": "#363433",
+                        "primary-container": "#d4d4d3",
+                        "outline-variant": "#474747",
+                        "on-tertiary-container": "#000000",
+                        "error": "#ffb4ab",
+                        "surface": "#141312",
+                        "secondary-fixed": "#c6c7c5",
+                        "inverse-primary": "#5d5f5d",
+                        "tertiary-fixed": "#5d5f5d",
+                        "inverse-on-surface": "#32302f",
+                        "background": "#141312",
+                        "on-background": "#e6e1df",
+                        "surface-variant": "#363433",
+                        "surface-container": "#211f1e",
+                        "surface-container-low": "#1d1b1a",
+                        "on-secondary-container": "#e2e3e1",
+                        "on-secondary": "#1a1c1b",
+                        "tertiary-fixed-dim": "#454746",
+                        "on-error": "#690005",
+                        "surface-container-high": "#2b2a28",
+                        "on-tertiary": "#1a1c1b",
+                        "on-surface-variant": "#c6c6c6",
+                        "error-container": "#93000a"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .brutalist-shadow {
+            box-shadow: 4px 4px 0px 0px #ffffff;
+        }
+        .active-tab-shadow {
+            box-shadow: inset 0px -4px 0px 0px #ffffff;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-6 py-4 bg-[#141312] sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#ffffff]">menu</span>
+<h1 class="font-['Space_Grotesk'] uppercase tracking-widest text-2xl font-bold text-[#ffffff]">SYNAPS</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#ffffff]">notifications</span>
+<div class="w-8 h-8 bg-surface-container-highest border border-outline-variant flex items-center justify-center">
+<span class="text-[10px] font-headline">AD</span>
+</div>
+</div>
+</header>
+<main class="px-6 pt-4 pb-24 min-h-screen">
+<!-- Section Header -->
+<div class="mb-8">
+<h2 class="font-headline text-4xl font-bold tracking-tighter uppercase text-primary">User Directory</h2>
+<p class="font-label text-xs text-on-surface-variant tracking-widest mt-1">[ SYSTEM_ACCESS_LEVEL: ADMIN ]</p>
+</div>
+<!-- Full-width Search Bar -->
+<div class="mb-8">
+<div class="relative group">
+<input class="w-full bg-surface-container-low border-b-2 border-outline-variant py-4 px-12 focus:outline-none focus:border-primary focus:bg-surface-container-high transition-all font-label uppercase text-sm tracking-widest placeholder:text-outline-variant" placeholder="SEARCH_DATABASE..." type="text"/>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline-variant">tune</span>
+</div>
+</div>
+<!-- Member List -->
+<div class="space-y-5">
+<!-- User Card 1 -->
+<div class="bg-surface-container p-5 relative group hover:bg-surface-container-high transition-colors">
+<div class="flex justify-between items-start mb-4">
+<div class="flex gap-4 items-center">
+<div class="w-12 h-12 bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img alt="User Avatar" class="w-full h-full object-cover grayscale" data-alt="close-up portrait of a professional man in a dark turtleneck minimalist editorial style high contrast black and white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX-A_8K1xiImOFgeXfVdoGZMIxGQuCChssxM0PKokOtP5hBiqpztPI8KK-eOuxSLVCWFoBzFujaenjnUqGqUtgtzTF4LHnUZ6dLEZgI6ScW8MxNE8Gv7x7PR_aDfZ0VX6nUDxZn1ibI7FB0rIM7x-Ln9Wk6rttQ8C4UAAX5hFAzq1XwNCHOTRGmUbavSz2dUp97JXg73n9dU5tbRVg2WP0_4N-5mdQ3habNgCDqQnsWC0elixb6VlNmCf31gLRDnPdLktYfOJB0mFg"/>
+</div>
+<div>
+<h3 class="font-headline font-bold text-lg leading-none text-primary uppercase">Erikson, J.</h3>
+<p class="font-body text-xs text-on-surface-variant lowercase">jerikson@synaps.io</p>
+</div>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary p-1">more_vert</button>
+</div>
+<div class="flex flex-wrap gap-2 pt-4 border-t border-outline-variant/30">
+<div class="px-2 py-1 bg-primary text-on-primary font-label text-[10px] font-bold tracking-tighter uppercase">
+                        Lead Developer
+                    </div>
+<div class="px-2 py-1 border border-outline text-on-surface-variant font-label text-[10px] tracking-tighter uppercase">
+                        Status: Active
+                    </div>
+</div>
+</div>
+<!-- User Card 2 -->
+<div class="bg-surface-container p-5 relative brutalist-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="flex gap-4 items-center">
+<div class="w-12 h-12 bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img alt="User Avatar" class="w-full h-full object-cover grayscale" data-alt="close-up portrait of a woman with sharp features and modern glasses high-end monochrome photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr3fIh2yZ9YvyffApZ-0zvbTqJxk0McT1iKFQsrr-hcSXmEVMd16eTJnhJ_7oBjX2VWmLSuRxavluaKrmLKreWoKM4GmE74CXxir4vAPNujpLEei-6agTAhVOO5tl0UtV3e3JmUmaL2RXlQSvcmmlTwaRvZ1iV6GvQA1Yn7v3DQY10YQHktWloLxprd5zJxakTpQU3tLmS8nmpVt257ScRefm-vNJQKc03y6HwTZuy6x5Al400_1AHyvJvms259Izc-6TQ6U8zRKCh"/>
+</div>
+<div>
+<h3 class="font-headline font-bold text-lg leading-none text-primary uppercase">Vance, Sarah</h3>
+<p class="font-body text-xs text-on-surface-variant lowercase">svance@synaps.io</p>
+</div>
+</div>
+<button class="material-symbols-outlined text-primary p-1">more_vert</button>
+</div>
+<div class="flex flex-wrap gap-2 pt-4 border-t border-outline-variant/30">
+<div class="px-2 py-1 bg-primary text-on-primary font-label text-[10px] font-bold tracking-tighter uppercase">
+                        Admin
+                    </div>
+<div class="px-2 py-1 border border-primary text-primary font-label text-[10px] tracking-tighter uppercase">
+                        Status: Online
+                    </div>
+</div>
+</div>
+<!-- User Card 3 (Action Menu Mockup) -->
+<div class="bg-surface-container-high p-5 relative border border-outline-variant">
+<div class="flex justify-between items-start mb-4">
+<div class="flex gap-4 items-center">
+<div class="w-12 h-12 bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img alt="User Avatar" class="w-full h-full object-cover grayscale" data-alt="close-up portrait of a man with minimalist aesthetic shadows across face black and white editorial" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1Ol3r7N6ANhIk-gFm0QKKAzqbhJpfhoSIOh9Q38ajBNZHRWkBHbnHxKObYRoX0syaQxm-WcceMT1bRsmeBnhdPKzw0IGuPSJ7HXKi1ci-PUmZSrnv-2AtC7o6lLLdtC7m67YylltWbe4BbIF4b5M2C3ya7IbC9mme6gCF0uD-H8-vBWkWSbpWu4VIZU3JXJuPmLKXv1pwjrLlhiqz-v8PKFpjRRc7Ti8kGN8aVrCEMyor1J2DCs9lKvcmZdXFFn7Hd_x8BiZd7zj7"/>
+</div>
+<div>
+<h3 class="font-headline font-bold text-lg leading-none text-primary uppercase">Chen, Marcus</h3>
+<p class="font-body text-xs text-on-surface-variant lowercase">mchen@synaps.io</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-4 border-t border-outline-variant/30">
+<button class="flex items-center justify-center gap-2 py-3 bg-surface-container-highest font-label text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-sm">edit</span> Change Role
+                    </button>
+<button class="flex items-center justify-center gap-2 py-3 border border-error text-error font-label text-[10px] font-bold uppercase tracking-widest hover:bg-error hover:text-on-error transition-colors">
+<span class="material-symbols-outlined text-sm">block</span> Ban User
+                    </button>
+</div>
+</div>
+<!-- User Card 4 -->
+<div class="bg-surface-container p-5 relative opacity-60">
+<div class="flex justify-between items-start mb-4">
+<div class="flex gap-4 items-center">
+<div class="w-12 h-12 bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img alt="User Avatar" class="w-full h-full object-cover grayscale" data-alt="blurry portrait of a person in high-contrast lighting dark room aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfoAm3RG91eKUCqgL95NeAE90-F9Ro4wGUrKRdYCcX2MHETRUSm-nNj9S2NIsZUJyXl_6uh3-_W_l4aGcq4rrNALSr3mPSoueoOdfpzeNxRhMe9oCR2E0n9q05kcymQVSMfzEKku62_k5kPqFr0TfXZoacnIQV5kg9jKsZe6eVfG1M4eC70R4-vQMnOMMz6ChFHfdOcIAFEkTzrjp7H3gy4ry2sR5x4LQmFeSS7F5lYPlaBep1c2CzM5p5gAm_PzeVgrtWZr8UrkJM"/>
+</div>
+<div>
+<h3 class="font-headline font-bold text-lg leading-none text-primary uppercase">Blackwood, L.</h3>
+<p class="font-body text-xs text-on-surface-variant lowercase">lblack@synaps.io</p>
+</div>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant p-1">more_vert</button>
+</div>
+<div class="flex flex-wrap gap-2 pt-4 border-t border-outline-variant/30">
+<div class="px-2 py-1 bg-surface-container-highest text-on-surface-variant font-label text-[10px] font-bold tracking-tighter uppercase">
+                        Guest
+                    </div>
+<div class="px-2 py-1 border border-outline-variant text-outline-variant font-label text-[10px] tracking-tighter uppercase">
+                        Status: Banned
+                    </div>
+</div>
+</div>
+</div>
+<!-- Add User Floating Button -->
+<button class="fixed bottom-20 right-6 w-14 h-14 bg-primary text-on-primary flex items-center justify-center brutalist-shadow z-[60]">
+<span class="material-symbols-outlined">person_add</span>
+</button>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-16 flex justify-around items-stretch bg-[#141312] z-50">
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28]" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28]" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#ffffff] text-[#141312] h-full w-full" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28]" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</a>
+</nav>
+</body></html>

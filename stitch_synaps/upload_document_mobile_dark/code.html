@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-lowest": "#0f0e0d",
+            "on-primary-container": "#000000",
+            "tertiary-container": "#90918f",
+            "primary-fixed": "#5d5f5d",
+            "on-tertiary-fixed-variant": "#e2e3e1",
+            "on-secondary-fixed": "#1a1c1b",
+            "on-primary": "#1a1c1b",
+            "surface-tint": "#c6c7c5",
+            "secondary": "#c6c7c5",
+            "on-tertiary-fixed": "#ffffff",
+            "outline": "#919191",
+            "on-secondary-fixed-variant": "#3a3c3b",
+            "surface-dim": "#141312",
+            "secondary-container": "#454746",
+            "surface-bright": "#3b3937",
+            "on-primary-fixed-variant": "#e2e3e1",
+            "on-error-container": "#ffdad6",
+            "on-surface": "#e6e1df",
+            "on-primary-fixed": "#ffffff",
+            "secondary-fixed-dim": "#ababaa",
+            "tertiary": "#e2e3e1",
+            "primary-fixed-dim": "#454746",
+            "primary": "#ffffff",
+            "inverse-surface": "#e6e1df",
+            "surface-container-highest": "#363433",
+            "primary-container": "#d4d4d3",
+            "outline-variant": "#474747",
+            "on-tertiary-container": "#000000",
+            "error": "#ffb4ab",
+            "surface": "#141312",
+            "secondary-fixed": "#c6c7c5",
+            "inverse-primary": "#5d5f5d",
+            "tertiary-fixed": "#5d5f5d",
+            "inverse-on-surface": "#32302f",
+            "background": "#141312",
+            "on-background": "#e6e1df",
+            "surface-variant": "#363433",
+            "surface-container": "#211f1e",
+            "surface-container-low": "#1d1b1a",
+            "on-secondary-container": "#e2e3e1",
+            "on-secondary": "#1a1c1b",
+            "tertiary-fixed-dim": "#454746",
+            "on-error": "#690005",
+            "surface-container-high": "#2b2a28",
+            "on-tertiary": "#1a1c1b",
+            "on-surface-variant": "#c6c6c6",
+            "error-container": "#93000a"
+          },
+          fontFamily: {
+            "headline": ["Space Grotesk"],
+            "body": ["Inter"],
+            "label": ["Space Grotesk"]
+          },
+          borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .brutalist-shadow {
+      box-shadow: 4px 4px 0px 0px #ffffff;
+    }
+    .brutalist-shadow-hover:hover {
+      box-shadow: 4px 4px 0px 0px #ffffff;
+    }
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #141312;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #474747;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="bg-[#141312] text-[#ffffff] font-['Space_Grotesk'] uppercase tracking-tighter flex justify-between items-center w-full px-6 py-4 sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#ffffff]">menu</span>
+<h1 class="text-2xl font-bold tracking-widest text-[#ffffff]">SYNAPS</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#ffffff]">account_circle</span>
+</div>
+</header>
+<main class="min-h-screen pb-32">
+<!-- Screen Title Section -->
+<section class="px-6 pt-8 pb-4">
+<div class="flex items-center gap-2 mb-2">
+<span class="text-[10px] font-label uppercase tracking-[0.2em] text-secondary">[ DOCUMENT_INGESTION_MODULE ]</span>
+</div>
+<h2 class="text-4xl font-headline font-bold text-primary uppercase leading-none tracking-tighter">Upload<br/>Document</h2>
+</section>
+<!-- Upload Zone -->
+<section class="px-6 mb-10">
+<div class="w-full h-64 border-2 border-dashed border-outline-variant bg-surface-container-low flex flex-col items-center justify-center relative group cursor-pointer transition-colors hover:bg-surface-container-high">
+<input class="absolute inset-0 opacity-0 cursor-pointer" type="file"/>
+<div class="flex flex-col items-center text-center p-8">
+<span class="material-symbols-outlined text-5xl mb-4 text-primary">upload_file</span>
+<p class="font-label uppercase text-sm font-bold mb-1 tracking-tight">Drop Source File</p>
+<p class="text-xs text-on-surface-variant font-body">MAX_SIZE: 50MB / FORMATS: PDF, MD, TXT</p>
+</div>
+</div>
+</section>
+<!-- Metadata Form -->
+<section class="px-6 space-y-10">
+<div class="space-y-8">
+<!-- Field: Title -->
+<div class="group">
+<label class="block font-label uppercase text-[10px] font-bold text-secondary mb-2 tracking-widest">01. Document Title</label>
+<input class="w-full bg-surface-container-low border-b-2 border-outline-variant text-primary font-headline text-xl px-0 py-3 focus:outline-none focus:border-primary focus:bg-surface-container-high transition-all placeholder:text-outline-variant rounded-none border-t-0 border-l-0 border-r-0" placeholder="ENTER_TITLE_STRING..." type="text"/>
+</div>
+<!-- Field: Description -->
+<div class="group">
+<label class="block font-label uppercase text-[10px] font-bold text-secondary mb-2 tracking-widest">02. Abstract / Description</label>
+<textarea class="w-full bg-surface-container-low border-b-2 border-outline-variant text-on-surface font-body text-sm px-0 py-3 focus:outline-none focus:border-primary focus:bg-surface-container-high transition-all placeholder:text-outline-variant rounded-none border-t-0 border-l-0 border-r-0" placeholder="PROVIDE_CONTEXTUAL_METADATA..." rows="3"></textarea>
+</div>
+<!-- Two Column Layout for Type and Subject -->
+<div class="grid grid-cols-2 gap-6">
+<div class="group">
+<label class="block font-label uppercase text-[10px] font-bold text-secondary mb-2 tracking-widest">03. Type</label>
+<select class="w-full bg-surface-container-low border-b-2 border-outline-variant text-primary font-label text-sm px-0 py-3 focus:outline-none focus:border-primary focus:bg-surface-container-high transition-all rounded-none border-t-0 border-l-0 border-r-0 appearance-none">
+<option>TECHNICAL_SPEC</option>
+<option>RESEARCH_PAPER</option>
+<option>WHITE_PAPER</option>
+<option>MANUAL</option>
+</select>
+</div>
+<div class="group">
+<label class="block font-label uppercase text-[10px] font-bold text-secondary mb-2 tracking-widest">04. Subject</label>
+<input class="w-full bg-surface-container-low border-b-2 border-outline-variant text-primary font-label text-sm px-0 py-3 focus:outline-none focus:border-primary focus:bg-surface-container-high transition-all placeholder:text-outline-variant rounded-none border-t-0 border-l-0 border-r-0" placeholder="TAG_KEYWORDS" type="text"/>
+</div>
+</div>
+</div>
+<!-- System Status Display (Decorative Brutalist Component) -->
+<div class="bg-surface-container p-4 border border-outline-variant">
+<div class="flex justify-between items-center mb-4">
+<span class="font-label text-[10px] text-secondary">ENCRYPTION_STATUS</span>
+<span class="font-label text-[10px] text-primary bg-primary-container px-2 py-0.5 text-on-primary-container">ACTIVE</span>
+</div>
+<div class="h-1 bg-outline-variant w-full overflow-hidden">
+<div class="h-full bg-primary w-2/3"></div>
+</div>
+<div class="flex justify-between mt-2">
+<span class="font-label text-[9px] text-on-surface-variant">NODE: SYN-042</span>
+<span class="font-label text-[9px] text-on-surface-variant">UP_SPEED: NOMINAL</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Sticky Bottom CTA -->
+<footer class="fixed bottom-16 left-0 w-full p-6 bg-surface/80 backdrop-blur-sm z-40 border-t border-outline-variant/30">
+<button class="w-full bg-primary text-on-primary font-headline font-bold uppercase py-5 text-lg flex items-center justify-center gap-3 brutalist-shadow transition-transform active:translate-x-1 active:translate-y-1">
+      Submit for Review
+      <span class="material-symbols-outlined">send</span>
+</button>
+</footer>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-16 flex justify-around items-stretch bg-[#141312] z-50 border-t-0">
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28]" href="#">
+<span class="material-symbols-outlined">home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28]" href="#">
+<span class="material-symbols-outlined">search</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#ffffff] text-[#141312] h-full w-full" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28]" href="#">
+<span class="material-symbols-outlined">settings</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#211f1e",
+              "error": "#ffb4ab",
+              "surface-container-low": "#1d1b1a",
+              "surface-container-lowest": "#0f0e0d",
+              "surface": "#141312",
+              "inverse-surface": "#e6e1df",
+              "primary": "#ffffff",
+              "primary-fixed": "#5d5f5d",
+              "surface-variant": "#363433",
+              "surface-dim": "#141312",
+              "inverse-primary": "#5d5f5d",
+              "on-tertiary": "#1a1c1b",
+              "error-container": "#93000a",
+              "on-primary": "#1a1c1b",
+              "on-tertiary-fixed-variant": "#e2e3e1",
+              "on-tertiary-container": "#000000",
+              "secondary": "#c6c7c5",
+              "on-surface": "#e6e1df",
+              "tertiary-fixed": "#5d5f5d",
+              "on-primary-fixed-variant": "#e2e3e1",
+              "primary-container": "#d4d4d3",
+              "tertiary-container": "#90918f",
+              "outline": "#919191",
+              "outline-variant": "#474747",
+              "surface-container-highest": "#363433",
+              "inverse-on-surface": "#32302f",
+              "surface-bright": "#3b3937",
+              "tertiary": "#e2e3e1",
+              "on-surface-variant": "#c6c6c6",
+              "secondary-container": "#454746",
+              "secondary-fixed-dim": "#ababaa",
+              "on-secondary-container": "#e2e3e1",
+              "on-error-container": "#ffdad6",
+              "on-secondary-fixed": "#1a1c1b",
+              "on-error": "#690005",
+              "on-secondary-fixed-variant": "#3a3c3b",
+              "primary-fixed-dim": "#454746",
+              "on-secondary": "#1a1c1b",
+              "background": "#141312",
+              "on-background": "#e6e1df",
+              "surface-container-high": "#2b2a28",
+              "tertiary-fixed-dim": "#454746",
+              "on-tertiary-fixed": "#ffffff",
+              "secondary-fixed": "#c6c7c5",
+              "surface-tint": "#c6c7c5",
+              "on-primary-fixed": "#ffffff",
+              "on-primary-container": "#000000"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        background-color: #141312;
+        color: #ffffff;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #141312;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #ffffff;
+      }
+    </style>
+</head>
+<body class="font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="sticky top-0 w-full flex justify-between items-center px-6 py-4 bg-[#141312] border-b-2 border-[#ffffff] z-50 shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
+<div class="flex items-center gap-12">
+<a class="text-2xl font-black tracking-tighter text-[#ffffff] uppercase font-headline" href="/">SYNAPS</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-xs font-mono uppercase text-[#c6c7c5] hover:text-[#ffffff] hover:bg-[#ffffff] hover:text-[#141312] transition-none px-2 py-1" href="#">Browse</a>
+<a class="text-xs font-mono uppercase text-[#ffffff] font-bold underline underline-offset-8 px-2 py-1" href="#">Search</a>
+<a class="text-xs font-mono uppercase text-[#c6c7c5] hover:text-[#ffffff] hover:bg-[#ffffff] hover:text-[#141312] transition-none px-2 py-1" href="#">Upload</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-xs font-mono uppercase px-4 py-2 text-primary hover:bg-primary hover:text-on-primary transition-none">Sign in</button>
+<button class="text-xs font-mono uppercase px-6 py-2 bg-primary text-on-primary font-bold hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none shadow-[4px_4px_0px_0px_rgba(255,255,255,0.3)] transition-none">Get started</button>
+</div>
+</nav>
+<main class="max-w-7xl mx-auto px-6 py-12 min-h-screen">
+<!-- Search Header -->
+<header class="mb-16">
+<div class="relative group">
+<input class="w-full bg-surface-container-low border-b-4 border-primary p-6 text-4xl md:text-6xl font-headline font-bold uppercase tracking-tighter focus:ring-0 focus:outline-none focus:bg-surface-container-high transition-all shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]" placeholder="SEARCH ARCHIVE..." type="text" value="data structures"/>
+<div class="absolute right-6 top-1/2 -translate-y-1/2 flex items-center gap-4">
+<span class="material-symbols-outlined text-4xl">search</span>
+</div>
+</div>
+<div class="mt-8 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+<div>
+<h1 class="text-xs font-mono text-secondary uppercase tracking-[0.2em] mb-2">[ SEARCH_METRICS ]</h1>
+<p class="text-2xl font-headline font-light uppercase italic">42 results for <span class="font-bold not-italic">"data structures"</span></p>
+</div>
+<div class="flex gap-4 items-center">
+<span class="text-xs font-mono uppercase text-secondary">Sort_by:</span>
+<div class="relative">
+<select class="bg-surface border-2 border-primary text-primary font-mono text-xs uppercase px-4 py-2 appearance-none pr-10 focus:ring-0">
+<option>Relevance</option>
+<option>Chronological</option>
+<option>File_Size</option>
+<option>Node_Depth</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Filter Bar -->
+<section class="mb-12 flex flex-wrap gap-3 overflow-x-auto pb-4 border-b border-outline-variant">
+<button class="bg-primary text-on-primary px-4 py-1 text-xs font-mono uppercase font-bold">All_Results</button>
+<button class="border border-outline text-secondary px-4 py-1 text-xs font-mono uppercase hover:border-primary hover:text-primary">Schema</button>
+<button class="border border-outline text-secondary px-4 py-1 text-xs font-mono uppercase hover:border-primary hover:text-primary">Documentation</button>
+<button class="border border-outline text-secondary px-4 py-1 text-xs font-mono uppercase hover:border-primary hover:text-primary">Binary_Blobs</button>
+<button class="border border-outline text-secondary px-4 py-1 text-xs font-mono uppercase hover:border-primary hover:text-primary">Log_Exports</button>
+<button class="border border-outline text-secondary px-4 py-1 text-xs font-mono uppercase hover:border-primary hover:text-primary">System_Maps</button>
+<div class="ml-auto flex items-center gap-2 border-l border-outline-variant pl-4">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+<span class="text-xs font-mono uppercase text-secondary">Advanced_Filters</span>
+</div>
+</section>
+<!-- Results List -->
+<section class="space-y-0">
+<!-- Result Item 1 -->
+<div class="group flex flex-col md:flex-row gap-8 py-10 border-b border-outline-variant hover:bg-surface-container-low transition-all relative">
+<div class="w-full md:w-64 h-40 bg-surface-container overflow-hidden border border-outline-variant group-hover:border-primary group-hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] transition-all">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" data-alt="abstract close-up of green glowing circuit board pathways with dramatic shadows and digital technical aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHlSGW1NpMsL8pLWnZa7LGd8rxph_eGKPR6_VQA8nqWSBphSmHXvD5w16gMKYtCxLQpUuZ0UjP70g0Pidab57LH2mJiFTuSkClzkAqc-iaDBYwBvp95J3fm-4mJwG1Zd1IJ8Cd6W0LWwG7Ifaq4TKp1StMwXPVG_l5Fhi8KuXlTDWka7kYy6BoevWjuRRt5B3bk94WeyP1KCbm36g45M5iyxYL_4hD9JEeYnm0wmFofF8sn3GyvLDPdFSmnmjO3vUrWOuaxXkNypf3"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<span class="bg-surface-container-highest px-2 py-0.5 text-[10px] font-mono text-secondary uppercase border border-outline-variant">CORE_DATABASE</span>
+<span class="text-[10px] font-mono text-outline uppercase tracking-widest">ID: SNPS-0982-X</span>
+</div>
+<h3 class="text-2xl font-headline font-bold uppercase tracking-tight group-hover:text-primary mb-3">Relational Tree Structures: Optimized Traversal v2.4</h3>
+<p class="text-on-surface-variant font-body text-sm max-w-2xl leading-relaxed mb-4">
+                            Detailed schematics for multi-node relational hierarchies within the Synaps core. Documentation includes performance benchmarks for recursive queries and latency injection tests.
+                        </p>
+</div>
+<div class="flex flex-wrap items-center gap-6 text-[10px] font-mono text-secondary uppercase">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">description</span>
+                            DOCUMENTATION_PDF
+                        </div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">database</span>
+                            STRUCTURE_ARCHIVE
+                        </div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                            MAY_24_2024
+                        </div>
+<div class="ml-auto flex gap-2">
+<button class="bg-surface-container border border-outline-variant px-3 py-1 hover:bg-primary hover:text-on-primary transition-none">ACCESS_FILE</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Result Item 2 -->
+<div class="group flex flex-col md:flex-row gap-8 py-10 border-b border-outline-variant hover:bg-surface-container-low transition-all relative">
+<div class="w-full md:w-64 h-40 bg-surface-container overflow-hidden border border-outline-variant group-hover:border-primary group-hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] transition-all">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" data-alt="racks of server hardware in a dark room with blue and white indicator lights reflecting on metallic surfaces" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrRm1r7_qE-7Ox7TZyrIvE-Ae9TOE0uaYg2M_yjwOrNFdo9ht9pFV_WgM19FulKn6u9huBO-I-HA-fZNd4QhoBZoBDlKnaj2qIAC7S2W8qoEMuAPMs9J2ZnMwm8bpswyIikuLjwZVYXOQwYu2UOp3KHtbE8smkwaPbOLUfD3PvnQRtz2ZdyDnK8UvPfYXY4KioauLSC0eL_S7yRMz-j6rIAI7BB0f-CmczoFdvO9oSk5DWarz_TEN-SPa4Edb3UfL5hHq23QdN2WQB"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<span class="bg-surface-container-highest px-2 py-0.5 text-[10px] font-mono text-secondary uppercase border border-outline-variant">SYSTEM_LOG</span>
+<span class="text-[10px] font-mono text-outline uppercase tracking-widest">ID: SNPS-1102-L</span>
+</div>
+<h3 class="text-2xl font-headline font-bold uppercase tracking-tight group-hover:text-primary mb-3">Redundant Hash Maps &amp; Distributed Indexing Protocols</h3>
+<p class="text-on-surface-variant font-body text-sm max-w-2xl leading-relaxed mb-4">
+                            A comprehensive log of the indexing service failure and subsequent recovery using secondary distributed hash maps. Technical post-mortem for system engineers.
+                        </p>
+</div>
+<div class="flex flex-wrap items-center gap-6 text-[10px] font-mono text-secondary uppercase">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">terminal</span>
+                            BINARY_BLOB
+                        </div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">data_object</span>
+                            JSON_EXPORT
+                        </div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                            APR_12_2024
+                        </div>
+<div class="ml-auto flex gap-2">
+<button class="bg-surface-container border border-outline-variant px-3 py-1 hover:bg-primary hover:text-on-primary transition-none">ACCESS_FILE</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Result Item 3 -->
+<div class="group flex flex-col md:flex-row gap-8 py-10 border-b border-outline-variant hover:bg-surface-container-low transition-all relative">
+<div class="w-full md:w-64 h-40 bg-surface-container overflow-hidden border border-outline-variant group-hover:border-primary group-hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] transition-all">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300" data-alt="close-up of microchips and integrated circuits on a black background with high contrast monochrome lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmNYHX4tJ86q8jiCwXX3ghOS3csNt1Uf-5lon9YMUBow5ciYGp6dv2qj1gkq_fIZwotItxsmr1LHGn54e-1bseEpaqkUxRhTn-AuEPGK-R9-3Eq-JgKOLRt4Hi5Aih7xQ5sF0AidJcseg11fOZOJeDmpcsIUXGyfMx2PEtuCVWkhxm9mP5cWmnFFqN6-wuiMEHEjBtvnkyIDPacqO2X5dK0NNdEwl_cA2w2VfMXz9oifvbupSUO46V_tm77jiAFEPABcy7l9VmLkyY"/>
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<span class="bg-surface-container-highest px-2 py-0.5 text-[10px] font-mono text-secondary uppercase border border-outline-variant">ALGORITHM_SPEC</span>
+<span class="text-[10px] font-mono text-outline uppercase tracking-widest">ID: SNPS-2490-A</span>
+</div>
+<h3 class="text-2xl font-headline font-bold uppercase tracking-tight group-hover:text-primary mb-3">Graph-Based Neural Data Structures: Connectivity Map</h3>
+<p class="text-on-surface-variant font-body text-sm max-w-2xl leading-relaxed mb-4">
+                            Visual mapping and data schema for the neural-linked graph structures used in synaptic emulation. High density information for R&amp;D purposes.
+                        </p>
+</div>
+<div class="flex flex-wrap items-center gap-6 text-[10px] font-mono text-secondary uppercase">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">hub</span>
+                            GRAPH_DATA
+                        </div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">memory</span>
+                            AI_NEURAL_MAP
+                        </div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                            JAN_08_2024
+                        </div>
+<div class="ml-auto flex gap-2">
+<button class="bg-surface-container border border-outline-variant px-3 py-1 hover:bg-primary hover:text-on-primary transition-none">ACCESS_FILE</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pagination -->
+<nav class="mt-20 flex flex-col md:flex-row items-center justify-between gap-8 py-8 border-t-2 border-primary">
+<div class="flex items-center gap-4">
+<button class="w-12 h-12 flex items-center justify-center border-2 border-outline-variant text-outline hover:border-primary hover:text-primary transition-none">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<div class="flex gap-2">
+<button class="w-12 h-12 flex items-center justify-center border-2 border-primary bg-primary text-on-primary font-mono font-bold">01</button>
+<button class="w-12 h-12 flex items-center justify-center border-2 border-outline-variant text-secondary font-mono hover:border-primary hover:text-primary">02</button>
+<button class="w-12 h-12 flex items-center justify-center border-2 border-outline-variant text-secondary font-mono hover:border-primary hover:text-primary">03</button>
+<button class="w-12 h-12 flex items-center justify-center border-2 border-outline-variant text-secondary font-mono hover:border-primary hover:text-primary">04</button>
+<span class="w-12 h-12 flex items-center justify-center text-outline">...</span>
+<button class="w-12 h-12 flex items-center justify-center border-2 border-outline-variant text-secondary font-mono hover:border-primary hover:text-primary">14</button>
+</div>
+<button class="w-12 h-12 flex items-center justify-center border-2 border-outline-variant text-secondary hover:border-primary hover:text-primary transition-none">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<p class="text-xs font-mono uppercase text-secondary tracking-widest">Displaying 1-10 of 42 Results</p>
+</nav>
+</main>
+<!-- Footer -->
+<footer class="bg-[#141312] border-t-2 border-[#ffffff]">
+<div class="w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 gap-12 max-w-7xl mx-auto">
+<div class="flex flex-col gap-6">
+<span class="text-3xl font-black text-[#ffffff] font-headline uppercase">SYNAPS</span>
+<p class="font-mono text-sm uppercase tracking-widest text-[#c6c6c6] max-w-sm">Global Archival System for Neural and Algorithmic Persistent Storage. Standard Protocol 4.4.2</p>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="flex flex-col gap-4">
+<h4 class="text-xl font-headline uppercase text-primary">System</h4>
+<div class="flex flex-col gap-2">
+<a class="font-mono text-sm uppercase tracking-widest text-[#c6c6c6] hover:text-[#ffffff] hover:italic" href="#">Browse</a>
+<a class="font-mono text-sm uppercase tracking-widest text-[#c6c6c6] hover:text-[#ffffff] hover:italic" href="#">Upload</a>
+<a class="font-mono text-sm uppercase tracking-widest text-[#c6c6c6] hover:text-[#ffffff] hover:italic" href="#">About</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-xl font-headline uppercase text-primary">Legal</h4>
+<div class="flex flex-col gap-2">
+<a class="font-mono text-sm uppercase tracking-widest text-[#c6c6c6] hover:text-[#ffffff] hover:italic" href="#">Privacy</a>
+<a class="font-mono text-sm uppercase tracking-widest text-[#c6c6c6] hover:text-[#ffffff] hover:italic" href="#">Terms</a>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full px-8 py-6 border-t border-outline-variant max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="font-mono text-xs uppercase tracking-widest text-outline">© 2024 SYNAPS ARCHIVAL SYSTEM</span>
+<div class="flex gap-4">
+<div class="w-3 h-3 bg-primary animate-pulse"></div>
+<span class="font-mono text-xs uppercase tracking-widest text-primary">SYSTEM_STATUS: OK</span>
+</div>
+</div>
+</footer>
+</body></html>

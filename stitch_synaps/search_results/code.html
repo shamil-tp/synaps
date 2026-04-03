@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/geist@1.3.0/dist/fonts/geist-sans/style.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .signature-shadow {
+            box-shadow: 4px 4px 0px 0px #0d0c0b;
+        }
+        .signature-shadow-hover:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #0d0c0b;
+        }
+        .hatch-skeleton {
+            background: repeating-linear-gradient(
+                45deg,
+                #f5f5f3,
+                #f5f5f3 10px,
+                #eeeeec 10px,
+                #eeeeec 20px
+            );
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "background": "#f5f5f3",
+                        "on-background": "#0d0c0b",
+                        "surface": "#f5f5f3",
+                        "primary": "#0d0c0b",
+                        "outline": "#0d0c0b",
+                        "inverse-surface": "#0d0c0b",
+                        "inverse-on-surface": "#f5f5f3",
+                    },
+                    fontFamily: {
+                        "headline": ["Geist"],
+                        "body": ["Geist"],
+                        "label": ["Geist"]
+                    },
+                    borderRadius: { "DEFAULT": "0px" },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 border-b border-[#0d0c0b] bg-[#f5f5f3] flex justify-between items-center h-16 px-12 w-full max-w-full">
+<div class="text-xl font-bold tracking-tighter text-[#0d0c0b]">SYNAPS</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium text-[#0d0c0b]/60 hover:underline decoration-1 underline-offset-4 transition-all duration-200 ease-[cubic-bezier(0.2,1,0.3,1)]" href="#">Browse</a>
+<a class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium text-[#0d0c0b] border-b border-[#0d0c0b] hover:underline decoration-1 underline-offset-4 transition-all duration-200 ease-[cubic-bezier(0.2,1,0.3,1)]" href="#">Search</a>
+<a class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium text-[#0d0c0b]/60 hover:underline decoration-1 underline-offset-4 transition-all duration-200 ease-[cubic-bezier(0.2,1,0.3,1)]" href="#">Upload</a>
+</div>
+<div class="flex gap-6 items-center">
+<button class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium text-[#0d0c0b] hover:underline">Sign in</button>
+<button class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium bg-[#0d0c0b] text-[#f5f5f3] px-4 py-2">Get started</button>
+</div>
+</nav>
+<main class="pt-24 pb-16 px-12 max-w-7xl mx-auto">
+<!-- Search Section -->
+<div class="mb-12">
+<div class="relative flex items-center border border-on-background bg-surface signature-shadow">
+<span class="material-symbols-outlined px-4 opacity-60" data-icon="search">search</span>
+<input class="w-full py-6 bg-transparent border-none focus:ring-0 text-2xl font-semibold tracking-tight placeholder-on-background/30" placeholder="Search archive..." type="text" value="data structures"/>
+<button class="bg-on-background text-background px-8 py-6 uppercase font-bold text-xs tracking-widest hover:opacity-90 transition-opacity">Execute</button>
+</div>
+</div>
+<!-- Result Summary & Sort -->
+<div class="flex justify-between items-end mb-8 pb-4 border-b border-on-background">
+<div>
+<p class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium opacity-60 mb-1">Search Query: data structures</p>
+<h2 class="text-xl">Showing <span class="font-bold">42 results</span> for <span class="font-bold">"data structures"</span></h2>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium opacity-60">Sort By</span>
+<select class="bg-transparent border-on-background text-xs uppercase font-bold tracking-widest py-1 px-4 focus:ring-0">
+<option>Relevance</option>
+<option>Newest First</option>
+<option>Top Rated</option>
+</select>
+</div>
+</div>
+<!-- Main Layout: Sidebar Filters + Results -->
+<div class="flex flex-col lg:flex-row gap-12">
+<!-- Filter Bar (Sidebar style) -->
+<aside class="w-full lg:w-64 flex-shrink-0 space-y-8">
+<div>
+<h3 class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-bold mb-4">Subject Category</h3>
+<div class="flex flex-wrap lg:flex-col gap-2">
+<button class="px-3 py-1 border border-on-background bg-on-background text-background text-xs text-left">All Subjects</button>
+<button class="px-3 py-1 border border-on-background text-xs text-left hover:bg-on-background hover:text-background transition-colors">Computer Science</button>
+<button class="px-3 py-1 border border-on-background text-xs text-left hover:bg-on-background hover:text-background transition-colors">Mathematics</button>
+<button class="px-3 py-1 border border-on-background text-xs text-left hover:bg-on-background hover:text-background transition-colors">Engineering</button>
+</div>
+</div>
+<div>
+<h3 class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-bold mb-4">File Type</h3>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded-none border-on-background focus:ring-0 text-on-background" type="checkbox"/>
+<span class="text-xs uppercase tracking-wider group-hover:underline">PDF Documents</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded-none border-on-background focus:ring-0 text-on-background" type="checkbox"/>
+<span class="text-xs uppercase tracking-wider group-hover:underline">Dataset (CSV/JSON)</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded-none border-on-background focus:ring-0 text-on-background" type="checkbox"/>
+<span class="text-xs uppercase tracking-wider group-hover:underline">Archive (ZIP)</span>
+</label>
+</div>
+</div>
+<div>
+<h3 class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-bold mb-4">Publication Date</h3>
+<div class="grid grid-cols-2 gap-2">
+<input class="w-full bg-transparent border-on-background text-xs p-2 focus:ring-0" placeholder="From" type="text"/>
+<input class="w-full bg-transparent border-on-background text-xs p-2 focus:ring-0" placeholder="To" type="text"/>
+</div>
+</div>
+</aside>
+<!-- Results List -->
+<div class="flex-grow space-y-0">
+<!-- Result Item 1 -->
+<div class="flex gap-6 py-8 border-b border-on-background group hover:bg-on-background/5 transition-colors">
+<div class="w-32 h-40 flex-shrink-0 bg-background border border-on-background overflow-hidden signature-shadow group-hover:-translate-x-1 group-hover:-translate-y-1 transition-transform">
+<img class="w-full h-full object-cover grayscale" data-alt="high contrast macro shot of binary code printed on technical parchment paper with sharp shadows and brutalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKK3XshE3H5n-sxNAXzjrrQvAtT5Q_TWK1JUIdT-eW8_oeEoDovVwxQjZs8o8UFq_s84AyHlTOQkxG0jIPMUbgU-jZUVWZHJP9WdU8p26vh1bhuzm0-8F_MChHOwjzXd6b2praHbd5zjHGf6iNQsLF_JEYOiFhBAg7KBbn4dIi6747qAb42DAPg7fy15OUKggMfKOA9zNNNesiPPgVPj5T_TaYXcLDJmlT59Ytl2qOZPDuC8txkHp4FiFAD-ojpaFcCqx2C_rR-y2y"/>
+</div>
+<div class="flex-grow flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between mb-2">
+<h3 class="text-xl font-medium group-hover:underline">Advanced <span class="font-bold underline decoration-2">Data Structures</span> and Algorithm Analysis</h3>
+<div class="bg-on-background text-background px-2 py-0.5 font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium">Verified</div>
+</div>
+<div class="flex gap-2 mb-3">
+<span class="text-xs border border-on-background px-2 py-0.5">Computer Science</span>
+<span class="text-xs border border-on-background px-2 py-0.5">Reference Material</span>
+</div>
+<p class="text-sm leading-relaxed text-on-background/80 max-w-2xl line-clamp-2 mb-4">
+                                A comprehensive exploration of complex <span class="font-semibold">data structures</span> including B-trees, Fibonacci heaps, and disjoint sets. Essential for architectural system design and high-performance computing optimization.
+                            </p>
+</div>
+<div class="flex items-center gap-6 font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium opacity-60">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="description">description</span> 482 Pages</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="download">download</span> 12.4k Downloads</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="star">star</span> 4.9 Rating</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="calendar_today">calendar_today</span> Oct 2023</span>
+</div>
+</div>
+</div>
+<!-- Result Item 2 -->
+<div class="flex gap-6 py-8 border-b border-on-background group hover:bg-on-background/5 transition-colors">
+<div class="w-32 h-40 flex-shrink-0 bg-background border border-on-background overflow-hidden signature-shadow group-hover:-translate-x-1 group-hover:-translate-y-1 transition-transform">
+<img class="w-full h-full object-cover grayscale" data-alt="stark technical drawing of structural architecture showing interconnected nodes and grid lines on white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB50E9uyjOUu-b955wJMFV6D_j8xYnBtNKFj8SiCeRXCf8_efKZZz-ou3mVOWqKFoi5HU_L2RNRoSf79qwX7v4fEt5pJ3iZH0AAwrsduAopx8Su3bcsm8FxS2N9dS5krjGAnuH_FBLfiEvogora36jc00NfwFmCdJms60XiXTTwx86S5oH8m0rGvymaPLOko_FCG8jR3Q98Zt2K8dQQuXDFiEbW4HR6AGqBl63lxzCrU9h46ZjV-IcWxn4_uPi1Nw92dCmpYM-mr-Lm"/>
+</div>
+<div class="flex-grow flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between mb-2">
+<h3 class="text-xl font-medium group-hover:underline">Fundamental <span class="font-bold underline decoration-2">Data Structures</span> in Modern C++</h3>
+<div class="bg-on-background text-background px-2 py-0.5 font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium">New</div>
+</div>
+<div class="flex gap-2 mb-3">
+<span class="text-xs border border-on-background px-2 py-0.5">Software Engineering</span>
+<span class="text-xs border border-on-background px-2 py-0.5">Tutorial</span>
+</div>
+<p class="text-sm leading-relaxed text-on-background/80 max-w-2xl line-clamp-2 mb-4">
+                                Implementation details of standard <span class="font-semibold">data structures</span> using C++20 features. Focuses on memory efficiency, cache locality, and pointer-chasing minimization.
+                            </p>
+</div>
+<div class="flex items-center gap-6 font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium opacity-60">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="description">description</span> 215 Pages</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="download">download</span> 3.1k Downloads</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="star">star</span> 4.7 Rating</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="calendar_today">calendar_today</span> Jan 2024</span>
+</div>
+</div>
+</div>
+<!-- Result Item 3 -->
+<div class="flex gap-6 py-8 border-b border-on-background group hover:bg-on-background/5 transition-colors">
+<div class="w-32 h-40 flex-shrink-0 bg-background border border-on-background overflow-hidden signature-shadow group-hover:-translate-x-1 group-hover:-translate-y-1 transition-transform">
+<img class="w-full h-full object-cover grayscale" data-alt="monochrome abstract representation of data flows using minimalist black lines on a textured off-white surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7iYAUHfKaWI7I03hw_D1BtBbYlerbJt-v2qR41GyfVfyPlIfI0aSyG1fzx7GSjbw4ulYap-tcXkYRcBne-Zaih83zYl-V1RXC8LnDgS3qRENXTHq06zodX7aojc0meQkMeII5nfHev8Q5TZstC9nkVoAm3R8p2faIvBM7ZDQMuopJSzhi4y8NJG_uhQH78bIhKCQt9_iHpqm-4r4WZw5V6hABMdjMI_xLzibF1-SeXG5DhiIJIMaWyPj3flgra_923NSYngT9zRAW"/>
+</div>
+<div class="flex-grow flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between mb-2">
+<h3 class="text-xl font-medium group-hover:underline">Graph-Based <span class="font-bold underline decoration-2">Data Structures</span> for Social Mapping</h3>
+<div class="bg-on-background/20 text-on-background px-2 py-0.5 font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium">Archive</div>
+</div>
+<div class="flex gap-2 mb-3">
+<span class="text-xs border border-on-background px-2 py-0.5">Sociology</span>
+<span class="text-xs border border-on-background px-2 py-0.5">Graph Theory</span>
+</div>
+<p class="text-sm leading-relaxed text-on-background/80 max-w-2xl line-clamp-2 mb-4">
+                                Research paper on the application of persistent <span class="font-semibold">data structures</span> in tracking social interaction changes over time-series datasets.
+                            </p>
+</div>
+<div class="flex items-center gap-6 font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium opacity-60">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="description">description</span> 45 Pages</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="download">download</span> 842 Downloads</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="star">star</span> 4.5 Rating</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="calendar_today">calendar_today</span> Mar 2022</span>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="pt-12 flex justify-center items-center gap-2">
+<button class="w-10 h-10 border border-on-background flex items-center justify-center hover:bg-on-background hover:text-background transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 border border-on-background flex items-center justify-center bg-on-background text-background font-bold">1</button>
+<button class="w-10 h-10 border border-on-background flex items-center justify-center hover:bg-on-background hover:text-background transition-colors font-bold">2</button>
+<button class="w-10 h-10 border border-on-background flex items-center justify-center hover:bg-on-background hover:text-background transition-colors font-bold">3</button>
+<span class="px-2">...</span>
+<button class="w-10 h-10 border border-on-background flex items-center justify-center hover:bg-on-background hover:text-background transition-colors font-bold">12</button>
+<button class="w-10 h-10 border border-on-background flex items-center justify-center hover:bg-on-background hover:text-background transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Empty State Example (Hidden by default, shown for "X") -->
+<section class="mt-24 py-24 border border-on-background bg-background text-center hidden">
+<h1 class="text-4xl font-bold tracking-tighter mb-4">NO ENTRIES FOUND FOR "X"</h1>
+<div class="w-32 h-32 border border-on-background mx-auto mb-8 hatch-skeleton"></div>
+<p class="max-w-md mx-auto text-on-background/60 mb-8 font-medium">The archival system contains no matches for this specific query. Please verify metadata parameters or consult the global index.</p>
+<a class="inline-block border border-on-background px-8 py-3 uppercase font-bold text-xs tracking-widest hover:bg-on-background hover:text-background transition-colors" href="#">Return to Browse Index</a>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-[#0d0c0b] bg-[#f5f5f3] flex flex-col gap-8 px-12 py-16 w-full max-w-full">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+<div class="text-lg font-bold text-[#0d0c0b]">SYNAPS</div>
+<div class="flex gap-8">
+<a class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium text-[#0d0c0b]/80 hover:underline" href="#">Browse</a>
+<a class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium text-[#0d0c0b]/80 hover:underline" href="#">Upload</a>
+<a class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium text-[#0d0c0b]/80 hover:underline" href="#">About</a>
+<a class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium text-[#0d0c0b]/80 hover:underline" href="#">Privacy</a>
+<a class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium text-[#0d0c0b]/80 hover:underline" href="#">Terms</a>
+</div>
+</div>
+<div class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium text-[#0d0c0b]/60 pt-8 border-t border-on-background/10">
+            © 2024 SYNAPS. ARCHIVAL SYSTEM v1.0. LOCATION: GMT-0
+        </div>
+</footer>
+</body></html>

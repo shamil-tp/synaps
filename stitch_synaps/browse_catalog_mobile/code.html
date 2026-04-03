@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100;400;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .signature-shadow {
+            box-shadow: 4px 4px 0px 0px #0d0c0b;
+        }
+        .signature-shadow-hover:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #0d0c0b;
+        }
+        .hatch-pattern {
+            background-image: repeating-linear-gradient(45deg, #0d0c0b10, #0d0c0b10 10px, transparent 10px, transparent 20px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "background": "#f5f5f3",
+                        "on-background": "#0d0c0b",
+                        "surface": "#f5f5f3",
+                        "primary": "#0d0c0b",
+                        "on-primary": "#f5f5f3",
+                        "outline": "#0d0c0b",
+                        "inverse-surface": "#0d0c0b",
+                        "inverse-on-surface": "#f5f5f3",
+                    },
+                    fontFamily: {
+                        "sans": ["Geist", "Inter", "sans-serif"],
+                        "headline": ["Geist", "sans-serif"],
+                        "body": ["Geist", "sans-serif"],
+                        "label": ["Geist", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full border-b border-[#0d0c0b] bg-[#f5f5f3] z-50 flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+<h1 class="text-2xl font-black tracking-[-0.04em] text-[#0d0c0b] font-['Geist'] uppercase">SYNAPS</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="search">search</span>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6">
+<!-- Catalog Header -->
+<div class="mb-8 space-y-2">
+<div class="flex justify-between items-end">
+<h2 class="text-4xl font-bold tracking-[-0.04em] uppercase leading-none">Catalog</h2>
+<span class="text-[11px] font-medium tracking-[0.05em] uppercase opacity-60">Items: 1,402</span>
+</div>
+<div class="h-[1px] w-full bg-on-background"></div>
+</div>
+<!-- Filter Action Bar -->
+<div class="mb-8 flex justify-between items-center">
+<button class="flex items-center gap-3 border border-on-background px-4 py-3 bg-surface signature-shadow active:translate-x-1 active:translate-y-1 active:shadow-none transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span>
+<span class="text-[11px] font-medium tracking-[0.05em] uppercase">Filters</span>
+<div class="bg-on-background text-background text-[9px] px-1.5 py-0.5 font-bold">3</div>
+</button>
+<div class="flex items-center gap-2">
+<span class="text-[11px] font-medium tracking-[0.05em] uppercase">Sort:</span>
+<span class="text-[11px] font-bold tracking-[0.05em] uppercase underline">Recent</span>
+</div>
+</div>
+<!-- Document Grid (2 columns as requested) -->
+<div class="grid grid-cols-2 gap-4">
+<!-- DocumentCard 1 -->
+<div class="border border-on-background bg-surface overflow-hidden signature-shadow group">
+<div class="aspect-square border-b border-on-background bg-zinc-200 relative">
+<img alt="Abstract geometric structure" class="w-full h-full object-cover" data-alt="Monochromatic abstract architectural fragment with sharp shadows and harsh lighting on a textured concrete surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq_mS64mkETmRnbWTBuCbE_aq-bkUt39SUDaKJuztdPV_fcshRY_rkri6ZeZW8MaCZ0Z6NW1AK6bCMuZb1QR2hLigH4DlYfKUCexxEHVSsDhtLJCzOsO6Ch8pXgfjl6Cv1-4qwrD_7ynUeKZw_0UiE60XVIDIMApOxj2A98L0yK59F9HXt0cE7VadlXv03DxnWekpsLRI6jfJjoZjoSjCstlnOa8ErtF54qRPTY3D2BoMzoNsEq2-2SCWCmZaDrzTbLczHXkGASsgF"/>
+<div class="absolute top-2 left-2">
+<span class="bg-on-background text-background text-[9px] px-2 py-1 font-bold tracking-widest uppercase">New</span>
+</div>
+</div>
+<div class="p-3 space-y-2">
+<h3 class="text-[13px] font-bold leading-tight tracking-tight uppercase line-clamp-2">Neural architecture pattern_01</h3>
+<div class="flex justify-between items-center pt-2">
+<span class="text-[9px] font-medium tracking-[0.05em] uppercase opacity-60">PDF / 4.2MB</span>
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+</div>
+</div>
+</div>
+<!-- DocumentCard 2 -->
+<div class="border border-on-background bg-surface overflow-hidden signature-shadow group">
+<div class="aspect-square border-b border-on-background bg-zinc-200">
+<img alt="Retro computer components" class="w-full h-full object-cover" data-alt="Extreme close up of vintage circuit boards and microchips in high contrast black and white industrial aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5bEupwEQC7e_J5kKX61jsnByhKnpUrfkYuGjZ0GvyVXw18_4d_Hrh6l1dCXjCwbo1VzlTzct65l24Uq6OOQqHmQavrzqpIGBZipN_MfRAkHZXwfHrFWuuv4-AgK-HzDeHIWlhVDOrmBmy8UNtvTxbKinhsPKVkgxQAY00WpCH75KSn5uOEzvEouaznT8TU4b_BLIaBDB2tnwxpw6pmvrbtPiipNgbbwj_KRvYRLcZ6djPEoEwmDK-e-7B8X6LH05XAkX7iWE9y0CN"/>
+</div>
+<div class="p-3 space-y-2">
+<h3 class="text-[13px] font-bold leading-tight tracking-tight uppercase line-clamp-2">Legacy kernel logs [encrypted]</h3>
+<div class="flex justify-between items-center pt-2">
+<span class="text-[9px] font-medium tracking-[0.05em] uppercase opacity-60">TXT / 0.8MB</span>
+<span class="material-symbols-outlined text-sm" data-icon="lock">lock</span>
+</div>
+</div>
+</div>
+<!-- DocumentCard 3 -->
+<div class="border border-on-background bg-surface overflow-hidden signature-shadow group">
+<div class="aspect-square border-b border-on-background bg-zinc-200">
+<img alt="Star cluster data" class="w-full h-full object-cover" data-alt="Scientific astronomical photography of a star cluster with harsh contrast and grainy film texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVlnIKFu7eZ_eRpRI0cbbyFWqOxB0mYC55VdbEc1wwgC1S8AjEkiX03QlzCs-TKl4VFTJoGXtZVli4uNzllulEPpgIQovNz4mcBDYhTCenbxPvAUB7ilHr66QcXPyNdCyNPS-556-xCzZEo9X61nj7VfDnTTZEkF1UVzFY7DN4U7FqlRgm6AHKovwUn0AHsSLNryxujoOx6jUgLXNpUiue2sVaplp37r-OlPDwrRKI9YNm8h7bhco8MMFftYaGnGzOsLUbRNGThDHA"/>
+</div>
+<div class="p-3 space-y-2">
+<h3 class="text-[13px] font-bold leading-tight tracking-tight uppercase line-clamp-2">Deep field telemetry scan 44</h3>
+<div class="flex justify-between items-center pt-2">
+<span class="text-[9px] font-medium tracking-[0.05em] uppercase opacity-60">RAW / 84MB</span>
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+</div>
+</div>
+</div>
+<!-- DocumentCard 4 -->
+<div class="border border-on-background bg-surface overflow-hidden signature-shadow group">
+<div class="aspect-square border-b border-on-background bg-zinc-200">
+<img alt="Minimal geometric art" class="w-full h-full object-cover" data-alt="Brutalist architectural detail with sharp angles and clean lines against a stark bright sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-uA2zwSkUltwcGM8FkBI3eYYuXzXoAxtoScAn2APSD2tAhJyViJ2pwuJFD7shN2YYUYhftHyLLUbVWFNLoUM1Bh6FEnWa2cevPAtZbknLVECHgicLsjmqFSpfPsiXSQhNjq77z0_8LynW4SaLHw0GlZe-TaRgTaHomF4h5G30kbuM7H-Z_Ax3D4hwAgcCz2FbllH7wGBsCVvGqhJMeFEILmIM-7cexJR0CZBZAgNSvVxKxi2m29t5GQLYw4iDbevxs01Di7h83wtW"/>
+</div>
+<div class="p-3 space-y-2">
+<h3 class="text-[13px] font-bold leading-tight tracking-tight uppercase line-clamp-2">Structural integrity report</h3>
+<div class="flex justify-between items-center pt-2">
+<span class="text-[9px] font-medium tracking-[0.05em] uppercase opacity-60">DOC / 2.1MB</span>
+<span class="material-symbols-outlined text-sm" data-icon="description">description</span>
+</div>
+</div>
+</div>
+<!-- DocumentCard 5 -->
+<div class="border border-on-background bg-surface overflow-hidden signature-shadow group">
+<div class="aspect-square border-b border-on-background hatch-pattern"></div>
+<div class="p-3 space-y-2">
+<h3 class="text-[13px] font-bold leading-tight tracking-tight uppercase line-clamp-2">Index overflow segment_b</h3>
+<div class="flex justify-between items-center pt-2">
+<span class="text-[9px] font-medium tracking-[0.05em] uppercase opacity-60">LOADING...</span>
+<span class="material-symbols-outlined text-sm" data-icon="sync">sync</span>
+</div>
+</div>
+</div>
+<!-- DocumentCard 6 -->
+<div class="border border-on-background bg-surface overflow-hidden signature-shadow group">
+<div class="aspect-square border-b border-on-background bg-zinc-200">
+<img alt="Digital network" class="w-full h-full object-cover" data-alt="Digital network mesh visualization in deep blacks and bright whites, technical and scientific diagram style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrT0kppJXRk7SalycK5z6OqhM53AYoKtX2hGR50z6M2ZeZwXQn47OgHqoI4uFMMcnV0ZVE6tfQ0ECCJGCFKHtW3_TvQprvSRNuQWGpJ1s53L11yYwEcweazj-VQHLbDWOrRVhvmzlk-zJAZkiHC4f4eJ9DtWDIXyaopCmxmTG1XPH6oxdE6IRvgQQ_xIjI6RvxU34AcuznX2p7SGBN8rV4z7MNxsf7qrj6RCCWyyhci9dkYfn8JJAvepteLG0337MrKxhD5ugt-f3T"/>
+</div>
+<div class="p-3 space-y-2">
+<h3 class="text-[13px] font-bold leading-tight tracking-tight uppercase line-clamp-2">Protocol 7 synchronization</h3>
+<div class="flex justify-between items-center pt-2">
+<span class="text-[9px] font-medium tracking-[0.05em] uppercase opacity-60">LOG / 0.1MB</span>
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination: Simplified -->
+<div class="mt-12 flex items-center justify-between">
+<button class="border border-on-background px-6 py-4 bg-surface flex items-center gap-2 active:bg-on-background active:text-background transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="arrow_back">arrow_back</span>
+<span class="text-[11px] font-bold tracking-[0.1em] uppercase">Prev</span>
+</button>
+<div class="text-[11px] font-bold tracking-[0.1em] uppercase">
+                Page 01 / 88
+            </div>
+<button class="border border-on-background px-6 py-4 bg-surface flex items-center gap-2 active:bg-on-background active:text-background transition-colors">
+<span class="text-[11px] font-bold tracking-[0.1em] uppercase">Next</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-[#0d0c0b] bg-[#f5f5f3] flex flex-col gap-4 p-8 w-full items-start mb-16">
+<div class="text-[#0d0c0b] font-['Geist'] text-[11px] leading-relaxed tracking-[0.05em] uppercase font-bold">SYNAPS ARCHIVE</div>
+<div class="flex flex-wrap gap-x-8 gap-y-2">
+<a class="text-[#0d0c0b] font-['Geist'] text-[11px] leading-relaxed tracking-[0.05em] uppercase hover:underline" href="#">TERMS</a>
+<a class="text-[#0d0c0b] font-['Geist'] text-[11px] leading-relaxed tracking-[0.05em] uppercase hover:underline" href="#">PRIVACY</a>
+<a class="text-[#0d0c0b] font-['Geist'] text-[11px] leading-relaxed tracking-[0.05em] uppercase hover:underline" href="#">DOCS</a>
+</div>
+<div class="text-[#0d0c0b] font-['Geist'] text-[11px] leading-relaxed tracking-[0.05em] uppercase opacity-40 mt-4">
+            © 2024 SYNAPS ARCHIVE
+        </div>
+</footer>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 bg-[#f5f5f3] border-t border-[#0d0c0b]">
+<button class="text-[#0d0c0b] p-3 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+</button>
+<button class="bg-[#0d0c0b] text-[#f5f5f3] p-3 flex items-center justify-center transition-none scale-100">
+<span class="material-symbols-outlined" data-icon="folder_open">folder_open</span>
+</button>
+<button class="text-[#0d0c0b] p-3 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+</button>
+<button class="text-[#0d0c0b] p-3 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</nav>
+</body></html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SYNAPS - MY LIBRARY</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary": "#e6e1df",
+              "surface-container-high": "#e8e8e6",
+              "surface-bright": "#f9f9f7",
+              "on-error": "#ffffff",
+              "on-background": "#0d0c0b",
+              "tertiary-container": "#777472",
+              "tertiary": "#3d3b3a",
+              "on-error-container": "#410002",
+              "primary": "#0d0c0b",
+              "primary-container": "#3d3b3a",
+              "on-primary": "#f5f5f3",
+              "surface": "#f5f5f3",
+              "secondary-fixed-dim": "#aeaaa8",
+              "secondary-container": "#d8d3d1",
+              "on-surface-variant": "#474747",
+              "on-primary-fixed": "#ffffff",
+              "on-primary-container": "#ffffff",
+              "background": "#f5f5f3",
+              "on-tertiary-fixed": "#ffffff",
+              "surface-tint": "#605e5c",
+              "tertiary-fixed": "#605e5c",
+              "on-secondary-container": "#1d1b1a",
+              "on-secondary-fixed": "#1d1b1a",
+              "on-primary-fixed-variant": "#e6e1df",
+              "inverse-on-surface": "#f5f5f3",
+              "surface-variant": "#e2e3e1",
+              "secondary": "#605e5c",
+              "inverse-primary": "#cac6c3",
+              "on-secondary": "#ffffff",
+              "surface-dim": "#dadad8",
+              "error-container": "#ffdad6",
+              "inverse-surface": "#0d0c0b",
+              "error": "#ba1a1a",
+              "tertiary-fixed-dim": "#484645",
+              "outline": "#0d0c0b",
+              "on-tertiary-container": "#ffffff",
+              "primary-fixed-dim": "#484645",
+              "primary-fixed": "#605e5c",
+              "on-surface": "#0d0c0b",
+              "surface-container-highest": "#e2e3e1",
+              "on-tertiary-fixed-variant": "#e6e1df",
+              "secondary-fixed": "#cac6c3",
+              "outline-variant": "#c6c6c6",
+              "surface-container-low": "#f4f4f2",
+              "surface-container": "#eeeeec",
+              "on-secondary-fixed-variant": "#3d3b3a",
+              "surface-container-lowest": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Geist", "sans-serif"],
+              "body": ["Geist", "sans-serif"],
+              "label": ["Geist", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "0px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .signature-shadow {
+            box-shadow: 4px 4px 0px 0px #0d0c0b;
+        }
+        .signature-shadow:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px 0px #0d0c0b;
+        }
+        .hatch-pattern {
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, #0d0c0b 10px, #0d0c0b 11px);
+            opacity: 0.1;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-on-background selection:text-background">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full border-b border-[#0d0c0b] bg-[#f5f5f3] z-50 flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#0d0c0b]">menu</span>
+<h1 class="text-2xl font-black tracking-[-0.04em] text-[#0d0c0b] uppercase font-['Geist']">SYNAPS</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#0d0c0b]">search</span>
+<span class="material-symbols-outlined text-[#0d0c0b]">account_circle</span>
+</div>
+</header>
+<main class="pt-16 pb-20 min-h-screen">
+<!-- Page Header & Tab Bar -->
+<div class="p-6 pb-2">
+<h2 class="text-4xl font-bold tracking-tight uppercase mb-6">MY LIBRARY</h2>
+<!-- Horizontal Scroll Tab Bar -->
+<div class="flex overflow-x-auto gap-4 no-scrollbar border-b border-outline/10 pb-4">
+<button class="flex-shrink-0 px-4 py-1 bg-on-background text-background text-[11px] font-medium tracking-[0.05em] uppercase">ALL ASSETS</button>
+<button class="flex-shrink-0 px-4 py-1 border border-outline text-[11px] font-medium tracking-[0.05em] uppercase hover:bg-on-background hover:text-background transition-colors">RECENT</button>
+<button class="flex-shrink-0 px-4 py-1 border border-outline text-[11px] font-medium tracking-[0.05em] uppercase hover:bg-on-background hover:text-background transition-colors">ARCHIVED</button>
+<button class="flex-shrink-0 px-4 py-1 border border-outline text-[11px] font-medium tracking-[0.05em] uppercase hover:bg-on-background hover:text-background transition-colors">FAVORITES</button>
+<button class="flex-shrink-0 px-4 py-1 border border-outline text-[11px] font-medium tracking-[0.05em] uppercase hover:bg-on-background hover:text-background transition-colors">SHARED</button>
+</div>
+</div>
+<!-- Library Content (Card List) -->
+<div class="px-6 py-4 space-y-4">
+<!-- Asset Card 1 -->
+<div class="bg-surface border border-outline p-4 flex gap-4 signature-shadow relative overflow-hidden">
+<div class="w-20 h-20 bg-surface-container flex-shrink-0 border border-outline relative">
+<img class="w-full h-full object-cover" data-alt="high-contrast monochromatic abstract architectural detail with sharp shadows and geometric lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEEccACumpPAK9pBGatrrtvTc4dV73u5g4UHyJx0aVDCfM_ZL_I238_xsgL8lRIS1mHFSF-9dulSDjUT8NnfRNPcB4Asitw4nKV5ZvBON2r6wwWnMtZHvA2X2lNLEjVX6ll21-hCA6SShl06gHswjdt86at8aZZUUm3ilcSsoewml9nRaTL6Rpy_H3_u-uD-QyAe3s54c1vrjBFBvcBF7F0aQHKJ1q8ptY1wEVUWY9hnYBbTFeMC9HGvTJfvceHX_T-e_jh6B7EB_G"/>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="text-sm font-bold uppercase tracking-tight leading-none mb-1">PROT_SYN_042.PDF</h3>
+<button class="p-1 -mr-2 -mt-1"><span class="material-symbols-outlined text-sm">more_vert</span></button>
+</div>
+<div class="inline-block bg-on-background text-background px-2 py-0.5 text-[9px] font-medium tracking-widest uppercase">STABLE</div>
+</div>
+<div class="text-[10px] uppercase tracking-wider text-outline/60 font-medium">
+                        MODIFIED: 24.OCT.24
+                    </div>
+</div>
+</div>
+<!-- Asset Card 2 -->
+<div class="bg-surface border border-outline p-4 flex gap-4 signature-shadow relative overflow-hidden">
+<div class="w-20 h-20 bg-surface-container flex-shrink-0 border border-outline overflow-hidden relative">
+<div class="absolute inset-0 hatch-pattern"></div>
+<img class="w-full h-full object-cover grayscale" data-alt="microscopic view of technical circuit board patterns in high contrast black and white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdCjv9BqRJeTc1x-Ub-MOHp5WY-70Beusg8Uqycu3lkvQWaIjXgaxUuz1ce6W41dgCAHwWR_8wDakYkxZ6uttJVNxczD2AOdTo-CL4CBhs02-rgY0Ta9k8sTLNy0k5tgqPFZI352zxBCack8oiAEoXfsyXP9nZBsKgtunXACRyDg-mhbDFmrYru1NPXBAn1Dj9HCI7dhvaigFzByVd6CEizFfUZdIcjhQLZXIbrM9PyfYYvlhkhIz8wsYASYss9jk8zqtmdLfEP534"/>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="text-sm font-bold uppercase tracking-tight leading-none mb-1">CORE_SCHEMA_V2.SVG</h3>
+<button class="p-1 -mr-2 -mt-1"><span class="material-symbols-outlined text-sm">more_vert</span></button>
+</div>
+<div class="inline-block bg-on-background text-background px-2 py-0.5 text-[9px] font-medium tracking-widest uppercase">ENCRYPTED</div>
+</div>
+<div class="text-[10px] uppercase tracking-wider text-outline/60 font-medium">
+                        MODIFIED: 21.OCT.24
+                    </div>
+</div>
+</div>
+<!-- Asset Card 3 -->
+<div class="bg-surface border border-outline p-4 flex gap-4 signature-shadow relative overflow-hidden">
+<div class="w-20 h-20 bg-surface-container flex-shrink-0 border border-outline relative">
+<img class="w-full h-full object-cover" data-alt="brutalist concrete building facade with heavy repeating patterns and stark sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEVVzjt40s5feSUpLaMDy2s5O_i1nEx0QQfqLHv65cDJkx199sr8RA4rxv_uFD_0w8ARSQPVccxK73lNQRAmvqyL0KLkLjdvy_NCFs-rARoQqeF_r1N5D4C33BVeEiOE1y6N01CfAdqWz097R-L1Q2pn5vbaUs5HWJTKx5OL1Raig3bssp1tbpk3rag-KnQys5upAaG-rzBj_hBlP26flVnnqRiLUYTWuA6g_FbntXDqUVftSVguwT_fsfBM9zjbfeO4I1yDqva_DS"/>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="text-sm font-bold uppercase tracking-tight leading-none mb-1">ARCHIVE_MANIFEST.LOG</h3>
+<button class="p-1 -mr-2 -mt-1"><span class="material-symbols-outlined text-sm">more_vert</span></button>
+</div>
+<div class="inline-block bg-on-background text-background px-2 py-0.5 text-[9px] font-medium tracking-widest uppercase">SYNCED</div>
+</div>
+<div class="text-[10px] uppercase tracking-wider text-outline/60 font-medium">
+                        MODIFIED: 19.OCT.24
+                    </div>
+</div>
+</div>
+<!-- Asset Card 4 -->
+<div class="bg-surface border border-outline p-4 flex gap-4 signature-shadow relative overflow-hidden">
+<div class="w-20 h-20 bg-surface-container flex-shrink-0 border border-outline overflow-hidden relative">
+<div class="absolute inset-0 hatch-pattern"></div>
+<img class="w-full h-full object-cover grayscale" data-alt="black and white macro photography of textured charcoal surface with dramatic highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7h3lwfYGreOhydJac4hDr6KAhsCMtSC4OGYe78nxpiRxUrqSpace4S8KSyuYd0Xf86xZqfYVQsKm5Cfw8Zmqpn7ods79rBwp0p4zHCoxW7nk9buxEogyB6CGK7zvLr9qDMeLSzYVo-0dAQWSNCvWEsTlfpzWS9g6NjLm6BsJ2AFiVb9tZkLvCz4l20o1q8wziBiVH4q0sI7A54d0I0uNU0Rd-qb_UT9gPjstmbLTi5DhDAoGMw4aJ-RTLYjKr_zP909S1YJfrzGkH"/>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="text-sm font-bold uppercase tracking-tight leading-none mb-1">USER_UPGRADE_PATCH.BIN</h3>
+<button class="p-1 -mr-2 -mt-1"><span class="material-symbols-outlined text-sm">more_vert</span></button>
+</div>
+<div class="inline-block bg-on-background text-background px-2 py-0.5 text-[9px] font-medium tracking-widest uppercase">PENDING</div>
+</div>
+<div class="text-[10px] uppercase tracking-wider text-outline/60 font-medium">
+                        MODIFIED: 18.OCT.24
+                    </div>
+</div>
+</div>
+<!-- Asset Card 5 -->
+<div class="bg-surface border border-outline p-4 flex gap-4 signature-shadow relative overflow-hidden">
+<div class="w-20 h-20 bg-surface-container flex-shrink-0 border border-outline relative">
+<img class="w-full h-full object-cover grayscale" data-alt="stark black and white satellite view of urban grid system with sharp contrasts" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnf94yCRhMQBXatOuGmBp1BB6aZzxPsU26ksft3kon8uRvFz_Smzv80F8s9W9VrbKY0xWJlbYd73GLku65y28HlJkfuLp8WYuOti7l7CyDy8gXH4HQYNshtssUgO1gs0Ou-eCXyYiLzkZbw3ehffpZruXwwFP80CzKYe4RCfCmW4SAlOGi__7RyiY4YO0DA-2A775VcIv39wWaM9m_yMUgA4QwEjjLJTt7iwsP89Mq7xNA8BQhJJ3zqWXLn1BYPi2cpf_qTZ_at9zH"/>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="text-sm font-bold uppercase tracking-tight leading-none mb-1">NODE_NETWORK_MAP.JSON</h3>
+<button class="p-1 -mr-2 -mt-1"><span class="material-symbols-outlined text-sm">more_vert</span></button>
+</div>
+<div class="inline-block bg-on-background text-background px-2 py-0.5 text-[9px] font-medium tracking-widest uppercase">STABLE</div>
+</div>
+<div class="text-[10px] uppercase tracking-wider text-outline/60 font-medium">
+                        MODIFIED: 15.OCT.24
+                    </div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full border-t border-[#0d0c0b] bg-[#f5f5f3] flex flex-col gap-4 p-8 w-full items-start mt-8">
+<div class="text-2xl font-black tracking-[-0.04em] text-[#0d0c0b] uppercase font-['Geist']">SYNAPS</div>
+<p class="font-['Geist'] text-[11px] leading-relaxed tracking-[0.05em] uppercase text-[#0d0c0b]">© 2024 SYNAPS ARCHIVE</p>
+<div class="flex flex-wrap gap-6 mt-4">
+<a class="font-['Geist'] text-[11px] leading-relaxed tracking-[0.05em] uppercase text-[#0d0c0b] hover:bg-[#0d0c0b] hover:text-[#f5f5f3] transition-colors" href="#">TERMS</a>
+<a class="font-['Geist'] text-[11px] leading-relaxed tracking-[0.05em] uppercase text-[#0d0c0b] hover:bg-[#0d0c0b] hover:text-[#f5f5f3] transition-colors" href="#">PRIVACY</a>
+<a class="font-['Geist'] text-[11px] leading-relaxed tracking-[0.05em] uppercase text-[#0d0c0b] hover:bg-[#0d0c0b] hover:text-[#f5f5f3] transition-colors" href="#">DOCS</a>
+</div>
+</footer>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 bg-[#f5f5f3] border-t border-[#0d0c0b]">
+<button class="text-[#0d0c0b] p-3 hover:bg-[#0d0c0b] hover:text-[#f5f5f3] transition-colors">
+<span class="material-symbols-outlined">home</span>
+</button>
+<button class="bg-[#0d0c0b] text-[#f5f5f3] p-3">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">folder_open</span>
+</button>
+<button class="text-[#0d0c0b] p-3 hover:bg-[#0d0c0b] hover:text-[#f5f5f3] transition-colors">
+<span class="material-symbols-outlined">analytics</span>
+</button>
+<button class="text-[#0d0c0b] p-3 hover:bg-[#0d0c0b] hover:text-[#f5f5f3] transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</nav>
+</body></html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SYNAPS ARCHIVAL PROTOCOL - ONBOARDING</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-secondary-fixed": "#1a1c1b",
+            "on-primary-container": "#000000",
+            "inverse-on-surface": "#32302f",
+            "outline-variant": "#474747",
+            "on-surface-variant": "#c6c6c6",
+            "surface-container-lowest": "#0f0e0d",
+            "on-tertiary-container": "#000000",
+            "inverse-primary": "#5d5f5d",
+            "tertiary": "#e2e3e1",
+            "on-primary": "#1a1c1b",
+            "secondary-fixed-dim": "#ababaa",
+            "secondary": "#c6c7c5",
+            "on-tertiary": "#1a1c1b",
+            "on-primary-fixed": "#ffffff",
+            "error-container": "#93000a",
+            "surface": "#141312",
+            "surface-container-high": "#2b2a28",
+            "surface-variant": "#363433",
+            "on-background": "#e6e1df",
+            "background": "#141312",
+            "tertiary-container": "#90918f",
+            "surface-bright": "#3b3937",
+            "tertiary-fixed": "#5d5f5d",
+            "on-surface": "#e6e1df",
+            "on-error": "#690005",
+            "tertiary-fixed-dim": "#454746",
+            "on-tertiary-fixed": "#ffffff",
+            "primary-fixed": "#5d5f5d",
+            "outline": "#919191",
+            "on-primary-fixed-variant": "#e2e3e1",
+            "surface-container-low": "#1d1b1a",
+            "surface-container-highest": "#363433",
+            "error": "#ffb4ab",
+            "secondary-container": "#454746",
+            "surface-dim": "#141312",
+            "secondary-fixed": "#c6c7c5",
+            "on-tertiary-fixed-variant": "#e2e3e1",
+            "surface-container": "#211f1e",
+            "on-secondary-container": "#e2e3e1",
+            "surface-tint": "#c6c7c5",
+            "on-secondary-fixed-variant": "#3a3c3b",
+            "primary-container": "#d4d4d3",
+            "on-secondary": "#1a1c1b",
+            "on-error-container": "#ffdad6",
+            "primary-fixed-dim": "#454746",
+            "inverse-surface": "#e6e1df",
+            "primary": "#ffffff"
+          },
+          fontFamily: {
+            "headline": ["Space Grotesk"],
+            "body": ["Inter"],
+            "label": ["Space Grotesk"]
+          },
+          borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #0d0c0b;
+      color: #f5f5f3;
+      font-family: 'Inter', sans-serif;
+    }
+    .font-space { font-family: 'Space Grotesk', sans-serif; }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      box-shadow: 4px 4px 0px 0px #ffffff;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #141312;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #ffffff;
+    }
+  </style>
+</head>
+<body class="bg-[#0d0c0b] text-[#f5f5f3] selection:bg-primary selection:text-on-primary">
+<!-- Header suppressed per rule: Onboarding page -->
+<main class="min-h-screen flex flex-col items-center pt-12 pb-24 px-6 max-w-5xl mx-auto">
+<!-- Progress Indicator Shell -->
+<div class="w-full mb-16">
+<div class="flex justify-between items-end mb-4">
+<span class="font-label text-xs tracking-[0.2em] uppercase text-secondary">PROTOCOL_INITIALIZATION</span>
+<span class="font-label text-xs tracking-widest text-primary">PHASE 01 / 02</span>
+</div>
+<div class="w-full h-1 bg-surface-container-low">
+<div class="h-full bg-primary w-1/2 transition-all duration-300"></div>
+</div>
+</div>
+<!-- Main Onboarding Canvas -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 w-full items-start">
+<!-- Content Left: Contextual Identity -->
+<div class="lg:col-span-4 flex flex-col gap-8">
+<div class="border-l-2 border-primary pl-6">
+<h1 class="text-5xl font-headline font-black tracking-tighter uppercase leading-[0.9]">
+            Define<br/>Your<br/>Identity.
+          </h1>
+</div>
+<p class="text-sm font-body text-on-surface-variant leading-relaxed max-w-xs">
+          SYNAPS requires baseline metadata to calibrate your archival feed. All data is encrypted and stored locally under Protocol 12.
+        </p>
+<div class="hidden lg:block bg-surface-container h-[300px] w-full relative">
+<img class="w-full h-full object-cover grayscale opacity-50 contrast-125" data-alt="abstract monochromatic 3d rendered wireframe of a human head constructed from data points and glowing lines on black background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCixt_sc0CwC_Kzm9Mnf1CIw1mbcwOqlNj6_sryqAV1Y1JBzDubZ5NsYWrc4tCXc1GPge3rvDzKQz45ZSAS-XtjcS42ps_S7vc2qcM9qQpPeDv58AJPJu44JZWRonmGz2jPbFYvFg1qdJRm0jnWoGU0bSdH_D6O9IHz5w0L1hLkLms_atNedngEAVTunMuRzzP7Ml9WeYmUkLrtm5iH1balGuFeT1CHN5XvaURwLy41UBMX-ZWZKYJheu1xV1soD933Z76sv6xNDZdo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0d0c0b] to-transparent"></div>
+</div>
+</div>
+<!-- Content Right: Actionable Forms (Bento-ish Layout) -->
+<div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- STEP 1: Profile -->
+<section class="md:col-span-2 bg-surface-container-low p-8 border border-outline-variant hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] transition-all duration-150">
+<div class="flex items-center gap-2 mb-8">
+<span class="font-label text-xs bg-primary text-on-primary px-2 py-0.5 font-bold">STEP_01</span>
+<h2 class="font-label text-sm uppercase tracking-widest">Baseline Metadata</h2>
+</div>
+<div class="space-y-8">
+<div class="relative group">
+<label class="block font-label text-[10px] uppercase tracking-widest text-secondary mb-2">FULL_NAME</label>
+<input class="w-full bg-surface-container border-b-2 border-outline-variant text-primary font-headline text-lg p-4 focus:border-primary transition-colors placeholder:text-surface-variant" placeholder="ARCHIVIST_00" type="text"/>
+</div>
+<div class="relative group">
+<label class="block font-label text-[10px] uppercase tracking-widest text-secondary mb-2">INSTITUTION</label>
+<input class="w-full bg-surface-container border-b-2 border-outline-variant text-primary font-headline text-lg p-4 focus:border-primary transition-colors placeholder:text-surface-variant" placeholder="NEURAL_CORP" type="text"/>
+</div>
+<div class="relative group">
+<label class="block font-label text-[10px] uppercase tracking-widest text-secondary mb-2">BIOGRAPHICAL_DATA</label>
+<textarea class="w-full bg-surface-container border-b-2 border-outline-variant text-primary font-body text-sm p-4 focus:border-primary transition-colors resize-none placeholder:text-surface-variant" placeholder="Define your purpose within the network..." rows="3"></textarea>
+</div>
+</div>
+</section>
+<!-- STEP 2: Interests selection grid -->
+<section class="md:col-span-2 bg-surface-container-low p-8 border border-outline-variant">
+<div class="flex items-center gap-2 mb-8">
+<span class="font-label text-xs bg-secondary text-on-secondary px-2 py-0.5 font-bold">STEP_02</span>
+<h2 class="font-label text-sm uppercase tracking-widest text-secondary">Neural Affinities</h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<!-- Interest Item -->
+<button class="flex flex-col items-center justify-center gap-3 p-6 border border-outline-variant hover:bg-primary hover:text-on-primary group transition-all duration-150 aspect-square">
+<span class="material-symbols-outlined text-3xl" data-icon="memory">memory</span>
+<span class="font-label text-[10px] uppercase tracking-tighter">Cybernetics</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-3 p-6 border border-outline-variant hover:bg-primary hover:text-on-primary group transition-all duration-150 aspect-square">
+<span class="material-symbols-outlined text-3xl" data-icon="database">database</span>
+<span class="font-label text-[10px] uppercase tracking-tighter">Big_Data</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-3 p-6 border-primary bg-primary text-on-primary shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] group transition-all duration-150 aspect-square">
+<span class="material-symbols-outlined text-3xl" data-icon="terminal" style="font-variation-settings: 'FILL' 1;">terminal</span>
+<span class="font-label text-[10px] uppercase tracking-tighter">Encryption</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-3 p-6 border border-outline-variant hover:bg-primary hover:text-on-primary group transition-all duration-150 aspect-square">
+<span class="material-symbols-outlined text-3xl" data-icon="monitoring">monitoring</span>
+<span class="font-label text-[10px] uppercase tracking-tighter">Analytics</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-3 p-6 border border-outline-variant hover:bg-primary hover:text-on-primary group transition-all duration-150 aspect-square">
+<span class="material-symbols-outlined text-3xl" data-icon="language">language</span>
+<span class="font-label text-[10px] uppercase tracking-tighter">Network</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-3 p-6 border border-outline-variant hover:bg-primary hover:text-on-primary group transition-all duration-150 aspect-square">
+<span class="material-symbols-outlined text-3xl" data-icon="security">security</span>
+<span class="font-label text-[10px] uppercase tracking-tighter">Security</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-3 p-6 border border-outline-variant hover:bg-primary hover:text-on-primary group transition-all duration-150 aspect-square">
+<span class="material-symbols-outlined text-3xl" data-icon="visibility">visibility</span>
+<span class="font-label text-[10px] uppercase tracking-tighter">Surveillance</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-3 p-6 border border-outline-variant hover:bg-primary hover:text-on-primary group transition-all duration-150 aspect-square">
+<span class="material-symbols-outlined text-3xl" data-icon="settings_input_component">settings_input_component</span>
+<span class="font-label text-[10px] uppercase tracking-tighter">Hardware</span>
+</button>
+</div>
+</section>
+<!-- CTAs -->
+<div class="md:col-span-2 flex flex-col md:flex-row gap-4 mt-8">
+<button class="flex-1 py-5 px-8 bg-primary text-on-primary font-label font-black text-sm uppercase tracking-widest hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all duration-150">
+            CONTINUE_TO_DASHBOARD
+          </button>
+<button class="py-5 px-8 border-2 border-primary text-primary font-label font-bold text-sm uppercase tracking-widest hover:bg-surface-container transition-colors duration-150">
+            SAVE_DRAFT
+          </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Block -->
+<footer class="bg-[#0d0c0b] text-[#f5f5f3] flex flex-col md:flex-row justify-between items-center w-full px-6 py-8 gap-4 border-t-2 border-[#f5f5f3] mt-auto">
+<div class="text-lg font-bold text-[#ffffff] font-headline tracking-tighter">SYNAPS</div>
+<p class="font-['Space_Grotesk'] uppercase text-[10px] tracking-widest text-[#c6c7c5]">© 2024 SYNAPS ARCHIVAL PROTOCOL. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-6">
+<a class="font-['Space_Grotesk'] uppercase text-[10px] tracking-widest text-[#c6c7c5] hover:text-[#ffffff] transition-colors duration-150" href="#">DOCUMENTATION</a>
+<a class="font-['Space_Grotesk'] uppercase text-[10px] tracking-widest text-[#c6c7c5] hover:text-[#ffffff] transition-colors duration-150" href="#">API</a>
+<a class="font-['Space_Grotesk'] uppercase text-[10px] tracking-widest text-[#c6c7c5] hover:text-[#ffffff] transition-colors duration-150" href="#">TERMS</a>
+<a class="font-['Space_Grotesk'] uppercase text-[10px] tracking-widest text-[#c6c7c5] hover:text-[#ffffff] transition-colors duration-150" href="#">PRIVACY</a>
+</div>
+</footer>
+</body></html>

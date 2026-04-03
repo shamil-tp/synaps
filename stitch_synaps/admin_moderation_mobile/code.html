@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SYNAPS | ADMIN MODERATION</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary": "#e6e1df",
+              "surface-container-high": "#e8e8e6",
+              "surface-bright": "#f9f9f7",
+              "on-error": "#ffffff",
+              "on-background": "#0d0c0b",
+              "tertiary-container": "#777472",
+              "tertiary": "#3d3b3a",
+              "on-error-container": "#410002",
+              "primary": "#0d0c0b",
+              "primary-container": "#3d3b3a",
+              "on-primary": "#f5f5f3",
+              "surface": "#f5f5f3",
+              "secondary-fixed-dim": "#aeaaa8",
+              "secondary-container": "#d8d3d1",
+              "on-surface-variant": "#474747",
+              "on-primary-fixed": "#ffffff",
+              "on-primary-container": "#ffffff",
+              "background": "#f5f5f3",
+              "on-tertiary-fixed": "#ffffff",
+              "surface-tint": "#605e5c",
+              "tertiary-fixed": "#605e5c",
+              "on-secondary-container": "#1d1b1a",
+              "on-secondary-fixed": "#1d1b1a",
+              "on-primary-fixed-variant": "#e6e1df",
+              "inverse-on-surface": "#f1f1ef",
+              "surface-variant": "#e2e3e1",
+              "secondary": "#605e5c",
+              "inverse-primary": "#cac6c3",
+              "on-secondary": "#ffffff",
+              "surface-dim": "#dadad8",
+              "error-container": "#ffdad6",
+              "inverse-surface": "#0d0c0b",
+              "error": "#ba1a1a",
+              "tertiary-fixed-dim": "#484645",
+              "outline": "#0d0c0b",
+              "on-tertiary-container": "#ffffff",
+              "primary-fixed-dim": "#484645",
+              "primary-fixed": "#605e5c",
+              "on-surface": "#0d0c0b",
+              "surface-container-highest": "#e2e3e1",
+              "on-tertiary-fixed-variant": "#e6e1df",
+              "secondary-fixed": "#cac6c3",
+              "outline-variant": "#c6c6c6",
+              "surface-container-low": "#f4f4f2",
+              "surface-container": "#eeeeec",
+              "on-secondary-fixed-variant": "#3d3b3a",
+              "surface-container-lowest": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Geist", "sans-serif"],
+              "body": ["Geist", "sans-serif"],
+              "label": ["Geist", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "0px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; background-color: #f5f5f3; color: #0d0c0b; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .signature-shadow { box-shadow: 4px 4px 0px 0px #0d0c0b; transition: all 0.1s cubic-bezier(0.2, 1, 0.3, 1); }
+        .signature-shadow:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px 0px #0d0c0b; }
+        .custom-scrollbar::-webkit-scrollbar { display: none; }
+        .custom-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full border-b border-[#0d0c0b] dark:border-[#f5f5f3] bg-[#f5f5f3] dark:bg-[#0d0c0b] z-50">
+<div class="flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#0d0c0b] dark:text-[#f5f5f3]">menu</span>
+<span class="text-2xl font-black tracking-[-0.04em] text-[#0d0c0b] dark:text-[#f5f5f3] font-['Geist'] uppercase">SYNAPS</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#0d0c0b] dark:text-[#f5f5f3]">search</span>
+<div class="w-8 h-8 bg-primary border border-outline flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-sm">admin_panel_settings</span>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-16 pb-24 px-4 min-h-screen">
+<!-- Page Title & Bulk Actions -->
+<div class="py-6 flex flex-col gap-4">
+<div class="flex justify-between items-end">
+<div>
+<span class="font-['Geist'] text-[11px] leading-relaxed tracking-[0.05em] uppercase font-medium opacity-60">Control Panel</span>
+<h1 class="font-['Geist'] text-[2.5rem] font-bold tracking-[-0.04em] leading-[1.0] uppercase">DOCS_MOD</h1>
+</div>
+<button class="border border-outline px-4 py-2 text-[10px] font-bold uppercase tracking-widest bg-surface flex items-center gap-2 active:bg-primary active:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-xs">select_all</span>
+                    BULK_EDIT
+                </button>
+</div>
+<!-- Horizontal Scroll Tabs -->
+<nav class="flex overflow-x-auto custom-scrollbar gap-2 border-b border-outline pb-4">
+<button class="whitespace-nowrap px-4 py-2 bg-primary text-on-primary text-[10px] font-bold uppercase tracking-widest">ALL_ARCHIVE (124)</button>
+<button class="whitespace-nowrap px-4 py-2 border border-outline text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:text-on-primary">PENDING (12)</button>
+<button class="whitespace-nowrap px-4 py-2 border border-outline text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:text-on-primary">FLAGGED (04)</button>
+<button class="whitespace-nowrap px-4 py-2 border border-outline text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:text-on-primary">REJECTED (09)</button>
+</nav>
+</div>
+<!-- Card List -->
+<div class="grid grid-cols-1 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface border border-outline p-4 signature-shadow relative group">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col gap-1">
+<span class="bg-primary text-on-primary text-[9px] font-medium tracking-[0.05em] uppercase px-2 py-0.5 w-fit">STATUS: PENDING</span>
+<h3 class="font-['Geist'] text-lg font-bold tracking-tight uppercase leading-tight">Project_X_V2.pdf</h3>
+</div>
+<button class="p-1">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="aspect-video w-full border border-outline mb-4 overflow-hidden grayscale contrast-125">
+<img class="w-full h-full object-cover" data-alt="Brutalist architectural blueprint with high contrast black and white lines and technical annotations" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIMf5pMgc7JVyLp2NM9of8da_5Ddl2CbQ3YwfTLXB5kAL7ZcEKqR3ZkHsrDMaukHZoeEJrwIVuhPhQb0YqqHfQ9k4ElmDv9fcGljUrkIRBWFnGD6nbpGCAAIgAsLfBe90tvlAFIQlWTRs3ozcdIFqT-wYFJkTALWrM9uy2Zo9JPcLOyUoFtVlQeZXjHze5Snu2XUGMULYzrmSZUki6arLl6Ocs3xhKvuTNIAIi_Zz6GIGbhtYgAcNq7_epL-3Pql2RyUduWueqJtR2"/>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex flex-col">
+<span class="font-['Geist'] text-[10px] font-medium tracking-[0.05em] uppercase opacity-60">Uploader</span>
+<span class="font-['Geist'] text-[11px] font-bold uppercase">User_7721</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-['Geist'] text-[10px] font-medium tracking-[0.05em] uppercase opacity-60">Timestamp</span>
+<span class="font-['Geist'] text-[11px] font-bold uppercase">24.OCT.24</span>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-outline flex gap-2">
+<button class="flex-1 border border-outline py-2 text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:text-on-primary">REJECT</button>
+<button class="flex-1 bg-primary text-on-primary py-2 text-[10px] font-bold uppercase tracking-widest">APPROVE</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface border border-outline p-4 signature-shadow relative">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col gap-1">
+<span class="bg-error text-on-error text-[9px] font-medium tracking-[0.05em] uppercase px-2 py-0.5 w-fit">STATUS: FLAGGED</span>
+<h3 class="font-['Geist'] text-lg font-bold tracking-tight uppercase leading-tight">Internal_Log_001.txt</h3>
+</div>
+<button class="p-1">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="aspect-video w-full border border-outline mb-4 p-4 bg-primary flex items-center justify-center overflow-hidden">
+<div class="w-full h-full opacity-20" style="background-image: repeating-linear-gradient(45deg, #f5f5f3, #f5f5f3 2px, transparent 2px, transparent 8px);"></div>
+<span class="absolute text-on-primary font-mono text-[10px] text-center px-4">SENSITIVE CONTENT DETECTED<br/>MODERATOR BYPASS REQUIRED</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex flex-col">
+<span class="font-['Geist'] text-[10px] font-medium tracking-[0.05em] uppercase opacity-60">Uploader</span>
+<span class="font-['Geist'] text-[11px] font-bold uppercase">System_Root</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-['Geist'] text-[10px] font-medium tracking-[0.05em] uppercase opacity-60">Reason</span>
+<span class="font-['Geist'] text-[11px] font-bold uppercase text-error">Policy_Violation_A2</span>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-outline flex gap-2">
+<button class="flex-1 border border-outline py-2 text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:text-on-primary">QUARANTINE</button>
+<button class="flex-1 bg-primary text-on-primary py-2 text-[10px] font-bold uppercase tracking-widest">REVIEW</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface border border-outline p-4 signature-shadow relative">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col gap-1">
+<span class="bg-primary text-on-primary text-[9px] font-medium tracking-[0.05em] uppercase px-2 py-0.5 w-fit">STATUS: PENDING</span>
+<h3 class="font-['Geist'] text-lg font-bold tracking-tight uppercase leading-tight">Satellite_Img_04.jpg</h3>
+</div>
+<button class="p-1">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="aspect-video w-full border border-outline mb-4 overflow-hidden grayscale brightness-75">
+<img class="w-full h-full object-cover" data-alt="Grainy black and white satellite imagery of an industrial complex at night with high contrast shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSiaG2pD-u5p3CWqowStlSmoosQJX-4Zu9ZX3ITm4EddbIQGnug7daYztlWImaOQ0tfGbvSegHd9Y17zL5gFV_vbBbcIEP0Bm-CJTByrIPNc6Co4dLXSVrse7d_Vg0D8cj3PerZ_mlDwgbpIVhFuUnWb_hn5RXDjqintLfrn8-zd0NICoSbJm76-emRYnzVbCphUCM8SXr-Ys7EUs-t1weuyw3Aeo2OrUH_a1ErBkcES4484tC6ODgbmgDY2biJcXZHUQtPQzQjVEk"/>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex flex-col">
+<span class="font-['Geist'] text-[10px] font-medium tracking-[0.05em] uppercase opacity-60">Uploader</span>
+<span class="font-['Geist'] text-[11px] font-bold uppercase">Drone_Op_09</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-['Geist'] text-[10px] font-medium tracking-[0.05em] uppercase opacity-60">Size</span>
+<span class="font-['Geist'] text-[11px] font-bold uppercase">12.4 MB</span>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-outline flex gap-2">
+<button class="flex-1 border border-outline py-2 text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:text-on-primary">REJECT</button>
+<button class="flex-1 bg-primary text-on-primary py-2 text-[10px] font-bold uppercase tracking-widest">APPROVE</button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 bg-[#f5f5f3] dark:bg-[#0d0c0b] border-t border-[#0d0c0b] dark:border-[#f5f5f3]">
+<a class="text-[#0d0c0b] dark:text-[#f5f5f3] p-3 flex items-center justify-center" href="#">
+<span class="material-symbols-outlined">home</span>
+</a>
+<a class="bg-[#0d0c0b] text-[#f5f5f3] dark:bg-[#f5f5f3] dark:text-[#0d0c0b] p-3 flex items-center justify-center" href="#">
+<span class="material-symbols-outlined">folder_open</span>
+</a>
+<a class="text-[#0d0c0b] dark:text-[#f5f5f3] p-3 flex items-center justify-center" href="#">
+<span class="material-symbols-outlined">analytics</span>
+</a>
+<a class="text-[#0d0c0b] dark:text-[#f5f5f3] p-3 flex items-center justify-center" href="#">
+<span class="material-symbols-outlined">settings</span>
+</a>
+</nav>
+<!-- Contextual FAB (Only for main screens) -->
+<button class="fixed right-6 bottom-20 w-14 h-14 bg-primary text-on-primary border border-outline signature-shadow flex items-center justify-center z-40 active:translate-y-1 active:shadow-none">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</body></html>

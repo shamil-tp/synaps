@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SYNAPS ADMIN OVERVIEW</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100;400;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Geist', sans-serif; background-color: #f5f5f3; color: #0d0c0b; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .brutalist-shadow { box-shadow: 4px 4px 0px 0px #0d0c0b; }
+        .brutalist-shadow-hover:hover { box-shadow: 6px 6px 0px 0px #0d0c0b; transform: translate(-2px, -2px); }
+        .hatch-pattern {
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(13, 12, 11, 0.05) 10px, rgba(13, 12, 11, 0.05) 11px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-background": "#0d0c0b",
+                        "background": "#f5f5f3",
+                        "surface": "#f5f5f3",
+                        "primary": "#0d0c0b",
+                        "on-primary": "#f5f5f3",
+                        "outline": "#0d0c0b"
+                    },
+                    fontFamily: {
+                        "headline": ["Geist"],
+                        "body": ["Geist"],
+                        "label": ["Geist"]
+                    },
+                    borderRadius: { "DEFAULT": "0" }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full border-b border-[#0d0c0b] bg-[#f5f5f5] z-50 flex justify-between items-center px-6 h-16">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#0d0c0b]">menu</span>
+<h1 class="text-2xl font-black tracking-[-0.04em] text-[#0d0c0b] uppercase">SYNAPS</h1>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 border border-on-background flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">notifications</span>
+</div>
+<div class="w-8 h-8 border border-on-background bg-on-background text-background flex items-center justify-center text-[10px] font-bold">
+                AD
+            </div>
+</div>
+</header>
+<main class="pt-24 px-6 space-y-8">
+<!-- Welcome Header -->
+<section>
+<p class="text-[11px] font-medium tracking-[0.05em] uppercase mb-1">SYSTEM STATUS: NOMINAL</p>
+<h2 class="text-4xl font-bold tracking-tight uppercase leading-[0.9]">ADMIN OVERVIEW</h2>
+</section>
+<!-- Stats Grid (2x2) -->
+<section class="grid grid-cols-2 gap-4">
+<div class="border border-on-background p-4 bg-surface brutalist-shadow">
+<p class="text-[10px] font-medium tracking-[0.05em] uppercase opacity-60">ACTIVE NODES</p>
+<div class="flex items-end justify-between mt-2">
+<span class="text-3xl font-bold tracking-tighter">1,204</span>
+<span class="material-symbols-outlined text-sm mb-1">memory</span>
+</div>
+</div>
+<div class="border border-on-background p-4 bg-on-background text-background brutalist-shadow">
+<p class="text-[10px] font-medium tracking-[0.05em] uppercase opacity-80">THROUGHPUT</p>
+<div class="flex items-end justify-between mt-2">
+<span class="text-3xl font-bold tracking-tighter">98.2%</span>
+<span class="material-symbols-outlined text-sm mb-1">speed</span>
+</div>
+</div>
+<div class="border border-on-background p-4 bg-surface brutalist-shadow">
+<p class="text-[10px] font-medium tracking-[0.05em] uppercase opacity-60">ERRORS</p>
+<div class="flex items-end justify-between mt-2">
+<span class="text-3xl font-bold tracking-tighter">04</span>
+<span class="material-symbols-outlined text-sm mb-1 text-red-600">warning</span>
+</div>
+</div>
+<div class="border border-on-background p-4 bg-surface brutalist-shadow">
+<p class="text-[10px] font-medium tracking-[0.05em] uppercase opacity-60">STORAGE</p>
+<div class="flex items-end justify-between mt-2">
+<span class="text-3xl font-bold tracking-tighter">82TB</span>
+<span class="material-symbols-outlined text-sm mb-1">database</span>
+</div>
+</div>
+</section>
+<!-- Chart Section (Stacked Full Width) -->
+<section class="space-y-4">
+<div class="border border-on-background bg-surface p-6 brutalist-shadow">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-[11px] font-bold tracking-[0.05em] uppercase">NETWORK_LATENCY (MS)</h3>
+<span class="text-[10px] font-mono">LIVE_STREAM</span>
+</div>
+<div class="h-32 flex items-end gap-1">
+<div class="w-full bg-on-background opacity-20 h-[30%]"></div>
+<div class="w-full bg-on-background opacity-40 h-[45%]"></div>
+<div class="w-full bg-on-background opacity-10 h-[20%]"></div>
+<div class="w-full bg-on-background opacity-60 h-[75%]"></div>
+<div class="w-full bg-on-background opacity-30 h-[40%]"></div>
+<div class="w-full bg-on-background opacity-80 h-[90%]"></div>
+<div class="w-full bg-on-background opacity-50 h-[60%]"></div>
+<div class="w-full bg-on-background opacity-100 h-[100%]"></div>
+<div class="w-full bg-on-background opacity-20 h-[35%]"></div>
+<div class="w-full bg-on-background opacity-40 h-[50%]"></div>
+</div>
+<div class="mt-4 border-t border-on-background pt-2 flex justify-between">
+<p class="text-[10px] font-mono">00:00</p>
+<p class="text-[10px] font-mono">12:00</p>
+<p class="text-[10px] font-mono">23:59</p>
+</div>
+</div>
+<div class="border border-on-background bg-on-background p-6 brutalist-shadow">
+<h3 class="text-[11px] font-bold tracking-[0.05em] uppercase text-background mb-4">INGRESS_VOLUMES</h3>
+<div class="relative h-2 border border-background">
+<div class="absolute inset-y-0 left-0 bg-background w-[65%]"></div>
+</div>
+<div class="mt-2 flex justify-between text-background">
+<p class="text-[10px] font-mono">VOLUME_A: 65%</p>
+<p class="text-[10px] font-mono">THRESHOLD: OK</p>
+</div>
+</div>
+</section>
+<!-- Activity Feed (Full-width list) -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="text-[11px] font-bold tracking-[0.05em] uppercase">SYSTEM_LOGS</h3>
+<button class="text-[10px] underline uppercase">VIEW_ALL</button>
+</div>
+<div class="border border-on-background divide-y divide-on-background">
+<div class="p-4 bg-surface flex gap-4 items-start">
+<span class="material-symbols-outlined text-lg mt-1">shield</span>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<span class="text-[11px] font-bold uppercase">Security Protocol</span>
+<span class="text-[9px] font-mono opacity-60">12:45:01</span>
+</div>
+<p class="text-[13px] leading-snug">Firewall rules updated for node [77-X]</p>
+</div>
+</div>
+<div class="p-4 bg-surface flex gap-4 items-start">
+<span class="material-symbols-outlined text-lg mt-1">sync</span>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<span class="text-[11px] font-bold uppercase">Database Sync</span>
+<span class="text-[9px] font-mono opacity-60">11:30:22</span>
+</div>
+<p class="text-[13px] leading-snug">Archive migration successfully completed</p>
+</div>
+</div>
+<div class="p-4 bg-surface flex gap-4 items-start">
+<span class="material-symbols-outlined text-lg mt-1 text-red-600">warning</span>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<span class="text-[11px] font-bold uppercase">Auth Warning</span>
+<span class="text-[9px] font-mono opacity-60">10:15:45</span>
+</div>
+<p class="text-[13px] leading-snug text-red-600">Failed login attempt from unauthorized IP</p>
+</div>
+</div>
+<div class="p-4 bg-surface flex gap-4 items-start hatch-pattern">
+<span class="material-symbols-outlined text-lg mt-1">download</span>
+<div class="flex-1">
+<div class="flex justify-between items-center mb-1">
+<span class="text-[11px] font-bold uppercase">System Update</span>
+<span class="text-[9px] font-mono opacity-60">PENDING</span>
+</div>
+<p class="text-[13px] leading-snug">Version 4.2.1-beta waiting for deployment</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Action Button Section -->
+<section class="pb-12">
+<button class="w-full bg-on-background text-background font-bold text-sm tracking-widest uppercase p-4 brutalist-shadow-hover transition-all flex justify-center items-center gap-2">
+                REBOOT_SYSTEM
+                <span class="material-symbols-outlined text-sm">power_settings_new</span>
+</button>
+</section>
+<!-- Footer -->
+<footer class="w-full border-t border-[#0d0c0b] flex flex-col gap-4 p-8 items-start bg-background">
+<span class="font-bold uppercase tracking-widest text-[11px]">SYNAPS ARCHIVE</span>
+<p class="text-[11px] leading-relaxed tracking-[0.05em] uppercase opacity-60">© 2024 SYNAPS ARCHIVE</p>
+<div class="flex gap-6">
+<a class="text-[11px] font-bold tracking-[0.05em] uppercase hover:underline" href="#">TERMS</a>
+<a class="text-[11px] font-bold tracking-[0.05em] uppercase hover:underline" href="#">PRIVACY</a>
+<a class="text-[11px] font-bold tracking-[0.05em] uppercase hover:underline" href="#">DOCS</a>
+</div>
+</footer>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 bg-[#f5f5f3] border-t border-[#0d0c0b]">
+<div class="p-3 bg-[#0d0c0b] text-[#f5f5f3]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+</div>
+<div class="p-3 text-[#0d0c0b] hover:bg-[#0d0c0b] hover:text-[#f5f5f3]">
+<span class="material-symbols-outlined">folder_open</span>
+</div>
+<div class="p-3 text-[#0d0c0b] hover:bg-[#0d0c0b] hover:text-[#f5f5f3]">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<div class="p-3 text-[#0d0c0b] hover:bg-[#0d0c0b] hover:text-[#f5f5f3]">
+<span class="material-symbols-outlined">settings</span>
+</div>
+</nav>
+</body></html>

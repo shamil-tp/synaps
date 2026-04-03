@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>SYNAPS — Archival System</title>
+    <!-- Core Libraries -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/history@5/umd/history.development.js"></script>
+    <script src="https://unpkg.com/react-router@6.3.0/umd/react-router.development.js"></script>
+    <script src="https://unpkg.com/react-router-dom@6.3.0/umd/react-router-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    
+    <!-- Styling and Fonts -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "error": "#ba1a1a",
+                        "primary-container": "#3d3b3a",
+                        "surface-container": "#eeeeec",
+                        "inverse-on-surface": "#f1f1ef",
+                        "tertiary-fixed-dim": "#484645",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#cac6c3",
+                        "secondary-container": "#d8d3d1",
+                        "surface-dim": "#dadad8",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#cac6c3",
+                        "inverse-surface": "#2f3130",
+                        "on-tertiary-fixed": "#ffffff",
+                        "on-primary-fixed-variant": "#e6e1df",
+                        "on-surface": "#1a1c1b",
+                        "on-tertiary": "#e6e1df",
+                        "surface-container-low": "#f4f4f2",
+                        "on-secondary-fixed": "#1d1b1a",
+                        "surface-container-high": "#e8e8e6",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#1d1b1a",
+                        "tertiary-fixed": "#605e5c",
+                        "secondary-fixed-dim": "#aeaaa8",
+                        "primary-fixed-dim": "#484645",
+                        "secondary": "#605e5c",
+                        "background": "#f5f5f3",
+                        "surface-container-highest": "#e2e3e1",
+                        "on-tertiary-fixed-variant": "#e6e1df",
+                        "on-primary-fixed": "#ffffff",
+                        "on-primary-container": "#ffffff",
+                        "surface-variant": "#e2e3e1",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#474747",
+                        "on-primary": "#e6e1df",
+                        "surface-bright": "#f9f9f7",
+                        "outline": "#0d0c0b",
+                        "tertiary": "#3d3b3a",
+                        "surface": "#f5f5f3",
+                        "on-error-container": "#410002",
+                        "on-tertiary-container": "#ffffff",
+                        "primary-fixed": "#605e5c",
+                        "outline-variant": "#c6c6c6",
+                        "tertiary-container": "#777472",
+                        "surface-tint": "#605e5c",
+                        "on-secondary-fixed-variant": "#3d3b3a",
+                        "on-background": "#0d0c0b",
+                        "primary": "#0d0c0b"
+                    },
+                    fontFamily: {
+                        "headline": ["Geist", "Inter", "sans-serif"],
+                        "body": ["Geist", "Inter", "sans-serif"],
+                        "label": ["Geist Mono", "monospace"]
+                    },
+                    borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f5f5f3;
+            color: #0d0c0b;
+            font-family: 'Geist', sans-serif;
+            overflow-x: hidden;
+        }
+        .signature-shadow {
+            box-shadow: 4px 4px 0px 0px #0d0c0b;
+        }
+        .signature-shadow:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #0d0c0b;
+        }
+        .giant-type {
+            font-size: clamp(6rem, 20vw, 12rem);
+            line-height: 0.9;
+            letter-spacing: -0.04em;
+        }
+        .diagonal-hatch {
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(13, 12, 11, 0.05) 10px,
+                rgba(13, 12, 11, 0.05) 11px
+            );
+        }
+        .hatch-loading {
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                #0d0c0b 10px,
+                #0d0c0b 11px
+            );
+            opacity: 0.05;
+        }
+        .pdf-page-shadow {
+            box-shadow: 8px 8px 0px 0px rgba(13, 12, 11, 0.4);
+        }
+        .label-sm {
+            font-family: 'Geist Mono', monospace;
+            font-size: 0.6875rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        /* Hide scrollbars but keep functionality */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .brutalist-border {
+            border: 1px solid #0d0c0b;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+        const { createRoot } = ReactDOM;
+        const { MemoryRouter, Routes, Route, Link, useNavigate, useLocation } = ReactRouterDOM;
+
+        // --- Layout Components ---
+
+        const TopNavBar = ({ hideNav = false }) => {
+            return (
+                <header className="bg-[#f5f5f3] text-[#0d0c0b] border-b border-[#0d0c0b] flex justify-between items-center w-full px-6 md:px-12 h-16 fixed top-0 z-50">
+                    <Link to="/" className="text-xl font-bold uppercase tracking-tighter text-[#0d0c0b]">SYNAPS</Link>
+                    <div className="flex items-center space-x-8">
+                        {!hideNav && (
+                            <nav className="hidden md:flex space-x-6 text-[0.6875rem] font-medium tracking-[0.05em] uppercase">
+                                <Link className="text-[#0d0c0b]/60 hover:underline decoration-1 underline-offset-4" to="/browse">Browse</Link>
+                                <Link className="text-[#0d0c0b]/60 hover:underline decoration-1 underline-offset-4" to="/admin">Admin</Link>
+                                <Link className="text-[#0d0c0b]/60 hover:underline decoration-1 underline-offset-4" to="/profile">Profile</Link>
+                                <Link className="text-[#0d0c0b]/60 hover:underline decoration-1 underline-offset-4" to="/upload">Upload</Link>
+                            </nav>
+                        )}
+                        <div className="flex items-center space-x-4">
+                            <span className="material-symbols-outlined cursor-pointer">notifications</span>
+                            <span className="material-symbols-outlined cursor-pointer">settings</span>
+                            <Link to="/profile" className="w-8 h-8 border border-primary overflow-hidden hidden md:block">
+                                <img className="w-full h-full object-cover grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9plfH9pVWNrWINyrYw4Vg8ijqpMWhBFih3AjRBs3LfKrzm_54GuuoBP-XhPWebSocfAWPLf3YS_Ek7GAw9nA5ZG7SzWrSSmoGFEnt9C3R_oFO7-SLM1J3_Nu_-VT2AiCWGg0Iv5wi3xLjSOYPONrU7-2Z2R06e_szZGDsyZhpvoj0XTtxaI7rj5btKwVh-Ral9e5IgbV5JsIQTJlTcfVveDIiTEjkpbxkYMCR3v-oXHzGDtGTmrgkqbYRaDbPX9qB8RDOT6al3xBV" />
+                            </Link>
+                        </div>
+                    </div>
+                </header>
+            );
+        };
+
+        const Footer = () => (
+            <footer className="w-full border-t border-[#0d0c0b] bg-[#f5f5f3] flex flex-col gap-8 px-12 py-16">
+                <div className="flex flex-col md:flex-row justify-between items-start gap-12">
+                    <div className="max-w-xs">
+                        <div className="text-lg font-bold text-[#0d0c0b] flex items-center gap-1 mb-4">SYNAPS</div>
+                        <p className="text-xs leading-relaxed opacity-60 uppercase font-medium tracking-wider">
+                            A digital vault for technical knowledge. High-fidelity archival of human ingenuity.
+                        </p>
+                    </div>
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-x-24 gap-y-8">
+                        <div className="flex flex-col gap-4">
+                            <span className="font-bold uppercase text-[0.6875rem]">Directory</span>
+                            <Link to="/browse" className="text-[0.6875rem] font-medium opacity-80 hover:underline">Browse</Link>
+                            <Link to="/upload" className="text-[0.6875rem] font-medium opacity-80 hover:underline">Upload</Link>
+                        </div>
+                        <div className="flex flex-col gap-4">
+                            <span className="font-bold uppercase text-[0.6875rem]">System</span>
+                            <Link to="/admin" className="text-[0.6875rem] font-medium opacity-80 hover:underline">Admin</Link>
+                            <Link to="/login" className="text-[0.6875rem] font-medium opacity-80 hover:underline">Login</Link>
+                        </div>
+                        <div className="flex flex-col gap-4">
+                            <span className="font-bold uppercase text-[0.6875rem]">Legal</span>
+                            <a href="#" className="text-[0.6875rem] font-medium opacity-80 hover:underline">Terms</a>
+                            <a href="#" className="text-[0.6875rem] font-medium opacity-80 hover:underline">Privacy</a>
+                        </div>
+                    </div>
+                </div>
+                <div className="pt-8 border-t border-on-background/10 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <span className="text-[0.6875rem] font-medium opacity-60">© 2024 SYNAPS. ARCHIVAL SYSTEM v1.0.</span>
+                    <div className="flex items-center gap-4">
+                        <span className="material-symbols-outlined text-lg">language</span>
+                        <span className="text-[0.6875rem] font-medium">Status: Operational</span>
+                    </div>
+                </div>
+            </footer>
+        );
+
+        // --- Pages ---
+
+        const HomePage = () => {
+            return (
+                <div className="pt-16">
+                    <section className="px-6 md:px-12 py-24 md:py-32 border-b border-on-background">
+                        <div className="max-w-screen-xl mx-auto">
+                            <span className="font-headline uppercase tracking-[0.05em] text-[0.6875rem] font-medium block mb-6">Open · Free · Community-driven</span>
+                            <h1 className="text-5xl md:text-8xl font-bold tracking-[-0.04em] leading-[1.0] mb-8 uppercase">
+                                The archival system <br/>
+                                <span className="italic underline decoration-2 underline-offset-8">for modern study.</span>
+                            </h1>
+                            <p className="text-lg md:text-2xl leading-relaxed max-w-2xl mb-12 opacity-80">
+                                A decentralized, high-fidelity repository for academic papers, lecture notes, and engineering problem sets. Built by students, for the future.
+                            </p>
+                            <div className="max-w-2xl">
+                                <div className="relative flex items-center border border-on-background bg-background signature-shadow mb-4">
+                                    <span className="material-symbols-outlined px-4">search</span>
+                                    <input className="w-full py-4 bg-transparent border-none focus:ring-0 font-medium text-lg" placeholder="Search 450,000+ documents..." type="text"/>
+                                </div>
+                                <div className="flex flex-wrap gap-4 items-center">
+                                    <span className="text-[0.6875rem] font-medium opacity-60 uppercase">Trending:</span>
+                                    <button className="text-[0.6875rem] font-medium border border-on-background px-2 py-1 hover:bg-on-background hover:text-background uppercase">CLRS</button>
+                                    <button className="text-[0.6875rem] font-medium border border-on-background px-2 py-1 hover:bg-on-background hover:text-background uppercase">Deep Learning</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section className="bg-on-background text-background py-8 px-12">
+                        <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row items-start md:items-center gap-8">
+                            <span className="text-[0.6875rem] font-bold whitespace-nowrap uppercase">Browse by subject</span>
+                            <div className="flex flex-wrap gap-3">
+                                {['Mathematics', 'Physics', 'Comp Sci', 'Mechanics'].map(sub => (
+                                    <button key={sub} className="border border-background px-3 py-1 text-[0.875rem] font-medium flex items-center gap-2 hover:bg-background hover:text-on-background">
+                                        {sub}
+                                    </button>
+                                ))}
+                                <Link to="/browse" className="bg-background text-on-background px-3 py-1 text-[0.875rem] font-bold hover:invert">VIEW ALL</Link>
+                            </div>
+                        </div>
+                    </section>
+                    <section className="px-6 md:px-12 py-24 border-b border-on-background">
+                        <div className="max-w-screen-xl mx-auto">
+                            <h2 className="text-3xl md:text-4xl font-bold tracking-tight uppercase mb-12">Featured Library</h2>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                                {[1, 2, 3, 4].map(i => (
+                                    <Link to={`/detail/${i}`} key={i} className="group border border-on-background bg-background signature-shadow transition-all flex flex-col">
+                                        <div className="aspect-[4/5] bg-on-background/5 border-b border-on-background relative overflow-hidden">
+                                            <div className="absolute inset-0 diagonal-hatch"></div>
+                                            <div className="absolute inset-0 flex items-center justify-center opacity-40 group-hover:opacity-80 transition-opacity">
+                                                <span className="material-symbols-outlined text-6xl">article</span>
+                                            </div>
+                                        </div>
+                                        <div className="p-6">
+                                            <span className="uppercase text-[0.6875rem] font-medium opacity-60 mb-2 block">Technical Archive</span>
+                                            <h3 className="font-semibold text-lg leading-tight mb-4">Sample Document Entry Node_{i}</h3>
+                                            <div className="mt-auto flex justify-between items-center pt-4 border-t border-on-background/10">
+                                                <span className="text-[0.6875rem] font-medium uppercase flex items-center gap-1"><span className="material-symbols-outlined text-sm">download</span> 4.2k</span>
+                                                <span className="text-[0.6875rem] font-medium opacity-60 uppercase">PDF · 12MB</span>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+                    <Footer />
+                </div>
+            );
+        };
+
+        const AdminDashboard = () => {
+            return (
+                <div className="flex min-h-screen pt-16">
+                    <aside className="hidden md:flex flex-col h-screen border-r border-outline w-64 bg-surface sticky top-16">
+                        <div className="p-6 border-b border-outline">
+                            <div className="font-bold text-lg tracking-widest uppercase">ARCHIVALIST</div>
+                            <div className="text-[10px] font-mono opacity-60 mt-1 uppercase tracking-widest">V1.0.4-STABLE</div>
+                        </div>
+                        <nav className="flex-1 overflow-y-auto py-6">
+                            <div className="px-6 mb-4 text-[10px] font-bold tracking-[0.2em] opacity-40 uppercase">CORE_SYSTEM</div>
+                            <ul className="space-y-1 px-4">
+                                <li><Link to="/admin" className="flex items-center gap-3 px-3 py-2 bg-[#0d0c0b] text-[#f5f5f3] font-bold"><span className="material-symbols-outlined text-xl">dashboard</span><span className="text-xs uppercase tracking-wider">Dashboard</span></Link></li>
+                                <li><Link to="/users" className="flex items-center gap-3 px-3 py-2 text-[#0d0c0b] hover:bg-[#0d0c0b] hover:text-[#f5f5f3]"><span className="material-symbols-outlined text-xl">group</span><span className="text-xs uppercase tracking-wider">Users</span></Link></li>
+                                <li><Link to="/moderation" className="flex items-center gap-3 px-3 py-2 text-[#0d0c0b] hover:bg-[#0d0c0b] hover:text-[#f5f5f3]"><span className="material-symbols-outlined text-xl">gavel</span><span className="text-xs uppercase tracking-wider">Moderation</span></Link></li>
+                            </ul>
+                        </nav>
+                    </aside>
+                    <main className="flex-1 p-6 md:p-12 space-y-12">
+                        <header className="border-b border-[#0d0c0b] pb-8">
+                            <h1 className="text-5xl font-bold tracking-tight uppercase leading-none">Admin overview</h1>
+                            <p className="text-xl opacity-60 mt-4 tracking-tight">Platform system metrics and security log</p>
+                        </header>
+                        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                            <div className="border border-[#0d0c0b] p-6 signature-shadow bg-surface">
+                                <div className="text-[10px] font-bold tracking-[0.1em] uppercase opacity-60">Total documents</div>
+                                <div className="text-4xl font-bold mt-2 font-mono">14,208</div>
+                            </div>
+                            <div className="border border-[#0d0c0b] p-6 signature-shadow bg-surface">
+                                <div className="text-[10px] font-bold tracking-[0.1em] uppercase opacity-60">Pending review</div>
+                                <div className="text-4xl font-bold mt-2 font-mono text-error">42</div>
+                            </div>
+                        </div>
+                        <div className="border border-[#0d0c0b]">
+                            <div className="bg-on-background text-background p-4 flex justify-between">
+                                <h2 className="uppercase font-bold tracking-widest text-xs">Recent activity log</h2>
+                                <span className="text-[10px] opacity-60 uppercase">Refresh: Now</span>
+                            </div>
+                            <div className="divide-y divide-on-background">
+                                {[1,2,3,4].map(i => (
+                                    <div key={i} className="p-4 flex justify-between items-center bg-white hover:bg-surface transition-colors">
+                                        <div className="flex gap-4 items-center">
+                                            <span className="material-symbols-outlined opacity-40">update</span>
+                                            <div className="text-xs uppercase font-bold">Node_Sync_0{i} Processed Archival Batch</div>
+                                        </div>
+                                        <span className="text-[10px] font-mono opacity-60 uppercase">12:04:{i}2</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            );
+        };
+
+        const DetailPage = () => {
+            return (
+                <div className="pt-24 pb-16 px-6 md:px-12 max-w-7xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-10 gap-12">
+                        <div className="md:col-span-7 space-y-10">
+                            <section className="space-y-6">
+                                <span className="bg-primary text-background px-3 py-1 font-headline uppercase tracking-[0.05em] text-[0.6875rem] font-medium">RESEARCH_PAPER_V4</span>
+                                <h1 className="text-4xl md:text-[3.5rem] font-extrabold leading-[1.0] tracking-[-0.04em] uppercase">Structural Synchrony in Distributed Neural Architectures</h1>
+                                <div className="flex items-center gap-4 py-4 border-y border-outline">
+                                    <span className="uppercase tracking-[0.05em] text-[0.6875rem] font-medium">Authors:</span>
+                                    <span className="underline decoration-1 underline-offset-4 font-medium text-sm">Dr. Elias Vance</span>
+                                </div>
+                            </section>
+                            <section className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                                <div className="lg:col-span-8">
+                                    <p className="text-lg leading-[1.8] opacity-90">
+                                        A comprehensive exploration of phase-locking mechanisms within synthetic neural clusters. This paper details the experimental framework used to observe asynchronous data packets during high-load processing states.
+                                    </p>
+                                </div>
+                                <div className="lg:col-span-4 flex flex-col gap-4">
+                                    <Link to="/viewer" className="bg-primary text-background py-4 flex items-center justify-center gap-2 font-bold text-[0.6875rem] uppercase signature-shadow">
+                                        <span className="material-symbols-outlined">menu_book</span> Read now
+                                    </Link>
+                                    <button className="border border-outline py-4 font-bold text-[0.6875rem] uppercase hover:bg-on-background hover:text-background">
+                                        Download PDF
+                                    </button>
+                                </div>
+                            </section>
+                            <section className="border border-outline p-8 bg-surface">
+                                <h3 className="uppercase tracking-[0.05em] text-[0.6875rem] font-bold mb-6">Archive_Metadata</h3>
+                                <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+                                    <div><label className="text-[10px] opacity-40 uppercase block">Subject</label><span className="text-sm font-bold uppercase">Computational Theory</span></div>
+                                    <div><label className="text-[10px] opacity-40 uppercase block">Year</label><span className="text-sm font-bold uppercase">2024</span></div>
+                                    <div><label className="text-[10px] opacity-40 uppercase block">Format</label><span className="text-sm font-bold uppercase">PDF/A-3</span></div>
+                                </div>
+                            </section>
+                        </div>
+                        <div className="md:col-span-3">
+                            <div className="border border-outline bg-surface p-6 signature-shadow">
+                                <h3 className="uppercase text-[10px] font-bold mb-4">Uploader</h3>
+                                <div className="flex items-center gap-4">
+                                    <div className="w-12 h-12 border border-outline bg-on-background flex items-center justify-center text-background font-bold">JD</div>
+                                    <div><div className="text-sm font-bold uppercase">Archivist_Null</div><div className="text-[10px] opacity-40 uppercase tracking-widest">Verified Contributor</div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        const ProfileSettings = () => {
+            return (
+                <div className="pt-16 min-h-screen flex">
+                    <aside className="w-64 border-r border-primary bg-surface p-8 flex flex-col gap-12 shrink-0 sticky top-16 h-[calc(100vh-64px)]">
+                        <nav className="flex flex-col gap-4">
+                            <a className="flex items-center gap-3 bg-primary text-white font-bold p-3" href="#"><span className="material-symbols-outlined text-sm">person</span><span className="text-xs uppercase">Profile</span></a>
+                            <a className="flex items-center gap-3 text-primary p-3 hover:bg-on-background hover:text-background" href="#"><span className="material-symbols-outlined text-sm">database</span><span className="text-xs uppercase">Account</span></a>
+                        </nav>
+                    </aside>
+                    <section className="flex-1 p-12 bg-background space-y-12">
+                        <h1 className="text-5xl font-bold tracking-tight uppercase">Profile Settings</h1>
+                        <div className="max-w-3xl space-y-8">
+                            <div className="flex items-center gap-8">
+                                <div className="w-32 h-32 border border-primary signature-shadow overflow-hidden">
+                                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP4RlNPzZj_27W9g_ncLOm9F_FuK1fdhxsZ5NkiaO8fVI70bv-vbBiRtSnPzTrfd_7E3vNln16t86RUn6rPmSXv1_VpFFgiJVhapwz1XGwsEeThn6ZVxX31NvznUY-fGV5qijXi504_z9eTAaveDUEt5TPh0na5KyJgDFs7oO3QQMQ4jn49whKhusn9q8LMDx1Ek1BH4461kFMyLb70LiDi_illm6L0wmFPZHV1RqOyK9Y7yAtGHxBVhxCF3AZKSqYEdCDfp6UYwXv" className="w-full h-full grayscale object-cover" />
+                                </div>
+                                <button className="border border-primary px-6 py-2 uppercase text-xs font-bold signature-shadow hover:bg-primary hover:text-white transition-all">Change Avatar</button>
+                            </div>
+                            <div className="space-y-4">
+                                <div><label className="text-xs font-bold uppercase block mb-1">Display Name</label><input type="text" className="w-full border border-primary p-3 bg-white font-mono" defaultValue="ALEXANDER_VANCE"/></div>
+                                <div><label className="text-xs font-bold uppercase block mb-1">Bio</label><textarea className="w-full border border-primary p-3 bg-white" rows="3" defaultValue="Senior Data Architect specializing in cold-storage retrieval and metadata structuralism." /></div>
+                            </div>
+                            <button className="bg-primary text-white px-10 py-4 font-bold uppercase signature-shadow">Save changes</button>
+                        </div>
+                    </section>
+                </div>
+            );
+        };
+
+        const DocumentViewer = () => {
+            const navigate = useNavigate();
+            return (
+                <div className="h-screen flex flex-col bg-[#0d0c0b] text-white">
+                    <header className="bg-[#f5f5f3] text-[#0d0c0b] border-b border-[#0d0c0b] flex justify-between items-center w-full px-4 md:px-12 h-16 shrink-0">
+                        <div className="flex items-center gap-6">
+                            <button onClick={() => navigate(-1)} className="p-2 border border-transparent hover:border-[#0d0c0b] transition-all"><span className="material-symbols-outlined">arrow_back</span></button>
+                            <div><span className="label-sm opacity-60">Reader</span><h1 className="font-bold text-lg leading-none uppercase">ARCHIVE_SYSTEM_SPEC_V4.PDF</h1></div>
+                        </div>
+                        <div className="flex items-center gap-4">
+                            <span className="text-[10px] font-bold uppercase border border-on-background px-3 py-1">Page 24 / 128</span>
+                            <button className="bg-primary text-background px-4 py-2 text-[10px] font-bold uppercase signature-shadow"><span className="material-symbols-outlined text-sm mr-2">download</span>Download</button>
+                        </div>
+                    </header>
+                    <main className="flex-1 overflow-y-auto p-12 flex justify-center scroll-smooth">
+                        <div className="w-full max-w-4xl space-y-12">
+                            <div className="bg-white text-on-background aspect-[1/1.41] p-16 md:p-24 pdf-page-shadow relative">
+                                <div className="border-b-2 border-on-background pb-4 mb-8 flex justify-between items-end">
+                                    <div><p className="label-sm">Classification: Confidential</p><h2 className="text-3xl font-bold mt-2 uppercase">TECHNICAL ARCHITECTURE</h2></div>
+                                    <div className="text-right font-mono text-xs">REF: 882-XJ<br/>2024.10.12</div>
+                                </div>
+                                <div className="grid grid-cols-12 gap-8">
+                                    <div className="col-span-4"><div className="aspect-square bg-surface border border-on-background flex items-center justify-center"><span className="material-symbols-outlined text-4xl">terminal</span></div><p className="text-[9px] mt-2 opacity-60 uppercase font-bold">Fig 01. Core System Connectivity</p></div>
+                                    <div className="col-span-8">
+                                        <h3 className="font-bold mb-2 uppercase">01. Executive Summary</h3>
+                                        <p className="text-sm leading-relaxed mb-4">The proposed archival system utilizes a non-relational binary storage engine designed for maximum throughput and zero-latency retrieval. By bypassing standard indexing protocols, the "Synaps" core establishes a direct neural-mapped path.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="bg-white text-on-background aspect-[1/1.41] flex items-center justify-center pdf-page-shadow relative overflow-hidden">
+                                <div className="absolute inset-0 hatch-loading"></div>
+                                <div className="z-10 flex flex-col items-center gap-4">
+                                    <div className="w-16 h-16 border-2 border-on-background animate-pulse flex items-center justify-center"><span className="material-symbols-outlined">sync</span></div>
+                                    <p className="label-sm">Rendering Page 025...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            );
+        };
+
+        const BrowseCatalog = () => {
+            return (
+                <div className="pt-24 pb-16 px-6 md:px-12 max-w-[1440px] mx-auto">
+                    <header className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4">
+                        <div>
+                            <h1 className="text-5xl md:text-[3.5rem] font-bold tracking-tight uppercase leading-[1.0]">Browse Catalog</h1>
+                            <p className="text-xs uppercase font-bold tracking-widest opacity-60 mt-2">Total Archive Count: 4,200 documents</p>
+                        </div>
+                        <div className="flex gap-2">
+                            <span className="material-symbols-outlined">grid_view</span>
+                            <span className="material-symbols-outlined opacity-40">view_list</span>
+                        </div>
+                    </header>
+                    <div className="sticky top-16 bg-background z-40 py-6 border-b border-on-background mb-8 flex flex-wrap gap-4">
+                        <select className="brutalist-border bg-background px-4 py-2 text-[10px] font-bold uppercase focus:ring-0"><option>Subject</option></select>
+                        <select className="brutalist-border bg-background px-4 py-2 text-[10px] font-bold uppercase focus:ring-0"><option>Type</option></select>
+                        <select className="brutalist-border bg-background px-4 py-2 text-[10px] font-bold uppercase focus:ring-0"><option>Format</option></select>
+                        <button className="text-[10px] font-bold uppercase underline">Reset Filters</button>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {[1, 2, 3, 4, 5, 6, 7, 8].map(i => (
+                            <Link to={`/detail/${i}`} key={i} className="brutalist-border bg-surface signature-shadow group">
+                                <div className="aspect-video bg-on-background relative overflow-hidden">
+                                    <div className="absolute inset-0 diagonal-hatch"></div>
+                                    <div className="absolute inset-0 flex items-center justify-center opacity-20 group-hover:opacity-100 transition-opacity">
+                                        <span className="material-symbols-outlined text-6xl text-background">inventory_2</span>
+                                    </div>
+                                    <div className="absolute top-4 left-4">
+                                        <span className="bg-on-background text-background px-2 py-1 text-[9px] font-bold uppercase tracking-widest">Entry_{i}02</span>
+                                    </div>
+                                </div>
+                                <div className="p-6">
+                                    <h3 className="text-lg font-bold uppercase tracking-tight mb-4 group-hover:underline">Technical Node Collection Alpha_{i}</h3>
+                                    <div className="text-[10px] uppercase font-bold opacity-40 space-y-1">
+                                        <div>ID: SYN-{i}09{i}</div>
+                                        <div>Date: 12.0{i}.199{i}</div>
+                                    </div>
+                                    <div className="mt-6 pt-4 border-t border-on-background/10 flex justify-between items-center">
+                                        <span className="text-[10px] font-bold uppercase">12.4 MB</span>
+                                        <span className="material-symbols-outlined text-sm">download</span>
+                                    </div>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            );
+        };
+
+        const UploadArchive = () => {
+            return (
+                <div className="pt-24 pb-16 px-6 md:px-12 max-w-7xl mx-auto">
+                    <header className="mb-12 border-b border-on-background pb-6">
+                        <h1 className="text-5xl md:text-[3.5rem] font-bold tracking-tight uppercase">Upload Archive</h1>
+                        <p className="text-[10px] uppercase font-bold tracking-widest mt-2 opacity-60">System / Documents / New_Entry</p>
+                    </header>
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                        <div className="lg:col-span-5 space-y-8">
+                            <div className="border-2 border-dashed border-on-background h-[400px] flex flex-col items-center justify-center p-8 bg-surface-container-low cursor-pointer hover:bg-white transition-colors group">
+                                <span className="material-symbols-outlined text-6xl mb-4 opacity-40 group-hover:opacity-100 group-hover:scale-110 transition-all">upload_file</span>
+                                <h2 className="text-lg font-bold uppercase mb-2">Drag & Drop Document</h2>
+                                <p className="text-[10px] uppercase font-bold opacity-60 mb-6">PDF, EPUB, TXT (Max 50MB)</p>
+                                <button className="border border-on-background px-6 py-3 text-[10px] font-bold uppercase signature-shadow bg-background">Select File</button>
+                            </div>
+                        </div>
+                        <div className="lg:col-span-7">
+                            <form className="space-y-6">
+                                <div className="space-y-2">
+                                    <label className="text-[10px] font-bold uppercase tracking-widest block">Document Title*</label>
+                                    <input className="w-full border border-on-background p-3 focus:ring-0 focus:border-on-background font-mono text-sm" placeholder="ENTER FULL DOCUMENT TITLE" type="text"/>
+                                </div>
+                                <div className="grid grid-cols-2 gap-6">
+                                    <div className="space-y-2">
+                                        <label className="text-[10px] font-bold uppercase tracking-widest block">Type*</label>
+                                        <select className="w-full border border-on-background p-3 focus:ring-0 uppercase font-mono text-xs">
+                                            <option>Technical Manual</option><option>Manuscript</option>
+                                        </select>
+                                    </div>
+                                    <div className="space-y-2">
+                                        <label className="text-[10px] font-bold uppercase tracking-widest block">Subject*</label>
+                                        <select className="w-full border border-on-background p-3 focus:ring-0 uppercase font-mono text-xs">
+                                            <option>Computing</option><option>Architecture</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div className="pt-8 flex items-center gap-6">
+                                    <button className="bg-primary text-background px-12 py-4 text-xs font-bold uppercase signature-shadow" type="submit">Submit for Review</button>
+                                    <button className="text-xs font-bold uppercase underline" type="button">Save as Draft</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        const LoginPage = () => {
+            const navigate = useNavigate();
+            return (
+                <div className="min-h-screen flex items-center justify-center p-6 relative overflow-hidden">
+                    <div className="fixed inset-0 hatch-loading pointer-events-none -z-10"></div>
+                    <div className="bg-white border border-on-background p-10 flex flex-col items-center signature-shadow max-w-[400px] w-full">
+                        <div className="mb-12"><h1 className="text-xl font-bold uppercase tracking-tighter">SYNAPS</h1></div>
+                        <div className="text-center mb-10">
+                            <h2 className="text-[1.75rem] font-bold uppercase leading-none tracking-tight mb-3">Sign in to Synaps</h2>
+                            <p className="text-sm opacity-60">Upload, save, and discover knowledge.</p>
+                        </div>
+                        <div className="w-full space-y-4">
+                            <button onClick={() => navigate('/')} className="w-full flex items-center justify-center gap-3 bg-primary text-background h-14 border border-primary transition-all active:scale-[0.98]">
+                                <span className="text-[10px] font-bold uppercase tracking-widest">Continue with Google</span>
+                            </button>
+                            <Link to="/" className="w-full flex items-center justify-center h-14 border border-on-background text-[10px] font-bold uppercase tracking-widest hover:bg-on-background hover:text-background transition-colors">
+                                Browse as Guest
+                            </Link>
+                        </div>
+                        <div className="mt-10 pt-8 border-t border-on-background/10 w-full text-center">
+                            <span className="text-[9px] font-bold uppercase opacity-40">System Version: V1.0.4-STABLE</span>
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        const NotFound = () => {
+            return (
+                <main className="min-h-screen flex items-center justify-center relative px-6 py-24">
+                    <div className="absolute inset-0 diagonal-hatch pointer-events-none"></div>
+                    <div className="relative z-10 w-full max-w-4xl text-center flex flex-col items-center">
+                        <div className="w-16 h-16 border border-on-background mb-12 flex items-center justify-center">
+                            <span className="material-symbols-outlined text-4xl" style={{ fontVariationSettings: "'FILL' 1" }}>warning</span>
+                        </div>
+                        <h1 className="giant-type font-bold text-on-background uppercase mb-4">404</h1>
+                        <div className="mb-8">
+                            <span className="text-[10px] font-bold uppercase tracking-[0.05em] border border-on-background px-3 py-1 bg-on-background text-background">
+                                Error Code: System_Resource_Not_Found
+                            </span>
+                        </div>
+                        <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tight mb-6">ENTRY NOT LOCATED</h2>
+                        <p className="text-body-md text-on-background/60 max-w-lg mb-12">
+                            The requested document hash or navigational pointer does not exist within the primary database.
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-6">
+                            <Link className="signature-shadow bg-on-background text-background px-12 py-4 text-[10px] font-bold uppercase tracking-widest flex items-center gap-2" to="/">
+                                <span className="material-symbols-outlined text-sm">home</span> Go Home
+                            </Link>
+                            <Link className="border border-on-background px-12 py-4 text-[10px] font-bold uppercase tracking-widest hover:bg-on-background hover:text-background flex items-center gap-2" to="/browse">
+                                <span className="material-symbols-outlined text-sm">menu_book</span> Browse
+                            </Link>
+                        </div>
+                    </div>
+                </main>
+            );
+        };
+
+        // --- App Shell ---
+
+        const App = () => {
+            const location = useLocation();
+            const hideHeader = ['/login', '/viewer'].includes(location.pathname);
+
+            return (
+                <div className="min-h-screen">
+                    {!hideHeader && <TopNavBar />}
+                    <Routes>
+                        <Route path="/" element={<HomePage />} />
+                        <Route path="/admin" element={<AdminDashboard />} />
+                        <Route path="/browse" element={<BrowseCatalog />} />
+                        <Route path="/detail/:id" element={<DetailPage />} />
+                        <Route path="/profile" element={<ProfileSettings />} />
+                        <Route path="/upload" element={<UploadArchive />} />
+                        <Route path="/viewer" element={<DocumentViewer />} />
+                        <Route path="/login" element={<LoginPage />} />
+                        <Route path="*" element={<NotFound />} />
+                    </Routes>
+                </div>
+            );
+        };
+
+        const container = document.getElementById('root');
+        const root = createRoot(container);
+        root.render(
+            <MemoryRouter>
+                <App />
+            </MemoryRouter>
+        );
+    </script>
+</body>
+</html>

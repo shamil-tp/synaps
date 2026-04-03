@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SYNAPS — PROFILE SETTINGS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error": "#ba1a1a",
+              "primary-container": "#3d3b3a",
+              "surface-container": "#eeeeec",
+              "inverse-on-surface": "#f1f1ef",
+              "tertiary-fixed-dim": "#484645",
+              "on-secondary": "#ffffff",
+              "inverse-primary": "#cac6c3",
+              "secondary-container": "#d8d3d1",
+              "surface-dim": "#dadad8",
+              "error-container": "#ffdad6",
+              "secondary-fixed": "#cac6c3",
+              "inverse-surface": "#2f3130",
+              "on-tertiary-fixed": "#ffffff",
+              "on-primary-fixed-variant": "#e6e1df",
+              "on-surface": "#1a1c1b",
+              "on-tertiary": "#e6e1df",
+              "surface-container-low": "#f4f4f2",
+              "on-secondary-fixed": "#1d1b1a",
+              "surface-container-high": "#e8e8e6",
+              "on-error": "#ffffff",
+              "on-secondary-container": "#1d1b1a",
+              "tertiary-fixed": "#605e5c",
+              "secondary-fixed-dim": "#aeaaa8",
+              "primary-fixed-dim": "#484645",
+              "secondary": "#605e5c",
+              "background": "#f9f9f7",
+              "surface-container-highest": "#e2e3e1",
+              "on-tertiary-fixed-variant": "#e6e1df",
+              "on-primary-fixed": "#ffffff",
+              "on-primary-container": "#ffffff",
+              "surface-variant": "#e2e3e1",
+              "surface-container-lowest": "#ffffff",
+              "on-surface-variant": "#474747",
+              "on-primary": "#e6e1df",
+              "surface-bright": "#f9f9f7",
+              "outline": "#777777",
+              "tertiary": "#3d3b3a",
+              "surface": "#f9f9f7",
+              "on-error-container": "#410002",
+              "on-tertiary-container": "#ffffff",
+              "primary-fixed": "#605e5c",
+              "outline-variant": "#c6c6c6",
+              "tertiary-container": "#777472",
+              "surface-tint": "#605e5c",
+              "on-secondary-fixed-variant": "#3d3b3a",
+              "on-background": "#1a1c1b",
+              "primary": "#000000"
+            },
+            fontFamily: {
+              "headline": ["Geist", "sans-serif"],
+              "body": ["Geist", "sans-serif"],
+              "label": ["Geist", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "0px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .signature-shadow {
+            box-shadow: 4px 4px 0px 0px #000000;
+        }
+        .signature-shadow:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #000000;
+        }
+        .diagonal-hatch {
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,0.05) 10px, rgba(0,0,0,0.05) 20px);
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-width: 2px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-white">
+<!-- TopAppBar Execution from JSON -->
+<header class="flex justify-between items-center w-full px-12 h-16 bg-[#f5f5f3] dark:bg-[#0d0c0b] text-[#0d0c0b] dark:text-[#f5f5f3] border-b border-[#0d0c0b] dark:border-[#f5f5f3] sticky top-0 z-50">
+<div class="text-xl font-bold uppercase tracking-tighter text-[#0d0c0b] dark:text-[#f5f5f3]">SYNAPS</div>
+<nav class="hidden md:flex gap-8">
+<a class="text-[#0d0c0b]/60 dark:text-[#f5f5f3]/60 label-sm font-medium tracking-[0.05em] uppercase hover:underline decoration-1 underline-offset-4" href="#">Documents</a>
+<a class="text-[#0d0c0b]/60 dark:text-[#f5f5f3]/60 label-sm font-medium tracking-[0.05em] uppercase hover:underline decoration-1 underline-offset-4" href="#">Admin</a>
+<a class="text-[#0d0c0b] dark:text-[#f5f5f3] border-b-2 border-[#0d0c0b] dark:border-[#f5f5f3] pb-1 label-sm font-medium tracking-[0.05em] uppercase" href="#">Profile</a>
+</nav>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined cursor-pointer hover:underline">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:underline">settings</span>
+<div class="w-8 h-8 border border-primary overflow-hidden">
+<img class="w-full h-full object-cover grayscale" data-alt="Monochrome close-up portrait of a man with minimalist glasses and neutral expression in high contrast lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhkoKTN_peWp-R9Fo5cpQ8fjX7R2sNeR7ZSi1ZbKltqXTbGy8EvEOmxFGqPbCjtTbfcnWkQdH6KKgE9gh_2MxHtjng2F1YUwXSFsMCdKykkzMduoFmPZYafImzDwcCmwaa4WEmhDRiLM6vUjM-SZKwSG1vag8UMZ4pOu3VJm2vSQkRcMMNKCVtpBapyUi0-B6QnQVNYhveJxtTv-fV9hUWdv_uF60LMEYIO6QV9gCsszAqlqqdQ_c9OgCm0qPolhNuvpro7Of5HJG5"/>
+</div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto min-h-[calc(100vh-64px)] flex border-x border-primary">
+<!-- Left Sidebar Navigation -->
+<aside class="w-64 border-r border-primary bg-surface p-8 flex flex-col gap-12 shrink-0">
+<div class="space-y-1">
+<p class="label-sm tracking-[0.05em] text-primary/40 uppercase mb-4">Settings Hierarchy</p>
+<nav class="flex flex-col gap-4">
+<a class="flex items-center gap-3 bg-primary text-white font-bold p-3 transition-none" href="#profile">
+<span class="material-symbols-outlined text-sm">person</span>
+<span class="label-sm tracking-[0.05em] uppercase">Profile</span>
+</a>
+<a class="flex items-center gap-3 text-primary p-3 hover:bg-primary hover:text-white transition-none border border-transparent hover:border-primary" href="#account">
+<span class="material-symbols-outlined text-sm">database</span>
+<span class="label-sm tracking-[0.05em] uppercase">Account</span>
+</a>
+<a class="flex items-center gap-3 text-primary p-3 hover:bg-primary hover:text-white transition-none border border-transparent hover:border-primary" href="#notifications">
+<span class="material-symbols-outlined text-sm">mail</span>
+<span class="label-sm tracking-[0.05em] uppercase">Notifications</span>
+</a>
+<a class="flex items-center gap-3 text-primary p-3 hover:bg-primary hover:text-white transition-none border border-transparent hover:border-primary" href="#privacy">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span class="label-sm tracking-[0.05em] uppercase">Privacy</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto border border-primary p-4 diagonal-hatch">
+<p class="label-sm tracking-[0.05em] uppercase font-bold mb-2">System Health</p>
+<p class="text-[10px] leading-tight">NODE_09 OPERATIONAL<br/>ENCRYPTION: AES-256-GCM<br/>LATENCY: 14MS</p>
+</div>
+</aside>
+<!-- Right Content Area -->
+<section class="flex-1 p-12 bg-background space-y-24 overflow-y-auto">
+<!-- Profile Section -->
+<div class="max-w-3xl" id="profile">
+<h1 class="display-lg text-primary uppercase mb-12 tracking-[-0.04em]">Profile</h1>
+<div class="flex items-start gap-12 mb-12">
+<div class="relative group">
+<div class="w-32 h-32 border border-primary signature-shadow overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover grayscale" data-alt="High contrast black and white studio portrait of a serious man, professional digital archivalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP4RlNPzZj_27W9g_ncLOm9F_FuK1fdhxsZ5NkiaO8fVI70bv-vbBiRtSnPzTrfd_7E3vNln16t86RUn6rPmSXv1_VpFFgiJVhapwz1XGwsEeThn6ZVxX31NvznUY-fGV5qijXi504_z9eTAaveDUEt5TPh0na5KyJgDFs7oO3QQMQ4jn49whKhusn9q8LMDx1Ek1BH4461kFMyLb70LiDi_illm6L0wmFPZHV1RqOyK9Y7yAtGHxBVhxCF3AZKSqYEdCDfp6UYwXv"/>
+</div>
+<button class="absolute -bottom-2 -right-2 bg-primary text-white p-2 border border-white hover:bg-white hover:text-primary transition-none">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+</div>
+<div class="flex-1 space-y-6">
+<div class="space-y-2">
+<label class="label-sm tracking-[0.05em] uppercase font-bold">Display Name</label>
+<input class="w-full border border-primary p-3 bg-white font-mono text-sm focus:ring-0" type="text" value="ALEXANDER_VANCE"/>
+</div>
+<div class="space-y-2">
+<label class="label-sm tracking-[0.05em] uppercase font-bold">Institution</label>
+<input class="w-full border border-primary p-3 bg-white font-mono text-sm focus:ring-0" type="text" value="CENTRAL ARCHIVE DIV."/>
+</div>
+</div>
+</div>
+<div class="space-y-2 mb-12">
+<label class="label-sm tracking-[0.05em] uppercase font-bold">Bio / Technical Brief</label>
+<textarea class="w-full border border-primary p-4 bg-white font-body text-sm focus:ring-0 leading-generous" placeholder="Enter professional biography..." rows="4">Senior Data Architect specializing in cold-storage retrieval and metadata structuralism. Overseeing the 2024 Synaps migration protocols.</textarea>
+</div>
+<button class="px-8 py-4 bg-primary text-white label-sm tracking-[0.05em] uppercase font-bold signature-shadow active:translate-x-1 active:translate-y-1 active:shadow-none transition-none">
+                    Save Changes
+                </button>
+</div>
+<hr class="border-primary opacity-20"/>
+<!-- Account Section -->
+<div class="max-w-3xl" id="account">
+<h2 class="headline-md text-primary uppercase mb-8 tracking-[-0.02em]">Account Settings</h2>
+<div class="border border-primary p-6 mb-12 space-y-4">
+<div class="flex justify-between items-center">
+<div>
+<p class="label-sm tracking-[0.05em] uppercase font-bold text-primary/40">Email Address</p>
+<p class="font-mono text-sm">vance.a@synaps.archive.internal</p>
+</div>
+<span class="status-badge bg-primary text-white px-2 py-1 label-sm uppercase">Verified</span>
+</div>
+</div>
+<div class="border border-error p-8 space-y-6">
+<div class="flex items-center gap-3 text-error">
+<span class="material-symbols-outlined">warning</span>
+<h3 class="label-sm tracking-[0.05em] uppercase font-bold">Danger Zone</h3>
+</div>
+<p class="body-md leading-generous text-on-surface/80">Deleting your account is irreversible. All archived documents, metadata nodes, and access logs will be permanently purged from the Synaps mainframes.</p>
+<button class="px-6 py-3 border-2 border-error text-error hover:bg-error hover:text-white label-sm tracking-[0.05em] uppercase font-bold transition-none">
+                        Delete my account
+                    </button>
+</div>
+</div>
+<hr class="border-primary opacity-20"/>
+<!-- Notifications Section -->
+<div class="max-w-3xl pb-24" id="notifications">
+<h2 class="headline-md text-primary uppercase mb-8 tracking-[-0.02em]">System Notifications</h2>
+<div class="space-y-px bg-primary border border-primary">
+<div class="bg-white p-6 flex justify-between items-center">
+<div class="space-y-1">
+<p class="title-sm uppercase font-bold">Upload Status Updates</p>
+<p class="body-md text-on-surface/60">Receive alerts when batch processing completes.</p>
+</div>
+<button class="w-12 h-6 border border-primary flex items-center px-1 bg-primary">
+<div class="w-4 h-4 bg-white"></div>
+</button>
+</div>
+<div class="bg-white p-6 flex justify-between items-center">
+<div class="space-y-1">
+<p class="title-sm uppercase font-bold">Milestone Achievements</p>
+<p class="body-md text-on-surface/60">Notification for storage usage tiers and uptime streaks.</p>
+</div>
+<button class="w-12 h-6 border border-primary flex items-center px-1 bg-surface-container">
+<div class="w-4 h-4 bg-primary"></div>
+</button>
+</div>
+<div class="bg-white p-6 flex justify-between items-center">
+<div class="space-y-1">
+<p class="title-sm uppercase font-bold">Security &amp; Access Logs</p>
+<p class="body-md text-on-surface/60">Alerts for unauthorized login attempts or IP shifts.</p>
+</div>
+<button class="w-12 h-6 border border-primary flex items-center px-1 bg-primary">
+<div class="w-4 h-4 bg-white ml-auto"></div>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar Execution for Mobile -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 bg-[#f5f5f3] dark:bg-[#0d0c0b] text-[#0d0c0b] dark:text-[#f5f5f3] border-t border-[#0d0c0b] dark:border-[#f5f5f3]">
+<a class="flex flex-col items-center justify-center text-[#0d0c0b] dark:text-[#f5f5f3] px-4 py-1" href="#">
+<span class="material-symbols-outlined">visibility</span>
+<span class="label-sm font-bold uppercase mt-1">View</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#0d0c0b] dark:text-[#f5f5f3] px-4 py-1" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="label-sm font-bold uppercase mt-1">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#0d0c0b] dark:text-[#f5f5f3] px-4 py-1" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="label-sm font-bold uppercase mt-1">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#0d0c0b] text-[#f5f5f3] dark:bg-[#f5f5f3] dark:text-[#0d0c0b] px-4 py-1" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+<span class="label-sm font-bold uppercase mt-1">Profile</span>
+</a>
+</nav>
+<!-- Toast Component for Confirmation -->
+<div class="fixed bottom-8 right-8 bg-inverse-surface text-inverse-on-surface px-6 py-4 signature-shadow flex items-center gap-4 z-[100] border border-primary">
+<span class="material-symbols-outlined">check_circle</span>
+<span class="label-sm font-bold uppercase tracking-[0.05em]">Settings synchronized to node</span>
+</div>
+</body></html>

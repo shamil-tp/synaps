@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SYNAPS - DOCUMENT VIEWER</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary": "#e6e1df",
+              "surface-container-high": "#e8e8e6",
+              "surface-bright": "#f9f9f7",
+              "on-error": "#ffffff",
+              "on-background": "#0d0c0b",
+              "tertiary-container": "#777472",
+              "tertiary": "#3d3b3a",
+              "on-error-container": "#410002",
+              "primary": "#0d0c0b",
+              "primary-container": "#3d3b3a",
+              "on-primary": "#e6e1df",
+              "surface": "#f5f5f3",
+              "secondary-fixed-dim": "#aeaaa8",
+              "secondary-container": "#d8d3d1",
+              "on-surface-variant": "#474747",
+              "on-primary-fixed": "#ffffff",
+              "on-primary-container": "#ffffff",
+              "background": "#f5f5f3",
+              "on-tertiary-fixed": "#ffffff",
+              "surface-tint": "#605e5c",
+              "tertiary-fixed": "#605e5c",
+              "on-secondary-container": "#1d1b1a",
+              "on-secondary-fixed": "#1d1b1a",
+              "on-primary-fixed-variant": "#e6e1df",
+              "inverse-on-surface": "#f1f1ef",
+              "surface-variant": "#e2e3e1",
+              "secondary": "#605e5c",
+              "inverse-primary": "#cac6c3",
+              "on-secondary": "#ffffff",
+              "surface-dim": "#dadad8",
+              "error-container": "#ffdad6",
+              "inverse-surface": "#0d0c0b",
+              "error": "#ba1a1a",
+              "tertiary-fixed-dim": "#484645",
+              "outline": "#0d0c0b",
+              "on-tertiary-container": "#ffffff",
+              "primary-fixed-dim": "#484645",
+              "primary-fixed": "#605e5c",
+              "on-surface": "#0d0c0b",
+              "surface-container-highest": "#e2e3e1",
+              "on-tertiary-fixed-variant": "#e6e1df",
+              "secondary-fixed": "#cac6c3",
+              "outline-variant": "#c6c6c6",
+              "surface-container-low": "#f4f4f2",
+              "surface-container": "#eeeeec",
+              "on-secondary-fixed-variant": "#3d3b3a",
+              "surface-container-lowest": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Geist", "sans-serif"],
+              "body": ["Geist", "sans-serif"],
+              "label": ["Geist", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "0px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .pdf-canvas {
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(13, 12, 11, 0.03) 10px, rgba(13, 12, 11, 0.03) 11px);
+        }
+        .signature-shadow {
+            box-shadow: 4px 4px 0px 0px #0d0c0b;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar: Predicted Component Overridden for Contextual View -->
+<nav class="fixed top-0 w-full z-50 bg-[#f5f5f3] dark:bg-[#0d0c0b] text-[#0d0c0b] dark:text-[#f5f5f3] border-b border-[#0d0c0b] dark:border-[#f5f5f3] flex justify-between items-center px-4 h-16">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center p-2 hover:bg-primary hover:text-on-primary transition-colors duration-200">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<span class="font-['Geist'] font-bold tracking-tighter uppercase text-xs opacity-60">ARCHIVE_DOC_082</span>
+<h1 class="font-['Geist'] font-bold tracking-tighter uppercase text-sm leading-none">STRUCTURAL_ANALYSIS_V4.PDF</h1>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center bg-surface border border-outline px-3 py-1 gap-2">
+<span class="font-['Geist'] text-[10px] font-medium tracking-[0.05em] uppercase">PAGE</span>
+<span class="font-['Geist'] text-[10px] font-bold">12 / 48</span>
+</div>
+<button class="flex items-center justify-center p-2 hover:bg-primary hover:text-on-primary transition-colors duration-200">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</nav>
+<!-- Main Viewport Area -->
+<main class="relative pt-16 h-screen w-full flex flex-col overflow-hidden pdf-canvas">
+<!-- Mobile Page Indicator (Floating) -->
+<div class="md:hidden absolute top-20 left-1/2 -translate-x-1/2 z-40">
+<div class="bg-on-background text-background px-4 py-1.5 font-['Geist'] text-[11px] font-bold tracking-[0.1em] uppercase signature-shadow">
+                PAGE 12 OF 48
+            </div>
+</div>
+<!-- PDF Document Container (Pinch-to-zoom context simulated) -->
+<div class="flex-1 overflow-auto p-4 md:p-8 flex justify-center items-start">
+<div class="relative w-full max-w-2xl bg-white border border-outline signature-shadow min-h-[140%] md:min-h-[120%] flex flex-col">
+<!-- Document Header Section -->
+<div class="p-8 border-b border-outline flex justify-between items-start">
+<div class="space-y-2">
+<div class="bg-primary text-on-primary inline-block px-2 py-0.5 text-[9px] font-bold tracking-[0.1em] uppercase">CONFIDENTIAL</div>
+<h2 class="text-3xl font-bold tracking-tighter leading-none uppercase">ANALYSIS OF<br/>KINETIC LOAD</h2>
+</div>
+<div class="text-right">
+<span class="font-['Geist'] text-[10px] font-medium opacity-50 uppercase tracking-widest leading-none block">REF_SYSTEM</span>
+<span class="font-['Geist'] text-xs font-bold leading-none">SYNAPS-X9</span>
+</div>
+</div>
+<!-- Document Body Simulation -->
+<div class="p-8 space-y-8 flex-1">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-4">
+<h3 class="font-bold text-xs uppercase tracking-widest border-b border-outline pb-1">01_SPECIFICATIONS</h3>
+<p class="text-sm leading-relaxed text-justify">
+                                The architectural framework utilizes a modular grid system designed to withstand extreme atmospheric pressure. Data points collected from the 2023 cycle indicate a 14% increase in structural integrity when employing monochromatic brutalist principles.
+                            </p>
+<img class="w-full grayscale border border-outline filter contrast-125" data-alt="Technical architectural photography of a brutalist concrete building with sharp shadows and geometric lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCT-hVGZZBbLP1mzp1iTdbQHfetZxvv5KBA2aJlCy0ZaE17djyzw67JRUzCtUwxlVi6hQQV8J9UFk2BEiOrxMamKnXzr7ruDpiQxDdCmlng9UkLdoCcHeby7_73mc9BAaNwnkxiKpaLbRE8zv6wXt2OrMdry0QPAaTskhvOFgeyZWLprEs8lS5yLCYkbHZOZPynqYWkLxA3DKfOK-FXK1qHERtix5ZE_KzNxJo4gGmGHeDhQfz2HI08uPCP4W6hosGIOwr6Xf1Ta1cK"/>
+</div>
+<div class="space-y-4">
+<h3 class="font-bold text-xs uppercase tracking-widest border-b border-outline pb-1">02_METRICS</h3>
+<div class="space-y-2">
+<div class="flex justify-between items-end border-b border-outline border-dashed pb-1">
+<span class="text-[10px] font-medium uppercase opacity-60">Tensile Strength</span>
+<span class="font-bold text-sm">840 MPA</span>
+</div>
+<div class="flex justify-between items-end border-b border-outline border-dashed pb-1">
+<span class="text-[10px] font-medium uppercase opacity-60">Flexural Modulus</span>
+<span class="font-bold text-sm">12.5 GPA</span>
+</div>
+<div class="flex justify-between items-end border-b border-outline border-dashed pb-1">
+<span class="text-[10px] font-medium uppercase opacity-60">Thermal Variance</span>
+<span class="font-bold text-sm">+/- 0.02%</span>
+</div>
+</div>
+<div class="aspect-square bg-surface border border-outline p-4 relative overflow-hidden">
+<!-- Abstract Technical Grid Graphic -->
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle, #000 1px, transparent 1px); background-size: 10px 10px;"></div>
+<div class="relative h-full w-full border border-outline border-dashed flex items-center justify-center">
+<span class="text-[8px] font-bold uppercase opacity-30 rotate-90">SCHE_DIAG_004</span>
+<div class="w-2/3 h-1 bg-primary"></div>
+<div class="absolute bottom-4 right-4 w-4 h-4 border-r border-b border-primary"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-outline">
+<h3 class="font-bold text-xs uppercase tracking-widest mb-4">03_PROJECTED_OUTCOMES</h3>
+<div class="h-40 w-full flex items-end gap-1 px-2 pb-2">
+<div class="flex-1 bg-primary h-[20%]"></div>
+<div class="flex-1 bg-primary h-[45%]"></div>
+<div class="flex-1 bg-primary h-[35%]"></div>
+<div class="flex-1 bg-primary h-[70%]"></div>
+<div class="flex-1 bg-primary h-[55%]"></div>
+<div class="flex-1 bg-primary h-[90%]"></div>
+<div class="flex-1 bg-primary h-[100%]"></div>
+</div>
+<div class="flex justify-between px-2 mt-2">
+<span class="text-[8px] font-bold uppercase">Q1_2024</span>
+<span class="text-[8px] font-bold uppercase">Q4_2024</span>
+</div>
+</div>
+</div>
+<!-- Page Footer Meta -->
+<div class="p-4 border-t border-outline flex justify-between items-center bg-surface">
+<span class="font-['Geist'] text-[10px] font-bold uppercase tracking-widest">SYNAPS_SYSTEM_OUTPUT_12</span>
+<span class="font-['Geist'] text-[10px] font-bold opacity-30">© 2024</span>
+</div>
+</div>
+</div>
+<!-- Contextual Controls (Mobile Floating) -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 flex items-center bg-background border border-outline signature-shadow z-50">
+<button class="p-3 border-r border-outline hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="zoom_in">zoom_in</span>
+</button>
+<button class="p-3 border-r border-outline hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="zoom_out">zoom_out</span>
+</button>
+<button class="p-3 border-r border-outline hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="p-3 hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+</div>
+</main>
+<!-- Overlay Textures -->
+<div class="fixed inset-0 pointer-events-none opacity-[0.03] mix-blend-multiply bg-[url('https://www.transparenttextures.com/patterns/p6.png')]"></div>
+</body></html>

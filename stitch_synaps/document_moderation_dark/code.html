@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-fixed": "#1a1c1b",
+                        "on-primary-container": "#000000",
+                        "inverse-on-surface": "#32302f",
+                        "outline-variant": "#474747",
+                        "on-surface-variant": "#c6c6c6",
+                        "surface-container-lowest": "#0f0e0d",
+                        "on-tertiary-container": "#000000",
+                        "inverse-primary": "#5d5f5d",
+                        "tertiary": "#e2e3e1",
+                        "on-primary": "#1a1c1b",
+                        "secondary-fixed-dim": "#ababaa",
+                        "secondary": "#c6c7c5",
+                        "on-tertiary": "#1a1c1b",
+                        "on-primary-fixed": "#ffffff",
+                        "error-container": "#93000a",
+                        "surface": "#141312",
+                        "surface-container-high": "#2b2a28",
+                        "surface-variant": "#363433",
+                        "on-background": "#e6e1df",
+                        "background": "#141312",
+                        "tertiary-container": "#90918f",
+                        "surface-bright": "#3b3937",
+                        "tertiary-fixed": "#5d5f5d",
+                        "on-surface": "#e6e1df",
+                        "on-error": "#690005",
+                        "tertiary-fixed-dim": "#454746",
+                        "on-tertiary-fixed": "#ffffff",
+                        "primary-fixed": "#5d5f5d",
+                        "outline": "#919191",
+                        "on-primary-fixed-variant": "#e2e3e1",
+                        "surface-container-low": "#1d1b1a",
+                        "surface-container-highest": "#363433",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#454746",
+                        "surface-dim": "#141312",
+                        "secondary-fixed": "#c6c7c5",
+                        "on-tertiary-fixed-variant": "#e2e3e1",
+                        "surface-container": "#211f1e",
+                        "on-secondary-container": "#e2e3e1",
+                        "surface-tint": "#c6c7c5",
+                        "on-secondary-fixed-variant": "#3a3c3b",
+                        "primary-container": "#d4d4d3",
+                        "on-secondary": "#1a1c1b",
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed-dim": "#454746",
+                        "inverse-surface": "#e6e1df",
+                        "primary": "#ffffff"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hard-shadow { box-shadow: 4px 4px 0px 0px rgba(255, 255, 255, 1); }
+        .hard-shadow-hover:hover { box-shadow: 4px 4px 0px 0px rgba(255, 255, 255, 1); }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #0d0c0b; }
+        ::-webkit-scrollbar-thumb { background: #f5f5f3; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="bg-[#0d0c0b] text-[#f5f5f3] font-['Space_Grotesk'] uppercase tracking-tighter text-sm docked full-width top-0 rounded-none border-b-2 border-[#f5f5f3] flex justify-between items-center w-full px-6 h-16 sticky z-50">
+<div class="text-2xl font-black tracking-tighter text-[#ffffff]">SYNAPS</div>
+<div class="hidden md:flex gap-8 items-center h-full">
+<a class="text-[#c6c7c5] hover:bg-[#f5f5f3] hover:text-[#0d0c0b] transition-colors duration-150 h-full flex items-center px-4" href="#">BROWSE</a>
+<a class="text-[#ffffff] border-b-2 border-[#ffffff] pb-1 h-full flex items-center px-4" href="#">SEARCH</a>
+<a class="text-[#c6c7c5] hover:bg-[#f5f5f3] hover:text-[#0d0c0b] transition-colors duration-150 h-full flex items-center px-4" href="#">UPLOAD</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-4 py-2 text-[#c6c7c5] hover:bg-[#f5f5f3] hover:text-[#0d0c0b] transition-colors duration-150">SIGN IN</button>
+<button class="px-4 py-2 bg-[#f5f5f3] text-[#0d0c0b] font-bold hard-shadow transition-all active:translate-x-1 active:translate-y-1 active:shadow-none">GET STARTED</button>
+</div>
+</nav>
+<main class="min-h-screen p-6 md:p-12 lg:px-24">
+<!-- Header & Stats Section -->
+<header class="mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-outline-variant pb-8">
+<div>
+<h1 class="font-headline text-5xl md:text-7xl font-black tracking-tighter uppercase mb-2">MODERATION</h1>
+<p class="font-label text-on-surface-variant tracking-widest text-sm">[ PROTOCOL_ADMIN_V2.04 ]</p>
+</div>
+<div class="grid grid-cols-2 md:flex gap-4">
+<div class="bg-surface-container border border-outline-variant p-4 min-w-[140px]">
+<span class="block font-label text-[10px] text-on-surface-variant mb-1">TOTAL_PENDING</span>
+<span class="block font-headline text-2xl font-bold">1,204</span>
+</div>
+<div class="bg-surface-container border border-outline-variant p-4 min-w-[140px]">
+<span class="block font-label text-[10px] text-on-surface-variant mb-1">SYSTEM_HEALTH</span>
+<span class="block font-headline text-2xl font-bold text-primary">100%</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Status Filter Tabs -->
+<div class="flex flex-wrap gap-2 mb-8">
+<button class="bg-primary text-on-primary font-label px-6 py-2 text-xs font-bold hard-shadow">PENDING</button>
+<button class="bg-surface-container-low border border-outline-variant text-on-surface-variant font-label px-6 py-2 text-xs font-bold hover:bg-surface-container-high transition-colors">APPROVED</button>
+<button class="bg-surface-container-low border border-outline-variant text-on-surface-variant font-label px-6 py-2 text-xs font-bold hover:bg-surface-container-high transition-colors">REJECTED</button>
+<button class="bg-surface-container-low border border-outline-variant text-on-surface-variant font-label px-6 py-2 text-xs font-bold hover:bg-surface-container-high transition-colors">FLAGGED</button>
+</div>
+<!-- Content Canvas -->
+<div class="bg-surface-container border-2 border-primary mb-24 overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b-2 border-primary bg-surface-container-highest">
+<th class="p-4 w-12"><input class="rounded-none bg-transparent border-primary text-primary focus:ring-0" type="checkbox"/></th>
+<th class="p-4 font-label text-[10px] tracking-widest text-on-surface">DOCUMENT_ID</th>
+<th class="p-4 font-label text-[10px] tracking-widest text-on-surface">PREVIEW</th>
+<th class="p-4 font-label text-[10px] tracking-widest text-on-surface">UPLOADER</th>
+<th class="p-4 font-label text-[10px] tracking-widest text-on-surface">METADATA</th>
+<th class="p-4 font-label text-[10px] tracking-widest text-on-surface">TIMESTAMP</th>
+<th class="p-4 font-label text-[10px] tracking-widest text-on-surface text-right">ACTIONS</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="p-4"><input class="rounded-none bg-transparent border-outline text-primary focus:ring-0" type="checkbox"/></td>
+<td class="p-4 font-label text-xs">#SYN-8902-X</td>
+<td class="p-4">
+<div class="w-16 h-16 bg-surface-container-lowest border border-outline-variant overflow-hidden group-hover:border-primary transition-colors">
+<img class="w-full h-full object-cover filter grayscale contrast-125" data-alt="Monochrome architectural sketch on weathered paper with technical annotations and geometric stamps" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKRlkJ8i7vmwVFJ7dqegOaOpazaOQibI8wfOUEMXs-C2sCrhnxRQENIlX4aOKtiQaHkxcNeLC2AqlqqSBgxdSbtr6m6vJIuJ8P_uyO6v_N0LpuXutNfYkKpM6IuXtDd4X_rW3w8EJGb4QqsBWDFgzh24VNYwNnU5w6WIGofApNlJ8M_IbJdvl5f19O0bg0LlyAsNrUXdSjeIf6I94UQpNUcziDyy0JY-Aiz3oJ4svj-e42DiYUO8HgUf5hVBGY3JDuycRlQxXX5xnD"/>
+</div>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-black text-[10px]">RA</div>
+<span class="text-xs font-medium">REPLICANT_ALPHA</span>
+</div>
+</td>
+<td class="p-4">
+<div class="flex flex-wrap gap-1">
+<span class="px-2 py-0.5 border border-outline-variant text-[9px] font-label">[PDF]</span>
+<span class="px-2 py-0.5 border border-outline-variant text-[9px] font-label">[CONFIDENTIAL]</span>
+</div>
+</td>
+<td class="p-4 text-xs font-label text-on-surface-variant uppercase">OCT 24, 02:44:12</td>
+<td class="p-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="w-8 h-8 border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors" title="Approve">
+<span class="material-symbols-outlined text-sm">check</span>
+</button>
+<button class="w-8 h-8 border border-outline-variant flex items-center justify-center hover:bg-error hover:text-on-error transition-colors" title="Reject">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+<button class="w-8 h-8 border border-outline-variant flex items-center justify-center hover:bg-primary-container hover:text-on-primary-container transition-colors" title="Flag">
+<span class="material-symbols-outlined text-sm">flag</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="p-4"><input class="rounded-none bg-transparent border-outline text-primary focus:ring-0" type="checkbox"/></td>
+<td class="p-4 font-label text-xs">#SYN-8903-P</td>
+<td class="p-4">
+<div class="w-16 h-16 bg-surface-container-lowest border border-outline-variant overflow-hidden group-hover:border-primary transition-colors">
+<img class="w-full h-full object-cover filter grayscale" data-alt="Digital abstract noise texture in high contrast black and white looking like scanned static" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpuf_xOZzpT3lQCwyQCA4doi7Tt7yqCqXg3WhheNsEUQDwxnFLssXVr4KQfGxVKEh1tVOwyf-ZZG-zurquFdNXdf6NNO9gH0x2urxikRFvnfXuOles2eqnedJzQjWe6Zzc1nBsy9t8kYsVK7eIwzkNVp9njpz_oYQkZ3-D9nmj_SSavjzLN3M-EljAFLmK21k77MZfcP2lDoj9sUPC6xlYs0uAY6nM8-sR4ncxKeKoS721hZujk9aI5dnnpLUKfkQgCuNPHrz2kPsM"/>
+</div>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-black text-[10px]">DR</div>
+<span class="text-xs font-medium">DATA_RUNNER</span>
+</div>
+</td>
+<td class="p-4">
+<div class="flex flex-wrap gap-1">
+<span class="px-2 py-0.5 border border-outline-variant text-[9px] font-label">[IMG]</span>
+<span class="px-2 py-0.5 border border-outline-variant text-[9px] font-label text-error">[CORRUPT?]</span>
+</div>
+</td>
+<td class="p-4 text-xs font-label text-on-surface-variant uppercase">OCT 24, 03:01:45</td>
+<td class="p-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="w-8 h-8 border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-sm">check</span>
+</button>
+<button class="w-8 h-8 border border-outline-variant flex items-center justify-center hover:bg-error hover:text-on-error transition-colors">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+<button class="w-8 h-8 border border-outline-variant flex items-center justify-center hover:bg-primary-container hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined text-sm">flag</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="p-4"><input class="rounded-none bg-transparent border-outline text-primary focus:ring-0" type="checkbox"/></td>
+<td class="p-4 font-label text-xs">#SYN-9112-L</td>
+<td class="p-4">
+<div class="w-16 h-16 bg-surface-container-lowest border border-outline-variant overflow-hidden group-hover:border-primary transition-colors">
+<img class="w-full h-full object-cover filter grayscale contrast-150" data-alt="Extreme close up of computer circuit board in cold clinical lighting with high detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCj5ALFkT9nbjtlGnc6douPtSPoAWy_meH9iNt_5QSgtc-UkbVFJHEeasfyoBksZ-1WOXJsbWH048Vl6sk6UrqelzJ6u-eoZbjLDiEOxNWzalsL5Cy1PS0vPaGzzbKmJbYzbqPFpoAhC2D7mw2b0NYJXQI2YJqfd9LNY4z2Wd1qNfhxo9VBjHnbZTM9PSH9gPSyDRNh-THGHFNzBoN7hjTr_ofFUsAhk_gGlnLn5Z8Fc1R02xJCx0jiK70JqI2m8Btf1bKPz4dav81z"/>
+</div>
+</td>
+<td class="p-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary font-black text-[10px]">SY</div>
+<span class="text-xs font-medium">SYS_INTERNAL</span>
+</div>
+</td>
+<td class="p-4">
+<div class="flex flex-wrap gap-1">
+<span class="px-2 py-0.5 border border-outline-variant text-[9px] font-label">[LOG]</span>
+<span class="px-2 py-0.5 border border-outline-variant text-[9px] font-label">[ENCRYPTED]</span>
+</div>
+</td>
+<td class="p-4 text-xs font-label text-on-surface-variant uppercase">OCT 24, 05:12:00</td>
+<td class="p-4 text-right">
+<div class="flex justify-end gap-2">
+<button class="w-8 h-8 border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-sm">check</span>
+</button>
+<button class="w-8 h-8 border border-outline-variant flex items-center justify-center hover:bg-error hover:text-on-error transition-colors">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+<button class="w-8 h-8 border border-outline-variant flex items-center justify-center hover:bg-primary-container hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined text-sm">flag</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 bg-surface-container-low border-t border-primary flex justify-between items-center">
+<span class="text-[10px] font-label text-on-surface-variant">DISPLAYING 3 OF 1,204 ENTRIES</span>
+<div class="flex gap-1">
+<button class="w-8 h-8 border border-outline-variant flex items-center justify-center hover:bg-surface-container-highest">1</button>
+<button class="w-8 h-8 border border-outline-variant flex items-center justify-center hover:bg-surface-container-highest">2</button>
+<button class="w-8 h-8 border border-outline-variant flex items-center justify-center hover:bg-surface-container-highest">3</button>
+<button class="w-8 h-8 border border-outline-variant flex items-center justify-center hover:bg-surface-container-highest">...</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bulk Action Bar -->
+<div class="fixed bottom-0 left-0 right-0 z-50 bg-[#0d0c0b] border-t-2 border-[#f5f5f3] px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="flex items-center gap-4">
+<div class="px-3 py-1 bg-primary text-on-primary text-[10px] font-bold font-label">12 SELECTED</div>
+<span class="text-xs font-label text-[#c6c7c5] hidden md:inline">CHOOSE ACTION FOR QUEUE:</span>
+</div>
+<div class="flex flex-wrap justify-center gap-3">
+<button class="bg-transparent border-2 border-primary text-primary px-4 py-2 font-label text-xs font-black hover:bg-primary hover:text-on-primary transition-all">BULK_APPROVE</button>
+<button class="bg-transparent border-2 border-outline-variant text-on-surface-variant px-4 py-2 font-label text-xs font-black hover:bg-error hover:text-on-error hover:border-error transition-all">BULK_REJECT</button>
+<button class="bg-transparent border-2 border-outline-variant text-on-surface-variant px-4 py-2 font-label text-xs font-black hover:bg-primary-container hover:text-on-primary-container hover:border-primary-container transition-all">BULK_FLAG</button>
+<button class="text-on-surface-variant hover:text-primary px-4 py-2 font-label text-xs underline underline-offset-4">CANCEL_ALL</button>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-[#0d0c0b] text-[#f5f5f3] font-['Space_Grotesk'] uppercase text-[10px] tracking-widest full-width rounded-none border-t-2 border-[#f5f5f3] flex flex-col md:flex-row justify-between items-center w-full px-6 py-8 gap-4 mb-20 md:mb-16">
+<div class="text-lg font-bold text-[#ffffff]">SYNAPS ARCHIVAL PROTOCOL</div>
+<div class="flex gap-6">
+<a class="text-[#c6c7c5] hover:text-[#ffffff] underline" href="#">DOCUMENTATION</a>
+<a class="text-[#c6c7c5] hover:text-[#ffffff]" href="#">API</a>
+<a class="text-[#c6c7c5] hover:text-[#ffffff]" href="#">TERMS</a>
+<a class="text-[#c6c7c5] hover:text-[#ffffff]" href="#">PRIVACY</a>
+</div>
+<div class="text-[#c6c7c5]">© 2024 SYNAPS ARCHIVAL PROTOCOL. ALL RIGHTS RESERVED.</div>
+</footer>
+</body></html>

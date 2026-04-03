@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-lowest": "#0f0e0d",
+              "on-primary-container": "#000000",
+              "tertiary-container": "#90918f",
+              "primary-fixed": "#5d5f5d",
+              "on-tertiary-fixed-variant": "#e2e3e1",
+              "on-secondary-fixed": "#1a1c1b",
+              "on-primary": "#1a1c1b",
+              "surface-tint": "#c6c7c5",
+              "secondary": "#c6c7c5",
+              "on-tertiary-fixed": "#ffffff",
+              "outline": "#919191",
+              "on-secondary-fixed-variant": "#3a3c3b",
+              "surface-dim": "#141312",
+              "secondary-container": "#454746",
+              "surface-bright": "#3b3937",
+              "on-primary-fixed-variant": "#e2e3e1",
+              "on-error-container": "#ffdad6",
+              "on-surface": "#e6e1df",
+              "on-primary-fixed": "#ffffff",
+              "secondary-fixed-dim": "#ababaa",
+              "tertiary": "#e2e3e1",
+              "primary-fixed-dim": "#454746",
+              "primary": "#ffffff",
+              "inverse-surface": "#e6e1df",
+              "surface-container-highest": "#363433",
+              "primary-container": "#d4d4d3",
+              "outline-variant": "#474747",
+              "on-tertiary-container": "#000000",
+              "error": "#ffb4ab",
+              "surface": "#141312",
+              "secondary-fixed": "#c6c7c5",
+              "inverse-primary": "#5d5f5d",
+              "tertiary-fixed": "#5d5f5d",
+              "inverse-on-surface": "#32302f",
+              "background": "#141312",
+              "on-background": "#e6e1df",
+              "surface-variant": "#363433",
+              "surface-container": "#211f1e",
+              "surface-container-low": "#1d1b1a",
+              "on-secondary-container": "#e2e3e1",
+              "on-secondary": "#1a1c1b",
+              "tertiary-fixed-dim": "#454746",
+              "on-error": "#690005",
+              "surface-container-high": "#2b2a28",
+              "on-tertiary": "#1a1c1b",
+              "on-surface-variant": "#c6c6c6",
+              "error-container": "#93000a"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        background-color: #141312;
+        color: #ffffff;
+      }
+      .brutalist-shadow {
+        box-shadow: 4px 4px 0px 0px #ffffff;
+      }
+      .brutalist-shadow-hover:hover {
+        box-shadow: 4px 4px 0px 0px #ffffff;
+        transform: translate(-2px, -2px);
+      }
+      .active-nav-item {
+        background-color: #ffffff;
+        color: #141312;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body selection:bg-primary selection:text-on-primary overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-6 py-4 bg-[#141312] sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#ffffff]" data-icon="menu">menu</span>
+</div>
+<div class="font-['Space_Grotesk'] uppercase tracking-widest text-2xl font-bold text-[#ffffff]">
+            SYNAPS
+        </div>
+<div class="w-6"></div> <!-- Spacer for balance -->
+</header>
+<main class="min-h-[calc(100vh-128px)] flex flex-col justify-center px-8 py-12">
+<!-- Large Display 404 -->
+<div class="mb-4">
+<h1 class="font-headline font-bold text-[120px] leading-none tracking-tighter text-primary">
+                404
+            </h1>
+</div>
+<!-- Semantic Info -->
+<div class="space-y-6">
+<div class="space-y-2">
+<h2 class="font-headline font-bold text-3xl uppercase tracking-tight text-primary">
+                    PAGE NOT FOUND
+                </h2>
+<div class="h-1 w-20 bg-primary"></div>
+</div>
+<p class="font-body text-on-surface-variant text-lg leading-relaxed max-w-xs">
+                The requested resource has been redacted or moved to a restricted directory. Verify the entry point or return to the main console.
+            </p>
+</div>
+<!-- Transactional Actions -->
+<div class="mt-16 flex flex-col gap-4">
+<button class="w-full bg-primary text-on-primary font-headline font-bold uppercase py-5 text-sm tracking-widest transition-all duration-150 active:translate-y-1 active:shadow-none brutalist-shadow">
+                Go Home
+            </button>
+<button class="w-full bg-transparent border-2 border-primary text-primary font-headline font-bold uppercase py-5 text-sm tracking-widest transition-all duration-150 hover:bg-surface-container-highest">
+                Browse Library
+            </button>
+</div>
+<!-- Decorative System Data Badges -->
+<div class="mt-20 flex flex-wrap gap-3">
+<div class="border border-outline-variant px-2 py-1 font-headline text-[10px] uppercase text-on-surface-variant">
+                [SYSTEM_ERROR_LOG_04]
+            </div>
+<div class="border border-outline-variant px-2 py-1 font-headline text-[10px] uppercase text-on-surface-variant">
+                LOC: 0x00412
+            </div>
+<div class="border border-outline-variant px-2 py-1 font-headline text-[10px] uppercase text-on-surface-variant">
+                STATUS: DISCONNECTED
+            </div>
+</div>
+</main>
+<!-- Visual Artifacts (Brutalist Elements) -->
+<div class="fixed top-1/4 -right-12 w-64 h-64 border-[1px] border-outline-variant/20 -z-10 pointer-events-none rotate-12"></div>
+<div class="fixed bottom-20 -left-16 w-48 h-48 border-[1px] border-outline-variant/10 -z-10 pointer-events-none -rotate-45"></div>
+<!-- BottomNavBar (Suppressed as per 404/Task focus rules, but kept for context if necessary; usually hidden on 404 to focus user journey) -->
+<!-- Applying suppression as per: "suppress the navigation to prioritize the content canvas" for error pages -->
+</body></html>

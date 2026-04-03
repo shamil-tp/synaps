@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SYNAPS | DASHBOARD</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5f3;
+            color: #0d0c0b;
+        }
+
+        .brutalist-shadow {
+            box-shadow: 4px 4px 0px 0px #0d0c0b;
+        }
+
+        .brutalist-shadow:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #0d0c0b;
+        }
+
+        .brutalist-shadow:active {
+            transform: translate(0px, 0px);
+            box-shadow: 2px 2px 0px 0px #0d0c0b;
+        }
+
+        /* Material Symbols helper */
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Geist-like precision styling */
+        .font-geist {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hatch-pattern {
+            background-image: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                #0d0c0b 10px,
+                #0d0c0b 11px
+            );
+            opacity: 0.1;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary": "#e6e1df",
+                        "surface-container-high": "#e8e8e6",
+                        "surface-bright": "#f9f9f7",
+                        "on-error": "#ffffff",
+                        "on-background": "#0d0c0b",
+                        "tertiary-container": "#777472",
+                        "tertiary": "#3d3b3a",
+                        "on-error-container": "#410002",
+                        "primary": "#0d0c0b",
+                        "primary-container": "#3d3b3a",
+                        "on-primary": "#f5f5f3",
+                        "surface": "#f5f5f3",
+                        "secondary-fixed-dim": "#aeaaa8",
+                        "secondary-container": "#d8d3d1",
+                        "on-surface-variant": "#474747",
+                        "on-primary-fixed": "#ffffff",
+                        "on-primary-container": "#ffffff",
+                        "background": "#f5f5f3",
+                        "inverse-on-surface": "#f1f1ef",
+                        "surface-variant": "#e2e3e1",
+                        "secondary": "#605e5c",
+                        "inverse-primary": "#cac6c3",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#0d0c0b",
+                        "error": "#ba1a1a",
+                        "outline": "#0d0c0b",
+                        "on-surface": "#0d0c0b",
+                        "surface-container": "#eeeeec",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-[#f5f5f3] dark:bg-[#0d0c0b] text-[#0d0c0b] dark:text-[#f5f5f3] fixed top-0 w-full border-b border-[#0d0c0b] dark:border-[#f5f5f3] flex justify-between items-center px-6 h-16 w-full z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-2xl">menu</span>
+<span class="font-['Inter'] font-bold tracking-tighter uppercase text-2xl font-black tracking-[-0.04em] text-[#0d0c0b] dark:text-[#f5f5f3]">SYNAPS</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-2xl cursor-pointer">notifications</span>
+</div>
+</header>
+<main class="pt-24 pb-24 px-6 max-w-lg mx-auto">
+<!-- Greeting Full Width -->
+<section class="flex justify-between items-center mb-10 w-full">
+<div class="flex flex-col">
+<span class="text-[0.6875rem] font-medium tracking-[0.05em] uppercase text-secondary mb-1">MEMBER_SESSION_01</span>
+<h1 class="text-3xl font-bold tracking-[-0.04em] uppercase leading-none">WELCOME BACK, ARCAS.</h1>
+</div>
+<div class="w-12 h-12 border border-primary overflow-hidden bg-white">
+<img class="w-full h-full object-cover grayscale" data-alt="Monochromatic portrait of a man with sharp lighting and high contrast, brutalist photographic style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-ku3m7_3DoLFIcZM1AsNrr4JV3035mlBvT6RQyD13HdRQmAub05DlgpCosF-YJ24Qgnrl7xEvaWO2RWIhcqbj5uxjGI6DYDYzrucgtDZsh1cdYRnn8RQj7Pe7OPrLl9F20GBk5zQQrgyztoMzN86OUr3n0UJ-OFXgVtsQSbiVm0Q5PTS5ij4kyL3ANN46x_GJeud9Jtjc4R-tWUHRYZXfhIoka5ofRqVMJb_6E_9YgUbo5OtNtPKcQ098KfpjlTEJwLeG72b605vL"/>
+</div>
+</section>
+<!-- Quick Actions: 3 equal-width cards -->
+<section class="mb-10">
+<div class="grid grid-cols-3 gap-3">
+<button class="flex flex-col items-center justify-center p-4 border border-primary bg-white brutalist-shadow transition-all group">
+<span class="material-symbols-outlined text-xl mb-2">upload_file</span>
+<span class="text-[0.6875rem] font-bold uppercase tracking-wider">UPLOAD</span>
+</button>
+<button class="flex flex-col items-center justify-center p-4 border border-primary bg-white brutalist-shadow transition-all">
+<span class="material-symbols-outlined text-xl mb-2">search</span>
+<span class="text-[0.6875rem] font-bold uppercase tracking-wider">SEARCH</span>
+</button>
+<button class="flex flex-col items-center justify-center p-4 border border-primary bg-white brutalist-shadow transition-all">
+<span class="material-symbols-outlined text-xl mb-2">share</span>
+<span class="text-[0.6875rem] font-bold uppercase tracking-wider">EXPORT</span>
+</button>
+</div>
+</section>
+<!-- Continue Reading: Horizontal Scroll -->
+<section class="mb-10 overflow-hidden">
+<div class="flex justify-between items-end mb-4">
+<h2 class="text-lg font-semibold tracking-tight uppercase">CONTINUE_READING</h2>
+<span class="text-[0.6875rem] font-medium uppercase tracking-widest text-secondary">VIEW ALL</span>
+</div>
+<div class="flex overflow-x-auto gap-4 pb-4 no-scrollbar -mx-6 px-6">
+<!-- Card 1 -->
+<div class="min-w-[240px] border border-primary bg-white brutalist-shadow">
+<div class="h-32 border-b border-primary relative overflow-hidden">
+<img class="w-full h-full object-cover grayscale brightness-75" data-alt="Technical architectural drawing of a brutalist building with sharp lines and high contrast" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyBkCdliXx1WodQY8MJfw4qRt101of8Je9F8PoT72hfJZTAUhNdpsC9LjjXIGvI_rwBEOIdTqvie6c7kupnpQmCQpRSccjVGRkHE23VTRNuJn3qX_2fD2clrmhDaBRUWJvPJVPUgc-PSi6cIyH9ZhOsgQ4m_49pFlxwyTfhg0DWegb6lHtOARk-NZ-Vq6TTRiIcbMm3i6sf6mOlaB3JUGsNHS1L-vVkxvKOnVdMcspo2TvwDnc83KyiDRn9PZlThnn2XBC4H1AT-qX"/>
+<div class="absolute top-2 right-2 bg-primary text-white text-[0.6rem] px-2 py-0.5 font-bold uppercase">ARCHIVE</div>
+</div>
+<div class="p-4">
+<h3 class="text-sm font-bold uppercase leading-tight mb-1">Structural Integrity Vol. 04</h3>
+<div class="flex justify-between items-center mt-3">
+<span class="text-[0.6rem] font-medium text-secondary uppercase">85% COMPLETE</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="min-w-[240px] border border-primary bg-white brutalist-shadow">
+<div class="h-32 border-b border-primary relative overflow-hidden">
+<img class="w-full h-full object-cover grayscale brightness-75" data-alt="Close up of mechanical gears and machinery parts in monochromatic high contrast" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1YTg8hgfsNHdc7BBzBHyU9m-x9YejKrw7D-6AEThWj61lQ3D79kKJP6XU8mMBcRO9lVlPfEt2FAIUOdkzcr9z3t3u61vgZJsCxlJgM244UXylf-vOxmVOPXJ-242zZXHauaAER_Ukm1ymdvLZaUZdAc2ZyeMIUoNqLo2r3LRM5RedwEH7s1xTDiQv32Isn5ShrxyHkFT5JeEdIArIRNccZn5mzSXG_-oR3Bv_vQEQ_-qhT4RLdy8PuGfmq61b29FEz6didRlnrIrY"/>
+<div class="absolute top-2 right-2 bg-primary text-white text-[0.6rem] px-2 py-0.5 font-bold uppercase">ENGINEER</div>
+</div>
+<div class="p-4">
+<h3 class="text-sm font-bold uppercase leading-tight mb-1">Kinetic Systems Overview</h3>
+<div class="flex justify-between items-center mt-3">
+<span class="text-[0.6rem] font-medium text-secondary uppercase">12% COMPLETE</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Recent Uploads: Full-width list -->
+<section class="mb-10">
+<h2 class="text-lg font-semibold tracking-tight uppercase mb-4">RECENT_UPLOADS</h2>
+<div class="flex flex-col gap-4">
+<!-- Item 1 -->
+<div class="flex border border-primary bg-white brutalist-shadow p-4 items-center">
+<div class="w-12 h-12 bg-primary text-white flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div class="ml-4 flex-grow">
+<h4 class="text-xs font-bold uppercase tracking-tight">Project_X_Schematics.pdf</h4>
+<p class="text-[0.65rem] text-secondary uppercase tracking-wider mt-1">OCT 24, 2024 • 14.2 MB</p>
+</div>
+<button class="material-symbols-outlined text-xl">more_vert</button>
+</div>
+<!-- Item 2 -->
+<div class="flex border border-primary bg-white brutalist-shadow p-4 items-center">
+<div class="w-12 h-12 bg-primary text-white flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">image</span>
+</div>
+<div class="ml-4 flex-grow">
+<h4 class="text-xs font-bold uppercase tracking-tight">Main_Facade_Rendering.png</h4>
+<p class="text-[0.65rem] text-secondary uppercase tracking-wider mt-1">OCT 22, 2024 • 8.1 MB</p>
+</div>
+<button class="material-symbols-outlined text-xl">more_vert</button>
+</div>
+<!-- Item 3 -->
+<div class="flex border border-primary bg-white brutalist-shadow p-4 items-center">
+<div class="w-12 h-12 bg-primary text-white flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">table_chart</span>
+</div>
+<div class="ml-4 flex-grow">
+<h4 class="text-xs font-bold uppercase tracking-tight">Resource_Allocation_Matrix.csv</h4>
+<p class="text-[0.65rem] text-secondary uppercase tracking-wider mt-1">OCT 21, 2024 • 0.4 MB</p>
+</div>
+<button class="material-symbols-outlined text-xl">more_vert</button>
+</div>
+</div>
+</section>
+<!-- Stats Block -->
+<section class="border border-primary p-6 bg-primary text-white relative overflow-hidden mb-10">
+<div class="hatch-pattern absolute inset-0 pointer-events-none"></div>
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-6">
+<div class="flex flex-col">
+<span class="text-[0.6rem] font-bold tracking-widest uppercase opacity-60">SYSTEM_UPTIME</span>
+<span class="text-2xl font-black italic">99.998%</span>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-[0.6rem] font-bold tracking-widest uppercase opacity-60">QUOTA_USED</span>
+<span class="text-2xl font-black italic">4.2/10TB</span>
+</div>
+</div>
+<div class="w-full bg-white/20 h-1">
+<div class="bg-white h-full w-[42%]"></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f5f5f3] dark:bg-[#0d0c0b] text-[#0d0c0b] dark:text-[#f5f5f3] w-full border-t border-[#0d0c0b] dark:border-[#f5f5f3] flex flex-col gap-4 p-8 w-full items-start mb-16">
+<span class="font-geist text-[11px] leading-relaxed tracking-[0.05em] uppercase font-bold">SYNAPS ARCHIVE</span>
+<div class="flex gap-6">
+<a class="font-geist text-[11px] leading-relaxed tracking-[0.05em] uppercase hover:bg-[#0d0c0b] hover:text-[#f5f5f3] transition-all" href="#">TERMS</a>
+<a class="font-geist text-[11px] leading-relaxed tracking-[0.05em] uppercase hover:bg-[#0d0c0b] hover:text-[#f5f5f3] transition-all" href="#">PRIVACY</a>
+<a class="font-geist text-[11px] leading-relaxed tracking-[0.05em] uppercase hover:bg-[#0d0c0b] hover:text-[#f5f5f3] transition-all" href="#">DOCS</a>
+</div>
+<span class="font-geist text-[11px] leading-relaxed tracking-[0.05em] uppercase opacity-50">© 2024 SYNAPS ARCHIVE</span>
+</footer>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 bg-[#f5f5f3] dark:bg-[#0d0c0b] text-[#0d0c0b] dark:text-[#f5f5f3] border-t border-[#0d0c0b] dark:border-[#f5f5f3]">
+<a class="bg-[#0d0c0b] text-[#f5f5f3] dark:bg-[#f5f5f3] dark:text-[#0d0c0b] p-3 flex items-center justify-center" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+</a>
+<a class="text-[#0d0c0b] dark:text-[#f5f5f3] p-3 hover:bg-[#0d0c0b] hover:text-[#f5f5f3] dark:hover:bg-[#f5f5f3] dark:hover:text-[#0d0c0b] transition-none" href="#">
+<span class="material-symbols-outlined">folder_open</span>
+</a>
+<a class="text-[#0d0c0b] dark:text-[#f5f5f3] p-3 hover:bg-[#0d0c0b] hover:text-[#f5f5f3] dark:hover:bg-[#f5f5f3] dark:hover:text-[#0d0c0b] transition-none" href="#">
+<span class="material-symbols-outlined">analytics</span>
+</a>
+<a class="text-[#0d0c0b] dark:text-[#f5f5f3] p-3 hover:bg-[#0d0c0b] hover:text-[#f5f5f3] dark:hover:bg-[#f5f5f3] dark:hover:text-[#0d0c0b] transition-none" href="#">
+<span class="material-symbols-outlined">settings</span>
+</a>
+</nav>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

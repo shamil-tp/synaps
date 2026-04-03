@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "background": "#f5f5f3",
+                        "on-background": "#0d0c0b",
+                        "surface": "#f5f5f3",
+                        "primary": "#0d0c0b",
+                        "outline": "#0d0c0b",
+                        "inverse-surface": "#0d0c0b",
+                        "inverse-on-surface": "#f5f5f3",
+                    },
+                    fontFamily: {
+                        "headline": ["Geist", "Inter", "sans-serif"],
+                        "body": ["Geist", "Inter", "sans-serif"],
+                        "label": ["Geist", "Inter", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .signature-shadow {
+            box-shadow: 4px 4px 0px 0px #0d0c0b;
+        }
+        .signature-shadow:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #0d0c0b;
+        }
+        .active-nav-shadow {
+            transform: translate(1px, 1px);
+        }
+        input, select, textarea {
+            border-radius: 0 !important;
+            border: 1px solid #0d0c0b !important;
+            background-color: transparent !important;
+            font-family: 'Geist', sans-serif !important;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none !important;
+            ring: 0 !important;
+            border-width: 2px !important;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 flex justify-between items-center w-full px-12 h-16 bg-[#f5f5f3] dark:bg-[#0d0c0b] border-b-[1px] border-[#0d0c0b] dark:border-[#f5f5f3] font-['Geist'] tracking-tight uppercase font-bold text-[0.6875rem]">
+<div class="flex items-center gap-8">
+<span class="text-[1.75rem] font-bold tracking-[-0.04em] text-[#0d0c0b] dark:text-[#f5f5f3]">SYNAPS</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-[#0d0c0b] dark:text-[#f5f5f3] opacity-60 hover:underline decoration-1 underline-offset-4" href="#">BROWSE</a>
+<a class="text-[#0d0c0b] dark:text-[#f5f5f3] opacity-60 hover:underline decoration-1 underline-offset-4" href="#">SEARCH</a>
+<a class="border-b-[1px] border-[#0d0c0b] dark:border-[#f5f5f3] text-[#0d0c0b] dark:text-[#f5f5f3] hover:underline decoration-1 underline-offset-4 active-nav-shadow" href="#">UPLOAD</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:underline decoration-1 underline-offset-4">LOGIN</button>
+<button class="bg-[#0d0c0b] text-[#f5f5f3] px-4 py-2 hover:opacity-90">SIGN UP</button>
+</div>
+</header>
+<main class="flex-grow w-full max-w-7xl mx-auto px-6 md:px-12 py-12">
+<!-- Title Section -->
+<div class="mb-12 border-b border-outline pb-6">
+<h1 class="text-[3.5rem] font-bold tracking-[-0.04em] leading-[1.0] uppercase">Upload Archive</h1>
+<p class="text-[0.6875rem] font-medium tracking-[0.05em] uppercase mt-2 opacity-60">System / Documents / New_Entry</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Left Column: Drop Zone -->
+<div class="lg:col-span-5 space-y-8">
+<div class="relative group">
+<div class="border-2 border-dashed border-outline h-[500px] flex flex-col items-center justify-center p-8 bg-surface transition-colors hover:bg-white">
+<span class="material-symbols-outlined text-6xl mb-4" data-icon="upload_file">upload_file</span>
+<h2 class="text-lg font-bold tracking-tight uppercase mb-2">Drag &amp; Drop Document</h2>
+<p class="text-[0.6875rem] font-medium tracking-[0.05em] uppercase opacity-60 mb-6">Supported Formats: PDF, EPUB, TXT (Max 50MB)</p>
+<button class="border border-outline px-6 py-3 text-[0.6875rem] font-bold tracking-[0.05em] uppercase signature-shadow bg-surface">Select File</button>
+</div>
+</div>
+<!-- Progress/Success State (Preview) -->
+<div class="border border-outline p-6 signature-shadow bg-surface">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<div>
+<p class="text-sm font-bold tracking-tight">MANUAL_V2.0_FINAL.PDF</p>
+<p class="text-[0.6875rem] opacity-60">12.4 MB</p>
+</div>
+</div>
+<span class="bg-primary text-white text-[0.6875rem] px-2 py-0.5 uppercase font-medium">Ready</span>
+</div>
+<div class="w-full h-4 border border-outline p-[1px]">
+<div class="h-full bg-primary" style="width: 100%;"></div>
+</div>
+<div class="flex justify-between mt-2">
+<span class="text-[0.6875rem] uppercase font-bold tracking-wider">Upload Complete</span>
+<button class="text-[0.6875rem] uppercase font-bold tracking-wider underline">Replace</button>
+</div>
+</div>
+</div>
+<!-- Right Column: Metadata Form -->
+<div class="lg:col-span-7">
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="md:col-span-2">
+<label class="block text-[0.6875rem] font-bold tracking-wider uppercase mb-2">Title*</label>
+<input class="w-full px-4 py-3 text-sm focus:ring-0" placeholder="ENTER FULL DOCUMENT TITLE" type="text"/>
+</div>
+<div class="md:col-span-2">
+<label class="block text-[0.6875rem] font-bold tracking-wider uppercase mb-2">Description</label>
+<textarea class="w-full px-4 py-3 text-sm focus:ring-0" placeholder="BRIEF ARCHIVAL SUMMARY..." rows="4"></textarea>
+</div>
+<div>
+<label class="block text-[0.6875rem] font-bold tracking-wider uppercase mb-2">Type*</label>
+<select class="w-full px-4 py-3 text-sm appearance-none">
+<option>TECHNICAL MANUAL</option>
+<option>MANUSCRIPT</option>
+<option>WHITE PAPER</option>
+<option>PERIODICAL</option>
+</select>
+</div>
+<div>
+<label class="block text-[0.6875rem] font-bold tracking-wider uppercase mb-2">Subject*</label>
+<select class="w-full px-4 py-3 text-sm appearance-none">
+<option>COMPUTING</option>
+<option>ARCHITECTURE</option>
+<option>PHILOSOPHY</option>
+<option>ECONOMICS</option>
+</select>
+</div>
+<div>
+<label class="block text-[0.6875rem] font-bold tracking-wider uppercase mb-2">Authors</label>
+<input class="w-full px-4 py-3 text-sm" placeholder="J. DOE, A. SMITH" type="text"/>
+</div>
+<div>
+<label class="block text-[0.6875rem] font-bold tracking-wider uppercase mb-2">Publisher</label>
+<input class="w-full px-4 py-3 text-sm" placeholder="PRESS / AGENCY" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-[0.6875rem] font-bold tracking-wider uppercase mb-2">Year</label>
+<input class="w-full px-4 py-3 text-sm" placeholder="YYYY" type="text"/>
+</div>
+<div>
+<label class="block text-[0.6875rem] font-bold tracking-wider uppercase mb-2">Edition</label>
+<input class="w-full px-4 py-3 text-sm" placeholder="VOL." type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-[0.6875rem] font-bold tracking-wider uppercase mb-2">ISBN / UID</label>
+<input class="w-full px-4 py-3 text-sm" placeholder="000-0-00-000000-0" type="text"/>
+</div>
+<div>
+<label class="block text-[0.6875rem] font-bold tracking-wider uppercase mb-2">Tags</label>
+<input class="w-full px-4 py-3 text-sm" placeholder="SEPARATE WITH COMMAS" type="text"/>
+</div>
+<div>
+<label class="block text-[0.6875rem] font-bold tracking-wider uppercase mb-2">Language*</label>
+<select class="w-full px-4 py-3 text-sm appearance-none">
+<option>ENGLISH (EN)</option>
+<option>GERMAN (DE)</option>
+<option>FRENCH (FR)</option>
+<option>JAPANESE (JP)</option>
+</select>
+</div>
+</div>
+<div class="pt-8 flex flex-col sm:flex-row items-center gap-6">
+<button class="w-full sm:w-auto bg-primary text-white border border-outline px-12 py-4 text-[0.6875rem] font-bold tracking-[0.1em] uppercase signature-shadow transition-all" type="submit">
+                            Submit for Review
+                        </button>
+<button class="text-[0.6875rem] font-bold tracking-[0.1em] uppercase underline underline-offset-4 hover:opacity-60 transition-opacity" type="button">
+                            Save as Draft
+                        </button>
+</div>
+</form>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-12 flex flex-col md:flex-row justify-between items-center gap-6 bg-[#f5f5f3] dark:bg-[#0d0c0b] border-t-[1px] border-[#0d0c0b] dark:border-[#f5f5f3] font-['Geist'] tracking-wider uppercase text-[0.6875rem]">
+<div class="text-[#0d0c0b] dark:text-[#f5f5f3]">
+            © 2024 SYNAPS ARCHIVAL SYSTEM. ALL RIGHTS RESERVED.
+        </div>
+<div class="flex gap-8">
+<a class="text-[#0d0c0b] dark:text-[#f5f5f3] hover:underline" href="#">PRIVACY</a>
+<a class="text-[#0d0c0b] dark:text-[#f5f5f3] hover:underline" href="#">TERMS</a>
+<a class="text-[#0d0c0b] dark:text-[#f5f5f3] hover:underline" href="#">MANIFESTO</a>
+<a class="text-[#0d0c0b] dark:text-[#f5f5f3] hover:underline" href="#">API</a>
+</div>
+</footer>
+</body></html>

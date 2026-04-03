@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-lowest": "#0f0e0d",
+              "on-primary-container": "#000000",
+              "tertiary-container": "#90918f",
+              "primary-fixed": "#5d5f5d",
+              "on-tertiary-fixed-variant": "#e2e3e1",
+              "on-secondary-fixed": "#1a1c1b",
+              "on-primary": "#1a1c1b",
+              "surface-tint": "#c6c7c5",
+              "secondary": "#c6c7c5",
+              "on-tertiary-fixed": "#ffffff",
+              "outline": "#919191",
+              "on-secondary-fixed-variant": "#3a3c3b",
+              "surface-dim": "#141312",
+              "secondary-container": "#454746",
+              "surface-bright": "#3b3937",
+              "on-primary-fixed-variant": "#e2e3e1",
+              "on-error-container": "#ffdad6",
+              "on-surface": "#e6e1df",
+              "on-primary-fixed": "#ffffff",
+              "secondary-fixed-dim": "#ababaa",
+              "tertiary": "#e2e3e1",
+              "primary-fixed-dim": "#454746",
+              "primary": "#ffffff",
+              "inverse-surface": "#e6e1df",
+              "surface-container-highest": "#363433",
+              "primary-container": "#d4d4d3",
+              "outline-variant": "#474747",
+              "on-tertiary-container": "#000000",
+              "error": "#ffb4ab",
+              "surface": "#141312",
+              "secondary-fixed": "#c6c7c5",
+              "inverse-primary": "#5d5f5d",
+              "tertiary-fixed": "#5d5f5d",
+              "inverse-on-surface": "#32302f",
+              "background": "#141312",
+              "on-background": "#e6e1df",
+              "surface-variant": "#363433",
+              "surface-container": "#211f1e",
+              "surface-container-low": "#1d1b1a",
+              "on-secondary-container": "#e2e3e1",
+              "on-secondary": "#1a1c1b",
+              "tertiary-fixed-dim": "#454746",
+              "on-error": "#690005",
+              "surface-container-high": "#2b2a28",
+              "on-tertiary": "#1a1c1b",
+              "on-surface-variant": "#c6c6c6",
+              "error-container": "#93000a"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hard-shadow {
+            box-shadow: 4px 4px 0px 0px #ffffff;
+        }
+        body {
+            background-color: #141312;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-20">
+<!-- TopAppBar -->
+<header class="bg-[#141312] text-[#ffffff] font-['Space_Grotesk'] uppercase tracking-tighter flex justify-between items-center w-full px-6 py-4 sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#ffffff]">menu</span>
+<h1 class="text-2xl font-bold tracking-widest text-[#ffffff]">SYNAPS</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#ffffff]">search</span>
+<div class="w-8 h-8 bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-xs">person</span>
+</div>
+</div>
+</header>
+<main class="px-6 py-8">
+<!-- Editorial Header -->
+<section class="mb-12">
+<h2 class="font-headline text-5xl font-bold uppercase tracking-tighter mb-2 leading-none">My Library</h2>
+<div class="flex items-center gap-2">
+<span class="text-on-surface-variant font-label text-[10px] tracking-widest uppercase">[ SYSTEM_INDEX_VOL_04 ]</span>
+<div class="h-[1px] flex-grow bg-outline-variant"></div>
+</div>
+</section>
+<!-- Category Tabs (Brutalist Style) -->
+<nav class="flex overflow-x-auto pb-4 gap-2 no-scrollbar mb-8">
+<button class="bg-primary text-on-primary px-6 py-2 font-label text-xs font-bold uppercase shrink-0">All</button>
+<button class="bg-surface-container-high text-on-surface-variant px-6 py-2 font-label text-xs font-bold uppercase shrink-0 hover:bg-surface-bright transition-colors">Approved</button>
+<button class="bg-surface-container-high text-on-surface-variant px-6 py-2 font-label text-xs font-bold uppercase shrink-0 hover:bg-surface-bright transition-colors">Pending</button>
+<button class="bg-surface-container-high text-on-surface-variant px-6 py-2 font-label text-xs font-bold uppercase shrink-0 hover:bg-surface-bright transition-colors">Rejected</button>
+</nav>
+<!-- Library Grid/List -->
+<div class="flex flex-col gap-6">
+<!-- Library Item 1 -->
+<div class="group relative bg-surface-container hover:bg-surface-container-high transition-all duration-150 p-4 border-l-4 border-primary">
+<div class="flex gap-4">
+<div class="w-24 h-24 shrink-0 bg-surface-container-highest overflow-hidden">
+<img alt="Neural interface schematic" class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all" data-alt="high-contrast monochromatic blueprint of a complex neural network interface with technical annotations and sharp lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYMpPI1S_F_udd3a7GwPhQ0wIOAS5wQrqvOwVJBQ3QPyxwYH56HTDfPK7KgirA93gWCSCuuGJHu3M15HWaPU4NE_VzhnAW6LNI_Zvg5iVeIjbmEY3mZhpQuofv1qNfwIpqoh1GGNV_gia2Q2FIRQqOg6xmmtd44piN3i_4IyIXKXd6DgPSkQK0iAAoNWhU6mgcqkiSdngTw-jjw5lcYFTHBPTqyvFKInpwlbxC898S7z3TqNda8D-tLWlZKfsK0mYaOw4RDWje9sx3"/>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline font-bold text-lg leading-tight mb-1 uppercase tracking-tight">NEURAL_DRAFT_V2</h3>
+<div class="flex gap-2 mb-2">
+<span class="border border-outline-variant px-2 py-0.5 font-label text-[9px] uppercase tracking-wider">Schematic</span>
+<span class="bg-primary text-on-primary px-2 py-0.5 font-label text-[9px] uppercase font-bold">Approved</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="flex justify-between items-center text-[10px] font-label text-on-surface-variant uppercase tracking-widest">
+<span>ID: 882-AX</span>
+<span>DEC 12, 2023</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Library Item 2 -->
+<div class="group relative bg-surface-container hover:bg-surface-container-high transition-all duration-150 p-4">
+<div class="flex gap-4">
+<div class="w-24 h-24 shrink-0 bg-surface-container-highest overflow-hidden">
+<img alt="Architectural scan" class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all" data-alt="extreme close up of a futuristic concrete architectural structure with sharp shadows and brutalist textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtfnKhfH7riEHxBBQoZD5wHK6dklnU-EVd3Ce4KUOtWiCE4kUxESXQJkG6w_I-R-jxYbxzSnsND43dtchLfai2dVKHzjYEeMyO5VSqe2M7_V_Qq_OQyJ0G2tOCyNuK78tt0q68xnKycQKcHNLqfG3BdEXFJvYwKXchsHQHzocYWdXBTVIpNbE0WtuB-UpehchtdyRDUG8TONDYWEYce0pDK-r76Ly5GmKTMBWQ11MqI4GVcXLImt8GjhRjoEYPKgSZhm2UIqi2ufZe"/>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline font-bold text-lg leading-tight mb-1 uppercase tracking-tight">VOID_CONSTRUCT</h3>
+<div class="flex gap-2 mb-2">
+<span class="border border-outline-variant px-2 py-0.5 font-label text-[9px] uppercase tracking-wider">Model_3D</span>
+<span class="bg-surface-container-highest text-secondary px-2 py-0.5 font-label text-[9px] uppercase font-bold">Pending</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="flex justify-between items-center text-[10px] font-label text-on-surface-variant uppercase tracking-widest">
+<span>ID: 441-TR</span>
+<span>DEC 14, 2023</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Library Item 3 -->
+<div class="group relative bg-surface-container hover:bg-surface-container-high transition-all duration-150 p-4">
+<div class="flex gap-4">
+<div class="w-24 h-24 shrink-0 bg-surface-container-highest overflow-hidden">
+<img alt="Encryption keys" class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all" data-alt="monochrome abstract pattern of digital noise and corrupted data fragments in a high-contrast editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwC2i5V29egYwgyJ7u4ciWAWfEh38mVPI9mJ2MtxD2wD8d9oAa4elHBfbbUsp3FVAv1k29OczTRahE4Hyz6ZnN_YVuJUfMoT33_iQs3csREjLg3hyTysY4OeZgC_CxjDTp_wUymrVleewNbrnQ1YlkpheiZL2yTNnab0yBxxPDx8IN-uc73dfBaitpB_a7q1Kx4U_fWTciACzIx7uIoFSm1oo1GN4EXZQfl4C9hSssHgLMTvOLn7s9p_GxUcmGTmVieyjbRlMV1CFY"/>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline font-bold text-lg leading-tight mb-1 uppercase tracking-tight">ENCRYPT_SEQUENCE</h3>
+<div class="flex gap-2 mb-2">
+<span class="border border-outline-variant px-2 py-0.5 font-label text-[9px] uppercase tracking-wider">Archive</span>
+<span class="bg-error text-on-error px-2 py-0.5 font-label text-[9px] uppercase font-bold">Rejected</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="flex justify-between items-center text-[10px] font-label text-on-surface-variant uppercase tracking-widest">
+<span>ID: 109-ML</span>
+<span>DEC 15, 2023</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Library Item 4 -->
+<div class="group relative bg-surface-container hover:bg-surface-container-high transition-all duration-150 p-4 border-l-4 border-primary">
+<div class="flex gap-4">
+<div class="w-24 h-24 shrink-0 bg-surface-container-highest overflow-hidden">
+<img alt="System logs" class="w-full h-full object-cover grayscale opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all" data-alt="stark black and white macro photograph of a vintage computer terminal screen showing lines of code" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwrxyDG-_0uig1x8nXhC3n04sCJl-bL9hCs1iyAEF-_IQvsuRLgjn6UYUTXkmkspQHfNZ555lLEDwwxrfEMrM0ZQP-y82v9RuOTN6TDbMqD6lZC-nd79Na47aULtdku3MQ2zFTHwulV7pg3FoRZqL9l_iHHblpp4GhsHC0ocT1dR0rcND19spNiphrgWtp-a2OTpCELP11OXCkCnsvSLfQJnIkoDiN50fLg6FWA1GlrH8D404uR9iV0X_e7PcCD7S0709S3PxQXZQ2"/>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline font-bold text-lg leading-tight mb-1 uppercase tracking-tight">KERNEL_PATCH_09</h3>
+<div class="flex gap-2 mb-2">
+<span class="border border-outline-variant px-2 py-0.5 font-label text-[9px] uppercase tracking-wider">Software</span>
+<span class="bg-primary text-on-primary px-2 py-0.5 font-label text-[9px] uppercase font-bold">Approved</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="flex justify-between items-center text-[10px] font-label text-on-surface-variant uppercase tracking-widest">
+<span>ID: 992-ZZ</span>
+<span>DEC 18, 2023</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination/Load More Footer -->
+<div class="mt-12 flex flex-col items-center">
+<button class="w-full py-4 border-2 border-primary font-headline font-bold uppercase tracking-[0.2em] text-sm hover:bg-primary hover:text-on-primary transition-all duration-150 active:translate-x-1 active:translate-y-1 active:shadow-none hard-shadow mb-4">
+                Fetch More Data
+            </button>
+<p class="text-[10px] font-label text-on-surface-variant tracking-widest uppercase">Displaying 4 of 128 assets</p>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-16 flex justify-around items-stretch bg-[#141312] z-50">
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28]" href="#">
+<span class="material-symbols-outlined">home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28]" href="#">
+<span class="material-symbols-outlined">search</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#ffffff] text-[#141312] h-full w-full" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28]" href="#">
+<span class="material-symbols-outlined">settings</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SYNAPS - Profile Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary": "#e6e1df",
+              "surface-container-high": "#e8e8e6",
+              "surface-bright": "#f9f9f7",
+              "on-error": "#ffffff",
+              "on-background": "#0d0c0b",
+              "tertiary-container": "#777472",
+              "tertiary": "#3d3b3a",
+              "on-error-container": "#410002",
+              "primary": "#0d0c0b",
+              "primary-container": "#3d3b3a",
+              "on-primary": "#f5f5f3",
+              "surface": "#f5f5f3",
+              "secondary-fixed-dim": "#aeaaa8",
+              "secondary-container": "#d8d3d1",
+              "on-surface-variant": "#474747",
+              "on-primary-fixed": "#ffffff",
+              "on-primary-container": "#ffffff",
+              "background": "#f5f5f3",
+              "on-tertiary-fixed": "#ffffff",
+              "surface-tint": "#605e5c",
+              "tertiary-fixed": "#605e5c",
+              "on-secondary-container": "#1d1b1a",
+              "on-secondary-fixed": "#1d1b1a",
+              "on-primary-fixed-variant": "#e6e1df",
+              "inverse-on-surface": "#f5f5f3",
+              "surface-variant": "#e2e3e1",
+              "secondary": "#605e5c",
+              "inverse-primary": "#cac6c3",
+              "on-secondary": "#ffffff",
+              "surface-dim": "#dadad8",
+              "error-container": "#ffdad6",
+              "inverse-surface": "#0d0c0b",
+              "error": "#ba1a1a",
+              "tertiary-fixed-dim": "#484645",
+              "outline": "#0d0c0b",
+              "on-tertiary-container": "#ffffff",
+              "primary-fixed-dim": "#484645",
+              "primary-fixed": "#605e5c",
+              "on-surface": "#0d0c0b",
+              "surface-container-highest": "#e2e3e1",
+              "on-tertiary-fixed-variant": "#e6e1df",
+              "secondary-fixed": "#cac6c3",
+              "outline-variant": "#c6c6c6",
+              "surface-container-low": "#f4f4f2",
+              "surface-container": "#eeeeec",
+              "on-secondary-fixed-variant": "#3d3b3a",
+              "surface-container-lowest": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Geist", "sans-serif"],
+              "body": ["Geist", "sans-serif"],
+              "label": ["Geist", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "0px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .signature-shadow {
+            box-shadow: 4px 4px 0px 0px #0d0c0b;
+        }
+        .signature-shadow-hover:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #0d0c0b;
+        }
+        .active-nav-tab {
+            background-color: #0d0c0b;
+            color: #f5f5f3;
+        }
+        input:focus {
+            outline: none;
+            box-shadow: none;
+            border-color: #0d0c0b;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-[#f5f5f3] dark:bg-[#0d0c0b] fixed top-0 w-full border-b border-[#0d0c0b] dark:border-[#f5f5f3] z-50 flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#0d0c0b] dark:text-[#f5f5f3]">arrow_back</span>
+<h1 class="text-2xl font-black tracking-[-0.04em] text-[#0d0c0b] dark:text-[#f5f5f3] font-['Geist'] uppercase">SYNAPS</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#0d0c0b] dark:text-[#f5f5f3]">search</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="mt-16 mb-24 flex-grow px-6 py-8 flex flex-col gap-8">
+<!-- Segmented Tab Bar -->
+<div class="grid grid-cols-2 border border-outline divide-x divide-outline divide-y md:grid-cols-4 border-t border-l border-r">
+<button class="active-nav-tab p-4 font-['Geist'] text-[11px] font-bold tracking-[0.05em] uppercase text-center transition-all">Profile</button>
+<button class="p-4 font-['Geist'] text-[11px] font-medium tracking-[0.05em] uppercase text-center hover:bg-surface-container transition-all">Account</button>
+<button class="p-4 font-['Geist'] text-[11px] font-medium tracking-[0.05em] uppercase text-center hover:bg-surface-container transition-all border-t md:border-t-0">Notifications</button>
+<button class="p-4 font-['Geist'] text-[11px] font-medium tracking-[0.05em] uppercase text-center hover:bg-surface-container transition-all border-t md:border-t-0">Privacy</button>
+</div>
+<!-- Section Headline -->
+<div>
+<span class="label-sm text-[0.6875rem] font-medium tracking-[0.05em] uppercase opacity-60">Section / 01</span>
+<h2 class="text-[1.75rem] font-semibold tracking-[-0.02em] leading-none">Profile Settings</h2>
+</div>
+<!-- Profile Picture Grid -->
+<div class="flex flex-col gap-6">
+<div class="relative w-32 h-32 border border-outline bg-surface-container">
+<img class="w-full h-full object-cover filter grayscale contrast-125" data-alt="high-contrast monochromatic portrait of a creative professional in sharp studio lighting with minimalist brutalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqLX0piKN4hPpIhIVTiMMv8Ie6RM2KCMCsbiR3KjrBL5Nhh4QmExLjfNUyP_3TuQ-8vggot45yRJHY9KFr4JR4s22QHTdMbzPShQrMR23qc8RNh87dRrpohVj6cqKsTwYGSO3bCU1hxGgOm3gfqSO4nu6-m0JWJ4e_ZMIkfEAV3POUOU6Mb4h-FlupQFt3xN0AAkOxTGNo4ciD2UVbvXIBjUb9i34AGBHWFbHRzTu-S5BtkylI1tBiRSb2kTPtLrk4akBfRNdxMIJc"/>
+<button class="absolute -bottom-2 -right-2 bg-primary text-on-primary p-2 signature-shadow hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-[0.6875rem] font-medium tracking-[0.05em] uppercase">User Identifier</label>
+<code class="text-sm font-mono opacity-60">ID_ARCHIVE_9821_X</code>
+</div>
+</div>
+<!-- Form Fields -->
+<div class="flex flex-col gap-8">
+<!-- Full Name -->
+<div class="flex flex-col gap-2">
+<label class="text-[0.6875rem] font-medium tracking-[0.05em] uppercase">Full Legal Name</label>
+<input class="w-full bg-surface border border-outline p-4 font-['Geist'] font-bold tracking-[-0.02em] focus:ring-0 rounded-none" type="text" value="ALEXANDER VANCE"/>
+</div>
+<!-- Bio -->
+<div class="flex flex-col gap-2">
+<label class="text-[0.6875rem] font-medium tracking-[0.05em] uppercase">Professional Bio / Metadata</label>
+<textarea class="w-full bg-surface border border-outline p-4 font-['Geist'] text-sm leading-relaxed focus:ring-0 rounded-none resize-none" rows="4">Senior Digital Archivist specializing in brutalist architectural data structures and monochrome interface taxonomies.</textarea>
+</div>
+<!-- Status Badges Selection -->
+<div class="flex flex-col gap-4">
+<label class="text-[0.6875rem] font-medium tracking-[0.05em] uppercase">Availability Status</label>
+<div class="flex flex-wrap gap-3">
+<div class="px-4 py-2 bg-on-background text-background text-[10px] font-medium tracking-[0.05em] uppercase flex items-center gap-2">
+<span class="w-2 h-2 bg-green-500"></span> ACTIVE
+                    </div>
+<div class="px-4 py-2 border border-outline text-[10px] font-medium tracking-[0.05em] uppercase flex items-center gap-2 opacity-50">
+<span class="w-2 h-2 bg-yellow-500"></span> AWAY
+                    </div>
+<div class="px-4 py-2 border border-outline text-[10px] font-medium tracking-[0.05em] uppercase flex items-center gap-2 opacity-50">
+<span class="w-2 h-2 bg-red-500"></span> DND
+                    </div>
+</div>
+</div>
+<!-- Toggle Options -->
+<div class="flex flex-col divide-y divide-outline border-y border-outline">
+<div class="py-6 flex justify-between items-center">
+<div class="flex flex-col gap-1">
+<span class="text-sm font-bold uppercase">Public Visibility</span>
+<span class="text-[11px] opacity-60">Allow profile data indexing</span>
+</div>
+<div class="w-12 h-6 border-2 border-outline bg-on-background p-1 flex justify-end">
+<div class="w-3 h-full bg-background"></div>
+</div>
+</div>
+<div class="py-6 flex justify-between items-center">
+<div class="flex flex-col gap-1">
+<span class="text-sm font-bold uppercase">Archive Sync</span>
+<span class="text-[11px] opacity-60">Auto-backup profile changes</span>
+</div>
+<div class="w-12 h-6 border-2 border-outline bg-background p-1 flex justify-start">
+<div class="w-3 h-full bg-on-background"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Global Save Button -->
+<div class="mt-4">
+<button class="w-full bg-primary text-on-primary py-5 px-8 font-['Geist'] font-black tracking-[0.1em] uppercase text-sm signature-shadow hover:translate-x-[-4px] hover:translate-y-[-4px] transition-all active:translate-x-0 active:translate-y-0 active:shadow-none">
+                Commit Changes
+            </button>
+</div>
+<footer class="bg-[#f5f5f3] dark:bg-[#0d0c0b] w-full border-t border-[#0d0c0b] dark:border-[#f5f5f3] flex flex-col gap-4 p-8 w-full items-start mt-12">
+<span class="font-['Geist'] text-[11px] leading-relaxed tracking-[0.05em] uppercase font-bold">SYNAPS ARCHIVE</span>
+<div class="flex gap-6">
+<a class="font-['Geist'] text-[11px] leading-relaxed tracking-[0.05em] uppercase text-[#0d0c0b] dark:text-[#f5f5f3] hover:bg-[#0d0c0b] hover:text-[#f5f5f3]" href="#">TERMS</a>
+<a class="font-['Geist'] text-[11px] leading-relaxed tracking-[0.05em] uppercase text-[#0d0c0b] dark:text-[#f5f5f3] hover:bg-[#0d0c0b] hover:text-[#f5f5f3]" href="#">PRIVACY</a>
+<a class="font-['Geist'] text-[11px] leading-relaxed tracking-[0.05em] uppercase text-[#0d0c0b] dark:text-[#f5f5f3] hover:bg-[#0d0c0b] hover:text-[#f5f5f3]" href="#">DOCS</a>
+</div>
+<p class="font-['Geist'] text-[11px] leading-relaxed tracking-[0.05em] uppercase opacity-50">© 2024 SYNAPS ARCHIVE</p>
+</footer>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 bg-[#f5f5f3] dark:bg-[#0d0c0b] border-t border-[#0d0c0b] dark:border-[#f5f5f3]">
+<a class="text-[#0d0c0b] dark:text-[#f5f5f3] p-3 hover:bg-[#0d0c0b] hover:text-[#f5f5f3] dark:hover:bg-[#f5f5f3] dark:hover:text-[#0d0c0b]" href="#">
+<span class="material-symbols-outlined">home</span>
+</a>
+<a class="text-[#0d0c0b] dark:text-[#f5f5f3] p-3 hover:bg-[#0d0c0b] hover:text-[#f5f5f3] dark:hover:bg-[#f5f5f3] dark:hover:text-[#0d0c0b]" href="#">
+<span class="material-symbols-outlined">folder_open</span>
+</a>
+<a class="text-[#0d0c0b] dark:text-[#f5f5f3] p-3 hover:bg-[#0d0c0b] hover:text-[#f5f5f3] dark:hover:bg-[#f5f5f3] dark:hover:text-[#0d0c0b]" href="#">
+<span class="material-symbols-outlined">analytics</span>
+</a>
+<a class="bg-[#0d0c0b] text-[#f5f5f3] dark:bg-[#f5f5f3] dark:text-[#0d0c0b] p-3" href="#">
+<span class="material-symbols-outlined">settings</span>
+</a>
+</nav>
+</body></html>

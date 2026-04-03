@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SYNAPS - PDF Viewer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-lowest": "#0f0e0d",
+                        "on-primary-container": "#000000",
+                        "tertiary-container": "#90918f",
+                        "primary-fixed": "#5d5f5d",
+                        "on-tertiary-fixed-variant": "#e2e3e1",
+                        "on-secondary-fixed": "#1a1c1b",
+                        "on-primary": "#1a1c1b",
+                        "surface-tint": "#c6c7c5",
+                        "secondary": "#c6c7c5",
+                        "on-tertiary-fixed": "#ffffff",
+                        "outline": "#919191",
+                        "on-secondary-fixed-variant": "#3a3c3b",
+                        "surface-dim": "#141312",
+                        "secondary-container": "#454746",
+                        "surface-bright": "#3b3937",
+                        "on-primary-fixed-variant": "#e2e3e1",
+                        "on-error-container": "#ffdad6",
+                        "on-surface": "#e6e1df",
+                        "on-primary-fixed": "#ffffff",
+                        "secondary-fixed-dim": "#ababaa",
+                        "tertiary": "#e2e3e1",
+                        "primary-fixed-dim": "#454746",
+                        "primary": "#ffffff",
+                        "inverse-surface": "#e6e1df",
+                        "surface-container-highest": "#363433",
+                        "primary-container": "#d4d4d3",
+                        "outline-variant": "#474747",
+                        "on-tertiary-container": "#000000",
+                        "error": "#ffb4ab",
+                        "surface": "#141312",
+                        "secondary-fixed": "#c6c7c5",
+                        "inverse-primary": "#5d5f5d",
+                        "tertiary-fixed": "#5d5f5d",
+                        "inverse-on-surface": "#32302f",
+                        "background": "#141312",
+                        "on-background": "#e6e1df",
+                        "surface-variant": "#363433",
+                        "surface-container": "#211f1e",
+                        "surface-container-low": "#1d1b1a",
+                        "on-secondary-container": "#e2e3e1",
+                        "on-secondary": "#1a1c1b",
+                        "tertiary-fixed-dim": "#454746",
+                        "on-error": "#690005",
+                        "surface-container-high": "#2b2a28",
+                        "on-tertiary": "#1a1c1b",
+                        "on-surface-variant": "#c6c6c6",
+                        "error-container": "#93000a"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            background-color: #141312;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+        }
+        .brutalist-shadow {
+            box-shadow: 4px 4px 0px 0px #ffffff;
+        }
+        /* Custom scrollbar for brutalist look */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #141312;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ffffff;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased overflow-hidden h-screen flex flex-col">
+<!-- TopAppBar - Mapped from Shared Components JSON -->
+<header class="bg-[#141312] text-[#ffffff] font-['Space_Grotesk'] uppercase tracking-tighter flex justify-between items-center w-full px-6 py-4 z-50">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center w-8 h-8 hover:bg-[#3b3937] transition-colors duration-150">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<h1 class="text-xs font-bold tracking-widest text-[#ffffff] leading-none mb-1">ARCHIVE_SYSTEM_V.04</h1>
+<p class="text-[10px] text-secondary tracking-widest font-label font-light">OPERATING_MANUAL.PDF</p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-[10px] font-bold text-[#ffffff]">PAGE 12 OF 84</span>
+<div class="w-16 h-[2px] bg-surface-container-highest mt-1">
+<div class="w-1/6 h-full bg-primary"></div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 overflow-hidden relative flex flex-col bg-[#0d0c0b]">
+<!-- Document Meta Header (In-Canvas) -->
+<div class="w-full py-2 px-6 flex justify-between items-center bg-[#1d1b1a] border-b border-outline-variant/30">
+<div class="flex items-center gap-3">
+<div class="px-2 py-0.5 border border-outline text-[8px] font-label text-on-surface-variant">
+                    [READ_ONLY]
+                </div>
+<div class="px-2 py-0.5 border border-outline text-[8px] font-label text-on-surface-variant">
+                    256-BIT_ENC
+                </div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-sm text-on-surface-variant" data-icon="zoom_in">zoom_in</span>
+<span class="material-symbols-outlined text-sm text-on-surface-variant" data-icon="search">search</span>
+</div>
+</div>
+<!-- PDF Page Centered -->
+<div class="flex-1 flex items-center justify-center p-4">
+<!-- Simulated PDF Page with Editorial Brutalist Layout -->
+<div class="w-full max-w-sm aspect-[1/1.41] bg-[#f5f5f3] text-[#0d0c0b] p-8 brutalist-shadow relative overflow-hidden">
+<!-- PDF Interior Design: Minimalist Editorial -->
+<div class="flex flex-col h-full border-[1px] border-[#0d0c0b] p-6 relative">
+<!-- Decorative Corner Marks -->
+<div class="absolute top-0 left-0 w-2 h-2 border-t border-l border-[#0d0c0b]"></div>
+<div class="absolute top-0 right-0 w-2 h-2 border-t border-r border-[#0d0c0b]"></div>
+<div class="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-[#0d0c0b]"></div>
+<div class="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-[#0d0c0b]"></div>
+<div class="mb-10">
+<p class="text-[8px] font-label font-bold tracking-widest mb-1">SECTION_02</p>
+<h2 class="text-3xl font-headline font-bold leading-none tracking-tighter uppercase mb-4">NEURAL<br/>INTERFACE<br/>PROTOCOL</h2>
+<div class="w-12 h-1 bg-[#0d0c0b]"></div>
+</div>
+<div class="space-y-4">
+<p class="text-[10px] font-body leading-relaxed">
+                            The synchronization between organic synaptic pathways and digital processing units requires a precise calibration of the neurotransmitter variance buffers. Failure to align within the 0.04ms threshold results in catastrophic feedback.
+                        </p>
+<div class="grid grid-cols-2 gap-4 mt-6">
+<div class="border-t border-[#0d0c0b] pt-2">
+<p class="text-[7px] font-label font-bold mb-1">DATA_STREAM</p>
+<p class="text-[14px] font-headline font-medium tracking-tight">88.4 GB/S</p>
+</div>
+<div class="border-t border-[#0d0c0b] pt-2">
+<p class="text-[7px] font-label font-bold mb-1">LATENCY</p>
+<p class="text-[14px] font-headline font-medium tracking-tight">0.002 MS</p>
+</div>
+</div>
+<!-- Abstract Diagram Placeholder -->
+<div class="mt-8 h-24 bg-[#0d0c0b]/5 relative border border-[#0d0c0b]/10 flex items-center justify-center">
+<div class="absolute inset-0 opacity-10">
+<img class="w-full h-full object-cover grayscale" data-alt="minimalist architectural technical drawing of a circuit board layout with clean sharp lines and monochromatic aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxDqgR5S7ZOlWhx5VDnphJ6xzlooxB6agG-tYS1MZMrewnjxGsX2SMHDgxui_umRzxUUPdCN94IXlfEWXjPrgLnofszmf0QwNsFM3HI3EuNsYX8P5H8aeWq-0F87qV6nRkJqSuA7tJWXuacvO4E6f4i4pB9cL-AFFYl0JsZsikWsc8w-YjsOmBtF-NG5StXLFAcLQvW71M1xA2ED5KoOYQk9J5DgW8hAM_75o4KXrXRUjlI1f4nIb9EJsJd9TIfEHzCydgDVpoJK6f"/>
+</div>
+<p class="text-[6px] font-label text-[#0d0c0b] tracking-[0.2em]">FIG_4.2 // SYNAPTIC_MAP</p>
+</div>
+</div>
+<div class="mt-auto pt-4 flex justify-between items-end">
+<span class="text-[8px] font-label tracking-widest">[SYSTEM_STABLE]</span>
+<span class="text-[18px] font-headline font-bold">12</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Interaction Overlay Indicators -->
+<div class="absolute bottom-10 left-0 w-full px-12 flex justify-between pointer-events-none opacity-20">
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-4xl" data-icon="chevron_left">chevron_left</span>
+<span class="text-[8px] font-label uppercase">SWIPE_PREV</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-4xl" data-icon="chevron_right">chevron_right</span>
+<span class="text-[8px] font-label uppercase">SWIPE_NEXT</span>
+</div>
+</div>
+<!-- Bottom Controls (Floating In-Canvas) -->
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-1 bg-[#1d1b1a] p-1 brutalist-shadow">
+<button class="w-12 h-12 flex items-center justify-center bg-transparent hover:bg-[#3b3937] transition-all">
+<span class="material-symbols-outlined text-on-surface" data-icon="bookmark">bookmark</span>
+</button>
+<div class="w-[1px] h-6 bg-outline-variant"></div>
+<button class="w-12 h-12 flex items-center justify-center bg-transparent hover:bg-[#3b3937] transition-all">
+<span class="material-symbols-outlined text-on-surface" data-icon="share">share</span>
+</button>
+<div class="w-[1px] h-6 bg-outline-variant"></div>
+<button class="px-6 h-12 flex items-center justify-center bg-primary text-on-primary font-label font-bold text-xs uppercase tracking-widest">
+                EXPORT
+            </button>
+</div>
+</main>
+<!-- Shell Suppression: No BottomNavBar or Footer as per instructions for Task-Focused PDF screen -->
+</body></html>

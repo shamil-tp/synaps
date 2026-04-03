@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SYNAPS | Archival System</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#211f1e",
+              "error": "#ffb4ab",
+              "surface-container-low": "#1d1b1a",
+              "surface-container-lowest": "#0f0e0d",
+              "surface": "#141312",
+              "inverse-surface": "#e6e1df",
+              "primary": "#ffffff",
+              "primary-fixed": "#5d5f5d",
+              "surface-variant": "#363433",
+              "surface-dim": "#141312",
+              "inverse-primary": "#5d5f5d",
+              "on-tertiary": "#1a1c1b",
+              "error-container": "#93000a",
+              "on-primary": "#1a1c1b",
+              "on-tertiary-fixed-variant": "#e2e3e1",
+              "on-tertiary-container": "#000000",
+              "secondary": "#c6c7c5",
+              "on-surface": "#e6e1df",
+              "tertiary-fixed": "#5d5f5d",
+              "on-primary-fixed-variant": "#e2e3e1",
+              "primary-container": "#d4d4d3",
+              "tertiary-container": "#90918f",
+              "outline": "#919191",
+              "outline-variant": "#474747",
+              "surface-container-highest": "#363433",
+              "inverse-on-surface": "#32302f",
+              "surface-bright": "#3b3937",
+              "tertiary": "#e2e3e1",
+              "on-surface-variant": "#c6c6c6",
+              "secondary-container": "#454746",
+              "secondary-fixed-dim": "#ababaa",
+              "on-secondary-container": "#e2e3e1",
+              "on-error-container": "#ffdad6",
+              "on-secondary-fixed": "#1a1c1b",
+              "on-error": "#690005",
+              "on-secondary-fixed-variant": "#3a3c3b",
+              "primary-fixed-dim": "#454746",
+              "on-secondary": "#1a1c1b",
+              "background": "#141312",
+              "on-background": "#e6e1df",
+              "surface-container-high": "#2b2a28",
+              "tertiary-fixed-dim": "#454746",
+              "on-tertiary-fixed": "#ffffff",
+              "secondary-fixed": "#c6c7c5",
+              "surface-tint": "#c6c7c5",
+              "on-primary-fixed": "#ffffff",
+              "on-primary-container": "#000000"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "0px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        vertical-align: middle;
+      }
+      body {
+        background-color: #141312;
+        color: #ffffff;
+      }
+    </style>
+</head>
+<body class="font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="sticky top-0 w-full flex justify-between items-center px-6 py-4 bg-[#141312] z-50 border-b-2 border-[#ffffff] shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
+<div class="flex items-center gap-12">
+<a class="text-2xl font-black tracking-tighter text-[#ffffff] uppercase" href="/">SYNAPS</a>
+<div class="hidden md:flex gap-8">
+<a class="text-xs font-mono uppercase text-[#ffffff] font-bold underline underline-offset-8" href="#">Browse</a>
+<a class="text-xs font-mono uppercase text-[#c6c7c5] hover:text-[#141312] hover:bg-[#ffffff] transition-none px-2 py-1" href="#">Search</a>
+<a class="text-xs font-mono uppercase text-[#c6c7c5] hover:text-[#141312] hover:bg-[#ffffff] transition-none px-2 py-1" href="#">Upload</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-xs font-mono uppercase px-4 py-2 text-[#ffffff] hover:italic">Sign in</button>
+<button class="text-xs font-mono uppercase px-6 py-2 bg-[#ffffff] text-[#141312] font-bold hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-none">Get started</button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative px-6 py-24 md:py-40 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="mb-6">
+<span class="text-xs font-label uppercase tracking-widest text-primary border border-outline-variant px-3 py-1">[ OPEN · FREE · COMMUNITY-DRIVEN ]</span>
+</div>
+<h1 class="font-headline text-6xl md:text-[8rem] font-bold tracking-tighter leading-[0.9] uppercase mb-12">
+                    Universal <span class="italic underline decoration-4">Intelligence</span> Archival.
+                </h1>
+<p class="font-body text-secondary max-w-2xl text-xl mb-12 uppercase tracking-tight">
+                    A decentralized repository for high-fidelity technical documentation, research papers, and industrial blueprints.
+                </p>
+<div class="max-w-3xl">
+<div class="flex flex-col md:flex-row gap-0 group shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
+<div class="flex-grow relative border-2 border-primary bg-surface-container-low px-4 flex items-center">
+<span class="material-symbols-outlined text-secondary mr-3" data-icon="search">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-primary font-label uppercase py-4" placeholder="QUERY ARCHIVE..." type="text"/>
+</div>
+<button class="bg-primary text-on-primary font-label font-bold uppercase px-8 py-4 hover:bg-surface-bright transition-none">Execute Search</button>
+</div>
+<div class="mt-4 flex flex-wrap gap-4 text-[10px] font-label text-on-surface-variant uppercase tracking-widest">
+<span>Recent:</span>
+<a class="underline hover:text-primary" href="#">Quantum-Cores</a>
+<a class="underline hover:text-primary" href="#">Bio-Mimicry</a>
+<a class="underline hover:text-primary" href="#">Orbital-Logistics</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Subject Strip -->
+<section class="bg-surface-container-low py-12 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-center gap-8">
+<h2 class="font-label text-xs font-black rotate-0 md:-rotate-90 uppercase tracking-tighter whitespace-nowrap">Browse by Subject</h2>
+<div class="flex-grow flex flex-wrap gap-2">
+<a class="px-4 py-2 border border-outline-variant hover:border-primary hover:bg-primary hover:text-on-primary font-label text-xs uppercase transition-none" href="#">Architecture</a>
+<a class="px-4 py-2 border border-outline-variant hover:border-primary hover:bg-primary hover:text-on-primary font-label text-xs uppercase transition-none" href="#">Biology</a>
+<a class="px-4 py-2 border border-outline-variant hover:border-primary hover:bg-primary hover:text-on-primary font-label text-xs uppercase transition-none" href="#">Computing</a>
+<a class="px-4 py-2 border border-outline-variant hover:border-primary hover:bg-primary hover:text-on-primary font-label text-xs uppercase transition-none" href="#">Design Systems</a>
+<a class="px-4 py-2 border border-outline-variant hover:border-primary hover:bg-primary hover:text-on-primary font-label text-xs uppercase transition-none" href="#">Engineering</a>
+<a class="px-4 py-2 border border-outline-variant hover:border-primary hover:bg-primary hover:text-on-primary font-label text-xs uppercase transition-none" href="#">Future Studies</a>
+<a class="px-4 py-2 border border-outline-variant hover:border-primary hover:bg-primary hover:text-on-primary font-label text-xs uppercase transition-none" href="#">Geopolitics</a>
+<a class="px-4 py-2 border border-outline-variant hover:border-primary hover:bg-primary hover:text-on-primary font-label text-xs uppercase transition-none" href="#">History</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Document Grid -->
+<section class="py-24 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-16">
+<h3 class="font-headline text-5xl font-bold uppercase tracking-tighter">Recent Deposits</h3>
+<a class="font-label text-sm uppercase underline underline-offset-4 hover:italic" href="#">View full index</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Document Card 1 -->
+<div class="group bg-surface-container border border-outline-variant p-6 flex flex-col h-[400px] hover:bg-surface-container-highest hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] transition-none">
+<div class="mb-4 h-32 w-full overflow-hidden grayscale contrast-125">
+<img alt="Cyber security background" class="w-full h-full object-cover" data-alt="close-up of circuit board with glowing neon pathways in a dark futuristic server room environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbwivS0McvXC08Wb6AjCdnUnXJHu4IA09ReIdSbDh7983k0iqrVZ7R2ppkANQsIfAo2MtwYqlBPUbhw9ZbAT1c3zGTLrJeBS_Qzk_EMPtN5xbX6_QvDcD5ZNIlu5EIDrCyVx8EZONkPuuWdGI7zxHcesrsRda1b7XS_cpINGd9fSZMXGpk3k4XC2imN6JCfyPtC1mTLWna-FzGLya5LW5S9UPsbMg2XEO36duPt-KdFcDMNKWu_GzBFfBIhZZMGxIgs_ehLuOaHHRG"/>
+</div>
+<span class="text-[10px] font-label text-secondary uppercase mb-2">001-ARCH-2024</span>
+<h4 class="font-headline text-xl font-bold uppercase mb-4 leading-tight">Neural Lattice Encryption Protocols</h4>
+<div class="mt-auto flex justify-between items-end">
+<span class="text-[10px] font-label uppercase px-2 py-1 bg-surface-container-low border border-outline-variant">Technical Report</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-none" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Document Card 2 -->
+<div class="group bg-surface-container border border-outline-variant p-6 flex flex-col h-[400px] hover:bg-surface-container-highest hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] transition-none">
+<div class="mb-4 h-32 w-full overflow-hidden grayscale contrast-125">
+<img alt="Lab equipment" class="w-full h-full object-cover" data-alt="microscopic view of biological cellular structures with harsh high-contrast lighting in shades of deep grey and white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4rSnCerBNYolKUBD1glN7fke8YFnbJ4jbgj8DnuhE4HCgqfR9YN9KbYhpiaLnfFgp_Yw46tkdKFDxPTnRh4a9NNO0TE0098LPj8LwNy2hXSRgpDsw_qEL7aMv300588RDU90v1QgE9Ee_UBdShT69BoYeA3A7Dozema-SR1UoY09uUxrXpLjIhtMpclLiIMjOLQjAKhZ3pXqyegyPziZvZnDnTwBH1kUxMLFfBT05zuGiHFfBQe5QuV5UYWm6rysy6gxcYkWLrid6"/>
+</div>
+<span class="text-[10px] font-label text-secondary uppercase mb-2">042-BIO-2024</span>
+<h4 class="font-headline text-xl font-bold uppercase mb-4 leading-tight">Synthetic Mycelium As Structural Core</h4>
+<div class="mt-auto flex justify-between items-end">
+<span class="text-[10px] font-label uppercase px-2 py-1 bg-surface-container-low border border-outline-variant">Case Study</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-none" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Document Card 3 -->
+<div class="group bg-surface-container border border-outline-variant p-6 flex flex-col h-[400px] hover:bg-surface-container-highest hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] transition-none">
+<div class="mb-4 h-32 w-full overflow-hidden grayscale contrast-125">
+<img alt="Space tech" class="w-full h-full object-cover" data-alt="satellite orbiting a dark planet with sharp sunlight reflecting off solar panels against a black void" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeauGOUhnrPHK7Gq3LZKVIA9TYxGArDIEu2Pli3VShqRba6yn_xBTsTw1Rk9ugzDmsA34qH7cNMP__YfuEWvc8BIu1MAbVG_k5b3B_6mQlFqvsHeVvaZM0BHAWc52S-39ydPMDwT7ZTc3BauFtKfKi0xEnLTNc6FY7iD8nzACyUF-6MyXPGf8g68cSP8LdjAIdt9iejdpAnFPLqVB5WYl9qCfrOE3vIkyriYz-489yVYOFPCh7wrtUgmfyOsjypRe5cOFVaEDyq4j0"/>
+</div>
+<span class="text-[10px] font-label text-secondary uppercase mb-2">109-SPA-2024</span>
+<h4 class="font-headline text-xl font-bold uppercase mb-4 leading-tight">Low-Earth Orbit Logistics Management</h4>
+<div class="mt-auto flex justify-between items-end">
+<span class="text-[10px] font-label uppercase px-2 py-1 bg-surface-container-low border border-outline-variant">Whitepaper</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-none" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Document Card 4 -->
+<div class="group bg-surface-container border border-outline-variant p-6 flex flex-col h-[400px] hover:bg-surface-container-highest hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] transition-none">
+<div class="mb-4 h-32 w-full overflow-hidden grayscale contrast-125">
+<img alt="Building architecture" class="w-full h-full object-cover" data-alt="brutalist concrete building with sharp geometric shadows and high-contrast sunlight on a clear day" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdv5-XWX9oaU0IwFtsW0GUZWVlq8h3mWVSPhO8uF2HfcI7vzbM6vOse3SuFSFom9q8APU1OeNNDaLYX6e5sF5Q5aMLnxk0gRhFA7gCo9QX4cQuuU4hMPf0zfQOf7U8CTO9P6E7gRoD9i1ulaRwMF4t9qxFLmh1mkYwBwecdUMnj7Yj35JJlhsEqi5yzyWOIBW_SQJZmTBKUvQ29Anj4nfpLlpPdp_7MKQ-QH03aMRgu9Myl3tvOb7X_Tj1WV0HsMA9QGozbp56C2Rd"/>
+</div>
+<span class="text-[10px] font-label text-secondary uppercase mb-2">556-URB-2024</span>
+<h4 class="font-headline text-xl font-bold uppercase mb-4 leading-tight">High-Density Modular Urbanism v2.0</h4>
+<div class="mt-auto flex justify-between items-end">
+<span class="text-[10px] font-label uppercase px-2 py-1 bg-surface-container-low border border-outline-variant">Blueprints</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-none" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Bar -->
+<section class="border-y-2 border-primary bg-surface py-12 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-2 md:grid-cols-4 divide-x-2 divide-outline-variant">
+<div class="px-8 text-center md:text-left">
+<p class="font-label text-xs uppercase text-secondary mb-2">Total Archives</p>
+<p class="font-headline text-4xl font-bold text-primary">1.2M+</p>
+</div>
+<div class="px-8 text-center md:text-left">
+<p class="font-label text-xs uppercase text-secondary mb-2">Daily Queries</p>
+<p class="font-headline text-4xl font-bold text-primary">85.4K</p>
+</div>
+<div class="px-8 text-center md:text-left">
+<p class="font-label text-xs uppercase text-secondary mb-2">Active Nodes</p>
+<p class="font-headline text-4xl font-bold text-primary">12,042</p>
+</div>
+<div class="px-8 text-center md:text-left">
+<p class="font-label text-xs uppercase text-secondary mb-2">Uptime Index</p>
+<p class="font-headline text-4xl font-bold text-primary">99.98%</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-32 px-6 relative overflow-hidden">
+<div class="absolute inset-0 bg-surface-container-low opacity-50 -z-10"></div>
+<div class="max-w-5xl mx-auto text-center">
+<h2 class="font-headline text-5xl md:text-7xl font-bold uppercase tracking-tighter mb-8">Share what you know, preserve the <span class="italic">Future</span>.</h2>
+<p class="font-body text-xl text-on-surface-variant max-w-2xl mx-auto mb-12 uppercase tracking-wide">
+                    The Synaps archival system is only as strong as its contributors. Upload your research, documentation, or technical assets today.
+                </p>
+<div class="flex flex-col md:flex-row justify-center gap-6">
+<button class="bg-primary text-on-primary font-label font-bold uppercase px-12 py-5 shadow-[6px_6px_0px_0px_rgba(198,199,197,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-none">Start Uploading</button>
+<button class="border-2 border-primary text-primary font-label font-bold uppercase px-12 py-5 hover:bg-primary hover:text-on-primary transition-none">Learn More</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 gap-12 bg-[#141312] border-t-2 border-[#ffffff]">
+<div class="flex flex-col gap-6">
+<span class="text-3xl font-black text-[#ffffff] uppercase tracking-tighter">SYNAPS</span>
+<p class="font-mono text-sm uppercase tracking-widest text-[#c6c6c6] max-w-xs">
+                AN OPEN PROTOCOL FOR THE PERMANENT STORAGE OF HUMAN KNOWLEDGE AND TECHNICAL PROGRESS.
+            </p>
+<p class="font-mono text-sm uppercase tracking-widest text-[#c6c6c6] mt-4">
+                © 2024 SYNAPS ARCHIVAL SYSTEM
+            </p>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="flex flex-col gap-4">
+<h4 class="text-xl font-['Space_Grotesk'] uppercase text-[#ffffff]">Navigate</h4>
+<a class="font-mono text-sm uppercase tracking-widest text-[#c6c6c6] hover:text-[#ffffff] hover:italic underline" href="#">Browse</a>
+<a class="font-mono text-sm uppercase tracking-widest text-[#c6c6c6] hover:text-[#ffffff] hover:italic" href="#">Upload</a>
+<a class="font-mono text-sm uppercase tracking-widest text-[#c6c6c6] hover:text-[#ffffff] hover:italic" href="#">About</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-xl font-['Space_Grotesk'] uppercase text-[#ffffff]">Legal</h4>
+<a class="font-mono text-sm uppercase tracking-widest text-[#c6c6c6] hover:text-[#ffffff] hover:italic" href="#">Privacy</a>
+<a class="font-mono text-sm uppercase tracking-widest text-[#c6c6c6] hover:text-[#ffffff] hover:italic" href="#">Terms</a>
+<a class="font-mono text-sm uppercase tracking-widest text-[#c6c6c6] hover:text-[#ffffff] hover:italic" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>

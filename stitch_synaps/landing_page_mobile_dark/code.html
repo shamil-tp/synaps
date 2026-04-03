@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SYNAPS | ARCHIVAL SYSTEM</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#211f1e",
+              "error": "#ffb4ab",
+              "surface-container-low": "#1d1b1a",
+              "surface-container-lowest": "#0f0e0d",
+              "surface": "#141312",
+              "inverse-surface": "#e6e1df",
+              "primary": "#ffffff",
+              "primary-fixed": "#5d5f5d",
+              "surface-variant": "#363433",
+              "surface-dim": "#141312",
+              "inverse-primary": "#5d5f5d",
+              "on-tertiary": "#1a1c1b",
+              "error-container": "#93000a",
+              "on-primary": "#1a1c1b",
+              "on-tertiary-fixed-variant": "#e2e3e1",
+              "on-tertiary-container": "#000000",
+              "secondary": "#c6c7c5",
+              "on-surface": "#e6e1df",
+              "tertiary-fixed": "#5d5f5d",
+              "on-primary-fixed-variant": "#e2e3e1",
+              "primary-container": "#d4d4d3",
+              "tertiary-container": "#90918f",
+              "outline": "#919191",
+              "outline-variant": "#474747",
+              "surface-container-highest": "#363332",
+              "inverse-on-surface": "#32302f",
+              "surface-bright": "#3b3937",
+              "tertiary": "#e2e3e1",
+              "on-surface-variant": "#c6c6c6",
+              "secondary-container": "#454746",
+              "secondary-fixed-dim": "#ababaa",
+              "on-secondary-container": "#e2e3e1",
+              "on-error-container": "#ffdad6",
+              "on-secondary-fixed": "#1a1c1b",
+              "on-error": "#690005",
+              "on-secondary-fixed-variant": "#3a3c3b",
+              "primary-fixed-dim": "#454746",
+              "on-secondary": "#1a1c1b",
+              "background": "#141312",
+              "on-background": "#e6e1df",
+              "surface-container-high": "#2b2a28",
+              "tertiary-fixed-dim": "#454746",
+              "on-tertiary-fixed": "#ffffff",
+              "secondary-fixed": "#c6c7c5",
+              "surface-tint": "#c6c7c5",
+              "on-primary-fixed": "#ffffff",
+              "on-primary-container": "#000000"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk", "sans-serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Space Grotesk", "monospace"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "0px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        display: inline-block;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+      }
+      .hard-shadow { box-shadow: 4px 4px 0px 0px #ffffff; }
+      .hard-shadow-active { transform: translate(2px, 2px); box-shadow: 0px 0px 0px 0px #ffffff; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<header class="sticky top-0 w-full flex justify-between items-center px-6 py-4 bg-[#141312] z-50 border-b-2 border-[#ffffff] shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
+<div class="text-2xl font-black tracking-tighter text-[#ffffff] uppercase font-headline">SYNAPS</div>
+<button class="text-primary p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<main class="flex flex-col">
+<!-- Hero Section -->
+<section class="px-6 py-12 bg-surface">
+<div class="mb-10">
+<h1 class="font-headline text-5xl font-black uppercase tracking-tighter leading-[0.9] text-primary mb-4">
+                    DECENTRALIZED<br/>ARCHIVAL<br/>SYSTEM
+                </h1>
+<p class="font-label text-sm uppercase tracking-widest text-secondary">V.042 // SECURE. IMMUTABLE. RAW.</p>
+</div>
+<!-- Search Hero Stack -->
+<div class="flex flex-col gap-4">
+<div class="relative">
+<input class="w-full bg-surface-container-low border-b-2 border-outline-variant py-4 px-4 font-label uppercase text-primary focus:outline-none focus:border-primary transition-colors placeholder:text-outline" placeholder="SEARCH DATABASE..." type="text"/>
+</div>
+<button class="bg-primary text-on-primary font-headline font-bold uppercase py-4 hard-shadow active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-none">
+                    EXECUTE SEARCH
+                </button>
+</div>
+</section>
+<!-- Subject Chips -->
+<section class="px-6 py-8 bg-surface-container-low">
+<h2 class="font-label text-xs uppercase tracking-[0.2em] text-secondary mb-6">[ ACTIVE_FILTERS ]</h2>
+<div class="flex flex-wrap gap-3">
+<span class="border border-outline px-3 py-1 font-label text-xs uppercase text-primary">Biometric</span>
+<span class="border border-outline px-3 py-1 font-label text-xs uppercase text-primary">Neural_Link</span>
+<span class="border border-outline px-3 py-1 font-label text-xs uppercase text-primary">Encrypted</span>
+<span class="border border-outline px-3 py-1 font-label text-xs uppercase text-primary">Gov_Classified</span>
+<span class="border border-outline px-3 py-1 font-label text-xs uppercase text-primary">Geo_Tag</span>
+<span class="border border-outline px-3 py-1 font-label text-xs uppercase text-primary">Metadata</span>
+</div>
+</section>
+<!-- Document Grid (2 Columns) -->
+<section class="px-6 py-12">
+<div class="flex justify-between items-end mb-8">
+<h2 class="font-headline text-2xl font-black uppercase tracking-tighter text-primary">LATEST LOGS</h2>
+<span class="font-label text-[10px] text-secondary uppercase">Page 01 // 24</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Card 1 -->
+<div class="bg-surface-container-high p-1 hard-shadow aspect-square flex flex-col justify-between">
+<div class="w-full h-2/3 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover grayscale brightness-75 contrast-125" data-alt="high contrast macro shot of glowing green server circuit board in a dark data center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDI0eJInajV0XGxXhmg6ml7m_P-HWC3rmkedL36l5h2ceCCCsJcDXy4tgf2OKaCGz_5sIWhL_ktekHquWJkMBHJepTE2ywiOElNJIPEJxqVJHXshboknSLXAnfQGPf5VUi-ctK4_iP287dzo58-ahS0qssliz6DPPWkDPuV-W4E1j-1W_tTpoMGsAzYcGfYUop5hMx_DQnbpghRqT39znq-ANrBN8OSExyChNUp9qKSsMqxsXB0LFaXybg_1Y_1jbQPAmvfNikbJs97"/>
+</div>
+<div class="p-2 overflow-hidden">
+<h3 class="font-headline text-xs font-bold uppercase truncate text-primary">PROJECT_X_01</h3>
+<p class="font-label text-[9px] text-secondary truncate mt-1">ID: 8829-AF</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-high p-1 hard-shadow aspect-square flex flex-col justify-between">
+<div class="w-full h-2/3 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover grayscale brightness-75 contrast-125" data-alt="abstract close up of fiber optic cables glowing white against a deep black background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCTI-dPzpjdmf26mJfVzSuDANTtFMYo77k87I8iy89JVHyK8CiG9k-3ynepT90hnFKdNDKTXEeODpx-Q_5lnYz8fxA8EY_D5T4Sodh73Z_2pFKXzO44V9t38ln6Msgv13SWHF17rdmoBXmbf5hOq2095ZOHUxcEZjbk-oa0EhEPLj8q7T1HxacOKQCIAQFDxf2VCAw4_WzOLn_JO0XmzJjR6MqmR3Cu0izh-kF43vB1u6RHE6b6gYd5PQmATN8kuUZvV_RK0Zz5_wM"/>
+</div>
+<div class="p-2 overflow-hidden">
+<h3 class="font-headline text-xs font-bold uppercase truncate text-primary">QUANTUM_SEC</h3>
+<p class="font-label text-[9px] text-secondary truncate mt-1">ID: 1042-XB</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-high p-1 hard-shadow aspect-square flex flex-col justify-between">
+<div class="w-full h-2/3 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover grayscale brightness-75 contrast-125" data-alt="satellite view of earth at night with bright city lights and atmospheric haze in high contrast black and white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5WTUSVat9wvt3lmFB51KJS8flDnvaUFhe01pDekijhXULjosOlfAeMYlrtLflgedRG-tg177ivnvE7oB_rMd0UO5tt2NEPN9_T7SGK0ADlnKhGgD_rccV3znG9AwLriHJ_m4415pfWqEUnKsBz-2B51Nyj3UIzyELoNMGn4kn8oZPYRv3ce6OqtHSYF7Pm8RF9aHPD2O3dzKcYlpGa2ep1LqXvlYC8u0q4f6tHWqy-_m7ARPNPlNXojSxdjub8zjUqjSmQQof5P1i"/>
+</div>
+<div class="p-2 overflow-hidden">
+<h3 class="font-headline text-xs font-bold uppercase truncate text-primary">GLOBAL_LOG</h3>
+<p class="font-label text-[9px] text-secondary truncate mt-1">ID: 9901-ZZ</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-high p-1 hard-shadow aspect-square flex flex-col justify-between">
+<div class="w-full h-2/3 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover grayscale brightness-75 contrast-125" data-alt="brutalist architecture interior with harsh shadows and concrete textures in a dark monochromatic style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuHDP0XzbeS2ecUxL4lEr00IMYHkJ3ovKSvKZ2dfAHXB_AQOAzX8Z3bHRVWcs3bGOSEciRG0Goa5XO21YLC-0ZTeqOrwRWYylzM9TrYGniaYvIettZgVxmX_WGPzjeQNzwslKBpw5piw-YYEg_qwfyrxojyGEbZONBqVKZRs5whZ0sXUYn7Itdd2cPtlVlHwQdmuCj9XEUBfZ141xzeW_b6qLUs4vkKklXGytauTbVNfaRlIIVj2QVNN5EvG9VvwRpFEb9mA0NUM4n"/>
+</div>
+<div class="p-2 overflow-hidden">
+<h3 class="font-headline text-xs font-bold uppercase truncate text-primary">BRUTAL_NODE</h3>
+<p class="font-label text-[9px] text-secondary truncate mt-1">ID: 4421-KK</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Grid (2x2) -->
+<section class="px-6 py-12 bg-surface-container-lowest">
+<h2 class="font-label text-xs uppercase tracking-[0.2em] text-secondary mb-8">[ SYSTEM_METRICS ]</h2>
+<div class="grid grid-cols-2 gap-px bg-outline-variant">
+<div class="bg-surface-container-lowest p-6 flex flex-col justify-center items-start">
+<span class="font-label text-[10px] text-secondary uppercase mb-2">Uptime</span>
+<span class="font-headline text-2xl font-black text-primary">99.9%</span>
+</div>
+<div class="bg-surface-container-lowest p-6 flex flex-col justify-center items-start">
+<span class="font-label text-[10px] text-secondary uppercase mb-2">Nodes</span>
+<span class="font-headline text-2xl font-black text-primary">4.2K</span>
+</div>
+<div class="bg-surface-container-lowest p-6 flex flex-col justify-center items-start">
+<span class="font-label text-[10px] text-secondary uppercase mb-2">Latency</span>
+<span class="font-headline text-2xl font-black text-primary">12ms</span>
+</div>
+<div class="bg-surface-container-lowest p-6 flex flex-col justify-center items-start">
+<span class="font-label text-[10px] text-secondary uppercase mb-2">Encrypted</span>
+<span class="font-headline text-2xl font-black text-primary">100%</span>
+</div>
+</div>
+</section>
+<!-- CTA Section (Buttons stack vertically) -->
+<section class="px-6 py-16 bg-surface">
+<div class="border-2 border-primary p-8 flex flex-col gap-8 bg-surface-container">
+<div>
+<h2 class="font-headline text-3xl font-black uppercase tracking-tighter text-primary leading-none mb-4">READY TO ARCHIVE?</h2>
+<p class="font-body text-sm text-secondary">Join the most secure decentralized documentation network on the dark web.</p>
+</div>
+<div class="flex flex-col gap-4">
+<button class="w-full bg-primary text-on-primary font-headline font-bold uppercase py-4 hard-shadow active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-none">
+                        START UPLOADING
+                    </button>
+<button class="w-full bg-transparent border-2 border-primary text-primary font-headline font-bold uppercase py-4 active:bg-surface-container-highest transition-none">
+                        VIEW PROTOCOLS
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 gap-12 bg-[#141312] border-t-2 border-[#ffffff]">
+<div class="flex flex-col gap-6">
+<div class="text-3xl font-black text-[#ffffff] font-headline">SYNAPS</div>
+<p class="font-mono text-sm uppercase tracking-widest text-[#ffffff] opacity-70">
+                DECENTRALIZED ARCHIVAL INFRASTRUCTURE. DATA IS IMMUTABLE. ACCESS IS ABSOLUTE.
+            </p>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="flex flex-col gap-4">
+<a class="font-mono text-sm uppercase tracking-widest text-[#c6c6c6] hover:text-[#ffffff] hover:italic" href="#">Browse</a>
+<a class="font-mono text-sm uppercase tracking-widest text-[#c6c6c6] hover:text-[#ffffff] hover:italic" href="#">Upload</a>
+<a class="font-mono text-sm uppercase tracking-widest text-[#c6c6c6] hover:text-[#ffffff] hover:italic" href="#">About</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-mono text-sm uppercase tracking-widest text-[#c6c6c6] hover:text-[#ffffff] hover:italic" href="#">Privacy</a>
+<a class="font-mono text-sm uppercase tracking-widest text-[#c6c6c6] hover:text-[#ffffff] hover:italic" href="#">Terms</a>
+</div>
+</div>
+<div class="col-span-full pt-12 border-t border-outline-variant font-mono text-[10px] uppercase tracking-[0.3em] text-[#c6c6c6]">
+            © 2024 SYNAPS ARCHIVAL SYSTEM
+        </div>
+</footer>
+</body></html>

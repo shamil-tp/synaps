@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SYNAPS | Browse Catalog</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+        
+        body {
+            font-family: 'Geist', sans-serif;
+            background-color: #f5f5f3;
+            color: #0d0c0b;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+            font-size: 1.25rem;
+        }
+
+        .hard-shadow {
+            box-shadow: 4px 4px 0px 0px #0d0c0b;
+        }
+
+        .hard-shadow-hover:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #0d0c0b;
+        }
+
+        .diagonal-hatch {
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, #0d0c0b 10px, #0d0c0b 11px);
+            opacity: 0.1;
+        }
+
+        /* Conflict Resolution: Design System over generic tailwind for specific brutalist look */
+        .brutalist-border {
+            border: 1px solid #0d0c0b;
+        }
+        
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%230d0c0b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.5rem center;
+            background-size: 1em;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "background": "#f5f5f3",
+                        "on-background": "#0d0c0b",
+                        "surface": "#f5f5f3",
+                        "primary": "#0d0c0b",
+                        "outline": "#0d0c0b",
+                        "inverse-surface": "#0d0c0b",
+                        "inverse-on-surface": "#f5f5f3"
+                    },
+                    fontFamily: {
+                        "headline": ["Geist"],
+                        "body": ["Geist"],
+                        "label": ["Geist"]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background">
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 border-b border-[#0d0c0b] dark:border-[#f5f5f3] bg-[#f5f5f3] dark:bg-[#0d0c0b] flex justify-between items-center h-16 px-12 w-full max-w-full">
+<div class="text-xl font-bold tracking-tighter text-[#0d0c0b] dark:text-[#f5f5f3]">SYNAPS</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium text-[#0d0c0b] dark:text-[#f5f5f3] border-b border-[#0d0c0b] dark:border-[#f5f5f3] hover:underline decoration-1 underline-offset-4 transition-all duration-200 ease-[cubic-bezier(0.2,1,0.3,1)]" href="#">Browse</a>
+<a class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium text-[#0d0c0b]/60 dark:text-[#f5f5f3]/60 hover:underline decoration-1 underline-offset-4 transition-all duration-200 ease-[cubic-bezier(0.2,1,0.3,1)]" href="#">Search</a>
+<a class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium text-[#0d0c0b]/60 dark:text-[#f5f5f3]/60 hover:underline decoration-1 underline-offset-4 transition-all duration-200 ease-[cubic-bezier(0.2,1,0.3,1)]" href="#">Upload</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium text-[#0d0c0b] dark:text-[#f5f5f3] hover:underline transition-all duration-200 ease-[cubic-bezier(0.2,1,0.3,1)]">Sign in</button>
+<button class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium bg-[#0d0c0b] text-[#f5f5f3] px-4 py-2 transition-all duration-200 ease-[cubic-bezier(0.2,1,0.3,1)]">Get started</button>
+</div>
+</nav>
+<main class="pt-24 pb-16 px-12 max-w-[1440px] mx-auto">
+<!-- Header Section -->
+<header class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="text-[3.5rem] font-bold tracking-[-0.04em] leading-[1.0] uppercase">Browse</h1>
+<p class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium mt-2 opacity-60">Total Archive Count: 4,200 documents</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="material-symbols-outlined opacity-40" data-icon="view_list">view_list</span>
+</div>
+</header>
+<!-- Filter Bar (Sticky) -->
+<div class="sticky top-16 bg-background z-40 py-6 border-b border-on-background mb-8">
+<div class="flex flex-wrap items-center gap-4">
+<div class="flex-1 grid grid-cols-2 md:grid-cols-5 gap-4">
+<select class="brutalist-border bg-background px-3 py-2 font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium focus:ring-0 focus:outline-none cursor-pointer">
+<option>Subject</option>
+<option>Architecture</option>
+<option>Cybernetics</option>
+<option>Economics</option>
+</select>
+<select class="brutalist-border bg-background px-3 py-2 font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium focus:ring-0 focus:outline-none cursor-pointer">
+<option>Type</option>
+<option>Manuscript</option>
+<option>Technical Drawing</option>
+<option>Data Set</option>
+</select>
+<select class="brutalist-border bg-background px-3 py-2 font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium focus:ring-0 focus:outline-none cursor-pointer">
+<option>Language</option>
+<option>English</option>
+<option>German</option>
+<option>Japanese</option>
+</select>
+<select class="brutalist-border bg-background px-3 py-2 font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium focus:ring-0 focus:outline-none cursor-pointer">
+<option>Format</option>
+<option>PDF</option>
+<option>SVG</option>
+<option>JSON</option>
+</select>
+<select class="brutalist-border bg-background px-3 py-2 font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium focus:ring-0 focus:outline-none cursor-pointer">
+<option>Sort</option>
+<option>Date Asc</option>
+<option>Date Desc</option>
+<option>A-Z</option>
+</select>
+</div>
+<button class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium hover:underline px-4 py-2 border border-transparent">
+                    Reset Filters
+                </button>
+</div>
+<!-- Active Filters Row -->
+<div class="mt-6 flex flex-wrap gap-2">
+<div class="bg-on-background text-background px-2 py-1 flex items-center gap-2 font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem]">
+                    Subject: Cybernetics
+                    <button class="material-symbols-outlined text-[1rem]" data-icon="close">close</button>
+</div>
+<div class="bg-on-background text-background px-2 py-1 flex items-center gap-2 font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem]">
+                    Format: PDF
+                    <button class="material-symbols-outlined text-[1rem]" data-icon="close">close</button>
+</div>
+</div>
+</div>
+<!-- Document Grid -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+<!-- Card 1 -->
+<article class="brutalist-border bg-surface hard-shadow hard-shadow-hover transition-all duration-200 ease-[cubic-bezier(0.2,1,0.3,1)] cursor-pointer group">
+<div class="aspect-[4/3] bg-on-background overflow-hidden relative border-b border-on-background">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="high-contrast macro photograph of vintage circuit board with sharp geometric lines and metallic components on dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBNa_Vypsq0gAKArUYZ4s6OQTFCWv4HpoabUBeMSkiPcFxJrkx_w58-rI-X0AnNZJrDYSulLd6TbMwmKbx_bAFaodT8iYgfxTCEv8IgTphLX7GUkcVSSQYdqxg0Ph-wsC1fm-4wNbJ3z4UBjIfcrl94eW6zFktabrFVaMXFkRUNvkwBRQJReuB3PDU2H4vX8M7t6FAtsApy1N7GVEdA5Y-16gOm0SSCj7CWaLni1sSPESSR-7caQINe8yeP7yoIuQU2MlYr4npUrhR"/>
+<div class="absolute top-4 left-4">
+<span class="bg-on-background text-background px-2 py-1 font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem]">TECHNICAL</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold tracking-[-0.02em] leading-tight mb-4 uppercase">Neural Network Schema v4.2</h3>
+<div class="flex flex-col gap-1">
+<p class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] opacity-60">ARCHIVE ID: SYN-9021</p>
+<p class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] opacity-60">DATE: 12.OCT.1994</p>
+</div>
+<div class="mt-6 pt-4 border-t border-on-background/10 flex justify-between items-center">
+<span class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-bold">12.4 MB</span>
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="brutalist-border bg-surface hard-shadow hard-shadow-hover transition-all duration-200 ease-[cubic-bezier(0.2,1,0.3,1)] cursor-pointer group">
+<div class="aspect-[4/3] bg-on-background overflow-hidden relative border-b border-on-background">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="abstract architectural blueprint of a brutalist concrete building with sharp shadows and stark linear perspectives" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7VWQyQJ37j756dlUQbu_q5aaAroyUURp0_qdz9y52jn3aZ0gDTwOCX-32dDj4WLkcK2sso8H1wq5iMZedCYtgyWoQsEroi7p-ClccLh130ZLcScFohZ7ELTkANLAew2W620dRqcvVSxms6SnNT0rlJUOI5ym6oGtT7uinDev8u8eG_em8tt2Kyxq5Rzfnnph9Q2SWYN9V1Pnlf09oJGqvMMON0GgWGfF8Xja_obFlqsiw4s8P6zbs9FxU11caU7HyZZEKvgMUNo0S"/>
+<div class="absolute top-4 left-4">
+<span class="bg-on-background text-background px-2 py-1 font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem]">BLUEPRINT</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold tracking-[-0.02em] leading-tight mb-4 uppercase">Urban Core Reconstruction</h3>
+<div class="flex flex-col gap-1">
+<p class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] opacity-60">ARCHIVE ID: SYN-4402</p>
+<p class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] opacity-60">DATE: 04.JAN.2001</p>
+</div>
+<div class="mt-6 pt-4 border-t border-on-background/10 flex justify-between items-center">
+<span class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-bold">45.0 MB</span>
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="brutalist-border bg-surface hard-shadow hard-shadow-hover transition-all duration-200 ease-[cubic-bezier(0.2,1,0.3,1)] cursor-pointer group">
+<div class="aspect-[4/3] bg-on-background overflow-hidden relative border-b border-on-background">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="monochrome technical illustration of mathematical equations floating in a structured grid with subtle textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0VSm3gcRd4XNAhNbYsOJKK8C3B8-J2tOKXQxDvXJUMBMYMuHoRR56ut-8rVoidiYSGGEO40e5WwsAixg1St9RCdPoPfn72N3xGLwOUCtTkG1rt7RCiaXBUIH0UyiE2fIbbrUFvhcuNZfl5k2bGGrXjzphe4V7LLZf7hHK2vCBQ0HCuTra6Gw6aLMqB1A7bo4WEG0qbpasIjctoslML5yu7GtyetNqLQ13qi2oH0JrE5eJL254_dTtDtRE6uigV5HUJBLqGwu70yH_"/>
+<div class="absolute top-4 left-4">
+<span class="bg-on-background text-background px-2 py-1 font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem]">MANUSCRIPT</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold tracking-[-0.02em] leading-tight mb-4 uppercase">Algorithmic Ethics Vol I</h3>
+<div class="flex flex-col gap-1">
+<p class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] opacity-60">ARCHIVE ID: SYN-1188</p>
+<p class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] opacity-60">DATE: 22.AUG.2018</p>
+</div>
+<div class="mt-6 pt-4 border-t border-on-background/10 flex justify-between items-center">
+<span class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-bold">2.1 MB</span>
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</div>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="brutalist-border bg-surface hard-shadow hard-shadow-hover transition-all duration-200 ease-[cubic-bezier(0.2,1,0.3,1)] cursor-pointer group">
+<div class="aspect-[4/3] bg-on-background overflow-hidden relative border-b border-on-background">
+<div class="w-full h-full flex items-center justify-center p-8 bg-[#0d0c0b]">
+<span class="text-background text-[4rem] material-symbols-outlined" data-icon="database">database</span>
+</div>
+<div class="absolute top-4 left-4">
+<span class="bg-on-background text-background px-2 py-1 font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem]">DATA SET</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold tracking-[-0.02em] leading-tight mb-4 uppercase">Environmental Metrics 2023</h3>
+<div class="flex flex-col gap-1">
+<p class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] opacity-60">ARCHIVE ID: SYN-8832</p>
+<p class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] opacity-60">DATE: 01.MAR.2023</p>
+</div>
+<div class="mt-6 pt-4 border-t border-on-background/10 flex justify-between items-center">
+<span class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-bold">892 MB</span>
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</div>
+</div>
+</article>
+</section>
+<!-- Pagination -->
+<nav class="flex justify-center items-center gap-2 mb-24">
+<button class="brutalist-border px-4 py-2 font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium hover:bg-on-background hover:text-background transition-colors">Prev</button>
+<button class="brutalist-border px-4 py-2 font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium bg-on-background text-background">1</button>
+<button class="brutalist-border px-4 py-2 font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium hover:bg-on-background hover:text-background transition-colors">2</button>
+<button class="brutalist-border px-4 py-2 font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium hover:bg-on-background hover:text-background transition-colors">3</button>
+<span class="px-2">...</span>
+<button class="brutalist-border px-4 py-2 font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium hover:bg-on-background hover:text-background transition-colors">Next</button>
+</nav>
+<!-- Empty State (Hidden by default, shown for demonstration logic) -->
+<section class="hidden flex-col items-center justify-center py-32 brutalist-border relative overflow-hidden mb-24">
+<div class="absolute inset-0 diagonal-hatch"></div>
+<h2 class="text-[2rem] font-bold tracking-tight uppercase relative z-10">No Documents Found</h2>
+<p class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] opacity-60 mt-4 relative z-10">Refine your parameters or clear all filters to continue browsing.</p>
+<button class="mt-8 bg-on-background text-background px-8 py-4 font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-bold hard-shadow transition-all hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_0px_#0d0c0b] relative z-10">
+                Clear All Filters
+            </button>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full border-t border-[#0d0c0b] dark:border-[#f5f5f3] bg-[#f5f5f3] dark:bg-[#0d0c0b] flex flex-col gap-8 px-12 py-16 w-full max-w-full">
+<div class="flex flex-col md:flex-row justify-between gap-12">
+<div class="flex flex-col gap-4">
+<div class="text-lg font-bold text-[#0d0c0b] dark:text-[#f5f5f3]">SYNAPS</div>
+<p class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium opacity-60 max-w-xs leading-relaxed">
+                    A decentralized archival system for technical documentation and legacy digital assets.
+                </p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-12">
+<div class="flex flex-col gap-4">
+<span class="font-bold uppercase text-[0.6875rem]">Directory</span>
+<a class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium text-[#0d0c0b]/80 dark:text-[#f5f5f3]/80 hover:underline" href="#">Browse</a>
+<a class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium text-[#0d0c0b]/80 dark:text-[#f5f5f3]/80 hover:underline" href="#">Upload</a>
+<a class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium text-[#0d0c0b]/80 dark:text-[#f5f5f3]/80 hover:underline" href="#">About</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-bold uppercase text-[0.6875rem]">Legal</span>
+<a class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium text-[#0d0c0b]/80 dark:text-[#f5f5f3]/80 hover:underline" href="#">Privacy</a>
+<a class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium text-[#0d0c0b]/80 dark:text-[#f5f5f3]/80 hover:underline" href="#">Terms</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-bold uppercase text-[0.6875rem]">Technical</span>
+<span class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] opacity-60">API Status: Online</span>
+<span class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] opacity-60">Node: 0x4F...E2</span>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-on-background/10">
+<p class="font-['Geist'] uppercase tracking-[0.05em] text-[0.6875rem] font-medium text-[#0d0c0b] dark:text-[#f5f5f3]">
+                © 2024 SYNAPS. ARCHIVAL SYSTEM v1.0. LOCATION: GMT-0
+            </p>
+</div>
+</footer>
+</body></html>

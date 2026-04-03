@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed": "#1a1c1b",
+              "on-primary-container": "#000000",
+              "inverse-on-surface": "#32302f",
+              "outline-variant": "#474747",
+              "on-surface-variant": "#c6c6c6",
+              "surface-container-lowest": "#0f0e0d",
+              "on-tertiary-container": "#000000",
+              "inverse-primary": "#5d5f5d",
+              "tertiary": "#e2e3e1",
+              "on-primary": "#1a1c1b",
+              "secondary-fixed-dim": "#ababaa",
+              "secondary": "#c6c7c5",
+              "on-tertiary": "#1a1c1b",
+              "on-primary-fixed": "#ffffff",
+              "error-container": "#93000a",
+              "surface": "#141312",
+              "surface-container-high": "#2b2a28",
+              "surface-variant": "#363433",
+              "on-background": "#e6e1df",
+              "background": "#141312",
+              "tertiary-container": "#90918f",
+              "surface-bright": "#3b3937",
+              "tertiary-fixed": "#5d5f5d",
+              "on-surface": "#e6e1df",
+              "on-error": "#690005",
+              "tertiary-fixed-dim": "#454746",
+              "on-tertiary-fixed": "#ffffff",
+              "primary-fixed": "#5d5f5d",
+              "outline": "#919191",
+              "on-primary-fixed-variant": "#e2e3e1",
+              "surface-container-low": "#1d1b1a",
+              "surface-container-highest": "#363433",
+              "error": "#ffb4ab",
+              "secondary-container": "#454746",
+              "surface-dim": "#141312",
+              "secondary-fixed": "#c6c7c5",
+              "on-tertiary-fixed-variant": "#e2e3e1",
+              "surface-container": "#211f1e",
+              "on-secondary-container": "#e2e3e1",
+              "surface-tint": "#c6c7c5",
+              "on-secondary-fixed-variant": "#3a3c3b",
+              "primary-container": "#d4d4d3",
+              "on-secondary": "#1a1c1b",
+              "on-error-container": "#ffdad6",
+              "primary-fixed-dim": "#454746",
+              "inverse-surface": "#e6e1df",
+              "primary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0rem", "lg": "0rem", "xl": "0rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #0d0c0b;
+            color: #f5f5f3;
+            font-family: 'Inter', sans-serif;
+        }
+        .brutalist-shadow {
+            box-shadow: 4px 4px 0px 0px #ffffff;
+        }
+        .geist-mono {
+            font-family: 'Space Grotesk', monospace;
+        }
+    </style>
+</head>
+<body class="bg-[#0d0c0b] text-[#f5f5f3] selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<header class="bg-[#0d0c0b] text-[#f5f5f3] font-['Space_Grotesk'] uppercase tracking-tighter text-sm docked full-width top-0 rounded-none border-b-2 border-[#f5f5f3] flex justify-between items-center w-full px-6 h-16 z-50">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black tracking-tighter text-[#ffffff]">SYNAPS</span>
+<nav class="hidden md:flex gap-6">
+<a class="text-[#c6c7c5] hover:bg-[#f5f5f3] hover:text-[#0d0c0b] transition-colors duration-150" href="#">BROWSE</a>
+<a class="text-[#c6c7c5] hover:bg-[#f5f5f3] hover:text-[#0d0c0b] transition-colors duration-150" href="#">SEARCH</a>
+<a class="text-[#ffffff] border-b-2 border-[#ffffff] pb-1 hover:bg-[#f5f5f3] hover:text-[#0d0c0b] transition-colors duration-150" href="#">UPLOAD</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-4 py-1 border border-[#f5f5f3] text-[#f5f5f3] hover:bg-[#f5f5f3] hover:text-[#0d0c0b] transition-colors duration-150">GET STARTED</button>
+<button class="px-4 py-1 text-[#f5f5f3] hover:bg-[#f5f5f3] hover:text-[#0d0c0b] transition-colors duration-150">SIGN IN</button>
+</div>
+</header>
+<main class="min-h-screen px-6 py-12 max-w-7xl mx-auto">
+<!-- Page Header -->
+<div class="mb-12">
+<h1 class="font-headline text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none mb-4">
+                MY_LIBRARY
+            </h1>
+<p class="font-label text-secondary uppercase tracking-widest text-xs">
+                PERSONAL UPLOAD MANAGEMENT PROTOCOL // USER_ID: SYN-8821
+            </p>
+</div>
+<!-- Dashboard Stats Bento -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+<div class="bg-surface-container border border-outline-variant p-6 brutalist-shadow transition-transform hover:-translate-y-1">
+<p class="font-label text-[10px] text-secondary mb-2 uppercase">Total Uploads</p>
+<p class="font-headline text-4xl font-bold">128</p>
+</div>
+<div class="bg-surface-container border border-outline-variant p-6 brutalist-shadow transition-transform hover:-translate-y-1">
+<p class="font-label text-[10px] text-secondary mb-2 uppercase">Storage Used</p>
+<p class="font-headline text-4xl font-bold">14.2 GB</p>
+</div>
+<div class="bg-surface-container border border-outline-variant p-6 brutalist-shadow transition-transform hover:-translate-y-1">
+<p class="font-label text-[10px] text-secondary mb-2 uppercase">Total Views</p>
+<p class="font-headline text-4xl font-bold">2.4K</p>
+</div>
+<div class="bg-primary text-on-primary p-6 brutalist-shadow flex flex-col justify-between cursor-pointer group">
+<p class="font-label text-[10px] uppercase font-bold">System Status</p>
+<div class="flex justify-between items-end">
+<p class="font-headline text-2xl font-black">STABLE</p>
+<span class="material-symbols-outlined text-3xl group-hover:translate-x-2 transition-transform">bolt</span>
+</div>
+</div>
+</div>
+<!-- Filter Tabs -->
+<div class="flex flex-wrap items-end justify-between border-b border-outline-variant mb-8 gap-4">
+<div class="flex gap-8 overflow-x-auto no-scrollbar">
+<button class="font-label uppercase text-sm font-bold pb-4 border-b-4 border-primary tracking-widest">
+                    All
+                </button>
+<button class="font-label uppercase text-sm text-secondary pb-4 border-b-4 border-transparent hover:border-outline-variant tracking-widest transition-colors">
+                    Approved
+                </button>
+<button class="font-label uppercase text-sm text-secondary pb-4 border-b-4 border-transparent hover:border-outline-variant tracking-widest transition-colors">
+                    Pending
+                </button>
+<button class="font-label uppercase text-sm text-secondary pb-4 border-b-4 border-transparent hover:border-outline-variant tracking-widest transition-colors">
+                    Rejected
+                </button>
+</div>
+<div class="pb-4 flex gap-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-sm">search</span>
+<input class="bg-surface-container border-none font-label text-xs uppercase tracking-widest pl-10 pr-4 py-2 focus:ring-0 w-64 border-b-2 border-outline focus:border-primary transition-colors" placeholder="SEARCH_FILES" type="text"/>
+</div>
+</div>
+</div>
+<!-- Document Management Table -->
+<div class="overflow-x-auto bg-surface-container-low brutalist-shadow mb-12">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b-2 border-primary font-label text-[10px] tracking-widest uppercase text-secondary">
+<th class="px-6 py-4 font-normal">Thumbnail</th>
+<th class="px-6 py-4 font-normal">Title</th>
+<th class="px-6 py-4 font-normal">Type</th>
+<th class="px-6 py-4 font-normal">Subject</th>
+<th class="px-6 py-4 font-normal">Uploaded</th>
+<th class="px-6 py-4 font-normal">Status</th>
+<th class="px-6 py-4 font-normal text-right">Views</th>
+<th class="px-6 py-4 font-normal text-right">Downloads</th>
+<th class="px-6 py-4 font-normal text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="font-body text-sm divide-y divide-outline-variant">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-6 py-4">
+<div class="w-12 h-16 bg-surface-container-highest border border-outline-variant overflow-hidden">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="abstract monochromatic architectural texture with deep shadows and sharp geometric lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB135Nx1Oas5CzaQAscQSf8IO2uMygztSAEkAKOc0B89T65Hy7tyPRqzir2O0_k0ziw_PIU9ZMzxwhF-GoMYMdloCkOvCPpR5laeBrHvEYDzzc6uae-Bhj2kRH-GM-8856tsXx0NSQgkuSDqH-xu5zCXwde1Ieag05o69dVEtVUTTt_ceFCrS_O78oKjmuPRMwuKsIJ38yzkphdKY4zwEu5mBD99BIc-ZGZynWp-ML_wt_vR4JYwJwVbKiw-bvlEniJWzjdZEqPxi2"/>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="font-headline font-bold text-primary">QUANTUM_DECOHERENCE_01.PDF</p>
+<p class="text-[10px] text-secondary font-label uppercase">4.2 MB</p>
+</td>
+<td class="px-6 py-4 font-label text-[10px] uppercase">Scientific Paper</td>
+<td class="px-6 py-4 font-label text-[10px] uppercase">Physics</td>
+<td class="px-6 py-4 text-secondary">24 OCT 2023</td>
+<td class="px-6 py-4">
+<span class="inline-block px-2 py-0.5 border border-primary text-[9px] font-label font-black uppercase text-primary">Approved</span>
+</td>
+<td class="px-6 py-4 text-right tabular-nums">1,024</td>
+<td class="px-6 py-4 text-right tabular-nums">456</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-3">
+<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined text-lg">visibility</span></button>
+<button class="hover:text-error transition-colors"><span class="material-symbols-outlined text-lg">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-6 py-4">
+<div class="w-12 h-16 bg-surface-container-highest border border-outline-variant overflow-hidden">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="extreme close up of black circuit board with silver solder points and complex patterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmDJva_yKPqcyydtg9nAZz1jbgMnC7DElUOIhJS0xfs2B1RyWcdyRq1Y4WxNGlv4HfcK9ZbOk0vvyM-5aCQwItazYUQ2HZDqBMH5AbF7TKrvQExaMqfjQZSpGg57VT61kZnygZb6386aAeXMTJEy0GBosNX6nMMbhyHp2oRqemfPFFZZjTuaVysxGYHKCcTuYY31wrtpgrDR7n1owoex2MeQ_srrv9SeyTpXnzaz9RxcJm3TncRYsPSDtNyUsZkwI9w524xmEZyBRj"/>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="font-headline font-bold text-primary">NEURAL_MAPPING_V4.XLSX</p>
+<p class="text-[10px] text-secondary font-label uppercase">12.8 MB</p>
+</td>
+<td class="px-6 py-4 font-label text-[10px] uppercase">Dataset</td>
+<td class="px-6 py-4 font-label text-[10px] uppercase">Biotech</td>
+<td class="px-6 py-4 text-secondary">15 NOV 2023</td>
+<td class="px-6 py-4">
+<span class="inline-block px-2 py-0.5 border border-outline text-[9px] font-label uppercase text-secondary">Pending</span>
+</td>
+<td class="px-6 py-4 text-right tabular-nums">--</td>
+<td class="px-6 py-4 text-right tabular-nums">--</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-3">
+<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined text-lg">visibility</span></button>
+<button class="hover:text-error transition-colors"><span class="material-symbols-outlined text-lg">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-6 py-4">
+<div class="w-12 h-16 bg-surface-container-highest border border-outline-variant overflow-hidden">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="satellite view of earth at night showing interconnected glowing city lights on dark blue background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoIJkcFSHHpkc1gIiI39oFGHbpV-ffJMz3HIb5Ju73_Uqdmj3BCobKvNFk6wPtdDksDsulClD-SzHp1AukbFMcqMkKXSqzCr3V4AxGlSXeNIy8Bf49UFbit8_CbKKiqyOHgXn2fetiUqheDLHXWhjSG45vTGjK4TE8wJdL4LFWoJMlqvF7AkC_w2uuXAR9T8DJlh68YbrcMg2Goz-m1nvQaaWAwSVxmQERO2tgDgbGHjOCdSB7uXtNe5bdjX9CvJ8cgj-jdFQ4MdpP"/>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="font-headline font-bold text-primary">GEO_POLITICAL_RISK.JPG</p>
+<p class="text-[10px] text-secondary font-label uppercase">1.1 MB</p>
+</td>
+<td class="px-6 py-4 font-label text-[10px] uppercase">Visual Asset</td>
+<td class="px-6 py-4 font-label text-[10px] uppercase">Economics</td>
+<td class="px-6 py-4 text-secondary">02 DEC 2023</td>
+<td class="px-6 py-4">
+<span class="inline-block px-2 py-0.5 border border-error text-[9px] font-label font-black uppercase text-error">Rejected</span>
+</td>
+<td class="px-6 py-4 text-right tabular-nums">12</td>
+<td class="px-6 py-4 text-right tabular-nums">0</td>
+<td class="px-6 py-4 text-right">
+<div class="flex justify-end gap-3">
+<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined text-lg">visibility</span></button>
+<button class="hover:text-error transition-colors"><span class="material-symbols-outlined text-lg">delete</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- System Logs / Metadata Area -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="space-y-4">
+<h3 class="font-headline text-2xl font-black uppercase tracking-tight">Recent Activity</h3>
+<div class="space-y-3">
+<div class="flex gap-4 items-start border-l-2 border-primary pl-4 py-1">
+<span class="font-label text-[10px] text-secondary">14:02:11</span>
+<p class="text-xs uppercase tracking-tight">Upload Successful: ARCHIVE_088.zip [SYN_UPLOAD_OK]</p>
+</div>
+<div class="flex gap-4 items-start border-l-2 border-outline pl-4 py-1">
+<span class="font-label text-[10px] text-secondary">09:15:45</span>
+<p class="text-xs uppercase tracking-tight text-secondary">Review Request Sent: SYSTEM_LOGS_NOV.log</p>
+</div>
+<div class="flex gap-4 items-start border-l-2 border-outline pl-4 py-1">
+<span class="font-label text-[10px] text-secondary">Yesterday</span>
+<p class="text-xs uppercase tracking-tight text-secondary">Metadata Refinement Protocol initiated by admin</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container border border-outline-variant p-8 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-30 transition-opacity">
+<span class="material-symbols-outlined text-9xl">archive</span>
+</div>
+<h3 class="font-headline text-2xl font-black uppercase mb-4 relative z-10">Archive Your Data</h3>
+<p class="text-sm text-secondary mb-6 relative z-10 leading-relaxed">
+                    Long-term cold storage protocol available for verified members. Encrypt and store your research assets in the Synaps Vault.
+                </p>
+<button class="bg-transparent border-2 border-primary text-primary px-6 py-2 font-label font-bold text-xs uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all brutalist-shadow active:translate-x-1 active:translate-y-1 active:shadow-none">
+                    INITIATE ARCHIVE
+                </button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0d0c0b] text-[#f5f5f3] font-['Space_Grotesk'] uppercase text-[10px] tracking-widest full-width rounded-none border-t-2 border-[#f5f5f3] flex flex-col md:flex-row justify-between items-center w-full px-6 py-8 gap-4 mt-auto">
+<div class="flex flex-col md:flex-row items-center gap-6">
+<span class="text-lg font-bold text-[#ffffff]">SYNAPS</span>
+<div class="flex gap-6">
+<a class="text-[#c6c7c5] hover:text-[#ffffff] transition-colors" href="#">DOCUMENTATION</a>
+<a class="text-[#c6c7c5] hover:text-[#ffffff] transition-colors" href="#">API</a>
+<a class="text-[#c6c7c5] hover:text-[#ffffff] transition-colors" href="#">TERMS</a>
+<a class="text-[#c6c7c5] hover:text-[#ffffff] transition-colors" href="#">PRIVACY</a>
+</div>
+</div>
+<p class="text-center md:text-right">© 2024 SYNAPS ARCHIVAL PROTOCOL. ALL RIGHTS RESERVED.</p>
+</footer>
+</body></html>

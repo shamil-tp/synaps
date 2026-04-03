@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "background": "#f5f5f3",
+                        "on-background": "#0d0c0b",
+                        "surface": "#f5f5f3",
+                        "primary": "#0d0c0b",
+                        "on-primary": "#f5f5f3",
+                        "outline": "#0d0c0b",
+                        "inverse-surface": "#0d0c0b",
+                        "inverse-on-surface": "#f5f5f3",
+                    },
+                    fontFamily: {
+                        "headline": ["Geist", "Inter", "sans-serif"],
+                        "body": ["Geist", "Inter", "sans-serif"],
+                        "label": ["Geist", "Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .signature-shadow {
+            box-shadow: 4px 4px 0px 0px #0d0c0b;
+        }
+        .signature-shadow-hover:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #0d0c0b;
+        }
+        .hatch-loading {
+            background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(13, 12, 11, 0.05) 10px, rgba(13, 12, 11, 0.05) 20px);
+        }
+        body {
+            background-color: #f5f5f3;
+            color: #0d0c0b;
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-on-background selection:text-background">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 flex justify-between items-center w-full px-12 h-16 bg-[#f5f5f3] dark:bg-[#0d0c0b] border-b-[1px] border-[#0d0c0b] dark:border-[#f5f5f3]">
+<div class="text-[1.75rem] font-bold tracking-[-0.04em] text-[#0d0c0b] dark:text-[#f5f5f3]">SYNAPS</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-['Geist'] tracking-tight uppercase font-bold text-[0.6875rem] text-[#0d0c0b] dark:text-[#f5f5f3] opacity-60 hover:underline decoration-1 underline-offset-4 Active: translate-x-[1px] translate-y-[1px] transition-transform" href="#">BROWSE</a>
+<a class="font-['Geist'] tracking-tight uppercase font-bold text-[0.6875rem] text-[#0d0c0b] dark:text-[#f5f5f3] opacity-60 hover:underline decoration-1 underline-offset-4 Active: translate-x-[1px] translate-y-[1px] transition-transform" href="#">SEARCH</a>
+<a class="font-['Geist'] tracking-tight uppercase font-bold text-[0.6875rem] text-[#0d0c0b] dark:text-[#f5f5f3] opacity-60 hover:underline decoration-1 underline-offset-4 Active: translate-x-[1px] translate-y-[1px] transition-transform" href="#">UPLOAD</a>
+</nav>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center border border-on-background px-3 py-1 gap-2">
+<span class="material-symbols-outlined text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-[0.6875rem] font-bold uppercase w-32 p-0" placeholder="SEARCH ARCHIVE..." type="text"/>
+</div>
+<button class="font-['Geist'] tracking-tight uppercase font-bold text-[0.6875rem] text-[#0d0c0b] dark:text-[#f5f5f3] hover:underline">LOGIN</button>
+<button class="font-['Geist'] tracking-tight uppercase font-bold text-[0.6875rem] px-4 py-2 border border-on-background bg-on-background text-background hover:bg-transparent hover:text-on-background transition-colors">SIGN UP</button>
+</div>
+</header>
+<main class="min-h-screen px-12 py-10">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-12 border-b border-on-background pb-8">
+<div>
+<div class="flex items-center gap-4 mb-2">
+<h1 class="text-5xl font-bold tracking-[-0.04em] uppercase font-headline">Document moderation</h1>
+<span class="bg-on-background text-background px-3 py-1 text-xl font-bold tracking-tight">124</span>
+</div>
+<p class="font-body text-sm max-w-xl opacity-80 leading-generous uppercase tracking-wider">Reviewing pending archival submissions for structural integrity and metadata accuracy.</p>
+</div>
+<div class="flex gap-1">
+<button class="p-2 border border-on-background hover:bg-on-background hover:text-background transition-colors"><span class="material-symbols-outlined">refresh</span></button>
+<button class="p-2 border border-on-background hover:bg-on-background hover:text-background transition-colors"><span class="material-symbols-outlined">filter_list</span></button>
+<button class="p-2 border border-on-background hover:bg-on-background hover:text-background transition-colors"><span class="material-symbols-outlined">settings</span></button>
+</div>
+</div>
+<!-- Status Tabs -->
+<div class="flex flex-wrap gap-4 mb-8">
+<button class="px-6 py-2 border border-on-background bg-on-background text-background text-[0.6875rem] font-bold uppercase tracking-widest">All</button>
+<button class="px-6 py-2 border border-on-background hover:bg-on-background/5 text-[0.6875rem] font-bold uppercase tracking-widest relative">Pending <span class="absolute -top-2 -right-2 bg-on-background text-background text-[10px] w-5 h-5 flex items-center justify-center">12</span></button>
+<button class="px-6 py-2 border border-on-background hover:bg-on-background/5 text-[0.6875rem] font-bold uppercase tracking-widest">Approved</button>
+<button class="px-6 py-2 border border-on-background hover:bg-on-background/5 text-[0.6875rem] font-bold uppercase tracking-widest">Rejected</button>
+<button class="px-6 py-2 border border-on-background hover:bg-on-background/5 text-[0.6875rem] font-bold uppercase tracking-widest">Flagged</button>
+</div>
+<!-- Document Table -->
+<div class="w-full border border-on-background bg-background overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-on-background bg-on-background/5">
+<th class="p-4 w-12 border-r border-on-background">
+<input class="w-4 h-4 rounded-none border-on-background text-on-background focus:ring-0" type="checkbox"/>
+</th>
+<th class="p-4 text-[0.6875rem] font-bold uppercase tracking-widest border-r border-on-background">Preview</th>
+<th class="p-4 text-[0.6875rem] font-bold uppercase tracking-widest border-r border-on-background">Document details</th>
+<th class="p-4 text-[0.6875rem] font-bold uppercase tracking-widest border-r border-on-background">Contributor</th>
+<th class="p-4 text-[0.6875rem] font-bold uppercase tracking-widest border-r border-on-background">Timeline</th>
+<th class="p-4 text-[0.6875rem] font-bold uppercase tracking-widest border-r border-on-background">Status</th>
+<th class="p-4 text-[0.6875rem] font-bold uppercase tracking-widest">Control</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-on-background">
+<!-- Row 1 -->
+<tr class="group hover:bg-on-background/5 transition-colors">
+<td class="p-4 border-r border-on-background">
+<input checked="" class="w-4 h-4 rounded-none border-on-background text-on-background focus:ring-0" type="checkbox"/>
+</td>
+<td class="p-4 border-r border-on-background w-24">
+<div class="w-16 h-16 border border-on-background bg-white">
+<img class="w-full h-full object-cover grayscale" data-alt="High contrast black and white architectural detail of brutalist concrete building with sharp shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDT6MWASQ3sg99tLaSu9KL_LdpmckLFmrxnQc48iZRbgRkOkCfSuWoXA782pyG8JH3FnqTP2uR7cVlahO2UqVTDSSC7DS6K-oTYfD7NM0yWVkR4Ov9RmhXnrASxvOa0jgjrn3j77Nmz_HJKylSjTP9ZDnsm2M0q-V4A0xbsuOAO4MJTvbQZhL_ssu3zajcl6KmTVB2UhHbb3BhKVMZaW62yMPsJJM5BhWgmmkdHDsAJidSb_NJLTvbY23SWkAGShj5pLlyxEtqPSlFi"/>
+</div>
+</td>
+<td class="p-4 border-r border-on-background max-w-xs">
+<div class="font-bold text-sm uppercase tracking-tight mb-1">ARCH-STR-092.PDF</div>
+<div class="text-[10px] uppercase opacity-60 tracking-wider">Type: Blueprints / Size: 14.2MB</div>
+</td>
+<td class="p-4 border-r border-on-background">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 border border-on-background bg-on-background flex items-center justify-center text-[10px] text-background font-bold">JD</div>
+<span class="text-xs font-bold uppercase">J. DOE</span>
+</div>
+</td>
+<td class="p-4 border-r border-on-background">
+<div class="text-[10px] font-bold uppercase">24 OCT 2023</div>
+<div class="text-[10px] opacity-60 uppercase">14:02 GMT</div>
+</td>
+<td class="p-4 border-r border-on-background">
+<span class="bg-on-background text-background px-2 py-0.5 text-[10px] font-bold uppercase">Pending</span>
+</td>
+<td class="p-4">
+<div class="flex gap-2">
+<button class="hover:bg-on-background hover:text-background p-1 border border-transparent hover:border-on-background transition-all" title="Approve"><span class="material-symbols-outlined text-lg">check</span></button>
+<button class="hover:bg-error hover:text-white p-1 border border-transparent hover:border-error transition-all" title="Reject"><span class="material-symbols-outlined text-lg">close</span></button>
+<button class="hover:bg-on-background hover:text-background p-1 border border-transparent hover:border-on-background transition-all" title="Flag"><span class="material-symbols-outlined text-lg" data-weight="fill">flag</span></button>
+<button class="hover:bg-on-background hover:text-background p-1 border border-transparent hover:border-on-background transition-all" title="View"><span class="material-symbols-outlined text-lg">visibility</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="group hover:bg-on-background/5 transition-colors">
+<td class="p-4 border-r border-on-background">
+<input class="w-4 h-4 rounded-none border-on-background text-on-background focus:ring-0" type="checkbox"/>
+</td>
+<td class="p-4 border-r border-on-background w-24">
+<div class="w-16 h-16 border border-on-background bg-white hatch-loading"></div>
+</td>
+<td class="p-4 border-r border-on-background max-w-xs">
+<div class="font-bold text-sm uppercase tracking-tight mb-1">DATA-NODE-EXP-V1.JSON</div>
+<div class="text-[10px] uppercase opacity-60 tracking-wider">Type: Dataset / Size: 2.1MB</div>
+</td>
+<td class="p-4 border-r border-on-background">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 border border-on-background bg-on-background flex items-center justify-center text-[10px] text-background font-bold">MK</div>
+<span class="text-xs font-bold uppercase">M. KOLT</span>
+</div>
+</td>
+<td class="p-4 border-r border-on-background">
+<div class="text-[10px] font-bold uppercase">23 OCT 2023</div>
+<div class="text-[10px] opacity-60 uppercase">09:15 GMT</div>
+</td>
+<td class="p-4 border-r border-on-background">
+<span class="bg-on-background text-background px-2 py-0.5 text-[10px] font-bold uppercase">Pending</span>
+</td>
+<td class="p-4">
+<div class="flex gap-2">
+<button class="hover:bg-on-background hover:text-background p-1 border border-transparent hover:border-on-background transition-all"><span class="material-symbols-outlined text-lg">check</span></button>
+<button class="hover:bg-error hover:text-white p-1 border border-transparent hover:border-error transition-all"><span class="material-symbols-outlined text-lg">close</span></button>
+<button class="hover:bg-on-background hover:text-background p-1 border border-transparent hover:border-on-background transition-all"><span class="material-symbols-outlined text-lg">flag</span></button>
+<button class="hover:bg-on-background hover:text-background p-1 border border-transparent hover:border-on-background transition-all"><span class="material-symbols-outlined text-lg">visibility</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="group hover:bg-on-background/5 transition-colors">
+<td class="p-4 border-r border-on-background">
+<input checked="" class="w-4 h-4 rounded-none border-on-background text-on-background focus:ring-0" type="checkbox"/>
+</td>
+<td class="p-4 border-r border-on-background w-24">
+<div class="w-16 h-16 border border-on-background bg-white">
+<img class="w-full h-full object-cover grayscale" data-alt="Technical schematic drawing on old yellowed grid paper showing complex mechanical gears and levers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaAjY3i2IPX56Tnz6-UQD-S3e9vZle-ZuvecQo8KmEaX8vsaPTjyUEcbu2i3Jtn2YFc4eLXlBkk7CweAt7pVo8mLipEHmo-Qm1-FpzkCTJUB3JpcsVVlCcz1HYYy6yR7xyWgBdufWZyUWZqeTWIFgbJtyrtnosPox_t9yEa3CSP7b80-SeLi-XKQt64C2vPKSdeilroKAi89Snfba4odNUEmGqIoxHKV2R2rwNc6pRgKSYQoaavWVkhKsGPwXyWGhN0IkAVkGvSGSU"/>
+</div>
+</td>
+<td class="p-4 border-r border-on-background max-w-xs">
+<div class="font-bold text-sm uppercase tracking-tight mb-1">SCHEMA-MECH-L2.SVG</div>
+<div class="text-[10px] uppercase opacity-60 tracking-wider">Type: Vector / Size: 0.8MB</div>
+</td>
+<td class="p-4 border-r border-on-background">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 border border-on-background bg-on-background flex items-center justify-center text-[10px] text-background font-bold">AL</div>
+<span class="text-xs font-bold uppercase">A. LEV</span>
+</div>
+</td>
+<td class="p-4 border-r border-on-background">
+<div class="text-[10px] font-bold uppercase">22 OCT 2023</div>
+<div class="text-[10px] opacity-60 uppercase">22:45 GMT</div>
+</td>
+<td class="p-4 border-r border-on-background">
+<span class="border border-on-background text-on-background px-2 py-0.5 text-[10px] font-bold uppercase">Flagged</span>
+</td>
+<td class="p-4">
+<div class="flex gap-2">
+<button class="hover:bg-on-background hover:text-background p-1 border border-transparent hover:border-on-background transition-all"><span class="material-symbols-outlined text-lg">check</span></button>
+<button class="hover:bg-error hover:text-white p-1 border border-transparent hover:border-error transition-all"><span class="material-symbols-outlined text-lg">close</span></button>
+<button class="bg-on-background text-background p-1 border border-on-background transition-all"><span class="material-symbols-outlined text-lg" data-weight="fill">flag</span></button>
+<button class="hover:bg-on-background hover:text-background p-1 border border-transparent hover:border-on-background transition-all"><span class="material-symbols-outlined text-lg">visibility</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="mt-8 flex justify-between items-center border border-on-background p-4">
+<div class="text-[0.6875rem] font-bold uppercase tracking-widest">Showing 1-12 of 124 documents</div>
+<div class="flex gap-1">
+<button class="px-4 py-2 border border-on-background bg-on-background/5 opacity-50 cursor-not-allowed text-[0.6875rem] font-bold uppercase">Prev</button>
+<button class="px-4 py-2 border border-on-background bg-on-background text-background text-[0.6875rem] font-bold uppercase">1</button>
+<button class="px-4 py-2 border border-on-background hover:bg-on-background hover:text-background text-[0.6875rem] font-bold uppercase transition-colors">2</button>
+<button class="px-4 py-2 border border-on-background hover:bg-on-background hover:text-background text-[0.6875rem] font-bold uppercase transition-colors">3</button>
+<button class="px-4 py-2 border border-on-background hover:bg-on-background hover:text-background text-[0.6875rem] font-bold uppercase transition-colors">Next</button>
+</div>
+</div>
+</main>
+<!-- Bulk Action Bar -->
+<div class="fixed bottom-0 left-0 right-0 z-[60] p-6 pointer-events-none">
+<div class="max-w-4xl mx-auto bg-on-background text-background p-6 signature-shadow pointer-events-auto flex flex-col md:flex-row justify-between items-center gap-6 border border-background">
+<div class="flex items-center gap-4">
+<div class="text-3xl font-bold tracking-tight">02</div>
+<div class="text-[0.6875rem] font-bold uppercase tracking-[0.2em] leading-tight">
+                    Documents selected<br/>
+<span class="opacity-60">Ready for bulk command execution</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2">
+<button class="flex items-center gap-2 px-6 py-2 bg-background text-on-background text-[0.6875rem] font-bold uppercase tracking-widest hover:bg-background/90 transition-colors">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+                    Approve all
+                </button>
+<button class="flex items-center gap-2 px-6 py-2 border border-background text-background text-[0.6875rem] font-bold uppercase tracking-widest hover:bg-error hover:border-error transition-colors">
+<span class="material-symbols-outlined text-sm">block</span>
+                    Reject
+                </button>
+<button class="flex items-center gap-2 px-6 py-2 border border-background text-background text-[0.6875rem] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-colors">
+<span class="material-symbols-outlined text-sm">archive</span>
+                    Move to vault
+                </button>
+<button class="px-3 py-2 text-background hover:underline text-[0.6875rem] font-bold uppercase">Cancel</button>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full py-12 px-12 flex flex-col md:flex-row justify-between items-center gap-6 bg-[#f5f5f3] dark:bg-[#0d0c0b] border-t-[1px] border-[#0d0c0b] dark:border-[#f5f5f3] mt-20">
+<div class="font-['Geist'] tracking-wider uppercase text-[0.6875rem] text-[#0d0c0b] dark:text-[#f5f5f3]">© 2024 SYNAPS ARCHIVAL SYSTEM. ALL RIGHTS RESERVED.</div>
+<div class="flex gap-8">
+<a class="font-['Geist'] tracking-wider uppercase text-[0.6875rem] text-[#0d0c0b] dark:text-[#f5f5f3] hover:underline" href="#">PRIVACY</a>
+<a class="font-['Geist'] tracking-wider uppercase text-[0.6875rem] text-[#0d0c0b] dark:text-[#f5f5f3] hover:underline" href="#">TERMS</a>
+<a class="font-['Geist'] tracking-wider uppercase text-[0.6875rem] text-[#0d0c0b] dark:text-[#f5f5f3] hover:underline" href="#">MANIFESTO</a>
+<a class="font-['Geist'] tracking-wider uppercase text-[0.6875rem] text-[#0d0c0b] dark:text-[#f5f5f3] hover:underline font-bold" href="#">API</a>
+</div>
+</footer>
+</body></html>

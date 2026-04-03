@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Geist', sans-serif;
+            background-color: #f5f5f3;
+            color: #0d0c0b;
+        }
+        .signature-shadow {
+            box-shadow: 4px 4px 0px 0px #0d0c0b;
+        }
+        .signature-shadow:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #0d0c0b;
+        }
+        .hatch-loading {
+            background: repeating-linear-gradient(
+                45deg,
+                #e2e3e1,
+                #e2e3e1 10px,
+                #f5f5f3 10px,
+                #f5f5f3 20px
+            );
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d0c0b",
+                        "on-primary": "#f5f5f3",
+                        "background": "#f5f5f3",
+                        "on-background": "#0d0c0b",
+                        "surface": "#f5f5f3",
+                        "outline": "#0d0c0b"
+                    },
+                    fontFamily: {
+                        "headline": ["Geist"],
+                        "body": ["Geist"],
+                        "label": ["Geist"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full border-b border-[#0d0c0b] bg-[#f5f5f3] z-50 flex justify-between items-center px-6 h-16">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">menu</span>
+<h1 class="text-2xl font-black tracking-[-0.04em] uppercase text-[#0d0c0b]">SYNAPS</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">search</span>
+</div>
+</header>
+<main class="flex-grow pt-16 pb-32 px-6 max-w-2xl mx-auto w-full">
+<!-- Page Title -->
+<div class="py-8">
+<h2 class="text-[3.5rem] font-bold leading-[1.0] tracking-[-0.04em] uppercase">UPLOAD</h2>
+<p class="text-[0.6875rem] font-medium tracking-[0.05em] uppercase mt-2 opacity-60">NEW ARCHIVE ENTRY</p>
+</div>
+<!-- Upload Zone -->
+<section class="mb-10">
+<div class="border-2 border-dashed border-primary h-40 flex flex-col items-center justify-center bg-white/50 group cursor-pointer transition-all duration-200">
+<span class="material-symbols-outlined text-4xl mb-2">upload_file</span>
+<span class="text-[0.6875rem] font-medium tracking-[0.05em] uppercase">DROP FILE OR TAP TO SELECT</span>
+<span class="text-[0.6875rem] opacity-40 mt-1 uppercase">MAX SIZE 50MB</span>
+</div>
+</section>
+<!-- Metadata Form -->
+<form class="space-y-8">
+<!-- Title Field -->
+<div class="space-y-2">
+<label class="text-[0.6875rem] font-medium tracking-[0.05em] uppercase block">ENTRY TITLE</label>
+<input class="w-full bg-transparent border-primary border-t-0 border-l-0 border-r-0 border-b-2 focus:ring-0 focus:border-primary placeholder:text-primary/20 text-lg font-semibold px-0 py-2" placeholder="ENTER ARCHIVE NAME" type="text"/>
+</div>
+<!-- Description -->
+<div class="space-y-2">
+<label class="text-[0.6875rem] font-medium tracking-[0.05em] uppercase block">DESCRIPTION</label>
+<textarea class="w-full bg-transparent border-primary border-2 focus:ring-0 focus:border-primary placeholder:text-primary/20 p-4 text-sm leading-relaxed" placeholder="PROVIDE CONTEXTUAL DATA..." rows="3"></textarea>
+</div>
+<!-- Grid for Metadata -->
+<div class="grid grid-cols-1 gap-8">
+<div class="space-y-2">
+<label class="text-[0.6875rem] font-medium tracking-[0.05em] uppercase block">CLASSIFICATION</label>
+<select class="w-full bg-transparent border-primary border-2 focus:ring-0 focus:border-primary p-3 text-[0.6875rem] font-medium tracking-[0.05em] uppercase">
+<option>UNCLASSIFIED</option>
+<option>INTERNAL</option>
+<option>RESTRICTED</option>
+<option>CONFIDENTIAL</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-[0.6875rem] font-medium tracking-[0.05em] uppercase block">TAGS (COMMA SEPARATED)</label>
+<input class="w-full bg-transparent border-primary border-2 focus:ring-0 focus:border-primary p-3 text-[0.6875rem] font-medium tracking-[0.05em] uppercase" placeholder="EG. SENSOR, RADAR, 2024" type="text"/>
+</div>
+</div>
+<!-- File Preview Area (Empty State) -->
+<div class="mt-4 border border-primary p-4 hatch-loading flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="text-[0.6875rem] font-medium tracking-[0.05em] uppercase italic">NO FILE SELECTED</span>
+</div>
+<span class="text-[0.6875rem] font-medium tracking-[0.05em]">0.0 KB</span>
+</div>
+</form>
+</main>
+<!-- Sticky Submit Button -->
+<div class="fixed bottom-16 left-0 w-full px-6 py-4 bg-[#f5f5f3]/80 backdrop-blur-sm border-t border-primary z-40">
+<button class="w-full bg-primary text-on-primary py-4 text-[0.6875rem] font-bold tracking-[0.2em] uppercase signature-shadow transition-all duration-200">
+            SUBMIT TO ARCHIVE
+        </button>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 bg-[#f5f5f3] border-t border-[#0d0c0b]">
+<a class="text-[#0d0c0b] p-3 flex flex-col items-center" href="#">
+<span class="material-symbols-outlined">home</span>
+</a>
+<a class="bg-[#0d0c0b] text-[#f5f5f3] p-3 flex flex-col items-center" href="#">
+<span class="material-symbols-outlined">folder_open</span>
+</a>
+<a class="text-[#0d0c0b] p-3 flex flex-col items-center" href="#">
+<span class="material-symbols-outlined">analytics</span>
+</a>
+<a class="text-[#0d0c0b] p-3 flex flex-col items-center" href="#">
+<span class="material-symbols-outlined">settings</span>
+</a>
+</nav>
+</body></html>

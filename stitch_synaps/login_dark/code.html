@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SYNAPS | AUTHENTICATION</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed": "#1a1c1b",
+              "on-primary-container": "#000000",
+              "inverse-on-surface": "#32302f",
+              "outline-variant": "#474747",
+              "on-surface-variant": "#c6c6c6",
+              "surface-container-lowest": "#0f0e0d",
+              "on-tertiary-container": "#000000",
+              "inverse-primary": "#5d5f5d",
+              "tertiary": "#e2e3e1",
+              "on-primary": "#1a1c1b",
+              "secondary-fixed-dim": "#ababaa",
+              "secondary": "#c6c7c5",
+              "on-tertiary": "#1a1c1b",
+              "on-primary-fixed": "#ffffff",
+              "error-container": "#93000a",
+              "surface": "#141312",
+              "surface-container-high": "#2b2a28",
+              "surface-variant": "#363433",
+              "on-background": "#e6e1df",
+              "background": "#141312",
+              "tertiary-container": "#90918f",
+              "surface-bright": "#3b3937",
+              "tertiary-fixed": "#5d5f5d",
+              "on-surface": "#e6e1df",
+              "on-error": "#690005",
+              "tertiary-fixed-dim": "#454746",
+              "on-tertiary-fixed": "#ffffff",
+              "primary-fixed": "#5d5f5d",
+              "outline": "#919191",
+              "on-primary-fixed-variant": "#e2e3e1",
+              "surface-container-low": "#1d1b1a",
+              "surface-container-highest": "#363433",
+              "error": "#ffb4ab",
+              "secondary-container": "#454746",
+              "surface-dim": "#141312",
+              "secondary-fixed": "#c6c7c5",
+              "on-tertiary-fixed-variant": "#e2e3e1",
+              "surface-container": "#211f1e",
+              "on-secondary-container": "#e2e3e1",
+              "surface-tint": "#c6c7c5",
+              "on-secondary-fixed-variant": "#3a3c3b",
+              "primary-container": "#d4d4d3",
+              "on-secondary": "#1a1c1b",
+              "on-error-container": "#ffdad6",
+              "primary-fixed-dim": "#454746",
+              "inverse-surface": "#e6e1df",
+              "primary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hard-shadow {
+            box-shadow: 4px 4px 0px 0px #ffffff;
+        }
+        .hard-shadow-hover:hover {
+            box-shadow: 4px 4px 0px 0px #ffffff;
+        }
+        body {
+            background-color: #0d0c0b;
+            color: #f5f5f3;
+        }
+    </style>
+</head>
+<body class="bg-[#0d0c0b] font-body flex flex-col min-h-screen">
+<!-- Content Area: SUPPRESSED SHELLS for Login Flow -->
+<main class="flex-grow flex items-center justify-center p-6 relative overflow-hidden">
+<!-- Abstract Background Element -->
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="w-full h-full" data-alt="minimalist architectural grid pattern with sharp white lines on a deep black background" style="background-image: repeating-linear-gradient(0deg, #f5f5f3, #f5f5f3 1px, transparent 1px, transparent 40px);"></div>
+</div>
+<!-- Auth Card -->
+<div class="relative z-10 w-full max-w-md bg-[#0d0c0b] border border-[#f5f5f3] p-8 md:p-12 hard-shadow">
+<!-- Wordmark -->
+<div class="mb-12 text-center">
+<span class="font-headline text-3xl font-black tracking-tighter text-[#ffffff] select-none">SYNAPS</span>
+<div class="h-px w-12 bg-[#f5f5f3] mx-auto mt-2"></div>
+</div>
+<!-- Header -->
+<div class="mb-10 text-center">
+<h1 class="font-headline text-2xl font-bold uppercase tracking-tight text-[#ffffff] mb-2">Sign in to Synaps</h1>
+<p class="font-label text-[10px] tracking-[0.2em] text-on-surface-variant uppercase">Secure Archival Protocol Access</p>
+</div>
+<!-- Actions -->
+<div class="space-y-4">
+<!-- Primary Action -->
+<button class="w-full bg-[#f5f5f3] text-[#0d0c0b] font-headline font-bold py-4 px-6 flex items-center justify-center gap-3 transition-transform active:scale-[0.98] group">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+<span class="uppercase tracking-tight">Continue with Google</span>
+</button>
+<!-- Form Divider -->
+<div class="flex items-center gap-4 py-4">
+<div class="h-px flex-grow bg-outline-variant"></div>
+<span class="font-label text-[10px] text-outline uppercase tracking-widest">OR</span>
+<div class="h-px flex-grow bg-outline-variant"></div>
+</div>
+<!-- Manual Entry Fields -->
+<div class="space-y-6">
+<div class="space-y-1">
+<label class="font-label text-[10px] text-[#f5f5f3] uppercase tracking-widest block px-1">Identifier</label>
+<input class="w-full bg-surface-container-low border-b-2 border-outline-variant focus:border-[#f5f5f3] focus:ring-0 text-[#f5f5f3] font-headline placeholder:text-outline-variant py-3 px-1 transition-colors" placeholder="USER@SYNAPS.IO" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="font-label text-[10px] text-[#f5f5f3] uppercase tracking-widest block px-1">Passkey</label>
+<input class="w-full bg-surface-container-low border-b-2 border-outline-variant focus:border-[#f5f5f3] focus:ring-0 text-[#f5f5f3] font-headline placeholder:text-outline-variant py-3 px-1 transition-colors" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<!-- Sign In Button -->
+<button class="w-full border-2 border-[#f5f5f3] text-[#f5f5f3] font-headline font-bold py-4 px-6 uppercase tracking-tight mt-4 hover:bg-[#f5f5f3] hover:text-[#0d0c0b] transition-colors duration-150 active:translate-y-1">
+                    Sign In
+                </button>
+<!-- Ghost Button -->
+<button class="w-full text-secondary font-headline text-xs font-medium py-3 px-6 uppercase tracking-widest hover:text-[#ffffff] transition-colors flex items-center justify-center gap-2">
+                    Browse without signing in
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Technical Metadata Footer inside card -->
+<div class="mt-12 flex justify-between items-center opacity-40">
+<div class="flex gap-2">
+<span class="border border-outline-variant px-1.5 py-0.5 text-[8px] font-label text-outline uppercase">v2.4.0</span>
+<span class="border border-outline-variant px-1.5 py-0.5 text-[8px] font-label text-outline uppercase">ENC_AES256</span>
+</div>
+<span class="text-[8px] font-label text-outline uppercase tracking-tighter">Connection Secure</span>
+</div>
+</div>
+<!-- System Message -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 w-full max-w-xs text-center">
+<p class="font-label text-[9px] text-outline-variant uppercase tracking-widest leading-relaxed">
+                Unauthorized access to the Synaps Archival Protocol is strictly monitored and logged.
+            </p>
+</div>
+</main>
+<!-- Small Footer for Policy (Suppressed Main Footer per Protocol) -->
+<footer class="w-full px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4 border-t border-outline-variant/30">
+<span class="font-label text-[9px] tracking-widest text-outline-variant uppercase">© 2024 SYNAPS ARCHIVAL PROTOCOL</span>
+<div class="flex gap-6">
+<a class="font-label text-[9px] tracking-widest text-outline-variant uppercase hover:text-[#f5f5f3] transition-colors" href="#">Documentation</a>
+<a class="font-label text-[9px] tracking-widest text-outline-variant uppercase hover:text-[#f5f5f3] transition-colors" href="#">Privacy</a>
+<a class="font-label text-[9px] tracking-widest text-outline-variant uppercase hover:text-[#f5f5f3] transition-colors" href="#">Terms</a>
+</div>
+</footer>
+</body></html>

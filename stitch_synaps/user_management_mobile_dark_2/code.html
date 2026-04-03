@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed": "#ffffff",
+              "on-primary-fixed": "#ffffff",
+              "on-background": "#e6e1df",
+              "primary-container": "#d4d4d3",
+              "on-primary": "#1a1c1b",
+              "surface-dim": "#141312",
+              "on-secondary-container": "#e2e3e1",
+              "on-tertiary": "#1a1c1b",
+              "on-secondary": "#1a1c1b",
+              "tertiary-fixed-dim": "#454746",
+              "tertiary-fixed": "#5d5f5d",
+              "surface-container": "#211f1e",
+              "on-secondary-fixed-variant": "#3a3c3b",
+              "on-tertiary-fixed-variant": "#e2e3e1",
+              "surface-container-highest": "#363433",
+              "outline-variant": "#474747",
+              "secondary-container": "#454746",
+              "surface-container-lowest": "#0f0e0d",
+              "on-tertiary-container": "#000000",
+              "primary-fixed": "#5d5f5d",
+              "error": "#ffb4ab",
+              "surface-container-low": "#1d1b1a",
+              "surface-bright": "#3b3937",
+              "primary": "#ffffff",
+              "on-primary-fixed-variant": "#e2e3e1",
+              "primary-fixed-dim": "#454746",
+              "tertiary": "#e2e3e1",
+              "on-surface": "#e6e1df",
+              "surface-container-high": "#2b2a28",
+              "secondary": "#c6c7c5",
+              "background": "#141312",
+              "inverse-on-surface": "#32302f",
+              "inverse-surface": "#e6e1df",
+              "surface-variant": "#363433",
+              "secondary-fixed-dim": "#ababaa",
+              "on-surface-variant": "#c6c6c6",
+              "on-primary-container": "#000000",
+              "on-secondary-fixed": "#1a1c1b",
+              "on-error": "#690005",
+              "tertiary-container": "#90918f",
+              "outline": "#919191",
+              "inverse-primary": "#5d5f5d",
+              "surface-tint": "#c6c7c5",
+              "secondary-fixed": "#c6c7c5",
+              "on-error-container": "#ffdad6",
+              "error-container": "#93000a",
+              "surface": "#141312"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            background-color: #141312;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+        }
+        .brutalist-shadow {
+            box-shadow: 4px 4px 0px 0px #ffffff;
+        }
+        .tonal-shift-and-hard-borders {
+            border-bottom: 2px solid #ffffff;
+        }
+        .hard-offset-elevation {
+            border-top: 2px solid #ffffff;
+            box-shadow: 0px -4px 0px 0px #ffffff;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex items-center px-4 h-16 bg-[#141312] text-[#ffffff] font-['Space_Grotesk'] uppercase tracking-tighter rounded-none border-b-2 border-[#ffffff] shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
+<div class="flex items-center w-full justify-between">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center h-10 w-10 hover:bg-[#ffffff] hover:text-[#141312] transition-none">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-xl font-bold tracking-widest text-[#ffffff] uppercase">USER MANAGEMENT</h1>
+</div>
+<button class="flex items-center justify-center h-10 w-10 hover:bg-[#ffffff] hover:text-[#141312] transition-none">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</header>
+<main class="pt-24 px-4 max-w-md mx-auto">
+<!-- Search and Filter Bar -->
+<section class="mb-8">
+<div class="relative group">
+<input class="w-full bg-surface-container-low border-none border-b-2 border-outline text-primary font-label uppercase text-sm p-4 focus:ring-0 focus:border-primary bg-[#1d1b1a] placeholder:text-on-surface-variant transition-none" placeholder="SEARCH_DATABASE..." type="text"/>
+<div class="absolute right-4 top-1/2 -translate-y-1/2">
+<span class="material-symbols-outlined text-secondary" data-icon="manage_search">manage_search</span>
+</div>
+</div>
+<div class="flex gap-2 mt-4 overflow-x-auto pb-2">
+<span class="px-3 py-1 border border-primary text-[10px] font-label font-bold bg-primary text-on-primary">ALL_SYSTEM_USERS</span>
+<span class="px-3 py-1 border border-outline text-[10px] font-label font-bold text-secondary">ADMINS</span>
+<span class="px-3 py-1 border border-outline text-[10px] font-label font-bold text-secondary">MODERATORS</span>
+<span class="px-3 py-1 border border-outline text-[10px] font-label font-bold text-secondary">BANNED</span>
+</div>
+</section>
+<!-- User Cards List -->
+<div class="flex flex-col gap-6">
+<!-- User Card 1: Admin -->
+<div class="bg-surface-container-high p-4 rounded-none border border-outline-variant hover:bg-surface-container-highest brutalist-shadow transition-none group">
+<div class="flex items-start justify-between">
+<div class="flex gap-4">
+<div class="w-12 h-12 bg-surface-container-lowest border border-primary overflow-hidden">
+<img alt="CURATOR_01" class="w-full h-full object-cover grayscale" data-alt="Monochrome portrait of a professional man with sharp lighting and high contrast brutalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZNppGx-pk-lthn-mqhLr3L0JQhwR3yyBliYCCD5DHVyt20V7Fwj6sEhbirw9RxKFBewLqd_I14LkXULESNv4Ix20FJbj8nP_QMP6j5lkTJ-h4McEh_b1gt31uAhqtOqc88MyAwJqUyJWZR5rLxej3bXZkl4ZfQKJhooNbDvdofxEYFD0fx5hbpGAP5Wf5nHBY8cnxcWno61V4ItrFhOHdAFLieY-slVUIhdlS203aPJD7npz8XNCZG1IB7nFdayHrurJHj9U8cCZj"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline font-bold text-primary uppercase text-lg tracking-tight">CURATOR_01</span>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-[10px] font-label bg-primary text-on-primary px-1.5 font-bold">[ADMIN]</span>
+<span class="text-[10px] font-label text-secondary flex items-center gap-1">
+<span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span> ACTIVE
+                                </span>
+</div>
+</div>
+</div>
+<button class="text-primary hover:bg-primary hover:text-on-primary p-1">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<div class="mt-4 pt-4 border-t border-outline-variant flex justify-between items-center">
+<span class="text-[10px] font-label text-on-surface-variant">UID: 8829-XQ-01</span>
+<div class="flex gap-3">
+<button class="text-[10px] font-label font-bold uppercase underline tracking-wider text-primary">EDIT_ROLE</button>
+<button class="text-[10px] font-label font-bold uppercase underline tracking-wider text-error">BAN_USER</button>
+</div>
+</div>
+</div>
+<!-- User Card 2: User / Banned -->
+<div class="bg-surface-container-low p-4 rounded-none border border-outline-variant hover:bg-surface-container-highest brutalist-shadow transition-none opacity-80">
+<div class="flex items-start justify-between">
+<div class="flex gap-4">
+<div class="w-12 h-12 bg-surface-container-lowest border border-error overflow-hidden">
+<img alt="MALWARE_VOID" class="w-full h-full object-cover grayscale" data-alt="Gritty urban portrait of a young person in shadows with heavy contrast and dark aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAcrPQYfs5_RGHLMpVFCxb1CDjC1YzS9iTaa8-eBkhFeKOjGS9I8nOwdyVyMmgCUz-VPN5pR28kOhuOESPt3h7O0JBnpuvXQotign9_ZP02qeg39_rCfHRyDeihalBfxltsWJKslbta9Tlu12W6AM5IC4ZuqwZ9iLh5A2mLSjBRyzmZ3aii6xTII4qkTPP4w2IrjfM460XZm8AF0nQQxaSrSpuLlQd5ZNHjNFJ-BbrrrXOkLJe6JhrZrzGpoQOwtFpq3L8doLd0u18"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline font-bold text-secondary uppercase text-lg tracking-tight">MALWARE_VOID</span>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-[10px] font-label border border-outline text-secondary px-1.5 font-bold">[USER]</span>
+<span class="text-[10px] font-label text-error flex items-center gap-1 font-bold">
+<span class="w-1.5 h-1.5 bg-error rounded-full"></span> BANNED
+                                </span>
+</div>
+</div>
+</div>
+<button class="text-primary hover:bg-primary hover:text-on-primary p-1">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<div class="mt-4 pt-4 border-t border-outline-variant flex justify-between items-center">
+<span class="text-[10px] font-label text-on-surface-variant">UID: 4412-ZZ-09</span>
+<div class="flex gap-3">
+<button class="text-[10px] font-label font-bold uppercase underline tracking-wider text-primary">RESTORE</button>
+<button class="text-[10px] font-label font-bold uppercase underline tracking-wider text-error">DELETE_LOGS</button>
+</div>
+</div>
+</div>
+<!-- User Card 3: Moderator -->
+<div class="bg-surface-container-high p-4 rounded-none border border-outline-variant hover:bg-surface-container-highest brutalist-shadow transition-none">
+<div class="flex items-start justify-between">
+<div class="flex gap-4">
+<div class="w-12 h-12 bg-surface-container-lowest border border-primary overflow-hidden">
+<img alt="S_PROTOCOL" class="w-full h-full object-cover grayscale" data-alt="High fashion editorial portrait with dramatic shadows and sharp focus on dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCG4Ux5lYop6OQXUdPrH_wdVTzJpyALVthq1xQLi-InrRRZaQcS1f6tv_PUc_kUFTrj3zxrxZd3k0_mv4Xmh5G-1QXi7k90smlF3QX1CfNIIYrpUqJNiOF2jK4NWMSExoqtjIzsTC-Ag5FWSB0h_FBuOnD_FHl-5i6YGyPiDL9hPd7cHaUQyDmQ3otOwBEgXOjs9NIrcf3U9TAxfFD7HX85z-g7-lYGD0GsURWtxOKvPzxU1lfaEzz_xxzVtsVRlrpcamlxJXTFpH9q"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline font-bold text-primary uppercase text-lg tracking-tight">S_PROTOCOL</span>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-[10px] font-label border border-primary text-primary px-1.5 font-bold">[MODERATOR]</span>
+<span class="text-[10px] font-label text-secondary flex items-center gap-1">
+<span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span> ACTIVE
+                                </span>
+</div>
+</div>
+</div>
+<button class="text-primary hover:bg-primary hover:text-on-primary p-1">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<div class="mt-4 pt-4 border-t border-outline-variant flex justify-between items-center">
+<span class="text-[10px] font-label text-on-surface-variant">UID: 9001-KK-42</span>
+<div class="flex gap-3">
+<button class="text-[10px] font-label font-bold uppercase underline tracking-wider text-primary">EDIT_ROLE</button>
+<button class="text-[10px] font-label font-bold uppercase underline tracking-wider text-error">BAN_USER</button>
+</div>
+</div>
+</div>
+<!-- User Card 4: User -->
+<div class="bg-surface-container-high p-4 rounded-none border border-outline-variant hover:bg-surface-container-highest brutalist-shadow transition-none">
+<div class="flex items-start justify-between">
+<div class="flex gap-4">
+<div class="w-12 h-12 bg-surface-container-lowest border border-primary overflow-hidden">
+<img alt="NEON_DRIFT" class="w-full h-full object-cover grayscale" data-alt="Close up portrait of a young man with intense gaze, cinematic moody lighting and deep blacks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSpqey_0nzTEpUTR_mW39fvj7InIQu6FTJayFI9AOQfELsrs-nqjfsN_Vys8Vhf7UXtQoeXj4IHNs7lY93qKhfKdD0sOZf81x6mddfhrdcTy2oi80lqZ8NuxYMDUoyctqWCxniMFgFL0-LAxIbm2y1eUm9koQz7EVnx_0pvN9BpsjcNTx6cC4jid8IaXYscxClcDU3mQwr0uAenVaevTS_-3TTRrpeHfw0jBRR5RNd7y_Ia85f0x0uNJtsKSCfVgAyxaz8csZS8iGZ"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline font-bold text-primary uppercase text-lg tracking-tight">NEON_DRIFT</span>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-[10px] font-label border border-outline text-secondary px-1.5 font-bold">[USER]</span>
+<span class="text-[10px] font-label text-secondary flex items-center gap-1">
+<span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span> ACTIVE
+                                </span>
+</div>
+</div>
+</div>
+<button class="text-primary hover:bg-primary hover:text-on-primary p-1">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<div class="mt-4 pt-4 border-t border-outline-variant flex justify-between items-center">
+<span class="text-[10px] font-label text-on-surface-variant">UID: 1102-AQ-88</span>
+<div class="flex gap-3">
+<button class="text-[10px] font-label font-bold uppercase underline tracking-wider text-primary">EDIT_ROLE</button>
+<button class="text-[10px] font-label font-bold uppercase underline tracking-wider text-error">BAN_USER</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-stretch h-20 bg-[#141312] text-[#ffffff] font-['Space_Grotesk'] text-[10px] uppercase font-bold rounded-none border-t-2 border-[#ffffff] shadow-[0px_-4px_0px_0px_rgba(255,255,255,1)]">
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28] transition-none" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="database">database</span>
+<span>LIBRARY</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28] transition-none" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="gavel">gavel</span>
+<span>MODERATE</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#ffffff] text-[#141312] h-full w-full transition-none" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+<span>USERS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#c6c7c5] h-full w-full hover:bg-[#2b2a28] transition-none" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="settings">settings</span>
+<span>SYSTEM</span>
+</a>
+</nav>
+</body></html>
